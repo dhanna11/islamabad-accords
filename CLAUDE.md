@@ -17,7 +17,19 @@ A static site: a click-through slideshow of the author's deck, plus the PDF edit
 3. Wait for the first deploy (`gh api repos/{owner}/islamabad-accords/pages/builds/latest`) and open `https://{owner}.github.io/islamabad-accords/`.
 4. Optional custom domain: ask the author which domain to use first (one option floated: `accords.virtuouscityvision.com`). Then write it to a `CNAME` file, commit, and tell him the DNS record to add (a CNAME from the subdomain to `{owner}.github.io`). Enforce HTTPS once the certificate is issued.
 
-### Updating after the deck changes
+### Where the deck lives
+The author edits the deck in the Claude chat app, as a Slides artifact: https://claude.ai/artifact/LFbTXx3XuS6AvxPaidPiNC
+Its published files `project/deck.json` and `project/slides/<id>.html` map one-to-one onto `deck/deck.json` and `deck/slides/<id>.html` here. The artifact is the upstream source; `deck/` is a copy of it.
+
+### Syncing from the deck ("sync from the deck")
+1. List the artifact's files (Artifact tool, `action: "list"`, `scope: "files"`, the URL above) and read `project/deck.json` plus every `project/slides/*.html` (`action: "read"`, `paths`, `out_dir` in the scratchpad).
+2. Compare with `deck/`. If nothing differs, stop: the site is current.
+3. Otherwise copy the files over `deck/` (remove slides that are no longer in the artifact), run `python3 build-slideshow.py`, and delete `preview.html`.
+4. Summarize for the author: slides added, removed or reordered, and which slides' text changed. Flag any removed or renamed slide id, since shared links to it will stop working.
+5. The PDF is not in the artifact. Note that `islamabad-accords.pdf` still needs replacing by hand with a fresh export from the Slides app.
+6. Commit and push to the working branch, and open a PR into `main` (merging it publishes the site).
+
+### Updating after the deck changes (manual)
 1. Replace `deck/deck.json` and `deck/slides/` with the new export, and `islamabad-accords.pdf` with the new PDF.
 2. Run `python3 build-slideshow.py`.
 3. Open `index.html` locally and step through a few slides, then commit and push.
