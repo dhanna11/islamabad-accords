@@ -1,0 +1,107 @@
+{
+ "v": 4,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-09-20T17:19:04Z"
+ },
+ "title": "The Islamabad Accords",
+ "order": [
+  "cover",
+  "why-me",
+  "lead",
+  "mechanism",
+  "arc",
+  "why-1",
+  "why-2",
+  "why-3",
+  "why-iran",
+  "sec-1",
+  "cessation",
+  "hormuz",
+  "nuclear",
+  "tranche",
+  "recon-story",
+  "pool",
+  "sec-2",
+  "institutions",
+  "table",
+  "table-anti",
+  "consortium",
+  "commission",
+  "forum",
+  "fund",
+  "coupling",
+  "sec-3",
+  "trade-hudna",
+  "hudna-why",
+  "trade-nuclear",
+  "trade-hormuz",
+  "trade-arms",
+  "arms-jungle",
+  "trade-recon",
+  "layer",
+  "sec-4",
+  "waypoint",
+  "capstone",
+  "sec-5",
+  "limits-a",
+  "limits-b",
+  "limits-c",
+  "close",
+  "ai-disclosure",
+  "references"
+ ],
+ "sections": {
+  "cover": {
+   "description": "Title, goals, author, and the unofficial mark.",
+   "start": "cover"
+  },
+  "core": {
+   "description": "The core, the mechanism in four sentences, and the arc.",
+   "start": "lead"
+  },
+  "why": {
+   "description": "Why Trump, in the author's own beats.",
+   "start": "why-1"
+  },
+  "transactional": {
+   "description": "Card 1: a ceasefire and three deals, and where the money goes.",
+   "start": "sec-1"
+  },
+  "institutions": {
+   "description": "Card 2: five regionally owned institutions and their lineage.",
+   "start": "sec-2"
+  },
+  "trades": {
+   "description": "Card 3: what each side commits on every track, and the layer beneath.",
+   "start": "sec-3"
+  },
+  "horizon": {
+   "description": "Card 4: the waypoint and the capstone.",
+   "start": "sec-4"
+  },
+  "limits": {
+   "description": "Card 5: seven things the framework does not claim.",
+   "start": "sec-5"
+  },
+  "references": {
+   "description": "The sources, by file.",
+   "start": "references"
+  }
+ },
+ "faces": {
+  "instrument-serif": {
+   "family": "Instrument Serif",
+   "href": "https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap"
+  },
+  "jetbrains-mono": {
+   "family": "JetBrains Mono",
+   "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+  },
+  "source-sans-3": {
+   "family": "Source Sans 3",
+   "href": "https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap"
+  }
+ },
+ "designSystems": []
+}
