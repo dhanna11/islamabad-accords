@@ -26,7 +26,7 @@ Its published files `project/deck.json` and `project/slides/<id>.html` map one-t
 2. Compare with `deck/`. If nothing differs, stop: the site is current.
 3. Otherwise copy the files over `deck/` (remove slides that are no longer in the artifact), run `python3 build-slideshow.py`, and delete `preview.html`.
 4. Summarize for the author: slides added, removed or reordered, and which slides' text changed. Flag any removed or renamed slide id, since shared links to it will stop working.
-5. The PDF is not in the artifact. Note that `islamabad-accords.pdf` still needs replacing by hand with a fresh export from the Slides app.
+5. The PDF is not in the artifact; the chat builds it from the cards and hands it over separately. If the author supplied a new `islamabad-accords.pdf`, include it; otherwise note that the PDF is unchanged and may be stale.
 6. Commit and push to the working branch, and open a PR into `main` (merging it publishes the site).
 
 ### Updating after the deck changes (manual)
@@ -38,3 +38,6 @@ Its published files `project/deck.json` and `project/slides/<id>.html` map one-t
 - The words on the slides are the author's. Never rewrite slide text here. Content changes happen upstream in the deck, then get re-exported.
 - Keep the site static and self-contained. Don't add trackers, analytics or third-party scripts without asking.
 - Every slide has a stable link (`index.html#<slide-id>`). Don't rename slide ids casually, since people may have shared them.
+- Who edits what. The chat app owns the deck (`deck/`) and the PDF. This repo owns `build-slideshow.py`: the page wrapper, controls and animations are edited only here, never taken from a chat's copy of the script (it would silently undo fixes made here).
+- The menu labels (`SECTION_LABEL`, `SLIDE_LABEL` in `build-slideshow.py`) are the author's wording. Change them only when the author gives the new wording, e.g. after a section is renamed in the deck.
+- If the build warns about an icon missing from `ICONS`, add that icon's 24px line paths to `ICONS` rather than leaving the plain-circle fallback.
