@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Standalone slideshow of the deck (25 Sep 2026, author: "rather than a long scroll… a button to click next/previous,
-like a slideshow… maybe some sexy animations"). Reads the deck exactly as published (scratchpad deck/project: deck.json
-+ slides/*.html) and writes ONE self-contained page. The deck is the source; nothing here rewrites a slide's words.
+like a slideshow… maybe some sexy animations"). Reads the deck export in deck/ beside this script (deck.json
++ slides/*.html, copied from the Slides artifact) and writes ONE self-contained page. The deck is the source; nothing here rewrites a slide's words.
   · <x-icon> (drawn by the Slides app) becomes inline SVG; <x-shape kind="arrow-right"> becomes a clipped block.
   · Speaker notes (<aside>) are dropped from view.
-Outputs: site/index.html (with a PDF link, for GitHub Pages) and site/preview.html (no file link, for the claude.ai preview)."""
-import json, re, html as H
+Outputs, beside this script: index.html (with a PDF link, for GitHub Pages) and preview.html (no file link, git-ignored).
+  · Warns on stderr about any <x-icon> name missing from ICONS (it would draw as a plain circle)."""
+import json, re, sys, html as H
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -39,8 +40,11 @@ SECTION_LABEL = {"cover": "Cover", "core": "The core", "why": "Why Trump", "tran
                  "limits": "5 · Limits", "references": "References"}
 SLIDE_LABEL = {"why-me": "About the author", "ai-disclosure": "AI disclosure"}
 
+UNKNOWN_ICONS = set()
+
 def icon(m):
     name, style = m.group(1), m.group(2)
+    if name not in ICONS: UNKNOWN_ICONS.add(name)
     paths = ICONS.get(name, '<circle cx="12" cy="12" r="8"/>')
     return (f'<svg class="xi" viewBox="0 0 24 24" aria-hidden="true" style="{style}; flex-shrink:0; fill:none; stroke:currentColor; '
             f'stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round">{paths}</svg>')
@@ -68,7 +72,11 @@ def build(with_pdf):
     return TEMPLATE.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", pdf_btn) \
                    .replace("{{TOTAL}}", str(len(order)))
 
-TEMPLATE = r"""<title>The Islamabad Accords</title>
+TEMPLATE = r"""<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Islamabad Accords</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
@@ -202,8 +210,8 @@ TEMPLATE = r"""<title>The Islamabad Accords</title>
   let tx = null, ty = null;
   vp.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
   vp.addEventListener('touchend', e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
-    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { go(dx < 0 ? 1 : -1); } tx = null; }, { passive: true });
-  vp.addEventListener('touchend', e => e.preventDefault(), { passive: false });
+    // only a real swipe swallows the tap-click, so a swipe never also counts as a half-screen tap
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { e.preventDefault(); go(dx < 0 ? 1 : -1); } tx = null; }, { passive: false });
   const menu = $('menu');
   function closeMenu() { menu.hidden = true; $('sect').setAttribute('aria-expanded', 'false'); }
   $('sect').onclick = e => { e.stopPropagation(); menu.hidden = !menu.hidden; $('sect').setAttribute('aria-expanded', String(!menu.hidden)); };
@@ -220,4 +228,6 @@ if __name__ == "__main__":
     OUT.mkdir(exist_ok=True)
     (OUT / "index.html").write_text(build(True))
     (OUT / "preview.html").write_text(build(False))
-    print("site/index.html and site/preview.html written", (OUT / "index.html").stat().st_size // 1024, "KB")
+    print("index.html and preview.html written", (OUT / "index.html").stat().st_size // 1024, "KB")
+    for name in sorted(UNKNOWN_ICONS):
+        print(f"warning: icon {name!r} is not in ICONS, so it draws as a plain circle; add its paths to ICONS", file=sys.stderr)
