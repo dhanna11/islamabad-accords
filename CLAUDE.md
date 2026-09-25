@@ -20,13 +20,14 @@ A static site: a click-through slideshow of the author's deck, plus the PDF edit
 ### Where the deck lives
 The author edits the deck in the Claude chat app, as a Slides artifact: https://claude.ai/artifact/LFbTXx3XuS6AvxPaidPiNC
 Its published files `project/deck.json` and `project/slides/<id>.html` map one-to-one onto `deck/deck.json` and `deck/slides/<id>.html` here. The artifact is the upstream source; `deck/` is a copy of it.
+The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE, whose published `islamabad-accords.pdf` is the upstream copy of the repo's PDF.
 
 ### Syncing from the deck ("sync from the deck")
 1. List the artifact's files (Artifact tool, `action: "list"`, `scope: "files"`, the URL above) and read `project/deck.json` plus every `project/slides/*.html` (`action: "read"`, `paths`, `out_dir` in the scratchpad).
-2. Compare with `deck/`. If nothing differs, stop: the site is current.
+2. Compare with `deck/`, and do step 5 (the PDF) too. If neither the deck nor the PDF differs, stop: the site is current.
 3. Otherwise copy the files over `deck/` (remove slides that are no longer in the artifact), run `python3 build-slideshow.py`, and delete `preview.html`.
 4. Summarize for the author: slides added, removed or reordered, and which slides' text changed. Flag any removed or renamed slide id, since shared links to it will stop working.
-5. The PDF is not in the artifact; the chat builds it from the cards and hands it over separately. If the author supplied a new `islamabad-accords.pdf`, include it; otherwise note that the PDF is unchanged and may be stale.
+5. The PDF comes from its own artifact: https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE. Read its published file `islamabad-accords.pdf` (Artifact tool, `action: "read"`, `path: "islamabad-accords.pdf"`, `out_dir` in the scratchpad). If it differs from the repo's copy, replace it and mention that in the summary.
 6. Commit and push to the working branch, and open a PR into `main` (merging it publishes the site).
 
 ### Updating after the deck changes (manual)
