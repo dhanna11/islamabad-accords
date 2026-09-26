@@ -350,7 +350,7 @@ The architecture operates at the margins, where the worst outcomes are stumbled 
 ## AI disclosure
 
 AI DISCLOSURE · HOW THIS PLAN WAS MADE
-The productive doom scroll loop
+The productive doom scroll state machine
 
 THE DOOM SCROLL LOOP · SINCE 7 OCTOBER
 
@@ -478,11 +478,31 @@ Slides that appear only in the deck.
 - Rules to the jungle, to stop another disaster from happening
 - Lower priority than the five trades
 
-### The obvious objections
-*The obvious objections · 1 of 2*
-1. **“It’s overly optimistic”** It’s the fucking Middle East · any plan to bring order to this chaos will be optimistic
-2. **“What if Israel sabotages it?”** It can, like any party, the way the JCPOA was undermined · America stands this one up and guarantees Israel’s compliance, and the normalization it brokers gives Israel a reason to stay
-3. **“It still leaves Iran enrichment”** A Persian, Shia state sitting on every fault line in the region will always want a hedge · no bombing campaign changes that, only regime change would · so the deal caps it: near-zero for 10–15 years, zero HEU, verification first
+### “It’s overly optimistic”
+*The obvious objections · 1 of 5*
+- It’s the fucking Middle East
+- Any plan to bring order to this chaos will be optimistic
 
-4. **“The Palestinian linkage is the weak link”** It is, and either side could veto it · it only asks the region to line up behind the one viable pathway · any future two-state solution will be a Frankenstein of Oslo and the 20-point plan, and this is the best way I found to put the whole region behind it
-5. **“How is it regionally owned with great-power guarantees?”** It’s a real limit · great powers have to throw their weight around to stand it up · the ideal is that they then step back to providing basic services to each side · great-power politics wins over the ideal, for now
+### “What if Israel sabotages it?”
+*The obvious objections · 2 of 5*
+- It can, like any party, the way the JCPOA was undermined
+- America stands this one up and guarantees Israel’s compliance, and the normalization it brokers gives Israel a reason to stay
+
+### “It still leaves Iran enrichment”
+*The obvious objections · 3 of 5*
+- A Persian, Shia state sitting on every fault line in the region will always want a hedge
+- No bombing campaign changes that, only regime change would
+- So the deal caps it: near&#8209;zero for 10–15 years, zero HEU, verification first
+
+### “The Palestinian linkage is the weak link”
+*The obvious objections · 4 of 5*
+- It is, and either side could veto it
+- It only asks the region to line up behind the one viable pathway
+- Any future two-state solution will be a Frankenstein of Oslo and the 20-point plan, and this is the best way I found to put the whole region behind it
+
+### “How is it regionally owned with great-power guarantees?”
+*The obvious objections · 5 of 5*
+- It’s a real limit
+- Great powers have to throw their weight around to stand it up
+- The ideal is that they then step back to providing basic services to each side
+- Great-power politics wins over the ideal, for now

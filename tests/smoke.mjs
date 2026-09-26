@@ -47,6 +47,17 @@ async function open(contextOptions, hash = '') {
   }
   check(wrong.length === 0, `every slide link #<id> opens its slide${wrong.length ? ': ' + wrong.join(', ') : ''}`);
 
+  // retired ids (SLIDE_ALIASES in build-slideshow.py) must still open the slide that took over their content
+  const aliases = JSON.parse(readFileSync(path.join(ROOT, 'index.html'), 'utf8').match(/const ALIASES = (\{.*?\});/)[1]);
+  const badAlias = [];
+  for (const [old, now] of Object.entries(aliases)) {
+    await page.goto(PAGE + '#' + old);
+    await page.waitForFunction(i => document.querySelector('.stage.on')?.dataset.id === i && location.hash === '#' + i, now, { timeout: 2000 })
+      .catch(() => badAlias.push(`${old} -> ${now}`));
+  }
+  check(Object.keys(aliases).length > 0 && badAlias.length === 0,
+    `old slide links redirect to their new slides (${Object.keys(aliases).length})${badAlias.length ? ': ' + badAlias.join(', ') : ''}`);
+
   // content drawn outside the 1920x1080 slide is cut off; padding past the edge is harmless, so measure the elements
   const spill = await page.evaluate(() => [...document.querySelectorAll('.stage section')].flatMap(sec => {
     const box = sec.getBoundingClientRect(), k = box.width / 1920, out = [];

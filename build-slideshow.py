@@ -46,6 +46,13 @@ SECTION_LABEL = {"cover": "Cover", "core": "The core thesis", "why": "Why Trump"
                  "institutions": "2 · Five institutions", "trades": "3 · Five trades", "horizon": "4 · The horizon",
                  "limits": "5 · Limits", "references": "References"}
 SLIDE_LABEL = {"why-me": "About the author", "ai-disclosure": "AI disclosure"}
+# Slide ids the deck has dropped, mapped to the slide that now holds the same content, so links people shared keep working.
+# Add an entry whenever a sync removes or renames an id; never delete one.
+SLIDE_ALIASES = {
+  "limits-a": "limit-1", "limits-b": "limit-3", "limits-c": "limit-6",   # 26 Sep 2026: one slide per limit
+  "objections-1": "objection-1", "objections-2": "objection-4",          # 26 Sep 2026: one slide per objection
+}
+BUILD_WARNINGS = []
 
 UNKNOWN_ICONS = set()
 
@@ -86,8 +93,12 @@ def build(with_pdf):
         note = f'<a class="note" href="{href}" target="_blank" rel="noopener">{H.escape(text)}</a>'
         menu_html += "".join(f'<li class="menu-ask"><a href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">Ask {name}</a></li>'
                              for name, url in ASK_LINKS) + f'<li class="menu-note">{note}</li>'
+    for old, new in SLIDE_ALIASES.items():
+        if old in order: BUILD_WARNINGS.append(f"alias {old!r} is a live slide id again; remove it from SLIDE_ALIASES")
+        if new not in order: BUILD_WARNINGS.append(f"alias {old!r} points to {new!r}, which is not in deck.json; point it at the slide that now holds that content")
     return TEMPLATE.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links) \
-                   .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(len(order)))
+                   .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(len(order))) \
+                   .replace("{{ALIASES}}", json.dumps(SLIDE_ALIASES))
 
 TEMPLATE = r"""<!doctype html>
 <html lang="en">
@@ -215,8 +226,10 @@ TEMPLATE = r"""<!doctype html>
     const k = Math.min((w - 2 * pad) / 1920, (h - 2 * pad) / 1080);
     stages.forEach(s => { s.style.transform = `scale(${k}) translate(-50%, -50%)`; });
   }
+  const ALIASES = {{ALIASES}};  // retired slide ids -> their current slide, so old shared links still land right
   function idxFromHash() {
-    const id = decodeURIComponent(location.hash.slice(1));
+    let id = decodeURIComponent(location.hash.slice(1));
+    if (Object.hasOwn(ALIASES, id)) id = ALIASES[id];
     const i = stages.findIndex(s => s.dataset.id === id);
     return i >= 0 ? i : 0;
   }
@@ -273,5 +286,7 @@ if __name__ == "__main__":
     (OUT / "index.html").write_text(build(True))
     (OUT / "preview.html").write_text(build(False))
     print("index.html and preview.html written", (OUT / "index.html").stat().st_size // 1024, "KB")
+    for w in dict.fromkeys(BUILD_WARNINGS):
+        print(f"warning: {w}", file=sys.stderr)
     for name in sorted(UNKNOWN_ICONS):
         print(f"warning: icon {name!r} is not in ICONS, so it draws as a plain circle; add its paths to ICONS", file=sys.stderr)

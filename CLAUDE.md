@@ -30,7 +30,7 @@ The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GS
 1. List the artifact's files (Artifact tool, `action: "list"`, `scope: "files"`, the URL above) and read `project/deck.json` plus every `project/slides/*.html` (`action: "read"`, `paths`, `out_dir` in the scratchpad).
 2. Compare with `deck/`, and do step 5 (the PDF and text edition) too. If none of them differs, stop: the site is current.
 3. Otherwise copy the files over `deck/` (remove slides that are no longer in the artifact), run `python3 build-slideshow.py`, and delete `preview.html`.
-4. Summarize for the author: slides added, removed or reordered, and which slides' text changed. Flag any removed or renamed slide id, since shared links to it will stop working.
+4. Summarize for the author: slides added, removed or reordered, and which slides' text changed. For every removed or renamed slide id, add an entry to `SLIDE_ALIASES` in `build-slideshow.py` pointing it at the slide that now holds its content, so links people shared keep working, and list the redirects in the summary.
 5. The PDF and the plain-text edition come from their own artifact: https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE. Read its published files `islamabad-accords.pdf` and `islamabad-accords.md` (Artifact tool, `action: "read"`, `paths`, `out_dir` in the scratchpad). If either differs from the repo's copy, replace it and say so in the PR summary.
 6. Commit and push to the working branch, and open a PR into `main` (merging it publishes the site).
 
@@ -49,7 +49,7 @@ It runs Chromium only, so it cannot catch iPhone-only (WebKit) behavior; check t
 ## Rules
 - The words on the slides are the author's. Never rewrite slide text here. Content changes happen upstream in the deck, then get re-exported.
 - Keep the site static and self-contained. Don't add trackers, analytics or third-party scripts without asking.
-- Every slide has a stable link (`index.html#<slide-id>`). Don't rename slide ids casually, since people may have shared them.
+- Every slide has a stable link (`index.html#<slide-id>`). Don't rename slide ids casually, since people may have shared them. When the deck does drop an id, `SLIDE_ALIASES` redirects it; never delete an alias, and the build warns if one points at a slide that no longer exists.
 - Who edits what. The chat app owns the deck (`deck/`) and the PDF. This repo owns `build-slideshow.py`: the page wrapper, controls and animations are edited only here, never taken from a chat's copy of the script (it would silently undo fixes made here).
 - The menu labels (`SECTION_LABEL`, `SLIDE_LABEL` in `build-slideshow.py`) are the author's wording. Change them only when the author gives the new wording, e.g. after a section is renamed in the deck.
 - The same goes for `ASK_PROMPT` (the prompt the Ask buttons send) and `FEEDBACK` (the "Tell me on X" note) in `build-slideshow.py`. Keep the Ask buttons ordinary outbound links: no scripts or embeds.
