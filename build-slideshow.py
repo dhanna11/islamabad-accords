@@ -35,7 +35,7 @@ ICONS = {
   "Verified": '<path d="M12 2.5 14.6 4.4 17.8 4.3 18.8 7.3 21.3 9.2 20.3 12.2 21.3 15.2 18.8 17.1 17.8 20.1 14.6 20 12 21.9 9.4 20 6.2 20.1 5.2 17.1 2.7 15.2 3.7 12.2 2.7 9.2 5.2 7.3 6.2 4.3 9.4 4.4z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',
   "Warning": '<path d="M12 3 2 20h20z"/><path d="M12 10v4"/><path d="M12 17h.01"/>',
 }
-SECTION_LABEL = {"cover": "Cover", "core": "The core", "why": "Why Trump", "transactional": "1 · The transactional phase",
+SECTION_LABEL = {"cover": "Cover", "core": "The core thesis", "why": "Why Trump", "transactional": "1 · The transactional phase",
                  "institutions": "2 · Five institutions", "trades": "3 · Five trades", "horizon": "4 · The horizon",
                  "limits": "5 · Limits", "references": "References"}
 SLIDE_LABEL = {"why-me": "About the author", "ai-disclosure": "AI disclosure"}

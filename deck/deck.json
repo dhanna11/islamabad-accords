@@ -21,6 +21,7 @@
   "nuclear",
   "tranche",
   "recon-story",
+  "recon-gap",
   "pool",
   "sec-2",
   "institutions",
@@ -57,7 +58,7 @@
    "start": "cover"
   },
   "core": {
-   "description": "The core, the mechanism in four sentences, and the arc.",
+   "description": "The core thesis, the mechanism in four sentences, and the arc.",
    "start": "lead"
   },
   "why": {
