@@ -15,3 +15,7 @@
 3. Once the certificate is issued, tick "Enforce HTTPS".
 
 The only thing the page loads from outside is its fonts, from Google Fonts.
+
+## License
+- **Text and design** (the deck, the slides, the PDF and the plain-text edition): © 2026 David Hanna Jr., [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). See `LICENSE-CONTENT.md`. Quoted material and sources belong to their authors.
+- **Build scripts and code** (`build-slideshow.py`, `tests/`, `.github/`, and the page wrapper around the slides): [MIT](LICENSE).
