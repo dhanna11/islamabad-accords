@@ -10,6 +10,7 @@ A static site: a click-through slideshow of the author's deck, plus the PDF edit
 - `deck/`: the deck export the slideshow is built from (`deck.json` for slide order and sections, `slides/*.html` for one slide each). This is the source. Do not hand-edit `index.html`.
 - `build-slideshow.py`: regenerates `index.html` (and `preview.html`) from `deck/`. It needs only Python 3.
 - `README.md`: the human steps for GitHub Pages and a custom domain.
+- `.github/workflows/check.yml` and `tests/`: the check that runs on every PR (see "Checks" below).
 
 ## Tasks
 ### First-time setup
@@ -36,6 +37,13 @@ The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GS
 1. Replace `deck/deck.json` and `deck/slides/` with the new export, and `islamabad-accords.pdf` with the new PDF.
 2. Run `python3 build-slideshow.py`.
 3. Open `index.html` locally and step through a few slides, then commit and push.
+
+### Checks
+Every PR and every push to `main` runs `.github/workflows/check.yml`. Merge only when it is green.
+1. Build check: `python3 build-slideshow.py` must print no warnings, and the `index.html` it writes must match the committed one (so `index.html` is never edited by hand or left stale after a deck or script change).
+2. `tests/smoke.mjs`: opens `index.html` in Chromium and checks every slide link, content spilling off a slide, the Ask/PDF/feedback links, taps and keys, and that the control bar stays on one line at widths from 1280px down to 320px.
+Run it locally before pushing: `cd tests && npm ci && npx playwright install chromium && node smoke.mjs` (where Chromium is preinstalled, skip the install step). If a check fails, fix the cause; never loosen or skip a check to get green.
+It runs Chromium only, so it cannot catch iPhone-only (WebKit) behavior; check those on a phone.
 
 ## Rules
 - The words on the slides are the author's. Never rewrite slide text here. Content changes happen upstream in the deck, then get re-exported.
