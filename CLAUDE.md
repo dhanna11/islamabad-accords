@@ -5,6 +5,8 @@ A static site: a click-through slideshow of the author's deck, plus the PDF edit
 ## Files
 - `index.html`: the slideshow, one self-contained page. It loads only Google Fonts from outside.
 - `islamabad-accords.pdf`: the PDF edition, linked from the slideshow's PDF button.
+- `islamabad-accords.md`: the plain-text edition, which the "Ask Claude" / "Ask ChatGPT" buttons point the AI at. Generated in the chat; never edit its text here.
+- `.nojekyll`: keeps GitHub Pages from running Jekyll, which would turn `islamabad-accords.md` into an HTML page and break its URL.
 - `deck/`: the deck export the slideshow is built from (`deck.json` for slide order and sections, `slides/*.html` for one slide each). This is the source. Do not hand-edit `index.html`.
 - `build-slideshow.py`: regenerates `index.html` (and `preview.html`) from `deck/`. It needs only Python 3.
 - `README.md`: the human steps for GitHub Pages and a custom domain.
@@ -20,14 +22,14 @@ A static site: a click-through slideshow of the author's deck, plus the PDF edit
 ### Where the deck lives
 The author edits the deck in the Claude chat app, as a Slides artifact: https://claude.ai/artifact/LFbTXx3XuS6AvxPaidPiNC
 Its published files `project/deck.json` and `project/slides/<id>.html` map one-to-one onto `deck/deck.json` and `deck/slides/<id>.html` here. The artifact is the upstream source; `deck/` is a copy of it.
-The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE, whose published `islamabad-accords.pdf` is the upstream copy of the repo's PDF.
+The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE, whose published `islamabad-accords.pdf` and `islamabad-accords.md` are the upstream copies of the repo's PDF and plain-text edition.
 
 ### Syncing from the deck ("sync from the deck")
 1. List the artifact's files (Artifact tool, `action: "list"`, `scope: "files"`, the URL above) and read `project/deck.json` plus every `project/slides/*.html` (`action: "read"`, `paths`, `out_dir` in the scratchpad).
-2. Compare with `deck/`, and do step 5 (the PDF) too. If neither the deck nor the PDF differs, stop: the site is current.
+2. Compare with `deck/`, and do step 5 (the PDF and text edition) too. If none of them differs, stop: the site is current.
 3. Otherwise copy the files over `deck/` (remove slides that are no longer in the artifact), run `python3 build-slideshow.py`, and delete `preview.html`.
 4. Summarize for the author: slides added, removed or reordered, and which slides' text changed. Flag any removed or renamed slide id, since shared links to it will stop working.
-5. The PDF comes from its own artifact: https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE. Read its published file `islamabad-accords.pdf` (Artifact tool, `action: "read"`, `path: "islamabad-accords.pdf"`, `out_dir` in the scratchpad). If it differs from the repo's copy, replace it and mention that in the summary.
+5. The PDF and the plain-text edition come from their own artifact: https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE. Read its published files `islamabad-accords.pdf` and `islamabad-accords.md` (Artifact tool, `action: "read"`, `paths`, `out_dir` in the scratchpad). If either differs from the repo's copy, replace it and say so in the PR summary.
 6. Commit and push to the working branch, and open a PR into `main` (merging it publishes the site).
 
 ### Updating after the deck changes (manual)
@@ -41,4 +43,5 @@ The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GS
 - Every slide has a stable link (`index.html#<slide-id>`). Don't rename slide ids casually, since people may have shared them.
 - Who edits what. The chat app owns the deck (`deck/`) and the PDF. This repo owns `build-slideshow.py`: the page wrapper, controls and animations are edited only here, never taken from a chat's copy of the script (it would silently undo fixes made here).
 - The menu labels (`SECTION_LABEL`, `SLIDE_LABEL` in `build-slideshow.py`) are the author's wording. Change them only when the author gives the new wording, e.g. after a section is renamed in the deck.
+- The same goes for `ASK_PROMPT` (the prompt the Ask buttons send) and `FEEDBACK` (the "Tell me on X" note) in `build-slideshow.py`. Keep the Ask buttons ordinary outbound links: no scripts or embeds.
 - If the build warns about an icon missing from `ICONS`, add that icon's 24px line paths to `ICONS` rather than leaving the plain-circle fallback.

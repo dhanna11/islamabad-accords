@@ -7,6 +7,7 @@ like a slideshow… maybe some sexy animations"). Reads the deck export in deck/
 Outputs, beside this script: index.html (with a PDF link, for GitHub Pages) and preview.html (no file link, git-ignored).
   · Warns on stderr about any <x-icon> name missing from ICONS (it would draw as a plain circle)."""
 import json, re, sys, html as H
+from urllib.parse import quote
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -15,6 +16,12 @@ import os
 DECK = Path(os.environ.get("DECK_DIR", HERE / "deck"))
 OUT = HERE
 PDF_NAME = "islamabad-accords.pdf"
+# "Ask Claude" / "Ask ChatGPT" open a new chat with this prompt filled in. The wording is the author's; change it only on their word.
+ASK_PROMPT = ("Read the Islamabad Accords at https://dhanna11.github.io/islamabad-accords/islamabad-accords.md. "
+              "Summarize it in a few lines, then answer my questions about it. Be fair to both its strengths and its weaknesses, "
+              "and where it falls short, suggest how the plan could be improved.")
+ASK_LINKS = [("Claude", "https://claude.ai/new?q="), ("ChatGPT", "https://chatgpt.com/?q=")]
+FEEDBACK = ("Found a way to improve it? Tell me on X: @thekingdavidjr", "https://x.com/thekingdavidjr")
 
 # 24px line icons, stroke = currentColor (the slide sets color and size on the element)
 ICONS = {
@@ -68,9 +75,19 @@ def build(with_pdf):
         body = clean((DECK / "slides" / f"{sid}.html").read_text().strip())
         slides.append(f'<div class="stage" data-id="{sid}" data-label="{H.escape(label)}" aria-roledescription="slide" aria-label="{i+1} of {len(order)}">{body}</div>')
     menu_html = "".join(f'<li><button type="button" data-go="{i}">{H.escape(l)}</button></li>' for i, l in menu)
-    pdf_btn = f'<a class="pdf" href="{PDF_NAME}" target="_blank" rel="noopener">PDF</a>' if with_pdf else ""
-    return TEMPLATE.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", pdf_btn) \
-                   .replace("{{TOTAL}}", str(len(order)))
+    # the PDF, Ask and feedback links go only in the Pages build (index.html), not the preview
+    links = note = ""
+    if with_pdf:
+        ask = "".join(f'<a class="pdf" href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">'
+                      f'<span class="ask-long">Ask </span>{name}</a>' for name, url in ASK_LINKS)
+        links = (f'<div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span>{ask}</div>'
+                 f'<a class="pdf" href="{PDF_NAME}" target="_blank" rel="noopener">PDF</a>')
+        text, href = FEEDBACK
+        note = f'<a class="note" href="{href}" target="_blank" rel="noopener">{H.escape(text)}</a>'
+        menu_html += "".join(f'<li class="menu-ask"><a href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">Ask {name}</a></li>'
+                             for name, url in ASK_LINKS) + f'<li class="menu-note">{note}</li>'
+    return TEMPLATE.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links) \
+                   .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(len(order)))
 
 TEMPLATE = r"""<!doctype html>
 <html lang="en">
@@ -129,6 +146,19 @@ TEMPLATE = r"""<!doctype html>
   .pdf { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; color: var(--gold-l); text-decoration:none;
          border:1px solid var(--gold-d); border-radius:20px; padding:9px 14px; }
   .pdf:hover { background: rgba(201,168,76,.12); }
+  .ask { display:flex; align-items:center; gap:8px; }
+  .ask-lbl { display:none; font: 400 9px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; text-transform:uppercase; color: var(--gold-d); }
+  .note { font: 400 10px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; color: var(--gold-d); text-decoration:none; white-space:nowrap; }
+  .note:hover { color: var(--gold-l); text-decoration:underline; }
+  .viewport > .note { position:absolute; left:16px; bottom:12px; opacity:.8; z-index:2; }
+  .menu-ask { display:none; }
+  .menu-ask:not(.menu-ask + .menu-ask) { border-top:1px solid var(--line); margin-top:6px; padding-top:6px; }
+  .menu-ask a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
+                font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
+  .menu-ask a:hover { background: rgba(201,168,76,.12); }
+  .menu-ask + .menu-note { border-top:0; margin-top:0; }
+  .menu-note { display:none; border-top:1px solid var(--line); margin-top:6px; padding:10px 12px 4px; }
+  .menu-note .note { font: 400 13px/1.2 'Source Sans 3', 'Segoe UI', Arial, sans-serif; letter-spacing:0; }
   :focus-visible { outline: 2px solid var(--gold-l); outline-offset: 3px; }
   .menu { position:absolute; left:16px; bottom: calc(var(--bar) + env(safe-area-inset-bottom, 0px) + 8px); background: var(--deep);
           border:1px solid var(--line); border-radius:6px; padding:8px; margin:0; list-style:none; min-width:260px; max-width: calc(100vw - 32px);
@@ -139,11 +169,23 @@ TEMPLATE = r"""<!doctype html>
   .hint { position:absolute; right:16px; bottom:12px; font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing:1.5px; color: var(--gold-d);
           opacity:.8; pointer-events:none; }
   @media (max-width: 560px) { .hint { display:none; } .count { display:none; } }
+  /* narrow screens keep the bar on one line: short Ask labels under a small "Ask" first, then (under 480px) the Ask links
+     move into the section menu; the feedback note moves into the menu under 640px */
+  @media (max-width: 760px) {
+    .bar { gap:8px; }
+    .ask { gap:4px; position:relative; }
+    .ask-lbl { display:block; position:absolute; left:50%; top:-12px; transform:translateX(-50%); }
+    .ask-long { display:none; }
+    .ask .pdf, .bar > .pdf { padding:9px 9px; letter-spacing:1px; }
+  }
+  @media (max-width: 640px) { .viewport > .note { display:none; } .menu-note { display:block; } }
+  @media (max-width: 479px) { .bar .ask { display:none; } .menu-ask { display:block; } }
 </style>
 
 <main class="viewport" id="vp" aria-live="polite">
 {{SLIDES}}
 <div class="hint">← → to move</div>
+{{NOTE}}
 </main>
 <nav class="bar" aria-label="Slideshow controls">
   <div class="progress" id="prog"></div>
@@ -192,9 +234,9 @@ TEMPLATE = r"""<!doctype html>
     $('sect').textContent = s.dataset.label;
     $('prog').style.width = ((i + 1) / N * 100) + '%';
     $('prev').disabled = i === 0; $('next').disabled = i === N - 1;
-    document.querySelectorAll('#menu button').forEach(b => {
-      const start = +b.dataset.go, next = b.parentElement.nextElementSibling;
-      const end = next ? +next.firstElementChild.dataset.go : N; b.classList.toggle('cur', i >= start && i < end); });
+    const secs = Array.from(document.querySelectorAll('#menu button[data-go]'));
+    secs.forEach((b, k) => { const start = +b.dataset.go, end = k + 1 < secs.length ? +secs[k + 1].dataset.go : N;
+      b.classList.toggle('cur', i >= start && i < end); });
     const id = s.dataset.id; if (location.hash.slice(1) !== id) history.replaceState(null, '', '#' + id);
   }
   const go = d => show(cur + d, true);
