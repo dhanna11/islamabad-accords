@@ -9,6 +9,8 @@
   /* single dark look, by choice: it is the deck's own identity */
   :root { color-scheme: dark; --ink:#05090f; --navy:#0a1628; --deep:#070e18; --gold:#c9a84c; --gold-l:#e0c872; --gold-d:#8a7234;
           --paper:#f0ece2; --line:rgba(201,168,76,.22); --bar:56px; }
+  /* iOS Safari inflates text inside the wide 1920px slide, except while it animates, so text jumped size when a slide finished entering */
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   html, body { height: 100%; }
   body { margin:0; background: var(--ink); color: var(--paper); font-family:'Source Sans 3', 'Segoe UI', Arial, sans-serif;
          display:flex; flex-direction:column; overflow:hidden; }
