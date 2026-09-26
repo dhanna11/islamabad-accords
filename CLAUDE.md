@@ -10,6 +10,7 @@ A static site: a click-through slideshow of the author's deck, plus the PDF edit
 - `deck/`: the deck export the slideshow is built from (`deck.json` for slide order and sections, `slides/*.html` for one slide each). This is the source. Do not hand-edit `index.html`.
 - `build-slideshow.py`: regenerates `index.html` (and `preview.html`) from `deck/`. It needs only Python 3.
 - `README.md`: the human steps for GitHub Pages and a custom domain.
+- `LICENSE` (MIT: build scripts, tests, workflow, page wrapper) and `LICENSE-CONTENT.md` (CC BY 4.0: text and design, in every edition). The copyright notice on the References slide comes from the deck; don't edit it here.
 - `.github/workflows/check.yml` and `tests/`: the check that runs on every PR (see "Checks" below).
 
 ## Tasks

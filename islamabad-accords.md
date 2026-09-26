@@ -2,6 +2,8 @@
 
 An unofficial proposal by a private author, September 2026. The same content as the slideshow at https://dhanna11.github.io/islamabad-accords/ and the PDF at https://dhanna11.github.io/islamabad-accords/islamabad-accords.pdf, as plain text so it can be read or questioned by a person or an AI. Layout, figures and icons are left out; every sentence is kept.
 
+© 2026 David Hanna Jr. · text and design licensed CC BY 4.0 · quoted material and sources belong to their authors (https://creativecommons.org/licenses/by/4.0/).
+
 
 ---
 
