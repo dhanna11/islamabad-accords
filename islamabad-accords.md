@@ -25,10 +25,11 @@ Unofficial · a private author's proposal · September 2026 · AI disclosure at 
 
 ABOUT THE AUTHOR
 Why listen to me?
-- Judge the plan itself · the receipts from the doom scroll are all here: 41 sources, every link checked
-- The outsider is the point · no political agenda, just trying to solve a problem
-- I’m a code monkey, born and living in the seat of the nation · local politics is national politics is global politics
+- Judge the plan itself · the receipts from the doom scroll are all here: 44 sources, every link checked
+- I’m a code monkey 👨🏾‍💻, born and living in the seat of the nation · local politics is national politics is global politics
+- I’m an outsider, which is the point · no political agenda, just trying to solve a problem
 - This started as a way to deal with cognitive dissonance and understand what I thought about the Israeli-Palestinian conflict · now I’m just tired of this BS
+- The US-Iran war was obvious after 7 October · so I set a delusional goal: create a Middle East peace framework for the next president, most likely Trump
 
 ---
 
@@ -88,7 +89,8 @@ WHY HIM
 - He’s the most powerful person in the world
 - It’s his war · his 2nd term’s signature policy in the Middle East, next to the 20-point plan
 - “Run from the Middle East” is not a thing Trump can own
-- The only thing that beats capitulation is a creative grand vision he can own · a prize that big gives him room for the concessions any real deal requires
+- The only thing that beats capitulation is a creative grand vision he can own
+- A prize that big gives him room for the concessions any real deal requires
 3
 WHY WOULD TRUMP TAKE A PLAN?
 - He already has · the 20-point plan came through a long, very collaborative process, and his power and influence got it over the line
@@ -108,10 +110,11 @@ A recommitment to the cessation of armed hostilities across all fronts, Gaza and
 
 HORMUZ STANDSTILL
 freeze the maritime conflict
+ADAPTED FROM THE IRAN–OMAN ROUTE TALKS (JUL–AUG 2026, STILL MOVING) · THE OUTBOUND LANE STAYS OMANI
 No-prejudice: nobody formally concedes sovereignty, transit rights, or economic arrangements. Holds until the architectural phase settles the strait.
 Sovereign and military fleets excepted
 - The lane arrangement governs commercial traffic
-- Warships, government vessels, and state-flagged commercial fleets transit by either route, in recognition of sovereign rights and interests
+- Warships, government vessels, and state-flagged commercial fleets transit by either route, in recognition of sovereign interests, rights, and balance of power
 The blockade lifts: the US naval blockade is lifted as part of the Hormuz standstill.
 The oil waiver returns with the strait
 - Restored under MoU ¶10
@@ -159,7 +162,7 @@ What counts as agreement of the architectural phase
 - Acceptance of the five institutions
 - Acceptance of their general mandates
 - Agreement on the range of the negotiating parameters: enrichment percentage, duration, money · not a particular figure, the range on the figures
-On agreement, the wartime surge withdraws: US forces surged for the war are withdrawn.
+On agreement, the wartime surge withdraws: US forces surged for the war are withdrawn, and an armistice ending the October 7th Firestorm is declared.
 
 ---
 
@@ -376,12 +379,16 @@ Manual editing pass
 
 Present
 
+The Israeli-Palestinian brainstorming was with ChatGPT ·
+the US-Iran plan and its artifacts were built with Claude
+Repository: [github.com/dhanna11/islamabad-accords](https://github.com/dhanna11/islamabad-accords)
+
 ---
 
 ## Sources
 
 A Mosaic Found in the Doom Scroll
-a synthesis of proposals · Trump's branding on the package · 41 sources, by file · links are live in the PDF edition
+a synthesis of proposals · Trump's branding on the package · 44 sources, by file · links are live in the PDF edition
 THE INSTRUMENT · the MoU and its collapse
 [Wikisource · 17 Jun 2026 · The Islamabad MoU, full text: Arts. 1, 5, 8, 10, 11, 12](https://en.wikisource.org/wiki/Islamabad_Memorandum_of_Understanding_between_the_United_States_of_America_and_the_Islamic_Republic_of_Iran)
 [AP via PBS · 7 Jul 2026 · Three tankers hit; the US revokes the oil license the same day](https://www.pbs.org/newshour/world/3-tankers-hit-in-latest-attacks-in-the-strait-of-hormuz-british-military-says)
@@ -394,6 +401,9 @@ HORMUZ · the Commission
 [Maritime Executive · 18 Jun 2026 · Iran’s Persian Gulf Strait Authority and its transit fees](https://maritime-executive.com/article/will-passage-fees-be-charged-in-the-strait-of-hormuz)
 [MarineLink · 24 Jun 2026 · Oman opens alternative lanes; the TSS declared unsafe](https://www.marinelink.com/news/oman-opens-alternative-hormuz-lanes-540579)
 [Reuters via Times of Israel · 28 Jul 2026 · Oman’s Gulf-backed proposal: joint control, voluntary fees, the Malacca model](https://www.timesofisrael.com/oman-hands-iran-proposal-for-joint-control-over-hormuz-with-voluntary-fees/)
+[Al Jazeera · 5 Aug 2026 · A lane plan: inbound through Iranian waters, outbound through Omani waters, 60 days toll-free](https://www.aljazeera.com/news/2026/8/5/iran-oman-us-close-to-hormuz-deal-what-do-they-all-want)
+[Al-Monitor · 17 Aug 2026 · Iran: an understanding reached with Oman on the route map](https://www.al-monitor.com/originals/2026/08/iran-says-understanding-reached-oman-over-new-hormuz-route-map)
+[Al Jazeera · 26 Aug 2026 · A temporary route agreed; part of the exit now runs through Iranian waters](https://www.aljazeera.com/news/2026/8/26/iran-oman-agree-on-temporary-hormuz-route-what-we-know)
 NUCLEAR · the Consortium
 [RFE/RL · 15 May 2025 · Iran pitches an enrichment consortium at the Muscat round](https://www.rferl.org/a/iran-us-consortium-persian-gulf-region/33414121.html)
 [Axios · 2 Jun 2025 · The US offer: enrichment through a regional consortium](https://www.axios.com/2025/06/02/iran-nuclear-deal-proposal-enrich-uranium)
@@ -430,7 +440,7 @@ ARMS & PRESENCE · the Forum
 [Reuters via Times of Israel · 17 Sep 2026 · China privately presses Iran on the Houthis after a Saudi appeal](https://www.timesofisrael.com/china-privately-pushing-iran-to-help-rein-in-houthis-after-saudi-appeal-sources-say)
 SANCTIONS · the layer beneath
 [Lawfare (Karbassi) · 26 May 2022 · Waiver vs. termination; EO 13716; the CISADA §401 certification](https://www.lawfaremedia.org/article/nuclear-brinkmanship-us-sanctions-against-iran-explained)
-EVERY LINK OPENED AND CHECKED 18 SEP 2026 · THE ARCHITECTURE ARRANGES WHAT THE RECORD ALREADY CONTAINS
+EVERY LINK OPENED AND CHECKED 18–26 SEP 2026 · THE ARCHITECTURE ARRANGES WHAT THE RECORD ALREADY CONTAINS
 
 ---
 
@@ -492,7 +502,7 @@ Slides that appear only in the deck.
 *The obvious objections · 3 of 5*
 - A Persian, Shia state sitting on every fault line in the region will always want a hedge
 - No bombing campaign changes that, only regime change would
-- So the deal caps it: near&#8209;zero for 10–15 years, zero HEU, verification first
+- So the deal caps it: near-zero for 10–15 years, zero HEU, verification first
 
 ### “The Palestinian linkage is the weak link”
 *The obvious objections · 4 of 5*
