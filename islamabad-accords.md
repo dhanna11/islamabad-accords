@@ -502,7 +502,7 @@ Slides that appear only in the deck.
 *The obvious objections · 3 of 5*
 - A Persian, Shia state sitting on every fault line in the region will always want a hedge
 - No bombing campaign changes that, only regime change would
-- So the deal caps it: near&#8209;zero for 10–15 years, zero HEU, verification first
+- So the deal caps it: near-zero for 10–15 years, zero HEU, verification first
 
 ### “The Palestinian linkage is the weak link”
 *The obvious objections · 4 of 5*
