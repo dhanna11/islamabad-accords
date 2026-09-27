@@ -7,10 +7,10 @@
  "title": "The Islamabad Accords",
  "order": [
   "cover",
-  "why-me",
   "lead",
   "mechanism",
   "arc",
+  "why-me",
   "why-1",
   "why-2",
   "why-3",
@@ -72,8 +72,8 @@
    "start": "lead"
   },
   "why": {
-   "description": "Why Trump, in the author's own beats.",
-   "start": "why-1"
+   "description": "Why listen to me, why Trump, and why Iran.",
+   "start": "why-me"
   },
   "transactional": {
    "description": "Card 1: a ceasefire and three deals, and where the money goes.",

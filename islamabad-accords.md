@@ -21,18 +21,6 @@ Unofficial · a private author's proposal · September 2026 · AI disclosure at 
 
 ---
 
-## About the author
-
-ABOUT THE AUTHOR
-Why listen to me?
-- Judge the plan itself · the receipts from the doom scroll are all here: 44 sources, every link checked
-- I’m a code monkey 👨🏾‍💻, born and living in the seat of the nation · local politics is national politics is global politics
-- I’m an outsider, which is the point · no political agenda, just trying to solve a problem
-- This started as a way to deal with cognitive dissonance and understand what I thought about the Israeli-Palestinian conflict · now I’m just tired of this BS
-- The US-Iran war was obvious after 7 October · so I set a delusional goal: create a Middle East peace framework for the next president, most likely Trump
-
----
-
 ## Overview
 
 Ending the October 7th Firestorm
@@ -73,9 +61,21 @@ a mosaic found in the Doom Scroll
 
 ---
 
+## About the author
+
+ABOUT THE AUTHOR
+Why listen to me?
+- Judge the plan itself · the receipts from the doom scroll are all here: 44 sources, every link checked
+- I’m a code monkey 👨🏾‍💻, born and living in the seat of the nation · local politics is national politics is global politics
+- I’m an outsider, which is the point · no political agenda, financial incentive, or reputation to protect, just trying to solve a problem
+- This started as a way to deal with cognitive dissonance and understand what I thought about the Israeli-Palestinian conflict · now I’m just tired of this BS
+- The US-Iran war was obvious after 7 October · so I set a delusional goal: create a Middle East peace framework for the next president, most likely Trump
+
+---
+
 ## Why Trump
 
-PAGE TWO · WHY TRUMP
+WHY TRUMP
 Why Trump
 a plan for a businessman
 1
@@ -471,7 +471,7 @@ Slides that appear only in the deck.
 - Iran's carve-out, 25% of every release after the nuclear gates: $18.5B
 - Board of Peace match, dollar for dollar: $18.5B
 - Remaining gap, additional funding from Europe, Asia and others: $28.4B (about 66% of the need covered)
-- A second match from outside the Board of Peace: about 88% covered
+- A second match from non-Board of Peace members in Europe and Asia: about 88% covered
 - Assumes a $100B pool; the carve-out scales with what is actually released
 
 ### Why the 20-point plan
