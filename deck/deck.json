@@ -8,9 +8,9 @@
  "order": [
   "cover",
   "lead",
+  "why-me",
   "mechanism",
   "arc",
-  "why-me",
   "why-1",
   "why-2",
   "why-3",
@@ -68,12 +68,12 @@
    "start": "cover"
   },
   "core": {
-   "description": "The core thesis, the mechanism in four sentences, and the arc.",
+   "description": "The core thesis, why listen to me, the mechanism in four sentences, and the arc.",
    "start": "lead"
   },
   "why": {
-   "description": "Why listen to me, why Trump, and why Iran.",
-   "start": "why-me"
+   "description": "Why Trump, and why Iran.",
+   "start": "why-1"
   },
   "transactional": {
    "description": "Card 1: a ceasefire and three deals, and where the money goes.",

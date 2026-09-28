@@ -67,7 +67,7 @@ ABOUT THE AUTHOR
 Why listen to me?
 - Judge the plan itself · the receipts from the doom scroll are all here: 44 sources, every link checked
 - I’m a code monkey 👨🏾‍💻, born and living in the seat of the nation · local politics is national politics is global politics
-- I’m an outsider, which is the point · no political agenda, financial incentive, or reputation to protect, just trying to solve a problem
+- I’m an outsider, which is the competitive advantage: no political agenda, financial incentive, or reputation to protect, just trying to solve a problem
 - This started as a way to deal with cognitive dissonance and understand what I thought about the Israeli-Palestinian conflict · now I’m just tired of this BS
 - The US-Iran war was obvious after 7 October · so I set a delusional goal: create a Middle East peace framework for the next president, most likely Trump
 
@@ -102,7 +102,7 @@ WHY WOULD TRUMP TAKE A PLAN?
 ## Card 1
 
 Freeze Hormuz, De-escalate the Nuclear File, Rebuild the Middle East
-a ceasefire first, then three deals run in parallel
+agree the three deals as the agenda, redeclare the ceasefire, then negotiate them in parallel
 
 RECOMMITMENT TO CESSATION
 rain on the firestorm
@@ -162,7 +162,7 @@ What counts as agreement of the architectural phase
 - Acceptance of the five institutions
 - Acceptance of their general mandates
 - Agreement on the range of the negotiating parameters: enrichment percentage, duration, money · not a particular figure, the range on the figures
-On agreement, the wartime surge withdraws: US forces surged for the war are withdrawn, and an armistice ending the October 7th Firestorm is declared.
+On agreement, the wartime escalation unwinds: US forces surged for the war are withdrawn, the sanctions imposed since the June MoU are lifted, and an armistice ending the October 7th Firestorm is declared.
 
 ---
 
@@ -375,7 +375,7 @@ Write things down
 
 AI helps refine
 
-Manual editing pass
+Anti-slop pass
 
 Present
 
@@ -470,8 +470,10 @@ Slides that appear only in the deck.
 - Pledged, Board of Peace donor conference, Feb 2026: $17.0B
 - Iran's carve-out, 25% of every release after the nuclear gates: $18.5B
 - Board of Peace match, dollar for dollar: $18.5B
-- Remaining gap, additional funding from Europe, Asia and others: $28.4B (about 66% of the need covered)
-- A second match from non-Board of Peace members in Europe and Asia: about 88% covered
+- Together, about 66% of the need in the deal
+- Second match, proposed: non-Board of Peace members in Europe and Asia, dollar for dollar: $18.5B (about 88% of the need covered)
+- Remaining gap, additional funding: $9.9B
+- Long term, rebuilding Gaza costs the world less than leaving an open sore to fester
 - Assumes a $100B pool; the carve-out scales with what is actually released
 
 ### Why the 20-point plan
