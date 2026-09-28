@@ -163,6 +163,7 @@ What counts as agreement of the architectural phase
 - Acceptance of their general mandates
 - Agreement on the range of the negotiating parameters: enrichment percentage, duration, money · not a particular figure, the range on the figures
 On agreement, the wartime escalation unwinds: US forces surged for the war are withdrawn, the sanctions imposed since the June MoU are lifted, and an armistice ending the October 7th Firestorm is declared.
+The agreed architecture is endorsed by a UN Security Council resolution, as the 20-point plan was.
 
 ---
 
@@ -450,11 +451,19 @@ Slides that appear only in the deck.
 
 ### Why Iran should take a Trump deal
 *Why Iran · the trust deficit*
-- The trust deficit between the sides is so large that nothing less than a legacy-defining deal for Trump could be seen by either side as worth pursuing
-- Tehran has been selling exactly that: “the trillion-dollar opportunity that access to our economy represents” · “no objection to the presence of American investors” · oil, gas, mining, and aircraft on the table
-- Trump’s oldest complaint about the JCPOA is economic: “We give them $150 billion, we get nothing” · “They bought 118 Airbus planes, not Boeing planes. They’re spending all of their money in Europe”
-- He wants to invest in Iran and trade with it: “a deal that allows Iran to thrive and prosper” · “economically bigger, better, and stronger than ever before” · a deal so mega that it is actually a regional architecture, and only he can set it up
+- The trust deficit is so large that only a legacy-defining deal for Trump is worth either side’s time
+- Tehran was selling exactly that: “the trillion-dollar opportunity that access to our economy represents” · American trade and investment in oil, gas, mining, and aircraft were on the table
+- Trump’s oldest complaint about the JCPOA is economic: “We give them $150 billion, we get nothing” · “They bought 118 Airbus planes, not Boeing planes. They’re spending all of their money in Europe” · he wants to invest in Iran and trade with it
+- Investment and trade at that scale need a regional architecture to protect them, and only Trump can build one
 - He honors deals he feels are his; an Iranian proposal never will be
+
+### The one hard line
+*Card 1 · on agreement of the architectural phase · the armistice*
+- The end of the firestorm is the end of the firestorm
+- No airstrikes, no rocket fire, no ballistic or cruise missiles, no drone attacks, no IEDs, no targeted assassinations, no land grabs, no blockades · no attacks by anyone, on any front
+- Everything else in the plan is negotiable
+- Once the firestorm is extinguished, it is extinguished · no exceptions
+*The cycle of extermination that started on October 7th and was exacerbated by Israel’s war in Gaza will finally be ended*
 
 ### Iran rebuilds Gaza and Lebanon
 *Reconstruction Tranche · in his words*
@@ -472,7 +481,7 @@ Slides that appear only in the deck.
 - Board of Peace match, dollar for dollar: $18.5B
 - Together, about 66% of the need in the deal
 - Second match, proposed: non-Board of Peace members in Europe and Asia, dollar for dollar: $18.5B (about 88% of the need covered)
-- Remaining gap, additional funding: $9.9B
+- Private contributions and investments, from anyone who cares about Palestine: $9.9B
 - Long term, rebuilding Gaza costs the world less than leaving an open sore to fester
 - Assumes a $100B pool; the carve-out scales with what is actually released
 
