@@ -14,6 +14,9 @@ HERE = Path(__file__).resolve().parent
 # the deck export: deck/deck.json + deck/slides/*.html beside this script (override with DECK_DIR=…)
 import os
 DECK = Path(os.environ.get("DECK_DIR", HERE / "deck"))
+# 29 Sep 2026 (author): the pitch is the front page. pitch/ holds its export (same format as deck/); index.html is built
+# from it and full.html from deck/. Each page links to the other; old links to full-deck slides on the front page forward.
+PITCH = Path(os.environ.get("PITCH_DIR", HERE / "pitch"))
 OUT = HERE
 PDF_NAME = "islamabad-accords.pdf"
 # "Ask Claude" / "Ask ChatGPT" open a new chat with this prompt filled in. The wording is the author's; change it only on their word.
@@ -42,7 +45,8 @@ ICONS = {
   "Verified": '<path d="M12 2.5 14.6 4.4 17.8 4.3 18.8 7.3 21.3 9.2 20.3 12.2 21.3 15.2 18.8 17.1 17.8 20.1 14.6 20 12 21.9 9.4 20 6.2 20.1 5.2 17.1 2.7 15.2 3.7 12.2 2.7 9.2 5.2 7.3 6.2 4.3 9.4 4.4z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',
   "Warning": '<path d="M12 3 2 20h20z"/><path d="M12 10v4"/><path d="M12 17h.01"/>',
 }
-SECTION_LABEL = {"cover": "Cover", "core": "The core thesis", "why": "Why Trump", "transactional": "1 · The transactional phase",
+SECTION_LABEL = {"open": "Cover", "how": "The mechanism", "architectural": "2 · The architecture",  # the pitch's sections (29 Sep 2026)
+                 "cover": "Cover", "core": "The core thesis", "why": "Why Trump", "transactional": "1 · The transactional phase",
                  "institutions": "2 · Five institutions", "trades": "3 · Five trades", "horizon": "4 · The horizon",
                  "limits": "5 · Limits", "close": "The close", "appendix": "Appendix",
                  "references": "References"}
@@ -71,8 +75,9 @@ def clean(s):
     s = re.sub(r"<aside>.*?</aside>", "", s, flags=re.S)
     return s
 
-def build(with_pdf):
-    deck = json.loads((DECK / "deck.json").read_text())
+def build(with_pdf, deck_dir=DECK, other=None, forward=None):
+    """other = (href, label) of the sibling page; forward = (page, ids): slide ids to send on to that page (old links)."""
+    deck = json.loads((deck_dir / "deck.json").read_text())
     order = deck["order"]
     starts = {v["start"]: k for k, v in deck["sections"].items()}
     sec, slides, menu = "cover", [], []
@@ -80,7 +85,7 @@ def build(with_pdf):
         if sid in starts:
             sec = starts[sid]; menu.append((i, SECTION_LABEL.get(sec, sec)))
         label = SLIDE_LABEL.get(sid, SECTION_LABEL.get(sec, sec))
-        body = clean((DECK / "slides" / f"{sid}.html").read_text().strip())
+        body = clean((deck_dir / "slides" / f"{sid}.html").read_text().strip())
         slides.append(f'<div class="stage" data-id="{sid}" data-label="{H.escape(label)}" aria-roledescription="slide" aria-label="{i+1} of {len(order)}">{body}</div>')
     menu_html = "".join(f'<li><button type="button" data-go="{i}">{H.escape(l)}</button></li>' for i, l in menu)
     # the PDF, Ask and feedback links go only in the Pages build (index.html), not the preview
@@ -89,17 +94,22 @@ def build(with_pdf):
         ask = "".join(f'<a class="pdf" href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">'
                       f'<span class="ask-long">Ask </span>{name}</a>' for name, url in ASK_LINKS)
         links = (f'<div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span>{ask}</div>'
-                 f'<a class="pdf" href="{PDF_NAME}" target="_blank" rel="noopener">PDF</a>')
+                 f'<a class="pdf" href="{PDF_NAME}" target="_blank" rel="noopener">PDF</a>'
+                 + (f'<a class="pdf other" href="{other[0]}">{H.escape(other[1])}</a>' if other else ""))
         text, href = FEEDBACK
         note = f'<a class="note" href="{href}" target="_blank" rel="noopener">{H.escape(text)}</a>'
         menu_html += "".join(f'<li class="menu-ask"><a href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">Ask {name}</a></li>'
                              for name, url in ASK_LINKS) + f'<li class="menu-note">{note}</li>'
-    for old, new in SLIDE_ALIASES.items():
+        if other: menu_html = f'<li class="menu-other"><a href="{other[0]}">{H.escape(other[1])}</a></li>' + menu_html
+    aliases = SLIDE_ALIASES if deck_dir == DECK else {}
+    for old, new in aliases.items():
         if old in order: BUILD_WARNINGS.append(f"alias {old!r} is a live slide id again; remove it from SLIDE_ALIASES")
         if new not in order: BUILD_WARNINGS.append(f"alias {old!r} points to {new!r}, which is not in deck.json; point it at the slide that now holds that content")
     return TEMPLATE.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links) \
                    .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(len(order))) \
-                   .replace("{{ALIASES}}", json.dumps(SLIDE_ALIASES))
+                   .replace("{{ALIASES}}", json.dumps(aliases)) \
+                   .replace("{{FORWARD}}", json.dumps({"page": forward[0], "ids": sorted(forward[1])} if forward else {"page": "", "ids": []})) \
+                   .replace("<title>The Islamabad Accords</title>", "<title>The Islamabad Accords</title>" if deck_dir == PITCH else "<title>The Islamabad Accords · Full deck</title>")
 
 TEMPLATE = r"""<!doctype html>
 <html lang="en">
@@ -164,6 +174,8 @@ TEMPLATE = r"""<!doctype html>
   .note:hover { color: var(--gold-l); text-decoration:underline; }
   .viewport > .note { position:absolute; left:16px; bottom:12px; opacity:.8; z-index:2; }
   .menu-ask { display:none; }
+  .menu-other { display:none; }  /* the sibling-page link: in the bar on wide screens, in the menu on phones */
+  .menu-other a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none; }
   .menu-ask:not(.menu-ask + .menu-ask) { border-top:1px solid var(--line); margin-top:6px; padding-top:6px; }
   .menu-ask a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
                 font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
@@ -190,8 +202,10 @@ TEMPLATE = r"""<!doctype html>
     .ask-long { display:none; }
     .ask .pdf, .bar > .pdf { padding:9px 9px; letter-spacing:1px; }
   }
+  @media (max-width: 900px) { .bar > .other { padding:9px 9px; letter-spacing:1px; } }  /* "Full deck" is wide: tighten it before the 760px step */
   @media (max-width: 640px) { .viewport > .note { display:none; } .menu-note { display:block; } }
   @media (max-width: 479px) { .bar .ask { display:none; } .menu-ask { display:block; } }
+  @media (max-width: 599px) { .bar > .other { display:none; } .menu-other { display:block; } }
 </style>
 
 <main class="viewport" id="vp" aria-live="polite">
@@ -228,8 +242,10 @@ TEMPLATE = r"""<!doctype html>
     stages.forEach(s => { s.style.transform = `scale(${k}) translate(-50%, -50%)`; });
   }
   const ALIASES = {{ALIASES}};  // retired slide ids -> their current slide, so old shared links still land right
+  const FORWARD = {{FORWARD}};  // on the front page: full-deck slide ids (and their aliases) that live on full.html
   function idxFromHash() {
     let id = decodeURIComponent(location.hash.slice(1));
+    if (FORWARD.ids.includes(id)) { location.replace(FORWARD.page + '#' + encodeURIComponent(id)); return 0; }
     if (Object.hasOwn(ALIASES, id)) id = ALIASES[id];
     const i = stages.findIndex(s => s.dataset.id === id);
     return i >= 0 ? i : 0;
@@ -284,9 +300,15 @@ TEMPLATE = r"""<!doctype html>
 
 if __name__ == "__main__":
     OUT.mkdir(exist_ok=True)
-    (OUT / "index.html").write_text(build(True))
-    (OUT / "preview.html").write_text(build(False))
-    print("index.html and preview.html written", (OUT / "index.html").stat().st_size // 1024, "KB")
+    full_ids = json.loads((DECK / "deck.json").read_text())["order"]
+    pitch_ids = json.loads((PITCH / "deck.json").read_text())["order"]
+    forward = ("full.html", (set(full_ids) | set(SLIDE_ALIASES)) - set(pitch_ids))
+    (OUT / "index.html").write_text(build(True, PITCH, ("full.html", "Full deck"), forward))   # the front page: the pitch
+    (OUT / "full.html").write_text(build(True, DECK, ("index.html", "Pitch")))               # the full deck
+    (OUT / "preview.html").write_text(build(False, PITCH))
+    (OUT / "preview-full.html").write_text(build(False, DECK))
+    print("index.html (pitch) and full.html (full deck) written,", (OUT / "index.html").stat().st_size // 1024, "and",
+          (OUT / "full.html").stat().st_size // 1024, "KB")
     for w in dict.fromkeys(BUILD_WARNINGS):
         print(f"warning: {w}", file=sys.stderr)
     for name in sorted(UNKNOWN_ICONS):

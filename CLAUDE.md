@@ -1,14 +1,16 @@
 # The Islamabad Accords · website repo
 
-A static site: a click-through slideshow of the author's deck, plus the PDF edition. No framework, no build server.
+A static site: two click-through slideshows (the pitch on the front page, the full deck on full.html), plus the PDF edition. No framework, no build server.
 
 ## Files
-- `index.html`: the slideshow, one self-contained page. It loads only Google Fonts from outside.
+- `index.html`: the front page, the **pitch** slideshow (21 slides), built from `pitch/`. One self-contained page; it loads only Google Fonts from outside. Old links to full-deck slides on it (`index.html#<id>`) forward to `full.html#<id>`.
+- `full.html`: the **full deck** slideshow, built from `deck/`. Each page links to the other ("Full deck" / "Pitch") in the bar and in the menu.
 - `islamabad-accords.pdf`: the PDF edition, linked from the slideshow's PDF button.
 - `islamabad-accords.md`: the plain-text edition, which the "Ask Claude" / "Ask ChatGPT" buttons point the AI at. Generated in the chat; never edit its text here.
 - `.nojekyll`: keeps GitHub Pages from running Jekyll, which would turn `islamabad-accords.md` into an HTML page and break its URL.
-- `deck/`: the deck export the slideshow is built from (`deck.json` for slide order and sections, `slides/*.html` for one slide each). This is the source. Do not hand-edit `index.html`.
-- `build-slideshow.py`: regenerates `index.html` (and `preview.html`) from `deck/`. It needs only Python 3.
+- `deck/`: the full deck's export (`deck.json` for slide order and sections, `slides/*.html` for one slide each). This is the source of `full.html`.
+- `pitch/`: the pitch deck's export, same format. This is the source of `index.html`. Do not hand-edit `index.html` or `full.html`.
+- `build-slideshow.py`: regenerates `index.html` from `pitch/` and `full.html` from `deck/` (plus `preview.html` and `preview-full.html`, never committed). It needs only Python 3.
 - `README.md`: the human steps for GitHub Pages and a custom domain.
 - `LICENSE` (MIT: build scripts, tests, workflow, page wrapper) and `LICENSE-CONTENT.md` (CC BY 4.0: text and design, in every edition). The copyright notice on the References slide comes from the deck; don't edit it here.
 - `.github/workflows/check.yml` and `tests/`: the check that runs on every PR (see "Checks" below).
@@ -25,12 +27,13 @@ A static site: a click-through slideshow of the author's deck, plus the PDF edit
 ### Where the deck lives
 The author edits the deck in the Claude chat app, as a Slides artifact: https://claude.ai/artifact/LFbTXx3XuS6AvxPaidPiNC
 Its published files `project/deck.json` and `project/slides/<id>.html` map one-to-one onto `deck/deck.json` and `deck/slides/<id>.html` here. The artifact is the upstream source; `deck/` is a copy of it.
+The pitch deck has its own Slides artifact, https://claude.ai/artifact/WMQcPRojVx9HH6K4RjpZjj; its published `project/deck.json` and `project/slides/<id>.html` map one-to-one onto `pitch/deck.json` and `pitch/slides/<id>.html`.
 The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE, whose published `islamabad-accords.pdf` and `islamabad-accords.md` are the upstream copies of the repo's PDF and plain-text edition.
 
 ### Syncing from the deck ("sync from the deck")
 1. List the artifact's files (Artifact tool, `action: "list"`, `scope: "files"`, the URL above) and read `project/deck.json` plus every `project/slides/*.html` (`action: "read"`, `paths`, `out_dir` in the scratchpad).
-2. Compare with `deck/`, and do step 5 (the PDF and text edition) too. If none of them differs, stop: the site is current.
-3. Otherwise copy the files over `deck/` (remove slides that are no longer in the artifact), run `python3 build-slideshow.py`, and delete `preview.html`.
+2. Compare with `deck/`, do the same for the pitch artifact against `pitch/`, and do step 5 (the PDF and text edition) too. If none of them differs, stop: the site is current.
+3. Otherwise copy the files over `deck/` and `pitch/` (remove slides that are no longer in their artifact), run `python3 build-slideshow.py`, and delete `preview.html` and `preview-full.html`.
 4. Summarize for the author: slides added, removed or reordered, and which slides' text changed. For every removed or renamed slide id, add an entry to `SLIDE_ALIASES` in `build-slideshow.py` pointing it at the slide that now holds its content, so links people shared keep working, and list the redirects in the summary.
 5. The PDF and the plain-text edition come from their own artifact: https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE. Read its published files `islamabad-accords.pdf` and `islamabad-accords.md` (Artifact tool, `action: "read"`, `paths`, `out_dir` in the scratchpad). If either differs from the repo's copy, replace it and say so in the PR summary.
 6. Commit and push to the working branch, and open a PR into `main` (merging it publishes the site).
@@ -42,8 +45,8 @@ The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GS
 
 ### Checks
 Every PR and every push to `main` runs `.github/workflows/check.yml`. Merge only when it is green.
-1. Build check: `python3 build-slideshow.py` must print no warnings, and the `index.html` it writes must match the committed one (so `index.html` is never edited by hand or left stale after a deck or script change).
-2. `tests/smoke.mjs`: opens `index.html` in Chromium and checks every slide link, content spilling off a slide, the Ask/PDF/feedback links, taps and keys, and that the control bar stays on one line at widths from 1280px down to 320px.
+1. Build check: `python3 build-slideshow.py` must print no warnings, and the `index.html` and `full.html` it writes must match the committed ones (so neither is ever edited by hand or left stale after a deck or script change).
+2. `tests/smoke.mjs`: opens `index.html` (the pitch) and `full.html` (the full deck) in Chromium and checks, on each, every slide link, content spilling off a slide, the Ask/PDF/feedback links, taps and keys, and that the control bar stays on one line at widths from 1280px down to 320px.
 Run it locally before pushing: `cd tests && npm ci && npx playwright install chromium && node smoke.mjs` (where Chromium is preinstalled, skip the install step). If a check fails, fix the cause; never loosen or skip a check to get green.
 It runs Chromium only, so it cannot catch iPhone-only (WebKit) behavior; check those on a phone.
 

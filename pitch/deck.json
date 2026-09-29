@@ -1,0 +1,72 @@
+{
+ "v": 4,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-09-29T10:24:05Z"
+ },
+ "title": "The Islamabad Accords · Pitch",
+ "order": [
+  "cover",
+  "lead",
+  "p-why-trump",
+  "p-why-iran",
+  "p-mechanism",
+  "arc",
+  "p-three-deals",
+  "nuclear",
+  "p-money",
+  "p-agreement",
+  "hard-line",
+  "p-institutions",
+  "p-trade-hudna",
+  "p-trade-nuclear",
+  "p-trade-hormuz",
+  "p-trade-arms",
+  "p-trade-recon",
+  "p-layer",
+  "p-horizon",
+  "p-limits",
+  "p-close"
+ ],
+ "sections": {
+  "open": {
+   "description": "Title, goals and the core thesis.",
+   "start": "cover"
+  },
+  "why": {
+   "description": "Why Trump, and why Iran.",
+   "start": "p-why-trump"
+  },
+  "how": {
+   "description": "The mechanism and the arc.",
+   "start": "p-mechanism"
+  },
+  "transactional": {
+   "description": "Card 1: a ceasefire and three deals.",
+   "start": "p-three-deals"
+  },
+  "architectural": {
+   "description": "Cards 2–4: five institutions, five trades, the layer beneath, the horizon.",
+   "start": "p-institutions"
+  },
+  "close": {
+   "description": "Limits, and the close.",
+   "start": "p-limits"
+  }
+ },
+ "faces": {
+  "instrument-serif": {
+   "family": "Instrument Serif",
+   "href": "https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap"
+  },
+  "jetbrains-mono": {
+   "family": "JetBrains Mono",
+   "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+  },
+  "source-sans-3": {
+   "family": "Source Sans 3",
+   "href": "https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap"
+  }
+ },
+ "designSystems": []
+}
