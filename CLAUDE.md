@@ -12,6 +12,7 @@ A static site: a click-through slideshow of the author's deck, plus the PDF edit
 - `README.md`: the human steps for GitHub Pages and a custom domain.
 - `LICENSE` (MIT: build scripts, tests, workflow, page wrapper) and `LICENSE-CONTENT.md` (CC BY 4.0: text and design, in every edition). The copyright notice on the References slide comes from the deck; don't edit it here.
 - `.github/workflows/check.yml` and `tests/`: the check that runs on every PR (see "Checks" below).
+- `docs/TODO-build.md`: the plan (not started) to move the chat's build scripts into this repo and give every edition one content source. Read it before changing the build or the sync steps.
 
 ## Tasks
 ### First-time setup
