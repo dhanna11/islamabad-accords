@@ -483,8 +483,8 @@ Slides that appear only in the deck.
 - Iran's carve-out, 25% of every release after the nuclear gates: $18.5B
 - Board of Peace match, dollar for dollar: $18.5B
 - Together, about 66% of the need in the deal
-- Second match, proposed: non-Board of Peace members in Europe and Asia, dollar for dollar: $18.5B (about 88% of the need covered)
-- Private contributions and investments, from anyone who cares about Palestine: $9.9B
+- Second match, potential: non-Board of Peace members in Europe and Asia, dollar for dollar: $18.5B (about 88% of the need covered)
+- Private contributions and investments, potential, from anyone who cares about Palestine: $9.9B
 - Long term, rebuilding Gaza costs the world less than leaving an open sore to fester
 - Assumes a $100B pool; the carve-out scales with what is actually released
 
