@@ -28,7 +28,7 @@ two phases · five institutions · one mechanism · 20 to 30 years
 The Islamabad MoU was a skeletal framework for a deal without a destination. The core of this is an architectural framework that attempts to implement the full agreement, using pieces that have already been proposed by the international community, synthesized into a coherent vision for Trump to sign off on.
 THE MECHANISM · in four sentences
 1. Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange settles with finality.
-2. That is the entire mechanism, repeated for a generation.
+2. That is the ideal loop, the fast path, repeated for a generation.
 3. When a crisis hits, settled exchanges stay settled: resume from where you stopped, not from zero.
 4. Quit outright and you keep what’s closed and lose everything still open · which is designed to be worth more.
 TRANSACTIONAL PHASE
@@ -458,10 +458,10 @@ Slides that appear only in the deck.
 - He honors deals he feels are his; an Iranian proposal never will be
 
 ### The one hard line
-*Card 1 · on agreement of the architectural phase · the armistice*
+*On agreement of the architectural phase · the armistice*
 - The end of the firestorm is the end of the firestorm
 - No airstrikes, no rocket fire, no ballistic or cruise missiles, no drone attacks, no IEDs, no targeted assassinations, no land grabs, no blockades · no attacks by anyone, on any front
-- Everything else in the plan is negotiable
+- Almost everything else in the plan is negotiable
 - Once the firestorm is extinguished, it is extinguished · no exceptions
 *The cycle of extermination that started on October 7th and was exacerbated by Israel’s war in Gaza will finally be ended*
 
@@ -487,10 +487,25 @@ Slides that appear only in the deck.
 
 ### Why the 20-point plan
 *All-Fronts Hudna · why the 20-point plan*
-- The 20-point plan is Trump’s signature peace plan · love it or hate it, the only political process for Gaza, backed by the whole region outside Iran and its axis and endorsed by the Security Council
+- The 20-point plan is Trump’s signature peace plan · love it or hate it, the only political process for Gaza and the greater Israeli-Palestinian conflict, backed by the whole region outside Iran and its axis and endorsed by the Security Council
 - The Israeli-Palestinian conflict is the largest fault line in the Middle East · the region’s Cascadia, the one that produces the really big one
 - What started in Gaza has to end in Gaza
-- Getting the entire region formally aligned behind it gives it new momentum
+- Acceptance by the Resistance axis aligns the entire region behind a single Israel-Palestine political process, and gives it new momentum
+
+### Why near-zero enrichment
+*Nuclear · why this bargain*
+- Iranian enrichment has been effectively on ice since the 12-day war · a single research cascade keeps Iran’s right to a civilian program while formalizing the status quo
+- Regionalized verification comes first, so every dollar released has the direct stakeholders’ blessing
+- Governing a regional consortium would be an extremely complex endeavor, but it’s still the only entity both sides have agreed to at one time or another
+- Near-zero reflects the post-war balance of power: the program largely destroyed, the government that wants it still intact
+
+### Why a shared strait
+*Hormuz · why a commission*
+- Geography is king · the strait runs partly through Iranian territorial waters, and Iran has legitimate sovereign rights and interests in the waterway
+- Iran has proven it can impose real costs on anyone using the strait
+- It has also proven it can’t impose its will on the Gulf · the US and Gulf states contained the disruption, at high cost
+- Neither side can keep that up for long · escorts and blockades are an expensive stopgap
+- The Commission gives everyone an off-ramp that reflects the post-war balance of power
 
 ### Can the region add rules to the jungle?
 *Arms & Presence · in all honesty*
