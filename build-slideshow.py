@@ -89,13 +89,14 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
         slides.append(f'<div class="stage" data-id="{sid}" data-label="{H.escape(label)}" aria-roledescription="slide" aria-label="{i+1} of {len(order)}">{body}</div>')
     menu_html = "".join(f'<li><button type="button" data-go="{i}">{H.escape(l)}</button></li>' for i, l in menu)
     # the PDF, Ask and feedback links go only in the Pages build (index.html), not the preview
-    links = note = ""
+    links = note = other_link = ""
     if with_pdf:
         ask = "".join(f'<a class="pdf" href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">'
                       f'<span class="ask-long">Ask </span>{name}</a>' for name, url in ASK_LINKS)
         links = (f'<div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span>{ask}</div>'
-                 f'<a class="pdf" href="{PDF_NAME}" target="_blank" rel="noopener">PDF</a>'
-                 + (f'<a class="pdf other" href="{other[0]}">{H.escape(other[1])}</a>' if other else ""))
+                 f'<a class="pdf" href="{PDF_NAME}" target="_blank" rel="noopener">PDF</a>')
+        # the Pitch / Full deck toggle sits at the left end of the bar, before the section menu
+        other_link = f'<a class="pdf other" href="{other[0]}">{H.escape(other[1])}</a>' if other else ""
         text, href = FEEDBACK
         note = f'<a class="note" href="{href}" target="_blank" rel="noopener">{H.escape(text)}</a>'
         menu_html += "".join(f'<li class="menu-ask"><a href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">Ask {name}</a></li>'
@@ -105,7 +106,7 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
     for old, new in aliases.items():
         if old in order: BUILD_WARNINGS.append(f"alias {old!r} is a live slide id again; remove it from SLIDE_ALIASES")
         if new not in order: BUILD_WARNINGS.append(f"alias {old!r} points to {new!r}, which is not in deck.json; point it at the slide that now holds that content")
-    return TEMPLATE.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links) \
+    return TEMPLATE.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links).replace("{{OTHER}}", other_link) \
                    .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(len(order))) \
                    .replace("{{ALIASES}}", json.dumps(aliases)) \
                    .replace("{{FORWARD}}", json.dumps({"page": forward[0], "ids": sorted(forward[1])} if forward else {"page": "", "ids": []})) \
@@ -215,6 +216,7 @@ TEMPLATE = r"""<!doctype html>
 </main>
 <nav class="bar" aria-label="Slideshow controls">
   <div class="progress" id="prog"></div>
+  {{OTHER}}
   <div class="where">
     <button class="sect" id="sect" type="button" aria-haspopup="true" aria-expanded="false">Cover</button>
     <span class="count" id="count">1 / {{TOTAL}}</span>
