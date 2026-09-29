@@ -44,7 +44,8 @@ ICONS = {
 }
 SECTION_LABEL = {"cover": "Cover", "core": "The core thesis", "why": "Why Trump", "transactional": "1 · The transactional phase",
                  "institutions": "2 · Five institutions", "trades": "3 · Five trades", "horizon": "4 · The horizon",
-                 "limits": "5 · Limits", "references": "References"}
+                 "limits": "5 · Limits", "close": "The close", "appendix": "Appendix",
+                 "references": "References"}
 SLIDE_LABEL = {"why-me": "About the author", "ai-disclosure": "AI disclosure"}
 # Slide ids the deck has dropped, mapped to the slide that now holds the same content, so links people shared keep working.
 # Add an entry whenever a sync removes or renames an id; never delete one.
