@@ -202,6 +202,7 @@ TEMPLATE = r"""<!doctype html>
     .ask-long { display:none; }
     .ask .pdf, .bar > .pdf { padding:9px 9px; letter-spacing:1px; }
   }
+  @media (max-width: 900px) { .bar > .other { padding:9px 9px; letter-spacing:1px; } }  /* "Full deck" is wide: tighten it before the 760px step */
   @media (max-width: 640px) { .viewport > .note { display:none; } .menu-note { display:block; } }
   @media (max-width: 479px) { .bar .ask { display:none; } .menu-ask { display:block; } }
   @media (max-width: 599px) { .bar > .other { display:none; } .menu-other { display:block; } }
