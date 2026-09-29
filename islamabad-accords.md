@@ -516,6 +516,7 @@ Slides that appear only in the deck.
 - The question is whether adversarial relationships can be managed
 - Rules to the jungle, to stop another disaster from happening
 - Lower priority than the five trades
+- Some framework for Iran’s proxy support and ballistic missiles is necessary for full statutory sanctions relief from America
 
 ### Why $500 billion
 *Reconstruction · why $500 billion*
