@@ -4,7 +4,7 @@ A static site: two click-through slideshows (the pitch on the front page, the fu
 
 ## Files
 - `index.html`: the front page, the **pitch** slideshow (21 slides), built from `pitch/`. One self-contained page; it loads only Google Fonts from outside. Old links to full-deck slides on it (`index.html#<id>`) forward to `full.html#<id>`.
-- `full.html`: the **full deck** slideshow, built from `deck/`. Each page links to the other ("Full deck" / "Pitch") in the bar and in the menu.
+- `full.html`: the **full deck** slideshow, built from `deck/`. Both pages carry a Pitch | Full deck switch (the page you are on lit, the other a link) at the left of the bar, and in the menu under 640px.
 - `islamabad-accords.pdf`: the PDF edition, linked from the slideshow's PDF button.
 - `islamabad-accords.md`: the plain-text edition, which the "Ask Claude" / "Ask ChatGPT" buttons point the AI at. Generated in the chat; never edit its text here.
 - `.nojekyll`: keeps GitHub Pages from running Jekyll, which would turn `islamabad-accords.md` into an HTML page and break its URL.

@@ -61,8 +61,13 @@
   .note:hover { color: var(--gold-l); text-decoration:underline; }
   .viewport > .note { position:absolute; left:16px; bottom:12px; opacity:.8; z-index:2; }
   .menu-ask { display:none; }
-  .menu-other { display:none; }  /* the sibling-page link: in the bar on wide screens, in the menu on phones */
-  .menu-other a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none; }
+  .menu-other { display:none; padding:6px 4px 10px; }  /* the Pitch | Full deck switch: in the bar on wide screens, in the menu on phones */
+  .switch { display:inline-flex; border:1px solid var(--gold-d); border-radius:20px; overflow:hidden; flex:none; }
+  .switch .seg { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; padding:9px 14px; white-space:nowrap;
+                 color: var(--gold-l); text-decoration:none; }
+  .switch .seg + .seg { border-left:1px solid var(--gold-d); }
+  .switch .seg.cur { background: var(--gold); color: var(--deep); }
+  .switch a.seg:hover { background: rgba(201,168,76,.12); }
   .menu-ask:not(.menu-ask + .menu-ask) { border-top:1px solid var(--line); margin-top:6px; padding-top:6px; }
   .menu-ask a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
                 font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
@@ -82,17 +87,17 @@
   @media (max-width: 560px) { .hint { display:none; } .count { display:none; } }
   /* narrow screens keep the bar on one line: short Ask labels under a small "Ask" first, then (under 480px) the Ask links
      move into the section menu; the feedback note moves into the menu under 640px */
-  @media (max-width: 760px) {
+  @media (max-width: 800px) {   /* was 760px; 800px since the Pitch | Full deck switch (29 Sep 2026), which needs the room */
     .bar { gap:8px; }
     .ask { gap:4px; position:relative; }
     .ask-lbl { display:block; position:absolute; left:50%; top:-12px; transform:translateX(-50%); }
     .ask-long { display:none; }
     .ask .pdf, .bar > .pdf { padding:9px 9px; letter-spacing:1px; }
   }
-  @media (max-width: 900px) { .bar > .other { padding:9px 9px; letter-spacing:1px; } }  /* "Full deck" is wide: tighten it before the 760px step */
+  @media (max-width: 900px) { .bar > .switch .seg { padding:9px 8px; letter-spacing:.5px; } .bar > .switch .seg-more { display:none; } }  /* the switch is wide: "Pitch | Full" before the 800px step */
   @media (max-width: 640px) { .viewport > .note { display:none; } .menu-note { display:block; } }
   @media (max-width: 479px) { .bar .ask { display:none; } .menu-ask { display:block; } }
-  @media (max-width: 599px) { .bar > .other { display:none; } .menu-other { display:block; } }
+  @media (max-width: 639px) { .bar > .switch { display:none; } .menu-other { display:block; } }  /* into the menu with the feedback note, under 640px */
 </style>
 
 <main class="viewport" id="vp" aria-live="polite">
@@ -317,7 +322,7 @@
 <p style="position:absolute; left:128px; bottom:64px; width:800px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#8a7234; letter-spacing:3px">CARD 5 · LIMITS</p><p style="position:absolute; right:128px; bottom:64px; width:800px; text-align:right; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#8a7234; letter-spacing:3px">X.COM/THEKINGDAVIDJR</p>
 </section></div>
 <div class="stage" data-id="objection-2" data-label="Appendix" aria-roledescription="slide" aria-label="56 of 60"><section id="objection-2" data-transition="fade" style="background:#0a1628; color:#f0ece2; font-family:'Source Sans 3', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:36px; justify-content:center">
-<div style="display:flex; gap:24px; align-items:center"><p aria-hidden="true" style="font-size:64px; line-height:1; flex:none">⚠️</p><div style="flex:1; display:flex; flex-direction:column; gap:16px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:28px; font-weight:700; color:#c9a84c; letter-spacing:4px; text-transform:uppercase; text-wrap:balance">The obvious objections · 2 of 5</p><h2 style="font-family:'Instrument Serif', Georgia, serif; font-size:88px; font-weight:400; color:#c9a84c; line-height:1.1">“What if Israel sabotages it?”</h2></div></div><ul style="font-family:'Instrument Serif', Georgia, serif; font-size:48px; color:#f0ece2; line-height:1.4; padding:0 0 0 40px"><li>It can, like any party, the way the JCPOA was undermined</li><li>America stands this one up and guarantees Israel’s compliance, and the normalization it brokers gives Israel a reason to stay</li></ul>
+<div style="display:flex; gap:24px; align-items:center"><p aria-hidden="true" style="font-size:64px; line-height:1; flex:none">⚠️</p><div style="flex:1; display:flex; flex-direction:column; gap:16px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:28px; font-weight:700; color:#c9a84c; letter-spacing:4px; text-transform:uppercase; text-wrap:balance">The obvious objections · 2 of 5</p><h2 style="font-family:'Instrument Serif', Georgia, serif; font-size:88px; font-weight:400; color:#c9a84c; line-height:1.1">“What if Israel sabotages it?”</h2></div></div><ul style="font-family:'Instrument Serif', Georgia, serif; font-size:48px; color:#f0ece2; line-height:1.4; padding:0 0 0 40px"><li>It can, like any party, the way the JCPOA was undermined</li><li>Israel’s permanence is a given, and nothing moves the Middle East more than its existential security interests</li><li>No architecture for the region survives without meeting them, and this one attempts to</li><li>Sabotage carries an increasingly high cost with the American nation</li></ul>
 <p style="position:absolute; left:128px; bottom:64px; width:800px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#8a7234; letter-spacing:3px">CARD 5 · LIMITS</p><p style="position:absolute; right:128px; bottom:64px; width:800px; text-align:right; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#8a7234; letter-spacing:3px">X.COM/THEKINGDAVIDJR</p>
 </section></div>
 <div class="stage" data-id="objection-3" data-label="Appendix" aria-roledescription="slide" aria-label="57 of 60"><section id="objection-3" data-transition="fade" style="background:#0a1628; color:#f0ece2; font-family:'Source Sans 3', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:36px; justify-content:center">
@@ -341,7 +346,7 @@
 </main>
 <nav class="bar" aria-label="Slideshow controls">
   <div class="progress" id="prog"></div>
-  <a class="pdf other" href="index.html">Pitch</a>
+  <div class="switch" role="group" aria-label="Pitch or full deck"><a class="seg other" href="index.html">Pitch</a><span class="seg cur" aria-current="page">Full<span class="seg-more"> deck</span></span></div>
   <div class="where">
     <button class="sect" id="sect" type="button" aria-haspopup="true" aria-expanded="false">Cover</button>
     <span class="count" id="count">1 / 60</span>
@@ -349,7 +354,7 @@
   <div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span><a class="pdf" href="https://claude.ai/new?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener"><span class="ask-long">Ask </span>Claude</a><a class="pdf" href="https://chatgpt.com/?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener"><span class="ask-long">Ask </span>ChatGPT</a></div><a class="pdf" href="islamabad-accords.pdf" target="_blank" rel="noopener">PDF</a>
   <button class="btn" id="prev" type="button" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
   <button class="btn" id="next" type="button" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
-  <ul class="menu" id="menu" hidden><li class="menu-other"><a href="index.html">Pitch</a></li><li><button type="button" data-go="0">Cover</button></li><li><button type="button" data-go="1">The core thesis</button></li><li><button type="button" data-go="5">Why Trump</button></li><li><button type="button" data-go="9">1 · The transactional phase</button></li><li><button type="button" data-go="18">2 · Five institutions</button></li><li><button type="button" data-go="27">3 · Five trades</button></li><li><button type="button" data-go="39">4 · The horizon</button></li><li><button type="button" data-go="42">The close</button></li><li><button type="button" data-go="44">Appendix</button></li><li><button type="button" data-go="59">References</button></li><li class="menu-ask"><a href="https://claude.ai/new?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener">Ask Claude</a></li><li class="menu-ask"><a href="https://chatgpt.com/?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener">Ask ChatGPT</a></li><li class="menu-note"><a class="note" href="https://x.com/thekingdavidjr" target="_blank" rel="noopener">Found a way to improve it? Tell me on X: @thekingdavidjr</a></li></ul>
+  <ul class="menu" id="menu" hidden><li class="menu-other"><div class="switch" role="group" aria-label="Pitch or full deck"><a class="seg other" href="index.html">Pitch</a><span class="seg cur" aria-current="page">Full<span class="seg-more"> deck</span></span></div></li><li><button type="button" data-go="0">Cover</button></li><li><button type="button" data-go="1">The core thesis</button></li><li><button type="button" data-go="5">Why Trump</button></li><li><button type="button" data-go="9">1 · The transactional phase</button></li><li><button type="button" data-go="18">2 · Five institutions</button></li><li><button type="button" data-go="27">3 · Five trades</button></li><li><button type="button" data-go="39">4 · The horizon</button></li><li><button type="button" data-go="42">The close</button></li><li><button type="button" data-go="44">Appendix</button></li><li><button type="button" data-go="59">References</button></li><li class="menu-ask"><a href="https://claude.ai/new?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener">Ask Claude</a></li><li class="menu-ask"><a href="https://chatgpt.com/?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener">Ask ChatGPT</a></li><li class="menu-note"><a class="note" href="https://x.com/thekingdavidjr" target="_blank" rel="noopener">Found a way to improve it? Tell me on X: @thekingdavidjr</a></li></ul>
 </nav>
 
 <script>

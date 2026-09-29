@@ -75,6 +75,20 @@ def clean(s):
     s = re.sub(r"<aside>.*?</aside>", "", s, flags=re.S)
     return s
 
+# the two pages, in the order the switch shows them (author, 29 Sep 2026: "Two button works": a Pitch | Full deck switch
+# with the page you are on lit, so the bar says where you are as well as where you can go)
+PAGES = [("index.html", "Pitch"), ("full.html", "Full deck")]
+
+def switch_html(here):
+    """Both pages as one control: the current one lit (aria-current), the other a link. On narrow bars "Full deck" shows
+    as "Full" (the word after the first space hides), so the bar keeps its line."""
+    def lab(label):
+        first, _, rest = label.partition(" ")
+        return H.escape(first) + (f'<span class="seg-more"> {H.escape(rest)}</span>' if rest else "")
+    segs = "".join(f'<span class="seg cur" aria-current="page">{lab(label)}</span>' if href == here
+                   else f'<a class="seg other" href="{href}">{lab(label)}</a>' for href, label in PAGES)
+    return f'<div class="switch" role="group" aria-label="Pitch or full deck">{segs}</div>'
+
 def build(with_pdf, deck_dir=DECK, other=None, forward=None):
     """other = (href, label) of the sibling page; forward = (page, ids): slide ids to send on to that page (old links)."""
     deck = json.loads((deck_dir / "deck.json").read_text())
@@ -96,12 +110,13 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
         links = (f'<div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span>{ask}</div>'
                  f'<a class="pdf" href="{PDF_NAME}" target="_blank" rel="noopener">PDF</a>')
         # the Pitch / Full deck toggle sits at the left end of the bar, before the section menu
-        other_link = f'<a class="pdf other" href="{other[0]}">{H.escape(other[1])}</a>' if other else ""
+        here = next(h for h, _ in PAGES if h != other[0]) if other else None
+        other_link = switch_html(here) if other else ""
         text, href = FEEDBACK
         note = f'<a class="note" href="{href}" target="_blank" rel="noopener">{H.escape(text)}</a>'
         menu_html += "".join(f'<li class="menu-ask"><a href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">Ask {name}</a></li>'
                              for name, url in ASK_LINKS) + f'<li class="menu-note">{note}</li>'
-        if other: menu_html = f'<li class="menu-other"><a href="{other[0]}">{H.escape(other[1])}</a></li>' + menu_html
+        if other: menu_html = f'<li class="menu-other">{switch_html(here)}</li>' + menu_html
     aliases = SLIDE_ALIASES if deck_dir == DECK else {}
     for old, new in aliases.items():
         if old in order: BUILD_WARNINGS.append(f"alias {old!r} is a live slide id again; remove it from SLIDE_ALIASES")
@@ -175,8 +190,13 @@ TEMPLATE = r"""<!doctype html>
   .note:hover { color: var(--gold-l); text-decoration:underline; }
   .viewport > .note { position:absolute; left:16px; bottom:12px; opacity:.8; z-index:2; }
   .menu-ask { display:none; }
-  .menu-other { display:none; }  /* the sibling-page link: in the bar on wide screens, in the menu on phones */
-  .menu-other a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none; }
+  .menu-other { display:none; padding:6px 4px 10px; }  /* the Pitch | Full deck switch: in the bar on wide screens, in the menu on phones */
+  .switch { display:inline-flex; border:1px solid var(--gold-d); border-radius:20px; overflow:hidden; flex:none; }
+  .switch .seg { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; padding:9px 14px; white-space:nowrap;
+                 color: var(--gold-l); text-decoration:none; }
+  .switch .seg + .seg { border-left:1px solid var(--gold-d); }
+  .switch .seg.cur { background: var(--gold); color: var(--deep); }
+  .switch a.seg:hover { background: rgba(201,168,76,.12); }
   .menu-ask:not(.menu-ask + .menu-ask) { border-top:1px solid var(--line); margin-top:6px; padding-top:6px; }
   .menu-ask a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
                 font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
@@ -196,17 +216,17 @@ TEMPLATE = r"""<!doctype html>
   @media (max-width: 560px) { .hint { display:none; } .count { display:none; } }
   /* narrow screens keep the bar on one line: short Ask labels under a small "Ask" first, then (under 480px) the Ask links
      move into the section menu; the feedback note moves into the menu under 640px */
-  @media (max-width: 760px) {
+  @media (max-width: 800px) {   /* was 760px; 800px since the Pitch | Full deck switch (29 Sep 2026), which needs the room */
     .bar { gap:8px; }
     .ask { gap:4px; position:relative; }
     .ask-lbl { display:block; position:absolute; left:50%; top:-12px; transform:translateX(-50%); }
     .ask-long { display:none; }
     .ask .pdf, .bar > .pdf { padding:9px 9px; letter-spacing:1px; }
   }
-  @media (max-width: 900px) { .bar > .other { padding:9px 9px; letter-spacing:1px; } }  /* "Full deck" is wide: tighten it before the 760px step */
+  @media (max-width: 900px) { .bar > .switch .seg { padding:9px 8px; letter-spacing:.5px; } .bar > .switch .seg-more { display:none; } }  /* the switch is wide: "Pitch | Full" before the 800px step */
   @media (max-width: 640px) { .viewport > .note { display:none; } .menu-note { display:block; } }
   @media (max-width: 479px) { .bar .ask { display:none; } .menu-ask { display:block; } }
-  @media (max-width: 599px) { .bar > .other { display:none; } .menu-other { display:block; } }
+  @media (max-width: 639px) { .bar > .switch { display:none; } .menu-other { display:block; } }  /* into the menu with the feedback note, under 640px */
 </style>
 
 <main class="viewport" id="vp" aria-live="polite">

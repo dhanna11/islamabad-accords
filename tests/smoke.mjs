@@ -8,8 +8,8 @@ import path from 'node:path';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // 29 Sep 2026: two pages. index.html is the pitch (the front page, from pitch/); full.html is the full deck (from deck/).
-const PAGES = [{ file: 'index.html', dir: 'pitch', other: ['full.html', 'Full deck'] },
-               { file: 'full.html', dir: 'deck', other: ['index.html', 'Pitch'] }];
+const PAGES = [{ file: 'index.html', dir: 'pitch', other: ['full.html', 'Full deck'], here: 'Pitch' },
+               { file: 'full.html', dir: 'deck', other: ['index.html', 'Pitch'], here: 'Full deck' }];
 let PAGE, deck;
 const MD_URL = 'https://dhanna11.github.io/islamabad-accords/islamabad-accords.md';
 
@@ -92,9 +92,12 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
   check(spill.length === 0, `no slide content spills past the slide edge${spill.length ? ': ' + spill.join(', ') : ''}`);
 
   // the bar's own links (the section menu, also inside the bar, holds phone copies of the Ask links and the note)
-  const other = await page.evaluate(() => [...document.querySelectorAll('.bar > .other, #menu .menu-other a')].map(a => [a.getAttribute('href'), a.textContent.trim()]));
+  const other = await page.evaluate(() => [...document.querySelectorAll('.bar > .switch a, #menu .menu-other a')].map(a => [a.getAttribute('href'), a.textContent.trim()]));
   check(other.length === 2 && other.every(([h, t]) => h === P.other[0] && t === P.other[1]),
     `the bar and the menu link to ${P.other[0]} ("${P.other[1]}")`);
+  // the switch says where you are: this page's half is lit and marked current, in the bar and in the menu
+  const here = await page.evaluate(() => [...document.querySelectorAll('.bar > .switch [aria-current="page"], #menu .menu-other [aria-current="page"]')].map(e => e.textContent.trim()));
+  check(here.length === 2 && here.every(t => t === P.here), `the switch marks "${P.here}" as the page you are on`);
   const links = await page.evaluate(() => [...document.querySelectorAll('.bar > .ask a, .bar > .pdf:not(.other), .viewport > .note')].map(a => ({
     text: a.textContent.trim(), href: a.href, target: a.target, rel: a.rel })));
   const ask = links.filter(l => /^Ask /.test(l.text));
@@ -124,12 +127,12 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
 }
 
 // every width: the bar stays one line and the section menu button keeps room to be read and tapped
-for (const width of [1280, 761, 760, 600, 480, 479, 390, 320]) {
+for (const width of [1280, 801, 800, 761, 760, 600, 480, 479, 390, 320]) {
   const phone = width <= 760;
   const { ctx, page, errors } = await open(phone ? { ...devices['iPhone 13'], viewport: { width, height: 800 } } : { viewport: { width, height: 800 } }, '#nuclear');
   const m = await page.evaluate(() => {
     const bar = document.querySelector('.bar'), vis = e => e.offsetParent !== null;
-    const otherReachable = [...document.querySelectorAll('.bar > .other, #menu .menu-other')].some(e => getComputedStyle(e).display !== 'none');
+    const otherReachable = [...document.querySelectorAll('.bar > .switch, #menu .menu-other')].some(e => getComputedStyle(e).display !== 'none');
     const inBar = [...bar.querySelectorAll('a')].filter(vis).map(a => a.textContent.trim());
     const inMenu = [...document.querySelectorAll('#menu .menu-ask')].filter(li => getComputedStyle(li).display !== 'none').length;
     return { overflow: bar.scrollWidth - bar.clientWidth, sect: document.getElementById('sect').getBoundingClientRect().width,

@@ -534,7 +534,9 @@ Slides that appear only in the deck.
 ### “What if Israel sabotages it?”
 *The obvious objections · 2 of 5*
 - It can, like any party, the way the JCPOA was undermined
-- America stands this one up and guarantees Israel’s compliance, and the normalization it brokers gives Israel a reason to stay
+- Israel’s permanence is a given, and nothing moves the Middle East more than its existential security interests
+- No architecture for the region survives without meeting them, and this one attempts to
+- Sabotage carries an increasingly high cost with the American nation
 
 ### “It still leaves Iran enrichment”
 *The obvious objections · 3 of 5*
