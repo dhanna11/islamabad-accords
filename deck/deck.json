@@ -24,7 +24,6 @@
   "hard-line",
   "recon-story",
   "recon-gap",
-  "pool",
   "sec-2",
   "institutions",
   "table",
@@ -49,6 +48,10 @@
   "sec-4",
   "waypoint",
   "capstone",
+  "close",
+  "ai-disclosure",
+  "appendix",
+  "pool",
   "sec-5",
   "limit-1",
   "limit-2",
@@ -62,8 +65,6 @@
   "objection-3",
   "objection-4",
   "objection-5",
-  "close",
-  "ai-disclosure",
   "references"
  ],
  "sections": {
@@ -95,9 +96,13 @@
    "description": "Card 4: the waypoint and the capstone.",
    "start": "sec-4"
   },
-  "limits": {
-   "description": "Card 5: seven things the framework does not claim.",
-   "start": "sec-5"
+  "close": {
+   "description": "The close and the AI disclosure.",
+   "start": "close"
+  },
+  "appendix": {
+   "description": "Appendix: the pool by the numbers, card 5's seven limits, and the five obvious objections.",
+   "start": "appendix"
   },
   "references": {
    "description": "The sources, by file.",

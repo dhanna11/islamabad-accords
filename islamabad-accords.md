@@ -29,7 +29,7 @@ The Islamabad MoU was a skeletal framework for a deal without a destination. The
 THE MECHANISM · in four sentences
 1. Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange settles with finality.
 2. That is the ideal loop, the fast path, repeated for a generation.
-3. When a crisis hits, settled exchanges stay settled: resume from where you stopped, not from zero.
+3. When a crisis hits, settled exchanges ideally stay settled: resume from where you stopped, not from zero.
 4. Quit outright and you keep what’s closed and lose everything still open · which is designed to be worth more.
 TRANSACTIONAL PHASE
 a ceasefire and three deals
@@ -277,7 +277,7 @@ THE ONE COUPLING, NOT DESIGNED · AMERICAN FINANCIAL LEVERAGE TOUCHES EVERY TRAC
 Sanctions Relief & Asset Releases
 Not a sixth track · the compensation and compliance layer beneath all five
 FLOORS
-Settlement finality: a closed exchange stays closed over a crisis on another track.
+Settlement finality: a closed exchange ideally stays closed over a crisis on another track.
 GATES
 Delivery versus payment: each future tranche tied to specified performance in its own track.
 BREACH
