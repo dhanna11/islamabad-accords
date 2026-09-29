@@ -216,14 +216,14 @@ TEMPLATE = r"""<!doctype html>
   @media (max-width: 560px) { .hint { display:none; } .count { display:none; } }
   /* narrow screens keep the bar on one line: short Ask labels under a small "Ask" first, then (under 480px) the Ask links
      move into the section menu; the feedback note moves into the menu under 640px */
-  @media (max-width: 760px) {
+  @media (max-width: 800px) {   /* was 760px; 800px since the Pitch | Full deck switch (29 Sep 2026), which needs the room */
     .bar { gap:8px; }
     .ask { gap:4px; position:relative; }
     .ask-lbl { display:block; position:absolute; left:50%; top:-12px; transform:translateX(-50%); }
     .ask-long { display:none; }
     .ask .pdf, .bar > .pdf { padding:9px 9px; letter-spacing:1px; }
   }
-  @media (max-width: 900px) { .bar > .switch .seg { padding:9px 8px; letter-spacing:.5px; } .bar > .switch .seg-more { display:none; } }  /* the switch is wide: "Pitch | Full" before the 760px step */
+  @media (max-width: 900px) { .bar > .switch .seg { padding:9px 8px; letter-spacing:.5px; } .bar > .switch .seg-more { display:none; } }  /* the switch is wide: "Pitch | Full" before the 800px step */
   @media (max-width: 640px) { .viewport > .note { display:none; } .menu-note { display:block; } }
   @media (max-width: 479px) { .bar .ask { display:none; } .menu-ask { display:block; } }
   @media (max-width: 639px) { .bar > .switch { display:none; } .menu-other { display:block; } }  /* into the menu with the feedback note, under 640px */
