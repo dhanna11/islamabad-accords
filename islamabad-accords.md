@@ -506,9 +506,9 @@ Slides that appear only in the deck.
 *Hormuz · why a commission*
 - Geography is king · the strait runs partly through Iranian territorial waters, and Iran has legitimate sovereign rights and interests in the waterway
 - Iran has proven it can impose real costs on anyone using the strait
-- It has also proven it can’t impose its will on the Gulf · the US and Gulf states contained the disruption, at high cost
+- It has also proven it can’t impose its will on the Gulf · America reopened the strait to critical oil flows, at high cost, and Gulf producers are shipping through it again
 - Neither side can keep that up for long · escorts and blockades are an expensive stopgap
-- The Commission gives everyone an off-ramp that reflects the post-war balance of power
+- The Commission gives everyone an off-ramp that reflects the post-war balance of power, and a way to restore the strait’s economic value for the region and the world
 
 ### Can the region add rules to the jungle?
 *Arms & Presence · in all honesty*
