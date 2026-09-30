@@ -67,7 +67,7 @@ ABOUT THE AUTHOR
 Why listen to me?
 - Judge the plan itself · the receipts from the doom scroll are all here: 45 sources, every link checked
 - I’m a code monkey 👨🏾‍💻, born and living in the seat of the nation · local politics is national politics is global politics
-- I’m an outsider, which is the competitive advantage: no political agenda, financial incentive, or reputation to protect, just trying to solve a problem
+- I’m an outsider, which is the competitive advantage: no political agenda, financial incentive, or reputation to protect, and none of the cynicism that comes with professional experience · a healthy dose of naivete, free to explore the state space
 - This started as a way to deal with cognitive dissonance and understand what I thought about the Israeli-Palestinian conflict · now I’m just tired of this BS
 - The US-Iran war was obvious after 7 October · so I set a delusional goal: create a Middle East peace framework for the next president, most likely Trump
 
