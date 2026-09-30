@@ -27,10 +27,10 @@ Ending the October 7th Firestorm
 two phases · five institutions · one mechanism · 20 to 30 years
 The Islamabad MoU was a skeletal framework for a deal without a destination. The core of this is an architectural framework that attempts to implement the full agreement, using pieces that have already been proposed by the international community, synthesized into a coherent vision for Trump to sign off on.
 THE CLEARING AND SETTLEMENT LOOP · in four sentences
-1. Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange settles with finality.
+1. Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange settles · each one makes going back harder.
 2. That is the ideal loop, the fast path, repeated for a generation.
-3. When a crisis hits, settled exchanges ideally stay settled: resume from where you stopped, not from zero.
-4. Quit outright and you keep what’s closed and lose everything still open · which is designed to be worth more.
+3. When a crisis hits, the regional architecture acts like a ratchet: reversing a settled exchange is slower, costlier, more visible, and felt by more parties · resume from where you stopped, not from zero.
+4. Quit outright and you keep what’s closed and lose everything still open · which is designed to be worth more every year, as trade and investment replace frozen assets.
 TRANSACTIONAL PHASE
 a ceasefire and three deals
 ARCHITECTURAL PHASE
@@ -67,7 +67,7 @@ ABOUT THE AUTHOR
 Why listen to me?
 - Judge the plan itself · the receipts from the doom scroll are all here: 45 sources, every link checked
 - I’m a code monkey 👨🏾‍💻, born and living in the seat of the nation · local politics is national politics is global politics
-- I’m an outsider, which is the competitive advantage: no political agenda, financial incentive, or reputation to protect, just trying to solve a problem
+- I’m an outsider, which is the competitive advantage: no political agenda, financial incentive, or reputation to protect, and none of the cynicism that comes with professional experience · a healthy dose of naivete, free to explore the state space
 - This started as a way to deal with cognitive dissonance and understand what I thought about the Israeli-Palestinian conflict · now I’m just tired of this BS
 - The US-Iran war was obvious after 7 October · so I set a delusional goal: create a Middle East peace framework for the next president, most likely Trump
 
