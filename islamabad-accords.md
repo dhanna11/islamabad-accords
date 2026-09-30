@@ -349,8 +349,9 @@ DÉTENTE IS MUTUAL, NOT PROMISED
 - Nothing guarantees regional actors won't undermine the pace of progress, or won't decide that détente and normalization aren't in their long-term interests
 - It's a north star, nothing more
 The architecture operates at the margins, where the worst outcomes are stumbled into.
-"…At long last we have peace in the Middle East. This is the historic dawn of a new Middle East."
+"Depart from evil, and do good; seek peace, and pursue it."
 "Blessed are the peacemakers: for they shall be called the children of God."
+"And if they incline to peace, incline thou also to it, and trust in Allah."
 
 ---
 
