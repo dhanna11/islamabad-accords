@@ -65,7 +65,7 @@ a mosaic found in the Doom Scroll
 
 ABOUT THE AUTHOR
 Why listen to me?
-- Judge the plan itself · the receipts from the doom scroll are all here: 44 sources, every link checked
+- Judge the plan itself · the receipts from the doom scroll are all here: 45 sources, every link checked
 - I’m a code monkey 👨🏾‍💻, born and living in the seat of the nation · local politics is national politics is global politics
 - I’m an outsider, which is the competitive advantage: no political agenda, financial incentive, or reputation to protect, just trying to solve a problem
 - This started as a way to deal with cognitive dissonance and understand what I thought about the Israeli-Palestinian conflict · now I’m just tired of this BS
@@ -393,7 +393,7 @@ Repository: [github.com/dhanna11/islamabad-accords](https://github.com/dhanna11/
 ## Sources
 
 A Mosaic Found in the Doom Scroll
-a synthesis of proposals · Trump's branding on the package · 44 sources, by file · links are live in the PDF edition
+a synthesis of proposals · Trump's branding on the package · 45 sources, by file · links are live in the PDF edition
 THE INSTRUMENT · the MoU and its collapse
 [Wikisource · 17 Jun 2026 · The Islamabad MoU, full text: Arts. 1, 5, 8, 10, 11, 12](https://en.wikisource.org/wiki/Islamabad_Memorandum_of_Understanding_between_the_United_States_of_America_and_the_Islamic_Republic_of_Iran)
 [AP via PBS · 7 Jul 2026 · Three tankers hit; the US revokes the oil license the same day](https://www.pbs.org/newshour/world/3-tankers-hit-in-latest-attacks-in-the-strait-of-hormuz-british-military-says)
@@ -405,6 +405,7 @@ HORMUZ · the Commission
 [Axios · 26 Apr 2026 · Iran offers Hormuz first, the nuclear file later](https://www.axios.com/2026/04/27/iran-us-hormuz-strait-nuclear-talks-proposal-pakistan)
 [Maritime Executive · 18 Jun 2026 · Iran’s Persian Gulf Strait Authority and its transit fees](https://maritime-executive.com/article/will-passage-fees-be-charged-in-the-strait-of-hormuz)
 [MarineLink · 24 Jun 2026 · Oman opens alternative lanes; the TSS declared unsafe](https://www.marinelink.com/news/oman-opens-alternative-hormuz-lanes-540579)
+[Bourse & Bazaar (Batmanghelidj, Haghirian) · 10 Jul 2026 · A Hormuz fee paid to a body of all eight Gulf coastal states](https://www.bourseandbazaar-substack.org/p/how-a-hormuz-fee-could-work)
 [Reuters via Times of Israel · 28 Jul 2026 · Oman’s Gulf-backed proposal: joint control, voluntary fees, the Malacca model](https://www.timesofisrael.com/oman-hands-iran-proposal-for-joint-control-over-hormuz-with-voluntary-fees/)
 [Al Jazeera · 5 Aug 2026 · A lane plan: inbound through Iranian waters, outbound through Omani waters, 60 days toll-free](https://www.aljazeera.com/news/2026/8/5/iran-oman-us-close-to-hormuz-deal-what-do-they-all-want)
 [Al-Monitor · 17 Aug 2026 · Iran: an understanding reached with Oman on the route map](https://www.al-monitor.com/originals/2026/08/iran-says-understanding-reached-oman-over-new-hormuz-route-map)
@@ -442,7 +443,7 @@ ARMS & PRESENCE · the Forum
 [NTI · 1992–95 · ACRS: the Madrid arms-control track, and why it stalled](https://www.nti.org/education-center/treaties-and-regimes/arms-control-and-regional-security-middle-east-acrs/)
 [Reuters via AOL · 27 Mar 2026 · Gulf states: ending the war is not enough](https://www.aol.com/articles/analysis-gulf-states-tell-us-140044388.html)
 [US–GCC joint statement · 25 Jun 2026 · Manama: trade with Iran “conditional and reversible”; missiles, drones, proxies named](https://www.gcc-sg.org/en/MediaCenter/News/Pages/news-2026-6-25-10.aspx)
-[Reuters via Times of Israel · 17 Sep 2026 · China privately presses Iran on the Houthis after a Saudi appeal](https://www.timesofisrael.com/china-privately-pushing-iran-to-help-rein-in-houthis-after-saudi-appeal-sources-say)
+[Bourse & Bazaar (Batmanghelidj, Haghirian) · 17 Sep 2026 · China privately presses Iran on the Houthis after a Saudi appeal](https://www.timesofisrael.com/china-privately-pushing-iran-to-help-rein-in-houthis-after-saudi-appeal-sources-say)
 SANCTIONS · the layer beneath
 [Lawfare (Karbassi) · 26 May 2022 · Waiver vs. termination; EO 13716; the CISADA §401 certification](https://www.lawfaremedia.org/article/nuclear-brinkmanship-us-sanctions-against-iran-explained)
 EVERY LINK OPENED AND CHECKED 18–26 SEP 2026 · THE ARCHITECTURE ARRANGES WHAT THE RECORD ALREADY CONTAINS
@@ -513,9 +514,9 @@ Slides that appear only in the deck.
 
 ### Can the region add rules to the jungle?
 *Arms & Presence · in all honesty*
-- Proxy warfare and defense spending are likely to increase, not decrease
+- Proxy warfare and defense spending are likely to increase, not decrease · a classic prisoner’s dilemma: each side arms because it can’t trust the other to stop
 - The question is whether adversarial relationships can be managed
-- Rules to the jungle, to stop another disaster from happening
+- Rules to the jungle, to stop another disaster from happening · matched restraint, verified step by step, is the classic way out of a prisoner’s dilemma
 - Lower priority than the five trades
 - Some framework for Iran’s proxy support and ballistic missiles is necessary for full statutory sanctions relief from America
 
