@@ -27,10 +27,10 @@ Ending the October 7th Firestorm
 two phases · five institutions · one mechanism · 20 to 30 years
 The Islamabad MoU was a skeletal framework for a deal without a destination. The core of this is an architectural framework that attempts to implement the full agreement, using pieces that have already been proposed by the international community, synthesized into a coherent vision for Trump to sign off on.
 THE CLEARING AND SETTLEMENT LOOP · in four sentences
-1. Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange settles with finality.
+1. Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange settles · each one makes going back harder.
 2. That is the ideal loop, the fast path, repeated for a generation.
-3. When a crisis hits, settled exchanges ideally stay settled: resume from where you stopped, not from zero.
-4. Quit outright and you keep what’s closed and lose everything still open · which is designed to be worth more.
+3. When a crisis hits, the regional architecture acts like a ratchet: reversing a settled exchange is slower, costlier, more visible, and felt by more parties · resume from where you stopped, not from zero.
+4. Quit outright and you keep what’s closed and lose everything still open · which is designed to be worth more every year, as trade and investment replace frozen assets.
 TRANSACTIONAL PHASE
 a ceasefire and three deals
 ARCHITECTURAL PHASE
