@@ -26,7 +26,7 @@ Unofficial · a private author's proposal · September 2026 · AI disclosure at 
 Ending the October 7th Firestorm
 two phases · five institutions · one mechanism · 20 to 30 years
 The Islamabad MoU was a skeletal framework for a deal without a destination. The core of this is an architectural framework that attempts to implement the full agreement, using pieces that have already been proposed by the international community, synthesized into a coherent vision for Trump to sign off on.
-THE MECHANISM · in four sentences
+THE CLEARING AND SETTLEMENT LOOP · in four sentences
 1. Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange settles with finality.
 2. That is the ideal loop, the fast path, repeated for a generation.
 3. When a crisis hits, settled exchanges ideally stay settled: resume from where you stopped, not from zero.
@@ -349,8 +349,9 @@ DÉTENTE IS MUTUAL, NOT PROMISED
 - Nothing guarantees regional actors won't undermine the pace of progress, or won't decide that détente and normalization aren't in their long-term interests
 - It's a north star, nothing more
 The architecture operates at the margins, where the worst outcomes are stumbled into.
-"…At long last we have peace in the Middle East. This is the historic dawn of a new Middle East."
+"Depart from evil, and do good; seek peace, and pursue it."
 "Blessed are the peacemakers: for they shall be called the children of God."
+"And if they incline to peace, incline thou also to it, and trust in Allah."
 
 ---
 
