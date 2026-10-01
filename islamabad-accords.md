@@ -114,7 +114,7 @@ No-prejudice: nobody formally concedes sovereignty, transit rights, or economic 
 Sovereign and military fleets excepted
 - The lane arrangement governs commercial traffic
 - Warships, government vessels, and state-flagged commercial fleets transit by either route, in recognition of sovereign interests, rights, and balance of power
-The blockade lifts: the US naval blockade is lifted as part of the Hormuz standstill.
+Mutual stand-down: the US naval blockade lifts; Iran’s attacks on the strait halt.
 The oil waiver returns with the strait
 - Restored under MoU ¶10
 - Worth real money inside an architectural roadmap
@@ -174,7 +174,7 @@ five files · five regionally owned institutions, each with its own members, mil
 FILE · THE WAR ITSELF
 
 Middle East Peace and Parley Table
-The region and its immediate neighbors, Iran and Israel included · every seat is unconditional
+The region and its immediate neighbors · every seat is unconditional
 MANDATE 1 · STANDING VENUE · NON-AGGRESSION AND PEACE AGREEMENTS
 - Neutral ground for deals and deconfliction
 - Non-aggression, restoration, and normalization agreements · brokered here when parties seek it, never exclusively
@@ -396,9 +396,9 @@ a synthesis of proposals · Trump's branding on the package · 45 sources, by fi
 THE INSTRUMENT · the MoU and its collapse
 [Wikisource · 17 Jun 2026 · The Islamabad MoU, full text: Arts. 1, 5, 8, 10, 11, 12](https://en.wikisource.org/wiki/Islamabad_Memorandum_of_Understanding_between_the_United_States_of_America_and_the_Islamic_Republic_of_Iran)
 [AP via PBS · 7 Jul 2026 · Three tankers hit; the US revokes the oil license the same day](https://www.pbs.org/newshour/world/3-tankers-hit-in-latest-attacks-in-the-strait-of-hormuz-british-military-says)
-[Axios · 8 Jul 2026 · Ceasefire “over”; the frozen funds never moved](https://www.axios.com/2026/07/09/trump-iran-strait-hormuz-battle)
-[Axios · 28 Aug 2026 · “That sucker is open”: Washington says it is winning Hormuz](https://www.axios.com/2026/08/28/trump-iran-hormuz-war-oil)
-[Axios · 4 Sep 2026 · Administration drafting a post-war regional plan](https://www.axios.com/2026/09/04/trump-middle-east-iran-post-war-strategy)
+[Axios (Ravid) · 8 Jul 2026 · Ceasefire “over”; the frozen funds never moved](https://www.axios.com/2026/07/09/trump-iran-strait-hormuz-battle)
+[Axios (Ravid) · 28 Aug 2026 · “That sucker is open”: Washington says it is winning Hormuz](https://www.axios.com/2026/08/28/trump-iran-hormuz-war-oil)
+[Axios (Ravid) · 4 Sep 2026 · Administration drafting a post-war regional plan](https://www.axios.com/2026/09/04/trump-middle-east-iran-post-war-strategy)
 HORMUZ · the Commission
 [Reuters via Business Recorder · 29 Mar 2026 · Türkiye, Egypt, Saudi Arabia float a consortium to manage the strait](https://www.brecorder.com/news/40413690/pakistan-hosts-regional-powers-for-iran-talks-with-focus-on-hormuz-proposals)
 [Axios · 26 Apr 2026 · Iran offers Hormuz first, the nuclear file later](https://www.axios.com/2026/04/27/iran-us-hormuz-strait-nuclear-talks-proposal-pakistan)
@@ -411,15 +411,15 @@ HORMUZ · the Commission
 [Al Jazeera · 26 Aug 2026 · A temporary route agreed; part of the exit now runs through Iranian waters](https://www.aljazeera.com/news/2026/8/26/iran-oman-agree-on-temporary-hormuz-route-what-we-know)
 NUCLEAR · the Consortium
 [RFE/RL · 15 May 2025 · Iran pitches an enrichment consortium at the Muscat round](https://www.rferl.org/a/iran-us-consortium-persian-gulf-region/33414121.html)
-[Axios · 2 Jun 2025 · The US offer: enrichment through a regional consortium](https://www.axios.com/2025/06/02/iran-nuclear-deal-proposal-enrich-uranium)
-[Axios · 3 Jun 2025 · Iran: a consortium works only on Iranian soil](https://www.axios.com/2025/06/03/iran-nuclear-consortium-trump-proposal)
+[Axios (Ravid) · 2 Jun 2025 · The US offer: enrichment through a regional consortium](https://www.axios.com/2025/06/02/iran-nuclear-deal-proposal-enrich-uranium)
+[Axios (Ravid) · 3 Jun 2025 · Iran: a consortium works only on Iranian soil](https://www.axios.com/2025/06/03/iran-nuclear-consortium-trump-proposal)
 [Bulletin of the Atomic Scientists · Jun 2025 · von Hippel, Glaser, Mian, Mousavian: the Gulf consortium design](https://thebulletin.org/2025/06/a-nuclear-consortium-in-the-persian-gulf-as-a-basis-for-a-new-nuclear-deal-between-the-united-states-and-iran/)
 [Reuters via Yahoo · 22 Feb 2026 · Tehran again floats exporting HEU, diluting the rest, a regional consortium](https://www.yahoo.com/news/articles/us-iran-clash-over-sanctions-112557635.html)
 [AP via PBS · 27 Feb 2026 · The IAEA cannot verify the size or whereabouts of the stockpile](https://www.pbs.org/newshour/world/un-nuclear-watchdog-says-its-unable-to-verify-whether-iran-has-suspended-all-uranium-enrichment)
 [Anadolu · 28 Feb 2026 · Oman: zero stockpiling, downblending, full IAEA verification agreed](https://www.aa.com.tr/en/americas/oman-says-us-iran-talks-reach-agreement-on-zero-stockpiling-of-enriched-uranium/3842447)
-[Axios · 17 Apr 2026 · $20B cash-for-uranium; split custody under discussion](https://www.axios.com/2026/04/17/iran-us-deal-20-billion-frozen-funds-uranium)
+[Axios (Ravid, Caputo) · 17 Apr 2026 · $20B cash-for-uranium; split custody under discussion](https://www.axios.com/2026/04/17/iran-us-deal-20-billion-frozen-funds-uranium)
 [Drop Site · 23 May 2026 · Iran's own offer: 3.6% ceiling for 10 years, dilution inside Iran, rights recognized](https://www.dropsitenews.com/p/exclusive-iranian-official-outlines-latest-proposal-end-war-trump-weighs-strikes)
-[Axios · 21 Jun 2026 · The $6B Qatar account offered in return for IAEA access](https://www.axios.com/2026/06/20/vance-iran-talks-switzerland)
+[Axios (Ravid) · 21 Jun 2026 · The $6B Qatar account offered in return for IAEA access](https://www.axios.com/2026/06/20/vance-iran-talks-switzerland)
 THE TABLE · the Hudna and the standing venue
 [OSCE · 1 Aug 1975 · The Helsinki Final Act](https://www.osce.org/helsinki-final-act)
 [CICA · 28 states · Iran, Israel and Palestine among the member states of one standing forum](https://www.s-cica.org/)
