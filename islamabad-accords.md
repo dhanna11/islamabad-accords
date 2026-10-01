@@ -68,7 +68,7 @@ Why listen to me?
 - I’m a code monkey, born and living in the seat of the nation
 - I’m an outsider: no political agenda, financial incentive, or reputation to protect, and none of the professional cynicism · a healthy dose of naivete
 - This started as a way to understand the Israeli-Palestinian conflict · after 7 October the US-Iran war was obvious, so I set a delusional goal: a peace framework for the next president, most likely Trump
-- Judge the plan itself · the receipts from the doom scroll are all here: 45 sources
+- Judge the plan itself · the receipts from the doom scroll are all here: 46 sources
 
 ---
 
@@ -392,7 +392,7 @@ Repository: [github.com/dhanna11/islamabad-accords](https://github.com/dhanna11/
 ## Sources
 
 A Mosaic Found in the Doom Scroll
-a synthesis of proposals · Trump's branding on the package · 45 sources, by file · links are live in the PDF edition
+a synthesis of proposals · Trump's branding on the package · 46 sources, by file · links are live in the PDF edition
 THE INSTRUMENT · the MoU and its collapse
 [Wikisource · 17 Jun 2026 · The Islamabad MoU, full text: Arts. 1, 5, 8, 10, 11, 12](https://en.wikisource.org/wiki/Islamabad_Memorandum_of_Understanding_between_the_United_States_of_America_and_the_Islamic_Republic_of_Iran)
 [AP via PBS · 7 Jul 2026 · Three tankers hit; the US revokes the oil license the same day](https://www.pbs.org/newshour/world/3-tankers-hit-in-latest-attacks-in-the-strait-of-hormuz-british-military-says)
@@ -428,6 +428,7 @@ THE TABLE · the Hudna and the standing venue
 [IRNA · 9 Jul 2025 · Araghchi calls for “indigenous security mechanisms”](https://www.globalsecurity.org/wmd/library/news/iran/2025/iran-250709-irna02.htm)
 [Arab News (FT) · 14 May 2026 · Saudi Arabia floats a non-aggression pact on the Helsinki model](https://www.arabnews.com/node/2643621/saudi-arabia)
 [The New Arab (FT) · 15 May 2026 · “Without Israel it could be counter-productive”](https://www.newarab.com/news/saudi-arabia-pushes-regional-non-aggression-pact-iran)
+[Channel 13 via Israel National News · 30 Jul 2026 · Hamas asks Trump directly for a 10- to 15-year hudna](https://www.israelnationalnews.com/news/431020)
 RECONSTRUCTION & ASSETS · the Fund and the carve-out
 [Iran–US Claims Tribunal · 19 Jan 1981 · Algiers Accords: half of each receipt into a security account for claims](https://iusct.com/wp-content/uploads/2021/02/1-General-Declaration_.pdf)
 [UN Compensation Commission · 1991–2022 · A share of Iraqi oil revenue for thirty years; $52.4B paid](https://uncc.un.org/en)
