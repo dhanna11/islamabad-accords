@@ -65,11 +65,10 @@ a mosaic found in the Doom Scroll
 
 ABOUT THE AUTHOR
 Why listen to me?
-- Judge the plan itself · the receipts from the doom scroll are all here: 45 sources, every link checked
-- I’m a code monkey 👨🏾‍💻, born and living in the seat of the nation · local politics is national politics is global politics
-- I’m an outsider, which is the competitive advantage: no political agenda, financial incentive, or reputation to protect, and none of the cynicism that comes with professional experience · a healthy dose of naivete, free to explore the state space
-- This started as a way to deal with cognitive dissonance and understand what I thought about the Israeli-Palestinian conflict · now I’m just tired of this BS
-- The US-Iran war was obvious after 7 October · so I set a delusional goal: create a Middle East peace framework for the next president, most likely Trump
+- I’m a code monkey, born and living in the seat of the nation
+- I’m an outsider: no political agenda, financial incentive, or reputation to protect, and none of the professional cynicism · a healthy dose of naivete
+- This started as a way to understand the Israeli-Palestinian conflict · after 7 October the US-Iran war was obvious, so I set a delusional goal: a peace framework for the next president, most likely Trump
+- Judge the plan itself · the receipts from the doom scroll are all here: 45 sources
 
 ---
 
@@ -90,7 +89,7 @@ WHY HIM
 - It’s his war · his 2nd term’s signature policy in the Middle East, next to the 20-point plan
 - “Run from the Middle East” is not a thing Trump can own
 - The only thing that beats capitulation is a creative grand vision he can own
-- A prize that big gives him room for the concessions any real deal requires
+- A prize that big gives him the room for maneuver any real deal requires
 3
 WHY WOULD TRUMP TAKE A PLAN?
 - He already has · the 20-point plan came through a long, very collaborative process, and his power and influence got it over the line
@@ -181,9 +180,9 @@ MANDATE 1 · STANDING VENUE · NON-AGGRESSION AND PEACE AGREEMENTS
 - Non-aggression, restoration, and normalization agreements · brokered here when parties seek it, never exclusively
 - Minimum bureaucracy, maximum agility
 - A realistic substitute for what MoU Art. 12 called for
-MANDATE 2 · ALL-FRONTS HUDNA
+THE FILE · ALL-FRONTS HUDNA
 The permanent termination of war promised in MoU Art. 1 · US, Iran, and their respective allies.
-MANDATE 3 · MEDIATION
+MANDATE 2 · MEDIATION
 Intensive mediation of cross-cutting incidents the other institutions do not contain.
 ANTI-MANDATE · WHAT THE TABLE IS NOT
 - Not a Middle East UN
@@ -460,7 +459,7 @@ Slides that appear only in the deck.
 - Tehran was selling exactly that: “the trillion-dollar opportunity that access to our economy represents” · American trade and investment in oil, gas, mining, and aircraft were on the table
 - Trump’s oldest complaint about the JCPOA is economic: “We give them $150 billion, we get nothing” · “They bought 118 Airbus planes, not Boeing planes. They’re spending all of their money in Europe” · he wants to invest in Iran and trade with it
 - Investment and trade at that scale need a regional architecture to protect them, and only Trump can build one
-- He honors deals he feels are his; an Iranian proposal never will be
+- He honors wins he claims are his; an Iranian proposal will never be a Trump win
 
 ### The one hard line
 *On agreement of the architectural phase · the armistice*
