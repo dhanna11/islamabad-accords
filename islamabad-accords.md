@@ -442,7 +442,7 @@ ARMS & PRESENCE · the Forum
 [NTI · 1992–95 · ACRS: the Madrid arms-control track, and why it stalled](https://www.nti.org/education-center/treaties-and-regimes/arms-control-and-regional-security-middle-east-acrs/)
 [Reuters via AOL · 27 Mar 2026 · Gulf states: ending the war is not enough](https://www.aol.com/articles/analysis-gulf-states-tell-us-140044388.html)
 [US–GCC joint statement · 25 Jun 2026 · Manama: trade with Iran “conditional and reversible”; missiles, drones, proxies named](https://www.gcc-sg.org/en/MediaCenter/News/Pages/news-2026-6-25-10.aspx)
-[Bourse & Bazaar (Batmanghelidj, Haghirian) · 17 Sep 2026 · China privately presses Iran on the Houthis after a Saudi appeal](https://www.timesofisrael.com/china-privately-pushing-iran-to-help-rein-in-houthis-after-saudi-appeal-sources-say)
+[Reuters via Times of Israel · 17 Sep 2026 · China privately presses Iran on the Houthis after a Saudi appeal](https://www.timesofisrael.com/china-privately-pushing-iran-to-help-rein-in-houthis-after-saudi-appeal-sources-say)
 SANCTIONS · the layer beneath
 [Lawfare (Karbassi) · 26 May 2022 · Waiver vs. termination; EO 13716; the CISADA §401 certification](https://www.lawfaremedia.org/article/nuclear-brinkmanship-us-sanctions-against-iran-explained)
 EVERY LINK OPENED AND CHECKED 18–26 SEP 2026 · THE ARCHITECTURE ARRANGES WHAT THE RECORD ALREADY CONTAINS
@@ -521,11 +521,9 @@ Slides that appear only in the deck.
 
 ### Why $500 billion
 *Reconstruction · why $500 billion*
-- It’s a headline number · big enough to be worth everyone’s time
-- It’s roughly what this war has cost the region, and probably an undercount: raw destruction, lost GDP, and the price of instability still to come
-- Gaza ~$71B, Lebanon ~$11B, and Iran’s own ~$300B estimate already come to ~$380B, before the Gulf’s losses or shipping
-- It’s optimistic, and nothing in the architecture depends on it · every track works at a fraction of it
-- The goal is economic ties dense enough to raise the cost of the next war for everyone
+- It’s a headline number · big enough to spur imagination and creativity
+- It’s roughly what this war has cost the region · Gaza ~$71B, Lebanon ~$11B, and Iran’s own ~$300B estimate already come to ~$380B, before the Gulf’s losses or shipping
+- The exact figure doesn’t matter · $500B, $300B, or $100B, what matters is real money put into regional reconstruction and economic ties dense enough to raise the cost of the next war for everyone
 
 ### “It’s overly optimistic”
 *The obvious objections · 1 of 5*
