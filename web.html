@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Islamabad Accords</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+
+<style>
+  :root {
+    --bg: #0a1628; --deep: #070e18; --container: #0f1d33;
+    --gold: #c9a84c; --gold-light: #e0c872; --gold-dim: #8a7234;
+    --gold-25: rgba(201,168,76,0.25); --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2; --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', Menlo, monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: var(--deep); color: var(--white); font-family: var(--sans); padding-inline: 16px; padding-block: 0 48px; }
+
+  .masthead { max-width: 900px; margin: 0 auto; text-align: center; padding-block: 56px 36px; }
+  .masthead .edition { font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--gold-dim); letter-spacing: 3px; text-transform: uppercase; }
+  .masthead h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 8vw, 64px); color: var(--gold); line-height: 1.05; letter-spacing: 0.5px; margin: 26px 0 0; text-wrap: balance; }
+  .masthead .sub { font-family: var(--serif); font-size: clamp(20px, 3.4vw, 26px); font-style: italic; color: var(--white); margin-top: 14px; text-wrap: balance; }
+  .rule { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 30px auto 24px; width: min(320px, 70%); }
+  .rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .rule .diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+  .masthead .strap { font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--dim); line-height: 1.55; }
+  .masthead .who { margin-top: 34px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .masthead .name { font-family: var(--serif); font-size: 20px; color: var(--white); }
+  .masthead .handle { font-family: var(--mono); font-size: 9.5px; color: var(--gold-dim); letter-spacing: 3px; text-transform: uppercase; }
+  .masthead .handle a { color: inherit; text-decoration: none; }
+  .masthead .handle a:hover, .masthead .handle a:focus-visible { color: var(--gold); }
+  .masthead .date { font-family: var(--mono); font-size: 9.5px; color: var(--gold-dim); letter-spacing: 2px; margin-top: 6px; }
+
+  nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: rgba(7,14,24,0.92); backdrop-filter: blur(6px); border-block: 1px solid var(--gold-25); margin-inline: -16px; padding-inline: 16px; }
+  nav ul { list-style: none; margin: 0 auto; padding: 0; max-width: 900px; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4px; }
+  nav a { display: block; padding: 11px 10px; font-family: var(--mono); font-size: 9.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dim); text-decoration: none; }
+  nav a:hover, nav a:focus-visible { color: var(--gold-light); outline: none; }
+  nav a.pdf { color: var(--gold); }
+
+  .cards { display: flex; flex-direction: column; align-items: center; gap: 28px; padding-top: 36px; }
+  .card { width: 100%; max-width: 900px; scroll-margin-top: 56px; }
+  .card-host { width: 900px; display: block; }
+
+  footer { max-width: 900px; margin: 44px auto 0; padding-top: 18px; border-top: 1px solid var(--gold-25); text-align: center; font-family: var(--mono); font-size: 9px; color: var(--gold-dim); letter-spacing: 2px; text-transform: uppercase; line-height: 2; }
+  footer a { color: inherit; text-decoration: none; }
+  footer a:hover, footer a:focus-visible { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="edition">A cover, five numbered cards, and references</div>
+  <h1>The Islamabad Accords</h1>
+  <div class="sub">A Peace Plan Synthesized for Donald Trump</div>
+  <div class="rule"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+  <div class="strap">Ending the October 7th Firestorm<br>Ensuring Iran Never Develops a Nuclear Weapon<br>Building a New Security Architecture for the Middle East</div>
+  <div class="who">
+    <div class="name">David Hanna Jr.</div>
+    <div class="handle"><a href="https://x.com/thekingdavidjr" target="_blank" rel="noopener">x.com/thekingdavidjr</a></div>
+    <div class="date">Unofficial · a private author's proposal · September 2026</div>
+  </div>
+</header>
+<nav aria-label="Cards"><ul><li><a href="#cover">Cover</a></li><li><a href="#me">Why listen to me?</a></li><li><a href="#why">Why Trump</a></li><li><a href="#card-1">1</a></li><li><a href="#card-2">2</a></li><li><a href="#card-3">3</a></li><li><a href="#card-4">4</a></li><li><a href="#card-5">5</a></li><li><a href="#ai">AI disclosure</a></li><li><a href="#refs">References</a></li><li><a class="pdf" href="https://dhanna11.github.io/islamabad-accords/islamabad-accords.pdf">PDF</a></li></ul></nav>
+<main class="cards">
+<section class="card" id="cover"><div class="card-host" data-card="cover"></div></section>
+<section class="card" id="me"><div class="card-host" data-card="me"></div></section>
+<section class="card" id="why"><div class="card-host" data-card="why"></div></section>
+<section class="card" id="card-1"><div class="card-host" data-card="card-1"></div></section>
+<section class="card" id="card-2"><div class="card-host" data-card="card-2"></div></section>
+<section class="card" id="card-3"><div class="card-host" data-card="card-3"></div></section>
+<section class="card" id="card-4"><div class="card-host" data-card="card-4"></div></section>
+<section class="card" id="card-5"><div class="card-host" data-card="card-5"></div></section>
+<section class="card" id="ai"><div class="card-host" data-card="ai"></div></section>
+<section class="card" id="refs"><div class="card-host" data-card="refs"></div></section>
+</main>
+<footer>The Islamabad Accords · <a href="https://x.com/thekingdavidjr" target="_blank" rel="noopener">x.com/thekingdavidjr</a><br>Unofficial · a private author's proposal · September 2026</footer>
+<template id="tpl-cover"><style>
+  :host {
+    --bg: #0a1628;
+    --container: #0f1d33;
+    --sub: #162744;
+    --sub-border: rgba(201,168,76,0.14);
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7234;
+    --gold-10: rgba(201,168,76,0.08);
+    --gold-15: rgba(201,168,76,0.15);
+    --gold-25: rgba(201,168,76,0.25);
+    --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2;
+    --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  :host { margin: 0; padding: 0; }
+  :host { background: #070e18; font-family: var(--sans); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
+
+  .texture {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .border-frame {
+    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
+    border: 2px solid var(--gold-35);
+    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
+  }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .corner svg { width: 100%; height: 100%; }
+  .corner.tl { top: 7px; left: 7px; }
+  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
+  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
+
+  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
+
+  /* ─── TITLE ─── */
+  .title-block { text-align: center; margin-bottom: 24px; position: relative; }
+  .title-glow {
+    position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+    width: 340px; height: 130px;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .title { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--gold); letter-spacing: 0.5px; line-height: 1.1; position: relative; }
+  .tag { font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; margin-top: 8px; text-transform: uppercase; }
+  .diamond-rule { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px auto 0; width: 200px; }
+  .diamond-rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .diamond-rule .diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* ─── PHASE HEADER ─── */
+  .phase-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .phase-label { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; }
+  .phase-title { font-family: var(--serif); font-size: 18px; color: var(--white); line-height: 1.25; }
+  .phase-note { font-family: var(--mono); font-size: 8.5px; color: var(--gold-dim); font-style: italic; margin-bottom: 14px; }
+
+  
+  /* ─── COVER ─── */
+  .lead {
+    border: 1.5px solid var(--gold); border-radius: 4px; padding: 20px 26px 18px;
+    background: linear-gradient(135deg, var(--container), var(--sub)); box-shadow: 0 0 26px var(--gold-10);
+    position: relative; text-align: center;
+  }
+  .lead .inner-frame { position: absolute; inset: 3px; border: 1px solid rgba(201,168,76,0.1); border-radius: 3px; pointer-events: none; }
+  .lead-text { font-family: var(--serif); font-size: 19px; color: var(--white); line-height: 1.45; }
+  .lead-text b { color: var(--gold); font-weight: 400; }
+
+  .mech { margin-top: 12px; background: var(--container); border: 1px solid var(--sub-border); border-radius: 3px; padding: 12px 18px 12px; }
+  .mech-label { font-family: var(--mono); font-size: 8.5px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px dashed var(--gold-25); }
+  .mech-label span { color: var(--gold-dim); font-weight: 400; letter-spacing: 0.8px; }
+  .mech-line { font-family: var(--sans); font-size: 13.5px; color: var(--white); line-height: 1.5; padding: 3px 0; }
+  .mech-line .n { font-family: var(--mono); font-size: 9px; color: var(--gold-dim); margin-right: 8px; }
+  .mech-line b { color: var(--gold-light); font-weight: 600; }
+
+  .arc { margin-top: 12px; display: flex; align-items: stretch; gap: 0; }
+  .arc-step { flex: 1; background: var(--sub); border: 1px solid var(--sub-border); padding: 9px 10px 8px; text-align: center; position: relative; }
+  .arc-step:first-child { border-radius: 3px 0 0 3px; }
+  .arc-step:last-child { border-radius: 0 3px 3px 0; }
+  .arc-step:nth-child(3) { border: 1.5px solid var(--gold); background: linear-gradient(135deg, var(--container), var(--sub)); }  /* 1 Oct 2026: the highlight is the realistic outcome, ~15 years (was the last step) */
+  .arc-step + .arc-step { border-left: 0; }
+  .arc-step .a-head { font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; }
+  .arc-step:nth-child(3) .a-head { color: var(--gold-light); }
+  .arc-step .a-sub { font-family: var(--mono); font-size: 8px; color: var(--gold-dim); font-style: italic; margin-top: 3px; letter-spacing: 0.3px; }
+  .arc-step::after { content: ""; position: absolute; right: -6px; top: 50%; width: 10px; height: 10px; background: var(--sub); border-top: 1px solid var(--gold-25); border-right: 1px solid var(--gold-25); transform: translateY(-50%) rotate(45deg); z-index: 2; }
+  .arc-step:last-child::after { display: none; }
+
+  .toc { margin-top: 12px; border: 1px solid var(--gold-25); border-radius: 3px; background: var(--container); padding: 4px 16px; }
+  .toc-label { font-family: var(--mono); font-size: 8.5px; font-weight: 700; color: var(--gold-dim); letter-spacing: 1.5px; padding: 8px 0 6px; border-bottom: 1px dashed var(--gold-25); }
+  .toc-row { display: flex; align-items: baseline; gap: 14px; padding: 7px 0; border-bottom: 1px solid rgba(201,168,76,0.06); }
+  .toc-row:last-child { border-bottom: 0; }
+  .toc-row .t-n { font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--gold); width: 30px; flex-shrink: 0; letter-spacing: 1px; }
+  .toc-row .t-title { font-family: var(--serif); font-size: 16px; color: var(--white); white-space: nowrap; }
+  .toc-row .t-sub { font-family: var(--mono); font-size: 8.5px; color: var(--gold-dim); font-style: italic; letter-spacing: 0.3px; }
+
+  .footer { text-align: center; margin-top: 22px; padding: 16px 16px 0; border-top: 1px solid var(--gold-25); }
+  .footer-attr { font-size: 9px; color: var(--gold-dim); font-family: var(--mono); letter-spacing: 3px; margin-top: 6px; }
+</style>
+<div class="page">
+  <div class="texture"></div>
+  <div class="border-frame"></div>
+  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+
+  <div class="content">
+    <div class="title-block">
+      <div class="title-glow"></div>
+      <div class="tag" style="margin-bottom:6px;">Cover</div>
+      <div class="title">The Islamabad Accords</div>
+      <div class="tag">Implementing Trump's Vision for Peace in the Middle East</div>
+      <div class="diamond-rule"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+      <div class="tag" style="margin-top:9px;">A Generational Settlement &middot; In Six Cards</div>
+    </div>
+
+    <div class="phase-header"><span class="phase-title">Ending the October 7th Firestorm</span></div>
+    <div class="phase-note">two phases · five institutions · one mechanism · 20 to 30 years</div>
+
+    <div class="lead">
+      <div class="inner-frame"></div>
+      <div class="lead-text">The Islamabad MoU was a skeletal framework for a deal without a destination. The core of this is an architectural framework that attempts to implement the full agreement, using pieces that have already been proposed by the international community, synthesized into a coherent vision for Trump to sign off on.</div>
+    </div>
+
+    <div class="mech">
+      <div class="mech-label">THE CLEARING AND SETTLEMENT LOOP <span>· in four sentences</span></div>
+      <div class="mech-line"><span class="n">1</span>Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange <b>settles with finality</b>.</div><div class="mech-line"><span class="n">2</span>That is the ideal loop, the fast path, repeated for a generation.</div><div class="mech-line"><span class="n">3</span>When a crisis hits, the regional architecture acts like a ratchet: reversing a settled exchange is slower, costlier, more visible, and felt by more parties · resume from where you stopped, not from zero.</div><div class="mech-line"><span class="n">4</span>Quit outright and you keep what’s closed and lose everything still open · which is designed to be worth more every year, as trade and investment replace frozen assets.</div>
+    </div>
+
+    <div class="arc"><div class="arc-step"><div class="a-head">TRANSACTIONAL PHASE</div><div class="a-sub">a ceasefire and three deals</div></div><div class="arc-step"><div class="a-head">ARCHITECTURAL PHASE</div><div class="a-sub">five institutions · five trades</div></div><div class="arc-step"><div class="a-head">~15 YEARS</div><div class="a-sub">the waypoint · regional détente</div></div><div class="arc-step"><div class="a-head">20 TO 30 YEARS</div><div class="a-sub">the capstone · full regional normalization</div></div></div>
+
+    <div class="toc">
+      <div class="toc-label">THE SET</div>
+      <div class="toc-row"><span class="t-n">1</span><span class="t-title">The Transactional Phase</span><span class="t-sub">a ceasefire and three deals · freeze Hormuz, de-escalate the nuclear file, rebuild the Middle East</span></div><div class="toc-row"><span class="t-n">2</span><span class="t-title">The Architectural Phase</span><span class="t-sub">five institutions · the generational settlement</span></div><div class="toc-row"><span class="t-n">3</span><span class="t-title">The Architectural Phase</span><span class="t-sub">five trades · what each side actually commits</span></div><div class="toc-row"><span class="t-n">4</span><span class="t-title">The Generational Horizon</span><span class="t-sub">the waypoint and the capstone</span></div><div class="toc-row"><span class="t-n">5</span><span class="t-title">What the Architecture Cannot Do</span><span class="t-sub">limits, stated up front</span></div><div class="toc-row"><span class="t-n">REF</span><span class="t-title">References</span><span class="t-sub">a mosaic found in the Doom Scroll</span></div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-attr">X.COM/THEKINGDAVIDJR</div>
+    </div>
+  </div>
+</div>
+</template>
+<template id="tpl-me"><style>
+  :host {
+    --bg: #0a1628;
+    --container: #0f1d33;
+    --sub: #162744;
+    --sub-border: rgba(201,168,76,0.14);
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7234;
+    --gold-10: rgba(201,168,76,0.08);
+    --gold-15: rgba(201,168,76,0.15);
+    --gold-25: rgba(201,168,76,0.25);
+    --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2;
+    --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  :host { margin: 0; padding: 0; }
+  :host { background: #070e18; font-family: var(--sans); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
+
+  .texture {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .border-frame {
+    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
+    border: 2px solid var(--gold-35);
+    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
+  }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .corner svg { width: 100%; height: 100%; }
+  .corner.tl { top: 7px; left: 7px; }
+  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
+  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
+
+  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
+
+  
+  .page { height: 1165px; }
+  .content { position: relative; z-index: 3; height: 100%; padding: 60px 72px 56px; box-sizing: border-box;
+             display: flex; flex-direction: column; }
+  .top-tag { font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--gold-dim); letter-spacing: 3px; text-transform: uppercase; text-align: center; }
+  .w-head { text-align: center; margin-top: 34px; }
+  .w-title { font-family: var(--serif); font-size: 48px; color: var(--gold); line-height: 1.05; letter-spacing: 0.5px; }
+  .w-sub { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--dim); margin-top: 10px; }
+  .rule { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 24px auto 32px; width: 320px; }
+  .rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .rule .diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+  .beats { display: flex; flex-direction: column; gap: 34px; flex: 1; justify-content: start; }
+  .beat { display: grid; grid-template-columns: 40px 1fr; column-gap: 22px; }
+  .beat .n { font-family: var(--mono); font-size: 16px; font-weight: 700; color: var(--gold); padding-top: 3px; }
+  .beat .label { font-family: var(--mono); font-size: 10.5px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; margin-bottom: 10px; padding-bottom: 7px; border-bottom: 1px dashed var(--gold-25); }
+  .beat .text { font-family: var(--serif); font-size: 19px; color: var(--white); line-height: 1.45; margin: 0; padding: 0 0 0 20px; }
+  .beat .text li { padding: 2px 0; }
+  .beat .text li::marker { color: var(--gold-dim); }
+  .w-foot { text-align: center; margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--gold-25); font-family: var(--mono); font-size: 9px; color: var(--gold-dim); letter-spacing: 3px; text-transform: uppercase; }
+
+  .beat .n, .beat .label { display: none !important; }
+  .beat { grid-template-columns: 1fr !important; }
+  .beats { justify-content: center !important; }
+  .beat .text { font-size: 25px !important; line-height: 1.45 !important; padding-left: 26px !important; }
+  .beat .text li { padding: 9px 0 !important; }
+</style>
+<div class="page">
+  <div class="texture"></div>
+  <div class="border-frame"></div>
+  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="content">
+    <div class="top-tag">About the author</div>
+    <div class="w-head">
+      <div class="w-title">Why listen to me?</div>
+      <div class="w-sub"></div>
+    </div>
+    <div class="rule"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+    <div class="beats"><div class="beat"><div class="n">1</div><div><div class="label"></div><ul class="text"><li>I’m a code monkey, born and living in the seat of the nation</li><li>I’m an outsider: no political agenda, financial incentive, or reputation to protect, and none of the professional cynicism · a healthy dose of naivete</li><li>This started as a way to understand the Israeli-Palestinian conflict · after 7 October the US-Iran war was obvious, so I set a delusional goal: a peace framework for the next president, most likely Trump</li><li>Judge the plan itself · the receipts from the doom scroll are all here: 45 sources</li></ul></div></div></div>
+    <div class="w-foot">x.com/thekingdavidjr</div>
+  </div>
+</div>
+</template>
+<template id="tpl-why"><style>
+  :host {
+    --bg: #0a1628;
+    --container: #0f1d33;
+    --sub: #162744;
+    --sub-border: rgba(201,168,76,0.14);
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7234;
+    --gold-10: rgba(201,168,76,0.08);
+    --gold-15: rgba(201,168,76,0.15);
+    --gold-25: rgba(201,168,76,0.25);
+    --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2;
+    --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  :host { margin: 0; padding: 0; }
+  :host { background: #070e18; font-family: var(--sans); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
+
+  .texture {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .border-frame {
+    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
+    border: 2px solid var(--gold-35);
+    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
+  }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .corner svg { width: 100%; height: 100%; }
+  .corner.tl { top: 7px; left: 7px; }
+  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
+  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
+
+  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
+
+  
+  .page { height: 1165px; }
+  .content { position: relative; z-index: 3; height: 100%; padding: 60px 72px 56px; box-sizing: border-box;
+             display: flex; flex-direction: column; }
+  .top-tag { font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--gold-dim); letter-spacing: 3px; text-transform: uppercase; text-align: center; }
+  .w-head { text-align: center; margin-top: 34px; }
+  .w-title { font-family: var(--serif); font-size: 48px; color: var(--gold); line-height: 1.05; letter-spacing: 0.5px; }
+  .w-sub { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--dim); margin-top: 10px; }
+  .rule { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 24px auto 32px; width: 320px; }
+  .rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .rule .diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+  .beats { display: flex; flex-direction: column; gap: 34px; flex: 1; justify-content: start; }
+  .beat { display: grid; grid-template-columns: 40px 1fr; column-gap: 22px; }
+  .beat .n { font-family: var(--mono); font-size: 16px; font-weight: 700; color: var(--gold); padding-top: 3px; }
+  .beat .label { font-family: var(--mono); font-size: 10.5px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; margin-bottom: 10px; padding-bottom: 7px; border-bottom: 1px dashed var(--gold-25); }
+  .beat .text { font-family: var(--serif); font-size: 19px; color: var(--white); line-height: 1.45; margin: 0; padding: 0 0 0 20px; }
+  .beat .text li { padding: 2px 0; }
+  .beat .text li::marker { color: var(--gold-dim); }
+  .w-foot { text-align: center; margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--gold-25); font-family: var(--mono); font-size: 9px; color: var(--gold-dim); letter-spacing: 3px; text-transform: uppercase; }
+</style>
+<div class="page">
+  <div class="texture"></div>
+  <div class="border-frame"></div>
+  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="content">
+    <div class="top-tag">Why Trump</div>
+    <div class="w-head">
+      <div class="w-title">Why Trump</div>
+      <div class="w-sub">a plan for a businessman</div>
+    </div>
+    <div class="rule"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+    <div class="beats"><div class="beat"><div class="n">1</div><div><div class="label">THE GAP</div><ul class="text"><li>A deal without a vision will not last · we have already seen that with the MoU</li><li>Moving forward takes two things: a vision and political will</li><li>Plenty of regional architectures have been proposed: a Helsinki process, which the Saudis now push as Helsinki-lite · an ASEAN Regional Forum for the Gulf · Iran’s Hormuz Peace Endeavour</li><li>None of them are Trump-flavored, and no credentialed analyst has proposed such a thing</li></ul></div></div><div class="beat"><div class="n">2</div><div><div class="label">WHY HIM</div><ul class="text"><li>He’s the most powerful person in the world</li><li>It’s his war · his 2nd term’s signature policy in the Middle East, next to the 20-point plan</li><li>“Run from the Middle East” is not a thing Trump can own</li><li>The only thing that beats capitulation is a creative grand vision he can own</li><li>A prize that big gives him the room for maneuver any real deal requires</li></ul></div></div><div class="beat"><div class="n">3</div><div><div class="label">WHY WOULD TRUMP TAKE A PLAN?</div><ul class="text"><li>He already has · the 20-point plan came through a long, very collaborative process, and his power and influence got it over the line</li><li>Its contours already existed: the previous administration, regional partners, and Blair’s GITA</li><li>His goals are well known: contain Iran’s nuclear program and expand normalization · the architecture is an implementation detail</li></ul></div></div></div>
+    <div class="w-foot">x.com/thekingdavidjr</div>
+  </div>
+</div>
+</template>
+<template id="tpl-card-1"><style>
+  :host {
+    --bg: #0a1628;
+    --container: #0f1d33;
+    --sub: #162744;
+    --sub-border: rgba(201,168,76,0.14);
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7234;
+    --gold-10: rgba(201,168,76,0.08);
+    --gold-15: rgba(201,168,76,0.15);
+    --gold-25: rgba(201,168,76,0.25);
+    --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2;
+    --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  :host { margin: 0; padding: 0; }
+  :host { background: #070e18; font-family: var(--sans); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
+
+  .texture {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .border-frame {
+    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
+    border: 2px solid var(--gold-35);
+    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
+  }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .corner svg { width: 100%; height: 100%; }
+  .corner.tl { top: 7px; left: 7px; }
+  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
+  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
+
+  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
+
+  /* ─── TITLE ─── */
+  .title-block { text-align: center; margin-bottom: 26px; position: relative; }
+  .title-glow {
+    position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+    width: 340px; height: 130px;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .title { font-family: var(--serif); font-size: 32px; font-weight: 400; color: var(--gold); letter-spacing: 0.5px; line-height: 1.1; position: relative; }
+  .subtitle { font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--gold-light); margin-top: 7px; position: relative; }
+  .tag { font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; margin-top: 9px; text-transform: uppercase; }
+  .diamond-rule { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px auto 0; width: 200px; }
+  .diamond-rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .diamond-rule .diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* ─── PHASE HEADER ─── */
+  .phase-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .phase-label { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; }
+  .phase-title { font-family: var(--serif); font-size: 18px; color: var(--white); line-height: 1.25; }
+  .phase-note { font-family: var(--mono); font-size: 8.5px; color: var(--gold-dim); font-style: italic; margin-bottom: 14px; }
+
+  /* ─── TRACK PANEL ─── */
+  .track {
+    background: var(--sub);
+    border: 1px solid var(--sub-border);
+    border-radius: 3px;
+    padding: 13px 16px 14px;
+    margin-bottom: 10px;
+  }
+  .track-head { display: flex; align-items: baseline; gap: 9px; margin-bottom: 3px; }
+  .track-head .icon { font-size: 15px; align-self: center; }
+  .track-name { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--gold-light); letter-spacing: 1px; text-transform: uppercase; }
+  .track-role { font-size: 13px; color: var(--gold-dim); font-style: italic; }
+  .track-caption { font-size: 13.5px; color: var(--dim); line-height: 1.45; margin-top: 10px; text-align: center; }
+  .track-caption strong { color: var(--white); font-weight: 600; }
+
+  .terms-box {
+    margin-top: 11px; background: rgba(10,22,40,0.5);
+    border: 1px dashed var(--gold-25); border-radius: 3px; padding: 11px 16px 12px;
+  }
+  .terms-box .t-item { font-size: 13px; color: var(--dim); line-height: 1.45; text-align: left; }
+  .terms-box .t-item + .t-item { margin-top: 6px; }
+  .terms-box .t-item strong { color: var(--white); font-weight: 600; }
+  /* ─── BULLETS (20 Sep) ─── */
+  .bl { margin: 0; padding: 0 0 0 14px; text-align: left; }
+  .bl li { padding: 1.5px 0; }
+  .bl li::marker { color: var(--gold-dim); }
+  .bl.center { display: inline-block; }
+
+
+  /* ─── HORMUZ LANES ─── */
+  .lanes { margin-top: 11px; border: 1px solid var(--gold-15); border-radius: 3px; overflow: hidden; }
+  .lane { display: flex; align-items: center; gap: 14px; padding: 9px 16px; background: var(--container); }
+  .lane + .lane { border-top: 1px dashed var(--gold-25); }
+  .lane-water { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold); width: 128px; flex-shrink: 0; line-height: 1.4; }
+  .lane-flow { flex: 1; display: flex; align-items: center; gap: 10px; }
+  .lane-flow.rev { flex-direction: row-reverse; }
+  .lane-arrow { flex: 1; height: 0; border-top: 1px solid var(--gold-dim); position: relative; }
+  .lane-arrow::after {
+    content: ''; position: absolute; top: -4px; right: -1px;
+    border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+    border-left: 7px solid var(--gold-dim);
+  }
+  .lane-flow.rev .lane-arrow::after { right: auto; left: -1px; border-left: none; border-right: 7px solid var(--gold-dim); }
+  .lane-label { font-size: 13.5px; color: var(--white); white-space: nowrap; }
+  .lane-label b { color: var(--gold-light); }
+
+  /* ─── HORMUZ STRAIT DIAGRAM ─── */
+  .strait { margin-top: 11px; border: 1px solid var(--gold-15); border-radius: 3px; background: var(--container); padding: 12px 16px 13px; }
+  .strait-ends { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; }
+  .strait-end { font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold-dim); }
+  .strait-:host { display: flex; flex-direction: column; gap: 9px; }
+  .srow { display: flex; align-items: center; gap: 12px; }
+  .srow-water { font-family: var(--mono); font-size: 9.5px; font-weight: 700; letter-spacing: 1.3px; color: var(--gold); width: 122px; flex-shrink: 0; text-align: right; }
+  .srow-channel { flex: 1; position: relative; height: 26px; border-radius: 13px; display: flex; align-items: center; }
+  .srow-channel.north { background: linear-gradient(270deg, rgba(201,168,76,0.05), rgba(201,168,76,0.16)); border: 1px solid var(--gold-25); }
+  .srow-channel.south { background: linear-gradient(90deg, rgba(201,168,76,0.05), rgba(201,168,76,0.16)); border: 1px solid var(--gold-25); }
+  .srow-channel .flow { position: absolute; inset: 0 14px; display: flex; align-items: center; justify-content: space-between; font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--gold-light); letter-spacing: 1.4px; }
+  .srow-channel .chev { color: var(--gold); font-size: 13px; opacity: 0.7; letter-spacing: -2px; }
+  .median { display: flex; align-items: center; gap: 12px; }
+  .median-spacer { width: 122px; flex-shrink: 0; }
+  .median-band { flex: 1; height: 0; border-top: 1px dashed var(--gold-25); position: relative; }
+  .median-band span {
+    position: absolute; left: 50%; top: -6px; transform: translateX(-50%);
+    background: var(--container); padding: 0 10px;
+    font-family: var(--mono); font-size: 8.5px; color: var(--gold-dim); letter-spacing: 1.5px; white-space: nowrap;
+  }
+
+  /* ─── NUCLEAR GATES ─── */
+  .gates { display: flex; align-items: stretch; gap: 0; margin-top: 12px; }
+  .gate {
+    flex: 1; background: var(--container); border: 1px solid var(--gold-15); border-radius: 3px;
+    padding: 11px 10px 12px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; gap: 8px;
+  }
+  .gate-step { font-family: var(--mono); font-size: 8.5px; color: var(--gold-dim); letter-spacing: 1.5px; }
+  .gate-action { font-size: 14px; color: var(--white); line-height: 1.35; }
+  .gate-amount { font-family: var(--mono); font-size: 21px; font-weight: 700; color: var(--gold-light); letter-spacing: -0.5px; }
+  .gate-amount .unlock { display: block; font-size: 8px; font-weight: 400; color: var(--gold-dim); letter-spacing: 1.5px; margin-top: 3px; }
+  /* 25 Sep 23:28, author: gate 3 marked as an architectural-phase item */
+  .gate.arch { background: var(--sub); border: 1px dashed var(--gold); }
+  .gate.arch .gate-step { color: var(--gold); }
+  .gate-link { display: flex; align-items: center; width: 26px; flex-shrink: 0; }
+  .gate-link .line { flex: 1; height: 0; border-top: 1px solid var(--gold-dim); position: relative; }
+  .gate-link .line::after {
+    content: ''; position: absolute; top: -4px; right: -1px;
+    border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+    border-left: 7px solid var(--gold-dim);
+  }
+
+  /* ─── RECONSTRUCTION SPLIT ─── */
+  .split { margin-top: 12px; }
+  .split-root {
+    width: 360px; margin: 0 auto; text-align: center;
+    background: var(--container); border: 1px solid var(--gold-25); border-radius: 3px;
+    padding: 9px 14px 10px;
+  }
+  .split-root .amt { font-family: var(--mono); font-size: 23px; font-weight: 700; color: var(--gold-light); }
+  .split-root .cond { font-size: 12.5px; color: var(--dim); margin-top: 2px; line-height: 1.35; }
+  .split-root .cond b { color: var(--white); font-weight: 600; }
+
+  .fork { position: relative; }
+  .fork-stem { width: 1px; height: 6px; background: var(--gold-dim); margin: 0 auto; }
+  .fork-bar { height: 0; border-top: 1px solid var(--gold-dim); width: 50%; margin: 0 auto; }
+  .fork-drops { display: flex; gap: 10px; }
+  .fork-drops .half { flex: 1; display: flex; justify-content: center; }
+  .drop { display: flex; flex-direction: column; align-items: center; height: 16px; }
+  .drop .dline { width: 1px; flex: 1; background: var(--gold-dim); }
+  .drop .dhead { border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 6px solid var(--gold-dim); }
+
+  .split-branches { display: flex; gap: 10px; align-items: stretch; }
+  .branch {
+    flex: 1; background: var(--container); border: 1px solid var(--gold-15); border-radius: 3px;
+    padding: 10px 14px 11px; text-align: center;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .branch.trust { border-color: var(--gold-25); background: var(--gold-10); }
+  .branch-share { font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 5px; }
+  .branch-line { font-size: 13.5px; color: var(--white); line-height: 1.4; }
+  .branch-line b { color: var(--gold-light); font-weight: 700; }
+  .branch-math { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 6px; }
+  .branch-math .cell { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--gold-light); }
+  .branch-math .op { font-family: var(--mono); font-size: 12px; color: var(--gold-dim); }
+  .branch-math .cell small { display: block; font-size: 8px; font-weight: 400; color: var(--gold-dim); letter-spacing: 1px; margin-top: 2px; text-transform: uppercase; }
+  .branch-math .cell.total { color: var(--gold); font-size: 15px; }
+
+  .rule-note {
+    margin-top: 10px; padding-top: 9px; border-top: 1px dashed var(--gold-25);
+    font-family: var(--mono); font-size: 10.5px; font-weight: 700; color: var(--gold); letter-spacing: 0.8px;
+    text-align: center; line-height: 1.6;
+  }
+  .rule-note b { color: var(--gold); font-weight: 700; }
+
+  /* ─── FOOTER ─── */
+  .footer { text-align: center; margin-top: 26px; padding: 16px 16px 0; border-top: 1px solid var(--gold-25); }
+  .footer-quote { font-family: var(--serif); font-size: 16px; color: var(--gold); font-style: italic; line-height: 1.6; }
+  .footer-attr { font-size: 9px; color: var(--gold-dim); font-family: var(--mono); letter-spacing: 3px; margin-top: 6px; }
+</style>
+<div class="page">
+  <div class="texture"></div>
+  <div class="border-frame"></div>
+  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+
+  <div class="content">
+    <div class="title-block">
+      <div class="title-glow"></div>
+      <div class="tag" style="margin-bottom:6px;">1 of 5</div>
+      <div class="title">The Islamabad Accords</div>
+      <div class="subtitle">Ending the <span style="letter-spacing:1px;">OCTOBER 7TH FIRESTORM</span></div>
+      <div class="tag">Implementing Trump's Vision for Peace in the Middle East</div>
+      <div class="diamond-rule"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+      <div class="tag" style="margin-top:9px;">The Transactional Phase &middot; A Ceasefire and Three Deals</div>
+    </div>
+
+    <div class="phase-header"><span class="phase-title">Freeze Hormuz, De-escalate the Nuclear File, Rebuild the Middle East</span></div>
+    <!-- entry point, author 27 Sep 2026 14:40, option A (was "a ceasefire first, then three deals run in parallel") -->
+    <div class="phase-note">agree the three deals as the agenda, redeclare the ceasefire, then negotiate them in parallel</div>
+
+    <!-- TRACK 0: CEASEFIRE -->
+    <div class="track">
+      <div class="track-head">
+        <span class="icon">🕊️</span>
+        <span class="track-name">Recommitment to Cessation</span>
+        <span class="track-role">rain on the firestorm</span>
+      </div>
+      <div class="track-caption" style="margin-top:11px; text-align:center;"><strong>A recommitment to the cessation of armed hostilities across all fronts</strong>, Gaza and Lebanon included, to be formalized into the All-Fronts Hudna, the war-ending armistice, in the architectural phase.</div>
+    </div>
+
+    <!-- TRACK 1: HORMUZ -->
+    <div class="track">
+      <div class="track-head">
+        <span class="icon">⚓</span>
+        <span class="track-name">Hormuz Standstill</span>
+        <span class="track-role">freeze the maritime conflict</span>
+      </div>
+      <div class="strait">
+        <div class="strait-ends">
+          <span class="strait-end">◀ PERSIAN GULF</span>
+          <span class="strait-end">GULF OF OMAN ▶</span>
+        </div>
+        <div class="strait-body">
+          <div class="srow">
+            <span class="srow-water">IRANIAN WATERS</span>
+            <div class="srow-channel north">
+              <span class="flow"><span class="chev">‹‹‹‹</span><span>INBOUND · NORTHERN LANE</span><span class="chev">‹‹‹‹</span></span>
+            </div>
+          </div>
+          <div class="median">
+            <span class="median-spacer"></span>
+            <span class="median-band"><span>MEDIAN LANE &middot; TSS RESTORED IN THE ARCHITECTURAL PHASE</span></span>
+          </div>
+          <div class="srow">
+            <span class="srow-water">OMANI WATERS</span>
+            <div class="srow-channel south">
+              <span class="flow"><span class="chev">››››</span><span>OUTBOUND · SOUTHERN LANE</span><span class="chev">››››</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="strait-note" style="font-family:var(--mono); font-size:8.5px; letter-spacing:1px; color:var(--gold-dim); text-align:center; margin-top:6px; line-height:1.5;">ADAPTED FROM THE IRAN–OMAN ROUTE TALKS (JUL–AUG 2026, STILL MOVING) · THE OUTBOUND LANE STAYS OMANI</div>
+      <div class="terms-box">
+        <div class="t-item"><strong>No-prejudice:</strong> nobody formally concedes sovereignty, transit rights, or economic arrangements. Holds until the architectural phase settles the strait.</div>
+        <div class="t-item"><strong>Sovereign and military fleets excepted</strong><ul class="bl"><li>The lane arrangement governs commercial traffic</li><li>Warships, government vessels, and state-flagged commercial fleets transit by either route, in recognition of sovereign interests, rights, and balance of power</li></ul></div>
+        <div class="t-item"><strong>The blockade lifts:</strong> the US naval blockade is lifted as part of the Hormuz standstill.</div>
+        <div class="t-item"><strong>The oil waiver returns with the strait</strong><ul class="bl"><li>Restored under MoU &para;10</li><li>Worth real money inside an architectural roadmap</li></ul></div>
+      </div>
+    </div>
+
+    <!-- TRACK 2: NUCLEAR -->
+    <div class="track">
+      <div class="track-head">
+        <span class="icon">⚛️</span>
+        <span class="track-name">Nuclear Bargain</span>
+        <span class="track-role">de-escalate the file without resolving it</span>
+      </div>
+      <div class="gates">
+        <div class="gate">
+          <div class="gate-step">GATE 1</div>
+          <div class="gate-action">IAEA access restored,<br>verification baseline set</div>
+          <div class="gate-amount">$6B+<span class="unlock">QATARI ACCOUNTS RELEASE</span></div>
+        </div>
+        <div class="gate-link"><div class="line"></div></div>
+        <div class="gate">
+          <div class="gate-step">GATE 2</div>
+          <div class="gate-action">HEU downblended in place,<br>verified, per MoU Art. 8</div>
+          <div class="gate-amount">$5B+<span class="unlock">RELEASES</span></div>
+        </div>
+        <div class="gate-link"><div class="line"></div></div>
+        <div class="gate arch">
+          <div class="gate-step">GATE 3 &middot; ARCHITECTURAL PHASE</div>
+          <div class="gate-action">Custody of remaining material,<br>on architectural-phase terms</div>
+          <div class="gate-amount">$15B+<span class="unlock">RELEASES</span></div>
+        </div>
+      </div>
+      <div class="track-caption" style="margin-top:11px;"><ul class="bl center"><li>Released to Iran <strong>without restriction on use</strong></li><li>These are Iran's own assets, unfrozen under the MoU &para;11 procedure</li></ul></div>
+      <div class="rule-note" style="margin-top:9px; padding-top:8px; font-size:8.5px; font-weight:400; color:var(--gold-dim); letter-spacing:1.2px;">FIGURES TRACK AMOUNTS REPORTED BY AXIOS DURING THE 2026 NUCLEAR NEGOTIATIONS</div>
+    </div>
+
+    <!-- TRACK 3: RECONSTRUCTION -->
+    <div class="track">
+      <div class="track-head">
+        <span class="icon">🏗️</span>
+        <span class="track-name">Reconstruction Tranche</span>
+        <span class="track-role">the mutual down payment on regional stability</span>
+      </div>
+      <div class="split">
+        <div class="split-root">
+          <div class="amt">$25B</div>
+          <div class="cond">of Iran's frozen assets, on <b>agreement of the architectural phase</b></div>
+        </div>
+        <div class="fork">
+          <div class="fork-stem"></div>
+          <div class="fork-bar"></div>
+          <div class="fork-drops">
+            <div class="half"><div class="drop"><div class="dline"></div><div class="dhead"></div></div></div>
+            <div class="half"><div class="drop"><div class="dline"></div><div class="dhead"></div></div></div>
+          </div>
+        </div>
+        <div class="split-branches">
+          <div class="branch trust">
+            <div class="branch-share">AT LEAST A 25% SHARE · PUBLIC TRUST</div>
+            <div class="branch-math">
+              <div class="cell">$6.25B<small>carve-out</small></div>
+              <div class="op">+</div>
+              <div class="cell">$6.25B<small>BoP match</small></div>
+              <div class="op">=</div>
+              <div class="cell total">$12.5B<small>Gaza &amp; Lebanon</small></div>
+            </div>
+          </div>
+          <div class="branch">
+            <div class="branch-share">75% BALANCE</div>
+            <div class="branch-line">to <b>Iran</b>, through<br>approved channels</div>
+          </div>
+        </div>
+        <div class="rule-note">EVERY SUBSEQUENT ASSET RELEASE CARRIES <b>AT LEAST A 25% SHARE</b> · NUCLEAR-TRACK PAYMENTS EXEMPT</div>
+        <div class="terms-box" style="margin-top:10px;">
+          <div class="t-item"><strong>What counts as agreement of the architectural phase</strong><ul class="bl"><li>Acceptance of the five institutions</li><li>Acceptance of their general mandates</li><li>Agreement on the range of the negotiating parameters: enrichment percentage, duration, money · not a particular figure, the range on the figures</li><li>Agreement on the set of candidate nations that could assist in each institution</li></ul></div>
+          <div class="t-item"><strong>On agreement, the wartime escalation unwinds:</strong> US forces surged for the war are withdrawn, the sanctions imposed since the June MoU are lifted, and an armistice ending the October 7th Firestorm is declared.</div>
+          <!-- author, 28 Sep 2026, 10:22–10:31, option B -->
+          <div class="t-item">The agreed architecture is endorsed by a UN Security Council resolution, as the 20-point plan was.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-attr">X.COM/THEKINGDAVIDJR</div>
+    </div>
+  </div>
+</div>
+</template>
+<template id="tpl-card-2"><style>
+  :host {
+    --bg: #0a1628;
+    --container: #0f1d33;
+    --sub: #162744;
+    --sub-border: rgba(201,168,76,0.14);
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7234;
+    --gold-10: rgba(201,168,76,0.08);
+    --gold-15: rgba(201,168,76,0.15);
+    --gold-25: rgba(201,168,76,0.25);
+    --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2;
+    --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  :host { margin: 0; padding: 0; }
+  :host { background: #070e18; font-family: var(--sans); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
+
+  .texture {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .border-frame {
+    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
+    border: 2px solid var(--gold-35);
+    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
+  }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .corner svg { width: 100%; height: 100%; }
+  .corner.tl { top: 7px; left: 7px; }
+  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
+  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
+
+  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
+
+  /* ─── TITLE ─── */
+  .title-block { text-align: center; margin-bottom: 24px; position: relative; }
+  .title-glow {
+    position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+    width: 340px; height: 130px;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .title { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--gold); letter-spacing: 0.5px; line-height: 1.1; position: relative; }
+  .tag { font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; margin-top: 8px; text-transform: uppercase; }
+  .diamond-rule { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px auto 0; width: 200px; }
+  .diamond-rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .diamond-rule .diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* ─── PHASE HEADER ─── */
+  .phase-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .phase-label { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; }
+  .phase-title { font-family: var(--serif); font-size: 18px; color: var(--white); line-height: 1.25; }
+  .phase-note { font-family: var(--mono); font-size: 8.5px; color: var(--gold-dim); font-style: italic; margin-bottom: 14px; }
+
+  /* ─── TABLE BANNER ─── */
+  .table-banner {
+    border: 1.5px solid var(--gold);
+    border-radius: 4px;
+    padding: 15px 22px 14px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--container), var(--sub));
+    box-shadow: 0 0 26px var(--gold-10);
+    position: relative;
+  }
+  .table-banner .inner-frame {
+    position: absolute; inset: 3px;
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 3px;
+    pointer-events: none;
+  }
+  .table-file { font-family: var(--mono); font-size: 8.5px; font-weight: 700; color: var(--gold-dim); letter-spacing: 2px; margin-bottom: 5px; }
+  .table-top { display: flex; align-items: center; justify-content: center; gap: 9px; margin-bottom: 4px; }
+  .table-icon { font-size: 19px; }
+  .table-title { font-family: var(--serif); font-size: 19px; color: var(--gold); }
+  .table-members { font-size: 13px; color: var(--gold-dim); font-style: italic; margin-bottom: 9px; }
+  .table-members b { color: var(--gold); font-weight: 600; font-style: normal; }
+  .mandates { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .mandate {
+    background: var(--sub); border: 1px solid var(--sub-border); border-radius: 3px;
+    padding: 7px 13px; text-align: left; flex: 1; min-width: 0; max-width: 270px;
+  }
+  .mandate .m-label { font-family: var(--mono); font-size: 8.5px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; margin-bottom: 3px; }
+  .mandate .m-text { font-size: 13px; color: var(--white); line-height: 1.4; }
+  .mandates.wide-row { margin-top: 8px; }
+  .mandate.wide, .mandates.wide-row .mandate { max-width: none; }
+
+  .anti-mandate {
+    margin-top: 8px;
+    background: rgba(10,22,40,0.55); border: 1px dashed var(--gold-25); border-radius: 3px;
+    padding: 7px 14px; text-align: left;
+  }
+  .anti-mandate .m-label { font-family: var(--mono); font-size: 8.5px; font-weight: 700; color: var(--gold-dim); letter-spacing: 1.5px; margin-bottom: 3px; }
+  .anti-mandate .m-text { font-size: 13px; color: var(--dim); line-height: 1.4; }
+
+  .inst-amt { font-family: var(--mono); font-size: 21px; font-weight: 700; color: var(--gold-light); letter-spacing: -0.5px; margin: 2px 0 1px; text-align: center; }
+  .inst-amt-cap { font-family: var(--mono); font-size: 8px; color: var(--gold-dim); letter-spacing: 1.5px; margin-bottom: 6px; text-align: center; }
+
+  /* ─── RISING CONNECTORS ─── */
+  .rise { position: relative; margin: 0 6px; }
+  .rise-label {
+    text-align: center; font-family: var(--mono); font-size: 10.5px; font-weight: 700; color: var(--gold);
+    letter-spacing: 1.3px; padding: 6px 0 5px;
+  }
+  .rise-drops { display: flex; gap: 8px; }
+  .rise-drops .qtr { flex: 1; display: flex; justify-content: center; }
+  .riser { display: flex; flex-direction: column; align-items: center; height: 18px; }
+  .riser .rhead { border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 6px solid var(--gold-dim); }
+  .riser .rline { width: 1px; flex: 1; background: var(--gold-dim); }
+
+  /* ─── INSTITUTION COLUMNS ─── */
+  .inst-row { display: flex; gap: 8px; align-items: stretch; }
+  .inst {
+    flex: 1; background: var(--sub); border: 1px solid var(--sub-border); border-radius: 3px;
+    padding: 11px 12px 12px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .inst-file { font-family: var(--mono); font-size: 8.5px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; text-align: center; padding-bottom: 6px; border-bottom: 1px dashed var(--gold-25); }
+  .inst-name-row { text-align: center; }
+  .inst-icon { font-size: 15px; display: block; margin-bottom: 3px; }
+  .inst-name { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--gold-light); letter-spacing: 0.3px; line-height: 1.35; }
+  .inst-members { font-size: 11.5px; color: var(--gold-dim); font-style: italic; line-height: 1.4; text-align: center; }
+  .inst-desc { font-size: 12.5px; color: var(--white); line-height: 1.42; text-align: center; margin-top: 9px; }
+  .inst-desc b { color: var(--gold-light); }
+  /* ─── BULLETS (20 Sep) ─── */
+  .bl { margin: 0; padding: 0 0 0 14px; text-align: left; }
+  .bl li { padding: 1.5px 0; }
+  .bl li::marker { color: var(--gold-dim); }
+  .bl.center { display: inline-block; }
+
+
+  .rule-note {
+    margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--gold-25);
+    font-family: var(--mono); font-size: 9.5px; color: var(--gold-dim); letter-spacing: 0.8px;
+    text-align: center; line-height: 1.6;
+  }
+  .rule-note b { color: var(--gold); font-weight: 700; }
+
+  /* ─── BOARD STRIP ─── */
+  .bop-strip {
+    margin-top: 12px;
+    border: 1px solid var(--gold-25); border-radius: 3px;
+    background: var(--container);
+    padding: 9px 16px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    flex-wrap: wrap;
+  }
+  .bop-strip .bop-name { font-family: var(--serif); font-size: 15px; color: var(--gold); white-space: nowrap; }
+  .bop-strip .bop-sep { width: 1px; height: 14px; background: var(--gold-25); }
+  .bop-strip .bop-role { font-size: 13px; color: var(--dim); }
+  .bop-strip .bop-role b { color: var(--gold-light); font-weight: 600; }
+
+  /* ─── FOOTER ─── */
+  .footer { text-align: center; margin-top: 24px; padding: 16px 16px 0; border-top: 1px solid var(--gold-25); }
+  .footer-quote { font-family: var(--serif); font-size: 16px; color: var(--gold); font-style: italic; line-height: 1.6; }
+  .footer-attr { font-size: 9px; color: var(--gold-dim); font-family: var(--mono); letter-spacing: 3px; margin-top: 6px; }
+</style>
+<div class="page">
+  <div class="texture"></div>
+  <div class="border-frame"></div>
+  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+
+  <div class="content">
+    <div class="title-block">
+      <div class="title-glow"></div>
+      <div class="tag" style="margin-bottom:6px;">2 of 5</div>
+      <div class="title">The Islamabad Accords</div>
+      <div class="tag">Implementing Trump's Vision for Peace in the Middle East</div>
+      <div class="diamond-rule"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+      <div class="tag" style="margin-top:9px;">The Architectural Phase &middot; Five Institutions</div>
+    </div>
+
+    <div class="phase-header"><span class="phase-title">The Generational Settlement</span></div>
+    <div class="phase-note">five files · five regionally owned institutions, each with its own members, milestones, and remedies</div>
+
+    <!-- THE TABLE -->
+    <div class="table-banner">
+      <div class="inner-frame"></div>
+      <div class="table-file">FILE · THE WAR ITSELF</div>
+      <div class="table-top">
+        <span class="table-icon">🤝</span>
+        <span class="table-title">Middle East Peace and Parley Table</span>
+      </div>
+      <div class="table-members">The region and its immediate neighbors, <b>Iran and Israel included</b> · every seat is unconditional</div>
+      <div class="mandates">
+        <div class="mandate wide">
+          <div class="m-label">MANDATE 1 · STANDING VENUE · NON-AGGRESSION AND PEACE AGREEMENTS</div>
+          <div class="m-text"><ul class="bl"><li>Neutral ground for deals and deconfliction</li><li>Non-aggression, restoration, and normalization agreements · brokered here when parties seek it, never exclusively</li><li>Minimum bureaucracy, maximum agility</li><li>A realistic substitute for what MoU&nbsp;Art.&nbsp;12 called for</li></ul></div>
+        </div>
+      </div>
+      <div class="mandates wide-row">
+        <div class="mandate">
+          <div class="m-label">THE FILE · ALL-FRONTS HUDNA</div>
+          <div class="m-text">The permanent termination of war promised in MoU&nbsp;Art.&nbsp;1 · US, Iran, and their respective allies.</div>
+        </div>
+        <div class="mandate">
+          <div class="m-label">MANDATE 2 · MEDIATION</div>
+          <div class="m-text">Intensive mediation of cross-cutting incidents the other institutions do not contain.</div>
+        </div>
+      </div>
+      <div class="anti-mandate">
+        <div class="m-label">ANTI-MANDATE · WHAT THE TABLE IS NOT</div>
+        <div class="m-text"><ul class="bl"><li><b>Not a Middle East UN</b></li><li>Not a voting body · issues no resolutions</li><li>Assigns no fault · commands no forces</li><li>Holds no standing over the other four institutions</li><li>No secretariat beyond what convening negotiations requires</li></ul></div>
+      </div>
+    </div>
+
+    <!-- RISING CONNECTORS -->
+    <div class="rise">
+      <div class="rise-label">UNCONTAINED DISPUTES RISE TO THE TABLE · NO AUTHORITY FLOWS DOWN</div>
+      <div class="rise-drops">
+        <div class="qtr"><div class="riser"><div class="rhead"></div><div class="rline"></div></div></div>
+        <div class="qtr"><div class="riser"><div class="rhead"></div><div class="rline"></div></div></div>
+        <div class="qtr"><div class="riser"><div class="rhead"></div><div class="rline"></div></div></div>
+        <div class="qtr"><div class="riser"><div class="rhead"></div><div class="rline"></div></div></div>
+      </div>
+    </div>
+
+    <!-- FOUR INSTITUTIONS BELOW THE TABLE -->
+    <div class="inst-row">
+      <div class="inst">
+        <div class="inst-file">FILE · NUCLEAR</div>
+        <div class="inst-name-row">
+          <span class="inst-icon">⚛️</span>
+          <span class="inst-name">Middle East Atoms for Peace Consortium</span>
+        </div>
+        <div class="inst-members">Iran · Pakistan · Türkiye · Gulf states · each party&rsquo;s guarantor seated: Russia, China, the US</div>
+        <div class="inst-desc"><ul class="bl center"><li><b>Verification first, enrichment second</b></li><li>Guarantees the negotiated terms alongside the IAEA</li></ul></div>
+      </div>
+      <div class="inst">
+        <div class="inst-file">FILE · HORMUZ</div>
+        <div class="inst-name-row">
+          <span class="inst-icon">⚓</span>
+          <span class="inst-name">Hormuz Freedom &amp; Prosperity Commission</span>
+        </div>
+        <div class="inst-members">Iran &amp; Oman as littoral states · Gulf states · major transit users</div>
+        <div class="inst-desc">The strait's <b>permanent settlement</b>: navigation, demining, deconfliction, transit rights, and the <b>economic arrangements</b> that go with them.</div>
+      </div>
+      <div class="inst">
+        <div class="inst-file">FILE · ARMS &amp; PRESENCE</div>
+        <div class="inst-name-row">
+          <span class="inst-icon">🛡️</span>
+          <span class="inst-name">Peace Through Strength Arms Control Forum</span>
+        </div>
+        <div class="inst-members">Iran · Israel · Gulf states · foreign powers with regional forces</div>
+        <div class="inst-desc"><ul class="bl center"><li>Arsenals, foreign military presence, arms to non-state actors</li><li>Reviving the <b>Arms Control and Regional Security</b> talks of 1992&ndash;95</li></ul></div>
+      </div>
+      <div class="inst">
+        <div class="inst-file">FILE · RECONSTRUCTION</div>
+        <div class="inst-name-row">
+          <span class="inst-icon">🏗️</span>
+          <span class="inst-name">Peace in the Middle East Reconstruction Fund</span>
+        </div>
+        <div class="inst-members">Public trust + private investment vehicle</div>
+        <div class="inst-amt">~$500B</div>
+        <div class="inst-amt-cap">REGIONAL PROGRAM</div>
+        <div class="inst-desc"><ul class="bl center"><li>Private capital for <b>Iran and the wider region's economic interdependence</b></li><li>The public trust for <b>Gaza &amp; Lebanon</b></li></ul></div>
+      </div>
+    </div>
+
+    <div class="rule-note">FIVE LOOSELY COUPLED TRACKS · <b>THE OPERATING IDEAL:</b> EACH KEEPS OPERATING THROUGH A CRISIS ELSEWHERE · SETTLED EXCHANGES STAY SETTLED</div>
+
+    <!-- BOARD OF PEACE -->
+    <div class="bop-strip">
+      <span class="bop-name">Board of Peace</span>
+      <span class="bop-sep"></span>
+      <span class="bop-role">Inaugurates the institutions and hosts the signing · <b>the region governs thereafter</b>.</span>
+    </div>
+
+    <div class="footer">
+      <div class="footer-attr">X.COM/THEKINGDAVIDJR</div>
+    </div>
+  </div>
+</div>
+</template>
+<template id="tpl-card-3"><style>
+  :host {
+    --bg: #0a1628;
+    --container: #0f1d33;
+    --sub: #162744;
+    --sub-border: rgba(201,168,76,0.14);
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7234;
+    --gold-10: rgba(201,168,76,0.08);
+    --gold-15: rgba(201,168,76,0.15);
+    --gold-25: rgba(201,168,76,0.25);
+    --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2;
+    --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  :host { margin: 0; padding: 0; }
+  :host { background: #070e18; font-family: var(--sans); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
+
+  .texture {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .border-frame {
+    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
+    border: 2px solid var(--gold-35);
+    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
+  }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .corner svg { width: 100%; height: 100%; }
+  .corner.tl { top: 7px; left: 7px; }
+  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
+  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
+
+  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
+
+  /* ─── TITLE ─── */
+  .title-block { text-align: center; margin-bottom: 24px; position: relative; }
+  .title-glow {
+    position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+    width: 340px; height: 130px;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .title { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--gold); letter-spacing: 0.5px; line-height: 1.1; position: relative; }
+  .tag { font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; margin-top: 8px; text-transform: uppercase; }
+  .diamond-rule { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px auto 0; width: 200px; }
+  .diamond-rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .diamond-rule .diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* ─── PHASE HEADER ─── */
+  .phase-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .phase-label { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; }
+  .phase-title { font-family: var(--serif); font-size: 18px; color: var(--white); line-height: 1.25; }
+  .phase-note { font-family: var(--mono); font-size: 8.5px; color: var(--gold-dim); font-style: italic; margin-bottom: 14px; }
+
+  /* ─── LEDGER ─── */
+  .ledger { border: 1px solid var(--gold-25); border-radius: 4px; overflow: hidden; background: var(--container); }
+
+  .ledger-head { display: flex; align-items: stretch; background: var(--sub); border-bottom: 1px solid var(--gold-25); }
+  .lh-track { width: 150px; flex-shrink: 0; padding: 8px 12px; }
+  .lh-side { flex: 1; padding: 8px 12px; text-align: center; }
+  .lh-glyph { width: 34px; flex-shrink: 0; }
+  .lh-label { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; }
+
+  .lrow { display: flex; align-items: stretch; }
+  .lrow + .lrow { border-top: 1px solid var(--sub-border); }
+  .l-track {
+    width: 150px; flex-shrink: 0; padding: 11px 12px;
+    background: var(--sub);
+    display: flex; flex-direction: column; justify-content: center; gap: 2px;
+  }
+  .l-track .t-name { font-family: var(--mono); font-size: 10.5px; font-weight: 700; color: var(--gold-light); letter-spacing: 0.5px; line-height: 1.35; }
+  .l-track .t-venue { font-size: 11px; color: var(--gold-dim); font-style: italic; }
+  .l-cell { flex: 1; padding: 11px 13px; display: flex; flex-direction: column; justify-content: center; }
+  .l-cell .c-text { font-size: 12.5px; color: var(--white); line-height: 1.45; }
+  .l-cell .c-text b { color: var(--gold-light); }
+  .l-cell .c-list { margin: 0; padding: 0 0 0 13px; font-size: 12.5px; color: var(--white); line-height: 1.4; }
+  .l-cell .c-list li { padding: 1.5px 0; }
+  .l-cell .c-list li::marker { color: var(--gold-dim); }
+  .l-cell .c-list b { color: var(--gold-light); }
+  .l-cell .c-list .num { font-family: var(--mono); font-weight: 700; color: var(--gold-light); font-size: 12px; }
+
+  .l-cell .c-text .num { font-family: var(--mono); font-weight: 700; color: var(--gold-light); font-size: 12px; }
+  .l-glyph {
+    width: 34px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 15px; color: var(--gold); font-weight: 700;
+  }
+
+  /* ─── SUPPORT POSTS ─── */
+  .posts { display: flex; justify-content: space-evenly; height: 16px; padding: 0 60px; }
+  .post { width: 7px; background: linear-gradient(var(--gold-dim), var(--gold-25)); border-radius: 0 0 1px 1px; }
+  .posts-label {
+    text-align: center; font-family: var(--mono); font-size: 10.5px; font-weight: 700; color: var(--gold);
+    letter-spacing: 1.3px; padding: 7px 0 5px;
+  }
+
+  /* ─── SUBSTRATE ─── */
+  .substrate {
+    border: 1.5px solid var(--gold); border-radius: 4px;
+    background: var(--gold-10);
+    padding: 13px 16px 14px;
+    position: relative;
+    box-shadow: 0 0 26px var(--gold-10);
+  }
+  .substrate .inner-frame {
+    position: absolute; inset: 3px;
+    border: 1px solid rgba(201,168,76,0.08);
+    border-radius: 3px; pointer-events: none;
+  }
+  .sub-head { text-align: center; margin-bottom: 3px; }
+  .sub-head .s-name { font-family: var(--serif); font-size: 17px; color: var(--gold); }
+  .sub-head .s-role { font-size: 12.5px; color: var(--dim); font-style: italic; margin-top: 2px; margin-bottom: 10px; }
+  .sub-head .s-role b { color: var(--gold-light); font-style: normal; font-weight: 600; }
+
+  .mech-row { display: flex; gap: 8px; align-items: stretch; }
+  .mech {
+    flex: 1; background: var(--container); border: 1px solid var(--gold-15); border-radius: 3px;
+    padding: 9px 11px 10px;
+  }
+  .mech .m-label { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; margin-bottom: 4px; text-align: center; }
+  .mech .m-text { font-size: 11.5px; color: var(--white); line-height: 1.42; text-align: center; }
+  .mech .m-text b { color: var(--gold-light); }
+  /* ─── BULLETS (20 Sep) ─── */
+  .bl { margin: 0; padding: 0 0 0 14px; text-align: left; }
+  .bl li { padding: 1.5px 0; }
+  .bl li::marker { color: var(--gold-dim); }
+  .bl.center { display: inline-block; }
+
+
+  /* ─── FOOTER ─── */
+  .footer { text-align: center; margin-top: 24px; padding: 16px 16px 0; border-top: 1px solid var(--gold-25); }
+  .footer-quote { font-family: var(--serif); font-size: 16px; color: var(--gold); font-style: italic; line-height: 1.6; }
+  .footer-attr { font-size: 9px; color: var(--gold-dim); font-family: var(--mono); letter-spacing: 3px; margin-top: 6px; }
+</style>
+<div class="page">
+  <div class="texture"></div>
+  <div class="border-frame"></div>
+  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+
+  <div class="content">
+    <div class="title-block">
+      <div class="title-glow"></div>
+      <div class="tag" style="margin-bottom:6px;">3 of 5</div>
+      <div class="title">The Islamabad Accords</div>
+      <div class="tag">Implementing Trump's Vision for Peace in the Middle East</div>
+      <div class="diamond-rule"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+      <div class="tag" style="margin-top:9px;">The Architectural Phase &middot; Five Trades</div>
+    </div>
+
+    <div class="phase-header"><span class="phase-title">What Each Side Actually Commits</span></div>
+    <div class="phase-note">every track is an exchange, and the layer beneath them all</div>
+
+    <!-- TRADE LEDGER -->
+    <div class="ledger">
+      <div class="ledger-head">
+        <div class="lh-track"><span class="lh-label">TRACK</span></div>
+        <div class="lh-side"><span class="lh-label">IRAN &amp; ITS ALLIES COMMIT</span></div>
+        <div class="lh-glyph"></div>
+        <div class="lh-side"><span class="lh-label">THE US &amp; THE REGION COMMIT</span></div>
+      </div>
+
+      <div class="lrow">
+        <div class="l-track">
+          <span class="t-name">🕊️ ALL-FRONTS HUDNA</span>
+          <span class="t-venue">at the Table</span>
+        </div>
+        <div class="l-cell"><ul class="c-list"><li>Accept <b>Trump's Comprehensive Plan</b> as the pathway for Palestinian self-determination, with no competing end-state</li><li>Commit to a <span class="num">10–15 yr</span> armistice and disengagement of the Axis toward Israel &amp; US forces, contingent on the pathway not being foreclosed</li></ul></div>
+        <div class="l-glyph">⇄</div>
+        <div class="l-cell"><ul class="c-list"><li><b>Reciprocal non-aggression and disengagement</b> toward Iran and its allies</li><li>The US guarantees Israel's compliance, and pursues its interests <b>through the architecture</b>, not around it</li></ul></div>
+      </div>
+
+      <div class="lrow">
+        <div class="l-track">
+          <span class="t-name">⚛️ NUCLEAR</span>
+          <span class="t-venue">in the Consortium</span>
+        </div>
+        <div class="l-cell"><ul class="c-list"><li>Near-zero enrichment for <span class="num">10–15 yrs</span> · one protected research cascade below <span class="num">1%</span>, under Consortium verification</li><li>Every other facility sealed under continuous IAEA watch</li><li><b>Zero HEU</b> for the duration</li><li>The existing stockpile part downblended in place and kept under seal, the rest exported to Consortium custody</li></ul></div>
+        <div class="l-glyph">⇄</div>
+        <div class="l-cell"><ul class="c-list"><li>Recognition of Iran's <b>right to enrich</b> under the NPT, via the Consortium, including on Iranian soil</li><li>Then a supervised ramp to a <span class="num">1.5–3.67%</span> ceiling</li><li>Saudi Arabia and any other domestic enrichment program under the same verification</li><li>The three nuclear gates of card 1 paid as each closes</li></ul></div>
+      </div>
+
+      <div class="lrow">
+        <div class="l-track">
+          <span class="t-name">⚓ HORMUZ</span>
+          <span class="t-venue">in the Commission</span>
+        </div>
+        <div class="l-cell"><ul class="c-list"><li>The strait reopens in practice</li><li><b>Joint mine-clearing</b>, naval deconfliction, and free, non-discriminatory flow of commerce</li><li><b>Return to the IMO traffic separation scheme</b> once the architecture stands</li></ul></div>
+        <div class="l-glyph">⇄</div>
+        <div class="l-cell"><ul class="c-list"><li>Iranian and Omani <b>sovereign rights openly acknowledged</b></li><li>A transit revenue framework carriers can pay into <b>without sanctions exposure</b></li><li>The Malacca Cooperative Mechanism as precedent</li></ul></div>
+      </div>
+
+      <div class="lrow">
+        <div class="l-track">
+          <span class="t-name">🛡️ ARMS &amp; PRESENCE</span>
+          <span class="t-venue">in the Forum</span>
+        </div>
+        <div class="l-cell"><ul class="c-list"><li>Restraint on <b>short- &amp; medium-range</b> missiles and drones</li><li><b>No intercontinental development</b>, ever</li><li>Limits on arming non-state actors</li></ul></div>
+        <div class="l-glyph">⇄</div>
+        <div class="l-cell"><ul class="c-list"><li>Economic and diplomatic integration</li><li><b>Restraint on American military presence</b> and <b>regional arsenals</b>, negotiated in the Forum</li><li>The same limits on arming non-state actors</li></ul></div>
+      </div>
+
+      <div class="lrow">
+        <div class="l-track">
+          <span class="t-name">🏗️ RECONSTRUCTION</span>
+          <span class="t-venue">in the Fund</span>
+        </div>
+        <div class="l-cell"><ul class="c-list"><li>A <span class="num">25%</span> carve-out from every asset release beyond the nuclear gates, roughly <span class="num">$20B</span> across the lifetime of the architecture, into the public trust for <b>Gaza &amp; Lebanon</b></li></ul></div>
+        <div class="l-glyph">⇄</div>
+        <div class="l-cell"><ul class="c-list"><li>The remaining <span class="num">75%</span> released to Iran</li><li>Dollar-for-dollar match by the Board of Peace, roughly <span class="num">$20B</span> across the lifetime of the architecture, on top of the <span class="num">$17B</span> already pledged</li><li>A <span class="num">~$500B</span> regional program folding in Iran's own ~$300B rebuild, weighted toward <b>cross-border infrastructure</b></li></ul></div>
+      </div>
+    </div>
+
+    <!-- SUPPORT POSTS -->
+    <div class="posts-label">THE ONE COUPLING, NOT DESIGNED · <b>AMERICAN FINANCIAL LEVERAGE TOUCHES EVERY TRACK</b></div>
+    <div class="posts">
+      <div class="post"></div><div class="post"></div><div class="post"></div><div class="post"></div><div class="post"></div>
+    </div>
+
+    <!-- SUBSTRATE -->
+    <div class="substrate">
+      <div class="inner-frame"></div>
+      <div class="sub-head">
+        <div class="s-name">Sanctions Relief &amp; Asset Releases</div>
+        <div class="s-role">Not a sixth track · <b>the compensation and compliance layer beneath all five</b></div>
+      </div>
+      <div class="mech-row">
+        <div class="mech">
+          <div class="m-label">FLOORS</div>
+          <div class="m-text"><i>Settlement finality:</i> a closed exchange ideally <b>stays closed</b> over a crisis on another track.</div>
+        </div>
+        <div class="mech">
+          <div class="m-label">GATES</div>
+          <div class="m-text"><i>Delivery versus payment:</i> each future tranche tied to <b>specified performance</b> in its own track.</div>
+        </div>
+        <div class="mech">
+          <div class="m-label">BREACH</div>
+          <div class="m-text"><ul class="bl center"><li><b>Breaches are inevitable</b> as sides continually assess the architecture's value</li><li>What the institutions cannot contain goes to the Table for intensive mediation</li></ul></div>
+        </div>
+        <div class="mech">
+          <div class="m-label">TERMINATION</div>
+          <div class="m-text"><ul class="bl center"><li><b>Waivers first</b></li><li>Permanent termination only when the architecture's record supports the certification to Congress</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-attr">X.COM/THEKINGDAVIDJR</div>
+    </div>
+  </div>
+</div>
+</template>
+<template id="tpl-card-4"><style>
+  :host {
+    --bg: #0a1628;
+    --container: #0f1d33;
+    --sub: #162744;
+    --sub-border: rgba(201,168,76,0.14);
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7234;
+    --gold-10: rgba(201,168,76,0.08);
+    --gold-15: rgba(201,168,76,0.15);
+    --gold-25: rgba(201,168,76,0.25);
+    --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2;
+    --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  :host { margin: 0; padding: 0; }
+  :host { background: #070e18; font-family: var(--sans); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
+
+  .texture {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .border-frame {
+    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
+    border: 2px solid var(--gold-35);
+    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
+  }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .corner svg { width: 100%; height: 100%; }
+  .corner.tl { top: 7px; left: 7px; }
+  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
+  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
+
+  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
+
+  /* ─── TITLE ─── */
+  .title-block { text-align: center; margin-bottom: 24px; position: relative; }
+  .title-glow {
+    position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+    width: 340px; height: 130px;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .title { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--gold); letter-spacing: 0.5px; line-height: 1.1; position: relative; }
+  .tag { font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; margin-top: 8px; text-transform: uppercase; }
+  .diamond-rule { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px auto 0; width: 200px; }
+  .diamond-rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .diamond-rule .diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* ─── PHASE HEADER ─── */
+  .phase-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .phase-label { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; }
+  .phase-title { font-family: var(--serif); font-size: 18px; color: var(--white); line-height: 1.25; }
+  .phase-note { font-family: var(--mono); font-size: 8.5px; color: var(--gold-dim); font-style: italic; margin-bottom: 14px; }
+
+  /* ─── HORIZON ─── */
+  .hbox { border-radius: 4px; padding: 15px 22px 17px; text-align: center; position: relative; }
+  .hbox .inner-frame { position: absolute; inset: 3px; border: 1px solid rgba(201,168,76,0.09); border-radius: 3px; pointer-events: none; }
+  .hbox.way { border: 1px solid var(--gold-25); background: var(--sub); }
+  .hbox.cap { border: 1.5px solid var(--gold); background: var(--gold-10); box-shadow: 0 0 26px var(--gold-10); }
+  .h-years { font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--gold-light); letter-spacing: 1px; margin-bottom: 8px; }
+  .verdict { font-family: var(--mono); font-size: 11.5px; font-weight: 700; letter-spacing: 2.5px; padding: 4px 14px; display: inline-block; border-radius: 2px; margin-bottom: 8px; }
+  .verdict.real { color: var(--gold-light); background: rgba(201,168,76,0.10); border: 1px solid var(--gold-25); }
+  .verdict.cat { color: #0f1d33; background: var(--gold); }
+  .h-title { font-family: var(--serif); color: var(--gold); }
+  .hbox.way .h-title { font-size: 21px; }
+  .hbox.cap .h-title { font-size: 27px; }
+  .h-text { font-size: 14px; color: var(--dim); line-height: 1.5; margin: 8px auto 0; max-width: 700px; }
+  .h-text b { color: var(--gold-light); }
+  .hbox.cap .h-text { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--gold-light); }
+  .hbox.cap .h-text b { color: var(--gold); font-style: normal; }
+  /* ─── BULLETS (20 Sep) ─── */
+  .bl { margin: 0; padding: 0 0 0 14px; text-align: left; }
+  .bl li { padding: 1.5px 0; }
+  .bl li::marker { color: var(--gold-dim); }
+  .bl.center { display: inline-block; }
+
+  .h-arrow { display: flex; flex-direction: column; align-items: center; height: 26px; }
+  .h-arrow .stem { width: 1px; flex: 1; background: var(--gold-dim); }
+  .h-arrow .head { border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 6px solid var(--gold-dim); }
+  .chips-label { text-align: center; font-family: var(--mono); font-size: 9px; color: var(--gold-dim); letter-spacing: 1.5px; margin: 16px 0 9px; }
+  .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; }
+  .chip { background: var(--sub); border: 1px solid var(--sub-border); border-radius: 20px; padding: 6px 15px; font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--white); letter-spacing: 0.8px; }
+  .chip .dot { color: var(--gold); margin-right: 6px; }
+  .chips-side { text-align: center; font-family: var(--mono); font-size: 8px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; margin: 10px 0 6px; }  /* 29 Sep 2026: capstone chips split by side (author, option A) */
+  .h-note { margin-top: 14px; padding-top: 11px; border-top: 1px dashed var(--gold-25); text-align: center; font-family: var(--mono); font-size: 9.5px; color: var(--gold-dim); letter-spacing: 1.1px; line-height: 1.7; }
+  .h-note b { color: var(--gold); font-weight: 700; }
+
+  /* ─── FOOTER ─── */
+  .footer { text-align: center; margin-top: 24px; padding: 16px 16px 0; border-top: 1px solid var(--gold-25); }
+  .footer-quote { font-family: var(--serif); font-size: 16px; color: var(--gold); font-style: italic; line-height: 1.6; }
+  .footer-attr { font-size: 9px; color: var(--gold-dim); font-family: var(--mono); letter-spacing: 3px; margin-top: 6px; }
+</style>
+<div class="page">
+  <div class="texture"></div>
+  <div class="border-frame"></div>
+  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+
+  <div class="content">
+    <div class="title-block">
+      <div class="title-glow"></div>
+      <div class="tag" style="margin-bottom:6px;">4 of 5</div>
+      <div class="title">The Islamabad Accords</div>
+      <div class="tag">Implementing Trump's Vision for Peace in the Middle East</div>
+      <div class="diamond-rule"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+      <div class="tag" style="margin-top:9px;">The Generational Horizon</div>
+    </div>
+
+    <div class="phase-header"><span class="phase-title">The Waypoint and the Capstone</span></div>
+    <div class="phase-note">whatever portion of the horizon the region actually gets, verified progress is kept</div>
+
+    <div class="hbox way">
+      <div class="inner-frame"></div>
+      <div class="h-years">~15 YEARS</div>
+      <div class="verdict real">THE REALISTIC OUTCOME</div>
+      <div class="h-title">Regional D&eacute;tente</div>
+      <div class="h-text"><ul class="bl"><li>Fifteen years without major conflict, alongside real if uneven progress across the five tracks</li><li><b>Major incidents are expected</b> &middot; the institutions exist to keep them from cascading into another regional war</li><li>Near-zero enrichment gives way to the supervised ramp</li></ul></div>
+    </div>
+
+    <div class="h-arrow"><div class="stem"></div><div class="head"></div></div>
+
+    <div class="hbox cap">
+      <div class="inner-frame"></div>
+      <div class="h-years">20 TO 30 YEARS</div>
+      <div class="verdict cat">THE CATASTROPHIC SUCCESS</div>
+      <div class="h-title">Full Regional Normalization</div>
+      <div class="h-text"><ul class="bl"><li>Diplomatic relations among all the states of the region, with <b>the end of US-Iran enmity as the keystone</b></li><li>Not warmth &middot; a channel that holds under stress</li><li>A Middle East where every capital can reach every other in an emergency</li><li>A Middle East that secures itself &middot; regional rivalries settled at its own table</li></ul></div>
+    </div>
+
+    <div class="chips-label">EARNED ON THE CUMULATIVE RECORD &middot; GENERATED BY THE INSTITUTIONS, NOT CLAIMED</div>
+    <div class="chips-side">IRAN &amp; ITS ALLIES</div>
+    <div class="chips">
+      <div class="chip"><span class="dot">&#9670;</span>NO WEAPONS-GRADE ENRICHMENT</div>
+      <div class="chip"><span class="dot">&#9670;</span>NO INTERCONTINENTAL DEVELOPMENT</div>
+      <div class="chip"><span class="dot">&#9670;</span>NO PROHIBITED PROLIFERATION</div>
+    </div>
+    <div class="chips-side">THE US &amp; THE REGION</div>
+    <div class="chips">
+      <div class="chip"><span class="dot">&#9670;</span>SANCTIONS RELIEF DELIVERED</div>
+      <div class="chip"><span class="dot">&#9670;</span>EVERY FRONT OF THE HUDNA HONORED</div>
+      <div class="chip"><span class="dot">&#9670;</span>RECONSTRUCTION MONEY DELIVERED</div>
+    </div>
+
+
+    <div class="footer">
+      <div class="footer-attr">X.COM/THEKINGDAVIDJR</div>
+    </div>
+  </div>
+</div>
+</template>
+<template id="tpl-card-5"><style>
+  :host {
+    --bg: #0a1628;
+    --container: #0f1d33;
+    --sub: #162744;
+    --sub-border: rgba(201,168,76,0.14);
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7234;
+    --gold-10: rgba(201,168,76,0.08);
+    --gold-15: rgba(201,168,76,0.15);
+    --gold-25: rgba(201,168,76,0.25);
+    --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2;
+    --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  :host { margin: 0; padding: 0; }
+  :host { background: #070e18; font-family: var(--sans); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
+
+  .texture {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .border-frame {
+    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
+    border: 2px solid var(--gold-35);
+    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
+  }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .corner svg { width: 100%; height: 100%; }
+  .corner.tl { top: 7px; left: 7px; }
+  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
+  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
+
+  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
+
+  /* ─── TITLE ─── */
+  .title-block { text-align: center; margin-bottom: 24px; position: relative; }
+  .title-glow {
+    position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+    width: 340px; height: 130px;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .title { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--gold); letter-spacing: 0.5px; line-height: 1.1; position: relative; }
+  .tag { font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; margin-top: 8px; text-transform: uppercase; }
+  .diamond-rule { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px auto 0; width: 200px; }
+  .diamond-rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .diamond-rule .diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* ─── PHASE HEADER ─── */
+  .phase-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .phase-label { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; }
+  .phase-title { font-family: var(--serif); font-size: 18px; color: var(--white); line-height: 1.25; }
+  .phase-note { font-family: var(--mono); font-size: 8.5px; color: var(--gold-dim); font-style: italic; margin-bottom: 14px; }
+
+  .limit-hero {
+    background: rgba(201,168,76,0.07); border: 1px dashed var(--gold); border-radius: 3px;
+    padding: 15px 22px 17px; text-align: center; margin-bottom: 9px;
+  }
+  .limit-hero .l-head { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; margin-bottom: 7px; }
+  .limit-hero .l-:host { font-size: 15px; color: var(--dim); line-height: 1.5; max-width: 720px; margin: 0 auto; }
+  .limit-hero .l-body b { color: var(--gold-light); }
+
+  /* ─── LIMITS GRID ─── */
+  .limits { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .limit {
+    background: rgba(10,22,40,0.55); border: 1px dashed var(--gold-25); border-radius: 3px;
+    padding: 12px 15px 13px;
+  }
+  .limit .l-head { font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 1.4px; margin-bottom: 5px; }
+  .limit .l-:host { font-size: 13.5px; color: var(--dim); line-height: 1.45; }
+  .limit .l-body b { color: var(--gold-light); }
+  /* ─── BULLETS (20 Sep) ─── */
+  .bl { margin: 0; padding: 0 0 0 14px; text-align: left; }
+  .bl li { padding: 1.5px 0; }
+  .bl li::marker { color: var(--gold-dim); }
+  .bl.center { display: inline-block; }
+
+
+  .limits-close {
+    margin-top: 15px; padding-top: 13px; border-top: 1px solid var(--gold-25);
+    text-align: center; font-family: var(--serif); font-style: italic;
+    font-size: 17px; color: var(--gold-light); line-height: 1.5;
+  }
+  .limits-close b { color: var(--gold); font-style: normal; }
+
+  /* ─── FOOTER ─── */
+  .footer { text-align: center; margin-top: 24px; padding: 16px 16px 0; border-top: 1px solid var(--gold-25); }
+  .footer-quote { font-family: var(--serif); font-size: 16px; color: var(--gold); font-style: italic; line-height: 1.6; }
+  .footer-verses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }   /* 30 Sep 2026: three verses in one row */
+  .footer-attr { font-size: 9px; color: var(--gold-dim); font-family: var(--mono); letter-spacing: 3px; margin-top: 6px; }
+</style>
+<div class="page">
+  <div class="texture"></div>
+  <div class="border-frame"></div>
+  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+
+  <div class="content">
+    <div class="title-block">
+      <div class="title-glow"></div>
+      <div class="tag" style="margin-bottom:6px;">5 of 5</div>
+      <div class="title">The Islamabad Accords</div>
+      <div class="tag">Implementing Trump's Vision for Peace in the Middle East</div>
+      <div class="diamond-rule"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+      <div class="tag" style="margin-top:9px;">What the Architecture Cannot Do</div>
+    </div>
+
+    <div class="phase-header"><span class="phase-label">LIMITS</span><span class="phase-title">Stated Up Front</span></div>
+    <div class="phase-note">seven things this framework does not claim</div>
+
+    <div class="limit-hero">
+      <div class="l-head">IT NEEDS TRUMP</div>
+      <div class="l-body"><ul class="bl"><li>This runs on one man's personal diplomacy</li><li>Nobody else has the appetite to own it or the standing to move the region</li><li>The architecture is <b>built to outlive him</b>, but nothing gets built without him</li></ul></div>
+    </div>
+
+    <div class="limits">
+      <div class="limit">
+        <div class="l-head">NOTHING IS TRULY IRREVERSIBLE</div>
+        <div class="l-body"><ul class="bl"><li>Irreversibility is an ideal, constrained by politics</li><li>Every element can be undone by a party willing to pay the cost</li><li>What the architecture changes is <b>how slow, how visible, and how damaging</b> reversal becomes</li><li>Finality has chargebacks, and geopolitics files more of them than finance does</li><li>And finality covers acts, not conditions: compliance is continuous, so a party that stops performing ends the series, and ending the series can undo much of what it was building</li></ul></div>
+      </div>
+      <div class="limit">
+        <div class="l-head">NO CENTRAL ENFORCEMENT</div>
+        <div class="l-body"><ul class="bl"><li>The institutions negotiate standards and produce receipts, not adjudications</li><li>Enforcement is left to the <b>distributed anarchy of geopolitics</b></li></ul></div>
+      </div>
+      <div class="limit">
+        <div class="l-head">A WEAK SECURITY GUARANTEE</div>
+        <div class="l-body"><ul class="bl"><li>Nobody is trapped in this</li><li>Staying has to be <b>worth more than leaving</b>, and that is the only thing holding it together</li></ul></div>
+      </div>
+      <div class="limit">
+        <div class="l-head">SANCTIONS RELIEF PRIMARILY AMERICAN</div>
+        <div class="l-body"><ul class="bl"><li>Reality is that relief primarily runs through Washington's political calculations</li><li>What the architecture supplies is a <b>pathway Washington and others can follow</b>, and regional partners with their own reasons to press for it</li></ul></div>
+      </div>
+      <div class="limit">
+        <div class="l-head">THE FAULT LINES ARE ENTRENCHED</div>
+        <div class="l-body"><ul class="bl"><li>Israeli-Palestinian, Sunni-Shia, US-Iran, Arab-Persian, Islamic-Western</li><li>The architecture <b>can only attempt to contain them</b></li></ul></div>
+      </div>
+      <div class="limit">
+        <div class="l-head">D&Eacute;TENTE IS MUTUAL, NOT PROMISED</div>
+        <div class="l-body"><ul class="bl"><li>Nothing guarantees regional actors won't undermine the pace of progress, or won't decide that d&eacute;tente and normalization aren't in their long-term interests</li><li>It's a <b>north star, nothing more</b></li></ul></div>
+      </div>
+    </div>
+
+    <div class="limits-close">The architecture operates at the margins, where the worst outcomes are stumbled into.</div>
+
+    <div class="footer">
+      <div class="footer-verses"><div><div class="footer-quote">"Depart from evil, and do good; seek peace, and pursue it."</div><div class="footer-attr">— PSALM 34:14, KJV</div></div><div><div class="footer-quote">"Blessed are the peacemakers: for they shall be called the children of God."</div><div class="footer-attr">— MATTHEW 5:9, KJV</div></div><div><div class="footer-quote">"And if they incline to peace, incline thou also to it, and trust in Allah."</div><div class="footer-attr">— QURAN 8:61, PICKTHALL</div></div></div>
+      <div class="footer-attr" style="margin-top: 16px;">X.COM/THEKINGDAVIDJR</div>
+    </div>
+  </div>
+</div>
+</template>
+<template id="tpl-ai"><style>
+  :host {
+    --bg: #0a1628;
+    --container: #0f1d33;
+    --sub: #162744;
+    --sub-border: rgba(201,168,76,0.14);
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7234;
+    --gold-10: rgba(201,168,76,0.08);
+    --gold-15: rgba(201,168,76,0.15);
+    --gold-25: rgba(201,168,76,0.25);
+    --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2;
+    --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  :host { margin: 0; padding: 0; }
+  :host { background: #070e18; font-family: var(--sans); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
+
+  .texture {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .border-frame {
+    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
+    border: 2px solid var(--gold-35);
+    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
+  }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .corner svg { width: 100%; height: 100%; }
+  .corner.tl { top: 7px; left: 7px; }
+  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
+  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
+
+  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
+
+  
+  .page { height: 1165px; }
+  .content { position: relative; z-index: 3; height: 100%; padding: 60px 30px; box-sizing: border-box;
+             display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px; text-align: center; }
+  .tag { font-family: var(--mono); font-size: 10.5px; font-weight: 700; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; }
+  .ttl { font-family: var(--serif); font-size: 44px; color: var(--gold); line-height: 1.1; margin-top: 10px; }
+  .fig { width: 840px; height: 252px; position: relative; }
+  .fig > div { transform: scale(0.505); transform-origin: 0 0; position: absolute; left: 0; top: 0; text-align: left; }
+  .fig p { margin: 0; }
+  .cred { display: flex; flex-direction: column; gap: 8px; }
+  .cred .c0 { font-family: var(--serif); font-size: 21px; font-style: italic; color: var(--white); }
+  .cred .c1 { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--gold-dim); letter-spacing: 1.5px; }
+  .cred a { color: var(--gold); text-decoration: none; }
+  .foot { font-family: var(--mono); font-size: 9.5px; color: var(--gold-dim); letter-spacing: 3px; text-transform: uppercase; }
+</style>
+<div class="page">
+  <div class="texture"></div>
+  <div class="border-frame"></div>
+  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+  <div class="content">
+    <div><div class="tag">AI disclosure · how this plan was made</div><div class="ttl">The productive doom scroll state machine</div></div>
+    <div class="fig"><div style="display:flex; width:1664px"><div style="position:relative; width:880px; height:500px; flex-shrink:0"><svg aria-label="The doom scroll loop" viewBox="0 0 880 500" style="position:absolute; left:0; top:0; width:880px; height:500px"><ellipse cx="440" cy="285" rx="310" ry="180" fill="none" stroke="#8a7234" stroke-width="2"/><polygon points="-9,-8 9,0 -9,8" transform="translate(148.7,223.4) rotate(-57.9)" fill="#c9a84c"/><polygon points="-9,-8 9,0 -9,8" transform="translate(334.0,115.9) rotate(-11.9)" fill="#c9a84c"/><polygon points="-9,-8 9,0 -9,8" transform="translate(617.8,137.6) rotate(22.1)" fill="#c9a84c"/><polygon points="-9,-8 9,0 -9,8" transform="translate(747.3,261.5) rotate(77.2)" fill="#c9a84c"/><polygon points="-9,-8 9,0 -9,8" transform="translate(685.9,394.6) rotate(142.9)" fill="#c9a84c"/><polygon points="-9,-8 9,0 -9,8" transform="translate(285.0,440.9) rotate(-161.5)" fill="#c9a84c"/><path d="M720,441 L880,441" stroke="#e0c872" stroke-width="3"/></svg><p style="position:absolute; left:0px; top:6px; width:800px; text-align:left; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#e0c872; letter-spacing:2px; text-transform:uppercase; white-space:nowrap">The doom scroll loop · since 7 October</p><p style="position:absolute; left:5px; top:260px; width:250px; height:50px; line-height:46px; text-align:center; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:600; color:#f0ece2; background:#162744; border:2px solid #c9a84c; border-radius:25px; white-space:nowrap">Read the news</p><p style="position:absolute; left:38px; top:144px; width:330px; height:50px; line-height:46px; text-align:center; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:600; color:#f0ece2; background:#162744; border:2px solid #c9a84c; border-radius:25px; white-space:nowrap">Feel existential dread</p><p style="position:absolute; left:329px; top:83px; width:330px; height:50px; line-height:46px; text-align:center; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:600; color:#f0ece2; background:#162744; border:2px solid #c9a84c; border-radius:25px; white-space:nowrap">Think of half-baked solutions</p><p style="position:absolute; left:583px; top:170px; width:250px; height:50px; line-height:46px; text-align:center; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:600; color:#a8a49a; background:#0f1d33; border:2px dashed #8a7234; border-radius:25px; white-space:nowrap">Talk to AI about it</p><p style="position:absolute; left:614px; top:307px; width:250px; height:50px; line-height:46px; text-align:center; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:600; color:#f0ece2; background:#162744; border:2px solid #c9a84c; border-radius:25px; white-space:nowrap">Manual research</p><p style="position:absolute; left:470px; top:416px; width:250px; height:50px; line-height:46px; text-align:center; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:600; color:#0a1628; background:#c9a84c; border:2px solid #e0c872; border-radius:25px; white-space:nowrap">Write it down</p></div><svg aria-label="What I write down feeds the production loop" viewBox="0 0 64 500" style="width:64px; height:500px; flex-shrink:0"><path d="M0,441 C32,441 32,290 50,290" fill="none" stroke="#e0c872" stroke-width="3"/><polygon points="48,280 64,290 48,300" fill="#e0c872"/></svg><div style="position:relative; width:720px; height:500px; flex-shrink:0"><svg aria-label="The production loop" viewBox="0 0 720 500" style="position:absolute; left:0; top:0; width:720px; height:500px"><ellipse cx="330" cy="290" rx="170" ry="170" fill="none" stroke="#8a7234" stroke-width="2"/><polygon points="-9,-8 9,0 -9,8" transform="translate(245.0,142.8) rotate(-30.0)" fill="#c9a84c"/><polygon points="-9,-8 9,0 -9,8" transform="translate(500.0,290.0) rotate(90.0)" fill="#c9a84c"/><polygon points="-9,-8 9,0 -9,8" transform="translate(245.0,437.2) rotate(-150.0)" fill="#c9a84c"/><path d="M455.0,413.22431864335454 C515.0,377.22431864335454 565.0,330 585.0,298" fill="none" stroke="#e0c872" stroke-width="3"/><polygon points="-10,-9 10,0 -10,9" transform="translate(587.0,294) rotate(-60)" fill="#e0c872"/></svg><p style="position:absolute; left:0px; top:6px; width:700px; text-align:left; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#e0c872; letter-spacing:2px; text-transform:uppercase; white-space:nowrap">The production loop</p><p style="position:absolute; left:15px; top:265px; width:290px; height:50px; line-height:46px; text-align:center; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:600; color:#0a1628; background:#c9a84c; border:2px solid #e0c872; border-radius:25px; white-space:nowrap">Write things down</p><p style="position:absolute; left:270px; top:118px; width:290px; height:50px; line-height:46px; text-align:center; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:600; color:#a8a49a; background:#0f1d33; border:2px dashed #8a7234; border-radius:25px; white-space:nowrap">AI helps refine</p><p style="position:absolute; left:270px; top:412px; width:290px; height:50px; line-height:46px; text-align:center; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:600; color:#0a1628; background:#c9a84c; border:2px solid #e0c872; border-radius:25px; white-space:nowrap">Anti-slop pass</p><p style="position:absolute; left:530px; top:235px; width:150px; height:50px; line-height:46px; text-align:center; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:600; color:#0a1628; background:#c9a84c; border:2px solid #e0c872; border-radius:25px; white-space:nowrap">Present</p></div></div></div>
+    <div class="cred"><div class="c0">The Israeli-Palestinian brainstorming was with ChatGPT ·<br>the US-Iran plan and its artifacts were built with Claude</div><div class="c1">Repository: <a href="https://github.com/dhanna11/islamabad-accords">github.com/dhanna11/islamabad-accords</a></div></div>
+    <div class="foot">x.com/thekingdavidjr</div>
+  </div>
+</div>
+</template>
+<template id="tpl-refs"><style>
+  :host {
+    --bg: #0a1628;
+    --container: #0f1d33;
+    --sub: #162744;
+    --sub-border: rgba(201,168,76,0.14);
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7234;
+    --gold-10: rgba(201,168,76,0.08);
+    --gold-15: rgba(201,168,76,0.15);
+    --gold-25: rgba(201,168,76,0.25);
+    --gold-35: rgba(201,168,76,0.35);
+    --white: #f0ece2;
+    --dim: #a8a49a;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  :host { margin: 0; padding: 0; }
+  :host { background: #070e18; font-family: var(--sans); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
+
+  .texture {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .border-frame {
+    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
+    border: 2px solid var(--gold-35);
+    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
+  }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .corner svg { width: 100%; height: 100%; }
+  .corner.tl { top: 7px; left: 7px; }
+  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
+  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
+  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
+
+  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
+
+  /* ─── TITLE ─── */
+  .title-block { text-align: center; margin-bottom: 24px; position: relative; }
+  .title-glow {
+    position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+    width: 340px; height: 130px;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .title { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--gold); letter-spacing: 0.5px; line-height: 1.1; position: relative; }
+  .tag { font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; margin-top: 8px; text-transform: uppercase; }
+  .diamond-rule { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px auto 0; width: 200px; }
+  .diamond-rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .diamond-rule .diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* ─── PHASE HEADER ─── */
+  .phase-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .phase-label { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; }
+  .phase-title { font-family: var(--serif); font-size: 18px; color: var(--white); line-height: 1.25; }
+  .phase-note { font-family: var(--mono); font-size: 8.5px; color: var(--gold-dim); font-style: italic; margin-bottom: 14px; }
+
+  
+  /* ─── SOURCES ─── */
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+  .sec { background: var(--container); border: 1px solid var(--sub-border); border-radius: 3px; padding: 9px 12px 8px; break-inside: avoid; }
+  .sec.wide { grid-column: 1 / -1; }
+  .sec-label { font-family: var(--mono); font-size: 8.5px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; padding-bottom: 5px; margin-bottom: 4px; border-bottom: 1px dashed var(--gold-25); }
+  .sec-label span { color: var(--gold-dim); font-weight: 400; letter-spacing: 0.8px; text-transform: none; }
+  .row { display: block; text-decoration: none; padding: 3.5px 0; border-bottom: 1px solid rgba(201,168,76,0.06); }
+  .row:last-child { border-bottom: 0; }
+  .row .src { font-family: var(--mono); font-size: 8px; color: var(--gold-dim); letter-spacing: 0.8px; text-transform: uppercase; display: block; line-height: 1.3; }
+  .row .hl { font-family: var(--sans); font-size: 11.5px; color: var(--white); line-height: 1.32; display: block; }
+  .row .hl b { color: var(--gold-light); font-weight: 600; }
+  .grid-wide { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 18px; }
+  .rule-note { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--gold-25); font-family: var(--mono); font-size: 9px; color: var(--gold-dim); letter-spacing: 0.8px; text-align: center; line-height: 1.6; }
+  .rule-note b { color: var(--gold); font-weight: 700; }
+  .footer { text-align: center; margin-top: 22px; padding: 16px 16px 0; border-top: 1px solid var(--gold-25); }
+  .footer-attr { font-size: 9px; color: var(--gold-dim); font-family: var(--mono); letter-spacing: 3px; margin-top: 6px; }
+</style>
+<div class="page">
+  <div class="texture"></div>
+  <div class="border-frame"></div>
+  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
+
+  <div class="content">
+    <div class="title-block">
+      <div class="title-glow"></div>
+      <div class="tag" style="margin-bottom:6px;">References</div>
+      <div class="title">The Islamabad Accords</div>
+      <div class="tag">Implementing Trump's Vision for Peace in the Middle East</div>
+      <div class="diamond-rule"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+      <div class="tag" style="margin-top:9px;">Sources &middot; Assembled From the Public Record</div>
+    </div>
+
+    <div class="phase-header"><span class="phase-title">A Mosaic Found in the Doom Scroll</span></div>
+    <div class="phase-note">a synthesis of proposals · Trump's branding on the package · 45 sources, by file · links are live in the PDF edition</div>
+
+    <div class="grid">
+      <div class="sec"><div class="sec-label">THE INSTRUMENT <span>· the MoU and its collapse</span></div><a class="row" href="https://en.wikisource.org/wiki/Islamabad_Memorandum_of_Understanding_between_the_United_States_of_America_and_the_Islamic_Republic_of_Iran"><span class="src">Wikisource · 17 Jun 2026</span><span class="hl">The Islamabad MoU, full text: Arts. 1, 5, 8, 10, 11, 12</span></a><a class="row" href="https://www.pbs.org/newshour/world/3-tankers-hit-in-latest-attacks-in-the-strait-of-hormuz-british-military-says"><span class="src">AP via PBS · 7 Jul 2026</span><span class="hl">Three tankers hit; the US revokes the oil license the same day</span></a><a class="row" href="https://www.axios.com/2026/07/09/trump-iran-strait-hormuz-battle"><span class="src">Axios · 8 Jul 2026</span><span class="hl">Ceasefire “over”; the frozen funds never moved</span></a><a class="row" href="https://www.axios.com/2026/08/28/trump-iran-hormuz-war-oil"><span class="src">Axios · 28 Aug 2026</span><span class="hl">“That sucker is open”: Washington says it is winning Hormuz</span></a><a class="row" href="https://www.axios.com/2026/09/04/trump-middle-east-iran-post-war-strategy"><span class="src">Axios · 4 Sep 2026</span><span class="hl">Administration drafting a post-war regional plan</span></a></div><div class="sec"><div class="sec-label">HORMUZ <span>· the Commission</span></div><a class="row" href="https://www.brecorder.com/news/40413690/pakistan-hosts-regional-powers-for-iran-talks-with-focus-on-hormuz-proposals"><span class="src">Reuters via Business Recorder · 29 Mar 2026</span><span class="hl">Türkiye, Egypt, Saudi Arabia float a consortium to manage the strait</span></a><a class="row" href="https://www.axios.com/2026/04/27/iran-us-hormuz-strait-nuclear-talks-proposal-pakistan"><span class="src">Axios · 26 Apr 2026</span><span class="hl">Iran offers Hormuz first, the nuclear file later</span></a><a class="row" href="https://maritime-executive.com/article/will-passage-fees-be-charged-in-the-strait-of-hormuz"><span class="src">Maritime Executive · 18 Jun 2026</span><span class="hl">Iran’s Persian Gulf Strait Authority and its transit fees</span></a><a class="row" href="https://www.marinelink.com/news/oman-opens-alternative-hormuz-lanes-540579"><span class="src">MarineLink · 24 Jun 2026</span><span class="hl">Oman opens alternative lanes; the TSS declared unsafe</span></a><a class="row" href="https://www.bourseandbazaar-substack.org/p/how-a-hormuz-fee-could-work"><span class="src">Bourse &amp; Bazaar (Batmanghelidj, Haghirian) · 10 Jul 2026</span><span class="hl">A Hormuz fee paid to a body of all eight Gulf coastal states</span></a><a class="row" href="https://www.timesofisrael.com/oman-hands-iran-proposal-for-joint-control-over-hormuz-with-voluntary-fees/"><span class="src">Reuters via Times of Israel · 28 Jul 2026</span><span class="hl">Oman’s Gulf-backed proposal: joint control, voluntary fees, the Malacca model</span></a><a class="row" href="https://www.aljazeera.com/news/2026/8/5/iran-oman-us-close-to-hormuz-deal-what-do-they-all-want"><span class="src">Al Jazeera · 5 Aug 2026</span><span class="hl">A lane plan: inbound through Iranian waters, outbound through Omani waters, 60 days toll-free</span></a><a class="row" href="https://www.al-monitor.com/originals/2026/08/iran-says-understanding-reached-oman-over-new-hormuz-route-map"><span class="src">Al-Monitor · 17 Aug 2026</span><span class="hl">Iran: an understanding reached with Oman on the route map</span></a><a class="row" href="https://www.aljazeera.com/news/2026/8/26/iran-oman-agree-on-temporary-hormuz-route-what-we-know"><span class="src">Al Jazeera · 26 Aug 2026</span><span class="hl">A temporary route agreed; part of the exit now runs through Iranian waters</span></a></div><div class="sec"><div class="sec-label">NUCLEAR <span>· the Consortium</span></div><a class="row" href="https://www.rferl.org/a/iran-us-consortium-persian-gulf-region/33414121.html"><span class="src">RFE/RL · 15 May 2025</span><span class="hl">Iran pitches an enrichment consortium at the Muscat round</span></a><a class="row" href="https://www.axios.com/2025/06/02/iran-nuclear-deal-proposal-enrich-uranium"><span class="src">Axios · 2 Jun 2025</span><span class="hl">The US offer: enrichment through a regional consortium</span></a><a class="row" href="https://www.axios.com/2025/06/03/iran-nuclear-consortium-trump-proposal"><span class="src">Axios · 3 Jun 2025</span><span class="hl">Iran: a consortium works only on Iranian soil</span></a><a class="row" href="https://thebulletin.org/2025/06/a-nuclear-consortium-in-the-persian-gulf-as-a-basis-for-a-new-nuclear-deal-between-the-united-states-and-iran/"><span class="src">Bulletin of the Atomic Scientists · Jun 2025</span><span class="hl">von Hippel, Glaser, Mian, Mousavian: the Gulf consortium design</span></a><a class="row" href="https://www.yahoo.com/news/articles/us-iran-clash-over-sanctions-112557635.html"><span class="src">Reuters via Yahoo · 22 Feb 2026</span><span class="hl">Tehran again floats exporting HEU, diluting the rest, a regional consortium</span></a><a class="row" href="https://www.pbs.org/newshour/world/un-nuclear-watchdog-says-its-unable-to-verify-whether-iran-has-suspended-all-uranium-enrichment"><span class="src">AP via PBS · 27 Feb 2026</span><span class="hl">The IAEA cannot verify the size or whereabouts of the stockpile</span></a><a class="row" href="https://www.aa.com.tr/en/americas/oman-says-us-iran-talks-reach-agreement-on-zero-stockpiling-of-enriched-uranium/3842447"><span class="src">Anadolu · 28 Feb 2026</span><span class="hl">Oman: zero stockpiling, downblending, full IAEA verification agreed</span></a><a class="row" href="https://www.axios.com/2026/04/17/iran-us-deal-20-billion-frozen-funds-uranium"><span class="src">Axios · 17 Apr 2026</span><span class="hl">$20B cash-for-uranium; split custody under discussion</span></a><a class="row" href="https://www.dropsitenews.com/p/exclusive-iranian-official-outlines-latest-proposal-end-war-trump-weighs-strikes"><span class="src">Drop Site · 23 May 2026</span><span class="hl">Iran&#x27;s own offer: 3.6% ceiling for 10 years, dilution inside Iran, rights recognized</span></a><a class="row" href="https://www.axios.com/2026/06/20/vance-iran-talks-switzerland"><span class="src">Axios · 21 Jun 2026</span><span class="hl">The $6B Qatar account offered in return for IAEA access</span></a></div><div class="sec"><div class="sec-label">THE TABLE <span>· the Hudna and the standing venue</span></div><a class="row" href="https://www.osce.org/helsinki-final-act"><span class="src">OSCE · 1 Aug 1975</span><span class="hl">The Helsinki Final Act</span></a><a class="row" href="https://www.s-cica.org/"><span class="src">CICA · 28 states</span><span class="hl">Iran, Israel and Palestine among the member states of one standing forum</span></a><a class="row" href="https://betterorderproject.org/regional-flashpoints-and-ordering/"><span class="src">Better Order Project · Nov 2024</span><span class="hl">Quincy Proposal 20: a permanent regional security organization with Iran in it</span></a><a class="row" href="https://carnegieendowment.org/research/2025/03/ending-the-new-wars-of-attrition-opportunities-for-collective-regional-security-in-the-middle-east"><span class="src">Carnegie · Mar 2025</span><span class="hl">An OSCE-model body open to all regional states, Israel and Iran included</span></a><a class="row" href="https://www.globalsecurity.org/wmd/library/news/iran/2025/iran-250709-irna02.htm"><span class="src">IRNA · 9 Jul 2025</span><span class="hl">Araghchi calls for “indigenous security mechanisms”</span></a><a class="row" href="https://www.arabnews.com/node/2643621/saudi-arabia"><span class="src">Arab News (FT) · 14 May 2026</span><span class="hl">Saudi Arabia floats a non-aggression pact on the Helsinki model</span></a><a class="row" href="https://www.newarab.com/news/saudi-arabia-pushes-regional-non-aggression-pact-iran"><span class="src">The New Arab (FT) · 15 May 2026</span><span class="hl">“Without Israel it could be counter-productive”</span></a></div><div class="sec wide"><div class="sec-label">RECONSTRUCTION &amp; ASSETS <span>· the Fund and the carve-out</span></div><div class="grid-wide"><a class="row" href="https://iusct.com/wp-content/uploads/2021/02/1-General-Declaration_.pdf"><span class="src">Iran–US Claims Tribunal · 19 Jan 1981</span><span class="hl">Algiers Accords: half of each receipt into a security account for claims</span></a><a class="row" href="https://uncc.un.org/en"><span class="src">UN Compensation Commission · 1991–2022</span><span class="hl">A share of Iraqi oil revenue for thirty years; $52.4B paid</span></a><a class="row" href="https://www.securitycouncilreport.org/un-documents/document/s-res-2803.php"><span class="src">UN Security Council · 17 Nov 2025</span><span class="hl">Res. 2803 endorses the Comprehensive Plan, welcomes the Board of Peace</span></a><a class="row" href="https://www.fdd.org/analysis/2026/02/20/stabilization-force-and-funding-pledged-for-gaza-at-board-of-peace-meeting/"><span class="src">FDD · 20 Feb 2026</span><span class="hl">Board of Peace: ~$17B pledged for Gaza</span></a><a class="row" href="https://www.aljazeera.com/news/2026/4/15/what-are-irans-100bn-in-frozen-assets-and-where-are-they-held"><span class="src">Al Jazeera · 15 Apr 2026</span><span class="hl">The $100bn in frozen assets, and where they sit</span></a><a class="row" href="https://www.thenationalnews.com/news/mena/2026/05/26/the-24bn-question-iran-pushes-us-to-release-frozen-funds-in-qatar-talks/"><span class="src">The National · 26 May 2026</span><span class="hl">Iran’s $24B ask: $12B at signing, $12B within 60 days</span></a><a class="row" href="https://www.timesofisrael.com/liveblog_entry/emerging-us-iran-mou-said-to-reference-possible-300b-postwar-investment-fund-to-aid-tehrans-reconstruction/"><span class="src">Times of Israel (NYT) · 29 May 2026</span><span class="hl">A $300B postwar investment fund in the draft MoU</span></a><a class="row" href="https://fortune.com/2026/06/07/us-frozen-iran-assets-gulf-allies-reconstruction-treasury-secretary-bessent/"><span class="src">Fortune (Bloomberg) · 7 Jun 2026</span><span class="hl">Treasury floats steering frozen Iranian assets to Gulf repairs</span></a><a class="row" href="https://truthsocial.com/@realDonaldTrump/117072424154442498"><span class="src">Truth Social · 10 Aug 2026</span><span class="hl">Trump: Iran “responsible for the damages and death” in Lebanon, Syria, Yemen, Gaza</span></a></div></div><div class="sec wide"><div class="sec-label">ARMS &amp; PRESENCE <span>· the Forum</span></div><div class="grid-wide"><a class="row" href="https://www.nti.org/education-center/treaties-and-regimes/arms-control-and-regional-security-middle-east-acrs/"><span class="src">NTI · 1992–95</span><span class="hl">ACRS: the Madrid arms-control track, and why it stalled</span></a><a class="row" href="https://www.aol.com/articles/analysis-gulf-states-tell-us-140044388.html"><span class="src">Reuters via AOL · 27 Mar 2026</span><span class="hl">Gulf states: ending the war is not enough</span></a><a class="row" href="https://www.gcc-sg.org/en/MediaCenter/News/Pages/news-2026-6-25-10.aspx"><span class="src">US–GCC joint statement · 25 Jun 2026</span><span class="hl">Manama: trade with Iran “conditional and reversible”; missiles, drones, proxies named</span></a><a class="row" href="https://www.timesofisrael.com/china-privately-pushing-iran-to-help-rein-in-houthis-after-saudi-appeal-sources-say"><span class="src">Reuters via Times of Israel · 17 Sep 2026</span><span class="hl">China privately presses Iran on the Houthis after a Saudi appeal</span></a></div></div><div class="sec wide"><div class="sec-label">SANCTIONS <span>· the layer beneath</span></div><div class="grid-wide"><a class="row" href="https://www.lawfaremedia.org/article/nuclear-brinkmanship-us-sanctions-against-iran-explained"><span class="src">Lawfare (Karbassi) · 26 May 2022</span><span class="hl">Waiver vs. termination; EO 13716; the CISADA §401 certification</span></a></div></div>
+    </div>
+
+    <div class="rule-note">EVERY LINK OPENED AND CHECKED 18–26 SEP 2026 · <b>THE ARCHITECTURE ARRANGES WHAT THE RECORD ALREADY CONTAINS</b></div>
+
+    <div class="footer">
+      <div class="footer-attr" style="letter-spacing:1.5px; margin-bottom:6px;"><a href="https://creativecommons.org/licenses/by/4.0/" style="color:inherit; text-decoration:none">© 2026 DAVID HANNA JR. · TEXT AND DESIGN LICENSED CC BY 4.0 · QUOTED MATERIAL AND SOURCES BELONG TO THEIR AUTHORS</a></div>
+      <div class="footer-attr">X.COM/THEKINGDAVIDJR</div>
+    </div>
+  </div>
+</div>
+</template>
+<script>
+(function () {
+  var hosts = document.querySelectorAll('.card-host');
+  hosts.forEach(function (host) {
+    var tpl = document.getElementById('tpl-' + host.dataset.card);
+    var root = host.attachShadow({ mode: 'open' });
+    root.appendChild(tpl.content.cloneNode(true));
+    root.querySelectorAll('a[href^="http"]').forEach(function (a) { a.target = '_blank'; a.rel = 'noopener'; });
+  });
+  function fit() {
+    var avail = document.querySelector('.cards').clientWidth;
+    var s = Math.min(1, avail / 900);
+    hosts.forEach(function (host) { host.style.zoom = s; });
+  }
+  fit();
+  window.addEventListener('resize', fit);
+})();
+</script>
+</body>
+</html>

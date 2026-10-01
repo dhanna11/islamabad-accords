@@ -7,6 +7,7 @@ A static site: two click-through slideshows (the pitch on the front page, the fu
 - `full.html`: the **full deck** slideshow, built from `deck/`. Both pages carry a Pitch | Full deck switch (the page you are on lit, the other a link) at the left of the bar, and in the menu under 640px.
 - `islamabad-accords.pdf`: the PDF edition, linked from the slideshow's PDF button.
 - `islamabad-accords.md`: the plain-text edition, which the "Ask Claude" / "Ask ChatGPT" buttons point the AI at. Generated in the chat; never edit its text here.
+- `web.html`: the web edition, the same text as the PDF with clickable source links (the References slide links it at `web.html#refs`). Generated in the chat; never edit it here.
 - `.nojekyll`: keeps GitHub Pages from running Jekyll, which would turn `islamabad-accords.md` into an HTML page and break its URL.
 - `deck/`: the full deck's export (`deck.json` for slide order and sections, `slides/*.html` for one slide each). This is the source of `full.html`.
 - `pitch/`: the pitch deck's export, same format. This is the source of `index.html`. Do not hand-edit `index.html` or `full.html`.
@@ -28,14 +29,14 @@ A static site: two click-through slideshows (the pitch on the front page, the fu
 The author edits the deck in the Claude chat app, as a Slides artifact: https://claude.ai/artifact/LFbTXx3XuS6AvxPaidPiNC
 Its published files `project/deck.json` and `project/slides/<id>.html` map one-to-one onto `deck/deck.json` and `deck/slides/<id>.html` here. The artifact is the upstream source; `deck/` is a copy of it.
 The pitch deck has its own Slides artifact, https://claude.ai/artifact/WMQcPRojVx9HH6K4RjpZjj; its published `project/deck.json` and `project/slides/<id>.html` map one-to-one onto `pitch/deck.json` and `pitch/slides/<id>.html`.
-The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE, whose published `islamabad-accords.pdf` and `islamabad-accords.md` are the upstream copies of the repo's PDF and plain-text edition.
+The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE, whose published `islamabad-accords.pdf`, `islamabad-accords.md` and `web.html` are the upstream copies of the repo's PDF, plain-text and web edition.
 
 ### Syncing from the deck ("sync from the deck")
 1. List the artifact's files (Artifact tool, `action: "list"`, `scope: "files"`, the URL above) and read `project/deck.json` plus every `project/slides/*.html` (`action: "read"`, `paths`, `out_dir` in the scratchpad).
 2. Compare with `deck/`, do the same for the pitch artifact against `pitch/`, and do step 5 (the PDF and text edition) too. If none of them differs, stop: the site is current.
 3. Otherwise copy the files over `deck/` and `pitch/` (remove slides that are no longer in their artifact), run `python3 build-slideshow.py`, and delete `preview.html` and `preview-full.html`.
 4. Summarize for the author: slides added, removed or reordered, and which slides' text changed. For every removed or renamed slide id, add an entry to `SLIDE_ALIASES` in `build-slideshow.py` pointing it at the slide that now holds its content, so links people shared keep working, and list the redirects in the summary.
-5. The PDF and the plain-text edition come from their own artifact: https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE. Read its published files `islamabad-accords.pdf` and `islamabad-accords.md` (Artifact tool, `action: "read"`, `paths`, `out_dir` in the scratchpad). If either differs from the repo's copy, replace it and say so in the PR summary.
+5. The PDF, plain-text and web editions come from their own artifact: https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE. Read its published files `islamabad-accords.pdf`, `islamabad-accords.md` and `web.html` (Artifact tool, `action: "read"`, `paths`, `out_dir` in the scratchpad). If any differs from the repo's copy, replace it and say so in the PR summary.
 6. Commit and push to the working branch, and open a PR into `main` (merging it publishes the site).
 
 ### Updating after the deck changes (manual)
