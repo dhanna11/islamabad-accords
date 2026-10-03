@@ -87,19 +87,19 @@
    "start": "why-1"
   },
   "transactional": {
-   "description": "Card 1: a ceasefire and three deals, and where the money goes.",
+   "description": "A ceasefire and three deals, and where the money goes.",
    "start": "sec-1"
   },
   "institutions": {
-   "description": "Card 2: five regionally owned institutions and their lineage.",
+   "description": "Five regionally owned institutions and their lineage.",
    "start": "sec-2"
   },
   "trades": {
-   "description": "Card 3: what each side commits on every track, and the layer beneath.",
+   "description": "What each side commits on every track, and the layer beneath.",
    "start": "sec-3"
   },
   "horizon": {
-   "description": "Card 4: the waypoint and the capstone.",
+   "description": "The waypoint and the capstone.",
    "start": "sec-4"
   },
   "close": {
@@ -107,7 +107,7 @@
    "start": "close"
   },
   "appendix": {
-   "description": "Appendix: the pool by the numbers, card 5's seven limits, and the five obvious objections.",
+   "description": "Appendix: the pool by the numbers, the seven limits, and the five obvious objections.",
    "start": "appendix"
   },
   "references": {
