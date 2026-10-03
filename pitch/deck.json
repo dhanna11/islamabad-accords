@@ -37,11 +37,11 @@
    "start": "p-mechanism"
   },
   "transactional": {
-   "description": "Card 1: a ceasefire and three deals, the sequencing, the end of the firestorm, and the year after.",
+   "description": "A ceasefire and three deals, the sequencing, the end of the firestorm, and the year after.",
    "start": "p-three-deals"
   },
   "architectural": {
-   "description": "Cards 2–3: five institutions, the All-Fronts Hudna, and why the 20-point plan.",
+   "description": "Five institutions, the All-Fronts Hudna, and why the 20-point plan.",
    "start": "p-institutions"
   },
   "close": {
