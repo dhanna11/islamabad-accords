@@ -338,6 +338,7 @@ NO CENTRAL ENFORCEMENT
 A WEAK SECURITY GUARANTEE
 - Nobody is trapped in this
 - Staying has to be worth more than leaving, and that is the only thing holding it together
+- The mistrust is asymmetric: a superpower that shapes the order, facing a state that deliberately sits outside it, and no mechanism verifies the stronger side's restraint
 SANCTIONS RELIEF PRIMARILY AMERICAN
 - Reality is that relief primarily runs through Washington's political calculations
 - What the architecture supplies is a pathway Washington and others can follow, and regional partners with their own reasons to press for it
