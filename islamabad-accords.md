@@ -30,7 +30,7 @@ THE CLEARING AND SETTLEMENT LOOP · in four sentences
 1. Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange settles with finality.
 2. That is the ideal loop, the fast path, repeated for a generation.
 3. When a crisis hits, the regional architecture acts like a ratchet: reversing a settled exchange is slower, costlier, more visible, and felt by more parties · resume from where you stopped, not from zero.
-4. Quit outright and you keep what’s closed and lose everything still open · which is designed to be worth more every year, as trade and investment replace frozen assets.
+4. Quit outright and you keep what’s closed and lose everything still open · which is designed to be worth more every year, as trade and long-term investment replace frozen assets and temporary waivers.
 TRANSACTIONAL PHASE
 a ceasefire and three deals
 ARCHITECTURAL PHASE
@@ -89,7 +89,7 @@ WHY HIM
 - It’s his war · his 2nd term’s signature policy in the Middle East, next to the 20-point plan
 - “Run from the Middle East” is not a thing Trump can own
 - The only thing that beats capitulation is a creative grand vision he can own
-- A prize that big gives him the room for maneuver any real deal requires
+- A prize that big gives him the incentive and the room for maneuver any real deal requires
 3
 WHY WOULD TRUMP TAKE A PLAN?
 - He already has · the 20-point plan came through a long, very collaborative process, and his power and influence got it over the line
