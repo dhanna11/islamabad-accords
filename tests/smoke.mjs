@@ -38,6 +38,8 @@ async function open(contextOptions, hash = '') {
 for (const P of PAGES) {
 PAGE = 'file://' + path.join(ROOT, P.file);
 deck = JSON.parse(readFileSync(path.join(ROOT, P.dir, 'deck.json'), 'utf8'));
+// a slide in the middle of this deck, for the navigation checks (3 Oct 2026: was a hard-coded id that left the pitch)
+const MID = deck.order[Math.floor(deck.order.length / 2)];
 console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
 // desktop: slides, links, spill
 {
@@ -112,15 +114,15 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
     "the section menu's phone copies of the Ask links match the bar's");
   check([...links, ...menuLinks].every(l => l.target === '_blank' && l.rel.includes('noopener')), 'outbound links open a new tab with rel=noopener');
 
-  await page.evaluate(() => { location.hash = 'nuclear'; });
+  await page.evaluate(id => { location.hash = id; }, MID);
   const [tab] = await Promise.all([ctx.waitForEvent('page'), page.locator('.ask a').first().click()]);
   await tab.waitForLoadState().catch(() => {});
-  check(tab.url().startsWith('https://claude.ai/new?q=') && (await page.evaluate(() => location.hash)) === '#nuclear',
+  check(tab.url().startsWith('https://claude.ai/new?q=') && (await page.evaluate(() => location.hash)) === '#' + MID,
     'clicking Ask Claude opens a new tab and the slideshow stays on its slide');
 
   await page.keyboard.press('ArrowRight');
   await page.waitForTimeout(200);
-  check((await page.evaluate(() => document.querySelector('.stage.on').dataset.id)) === deck.order[deck.order.indexOf('nuclear') + 1],
+  check((await page.evaluate(() => document.querySelector('.stage.on').dataset.id)) === deck.order[deck.order.indexOf(MID) + 1],
     'the right arrow key moves one slide forward');
   check(errors.length === 0, `no page errors on desktop${errors.length ? ': ' + errors.join('; ') : ''}`);
   await ctx.close();
@@ -129,7 +131,7 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
 // every width: the bar stays one line and the section menu button keeps room to be read and tapped
 for (const width of [1280, 801, 800, 761, 760, 600, 480, 479, 390, 320]) {
   const phone = width <= 760;
-  const { ctx, page, errors } = await open(phone ? { ...devices['iPhone 13'], viewport: { width, height: 800 } } : { viewport: { width, height: 800 } }, '#nuclear');
+  const { ctx, page, errors } = await open(phone ? { ...devices['iPhone 13'], viewport: { width, height: 800 } } : { viewport: { width, height: 800 } }, '#' + MID);
   const m = await page.evaluate(() => {
     const bar = document.querySelector('.bar'), vis = e => e.offsetParent !== null;
     const otherReachable = [...document.querySelectorAll('.bar > .switch, #menu .menu-other')].some(e => getComputedStyle(e).display !== 'none');

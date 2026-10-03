@@ -9,26 +9,14 @@
   "cover",
   "lead",
   "p-why-trump",
-  "p-why-iran",
   "p-mechanism",
   "arc",
   "p-three-deals",
   "sequencing",
-  "cessation",
-  "hormuz",
-  "nuclear",
-  "tranche",
   "recon-story",
-  "p-money",
-  "p-agreement",
   "hard-line",
+  "next-year",
   "p-institutions",
-  "p-trade-hudna",
-  "p-trade-nuclear",
-  "p-trade-hormuz",
-  "p-trade-arms",
-  "p-trade-recon",
-  "p-layer",
   "p-horizon",
   "p-limits",
   "in-sum",
@@ -40,7 +28,7 @@
    "start": "cover"
   },
   "why": {
-   "description": "Why Trump, and why Iran.",
+   "description": "Why Trump.",
    "start": "p-why-trump"
   },
   "how": {
@@ -48,11 +36,11 @@
    "start": "p-mechanism"
   },
   "transactional": {
-   "description": "Card 1: a ceasefire and three deals.",
+   "description": "Card 1: a ceasefire and three deals, the sequencing, and the end of the firestorm.",
    "start": "p-three-deals"
   },
   "architectural": {
-   "description": "Cards 2–4: five institutions, five trades, the layer beneath, the horizon.",
+   "description": "Cards 2–4: five institutions, one year of intense diplomacy, the horizon.",
    "start": "p-institutions"
   },
   "close": {
