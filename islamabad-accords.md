@@ -325,6 +325,7 @@ seven things this framework does not claim
 IT NEEDS TRUMP
 - This runs on one man's personal diplomacy
 - Nobody else has the appetite to own it or the standing to move the region
+- He also has to get the entire region on board: the Arabs, Israel and Iran
 - The architecture is built to outlive him, but nothing gets built without him
 NOTHING IS TRULY IRREVERSIBLE
 - Irreversibility is an ideal, constrained by politics
@@ -464,13 +465,21 @@ Slides that appear only in the deck.
 - Investment and trade at that scale need a regional architecture to protect them, and only Trump can build one
 - He honors wins he claims are his; an Iranian proposal will never be a Trump win
 
-### The one hard line
+### The definitive end of the October 7th Firestorm
 *On agreement of the architectural phase · the armistice*
 - The end of the firestorm is the end of the firestorm
 - No airstrikes, no rocket fire, no ballistic or cruise missiles, no drone attacks, no IEDs, no targeted assassinations, no land grabs, no blockades · no attacks by anyone, on any front
 - Almost everything else in the plan is negotiable
 - Once the firestorm is extinguished, it is extinguished · no exceptions
-*The cycle of extermination that started on October 7th and was exacerbated by Israel’s war in Gaza will finally be ended*
+*The cycle of extermination that started on October 7th and resulted in so much destruction across the Middle East will have finally ended*
+
+### One year of intense diplomacy
+*After the armistice · what comes next*
+- A highly ambitious goal for the Middle East
+- The primary focus: getting the deal across the line and standing up the architecture, through agreements that manage the competition and adjust to the new balance of power
+- Everyone has exhausted themselves · make the deals that recognize that reality
+- Alongside it: disengagement, stabilizing the ceasefires, and the files outside this plan’s scope that it still depends on
+*One year of intense diplomatic activity, not interrupted by any major conflict · then see if the Middle East can abide by it*
 
 ### Iran rebuilds Gaza and Lebanon
 *Reconstruction Tranche · in his words*
