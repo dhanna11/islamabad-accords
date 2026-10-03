@@ -235,7 +235,7 @@ at the Table
 - Commit to a 10–15 yr armistice and disengagement of the Axis toward Israel & US forces, contingent on the pathway not being foreclosed
 ⇄
 - Reciprocal non-aggression and disengagement toward Iran and its allies
-- The US guarantees Israel's compliance, and pursues its interests through the architecture, not around it
+- The US guarantees Israel's compliance; both pursue their interests through the architecture, not around it
 NUCLEAR
 in the Consortium
 - Near-zero enrichment for 10–15 yrs · one protected research cascade below 1%, under Consortium verification
