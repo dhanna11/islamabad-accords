@@ -68,6 +68,8 @@
   "objection-3",
   "objection-4",
   "objection-5",
+  "objection-6",
+  "objection-7",
   "references",
   "sources-1",
   "sources-2",
@@ -107,7 +109,7 @@
    "start": "close"
   },
   "appendix": {
-   "description": "Appendix: the pool by the numbers, the seven limits, and the five obvious objections.",
+   "description": "Appendix: the pool by the numbers, the seven limits, and the seven obvious objections.",
    "start": "appendix"
   },
   "references": {
