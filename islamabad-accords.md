@@ -459,9 +459,9 @@ Slides that appear only in the deck.
 
 ### Why Iran should take a Trump deal
 *Why Iran · the trust deficit*
-- The trust deficit is so large that only a legacy-defining deal for Trump is worth either side’s time
+- Large trust deficit: a legacy-defining deal is the only thing worth each other’s time
 - Tehran was selling exactly that: “the trillion-dollar opportunity that access to our economy represents” · American trade and investment in oil, gas, mining, and aircraft were on the table
-- Trump’s oldest complaint about the JCPOA is economic: “We give them $150 billion, we get nothing” · “They bought 118 Airbus planes, not Boeing planes. They’re spending all of their money in Europe” · he wants to invest in Iran and trade with it
+- Trump’s oldest complaint about the JCPOA is economic: “We give them $150 billion, we get nothing” · “They bought 118 Airbus planes, not Boeing planes. They’re spending all of their money in Europe”
 - Investment and trade at that scale need a regional architecture to protect them, and only Trump can build one
 - He honors wins he claims are his; an Iranian proposal will never be a Trump win
 
@@ -503,10 +503,11 @@ Slides that appear only in the deck.
 
 ### Why the 20-point plan
 *All-Fronts Hudna · why the 20-point plan*
-- The 20-point plan is Trump’s signature peace plan · love it or hate it, the only political process for Gaza and the greater Israeli-Palestinian conflict, backed by the whole region outside Iran and its axis and endorsed by the Security Council
-- The Israeli-Palestinian conflict is the largest fault line in the Middle East · the region’s Cascadia, the one that produces the really big one
 - What started in Gaza has to end in Gaza
-- Acceptance by the Resistance axis aligns the entire region behind a single Israel-Palestine political process, and gives it new momentum
+- The 20-point plan is Trump’s signature peace plan · the only political process for Gaza and the greater Israeli-Palestinian conflict, backed by the whole region outside the Resistance Axis and endorsed by the Security Council
+- The Israeli-Palestinian conflict is the largest fault line in the Middle East · the region’s San Andreas Fault, the one that produces the really big one
+- Acceptance by the Resistance Axis aligns the entire region behind a single Israel-Palestine political process, and gives it new momentum
+- Without forward progress on the Israel-Palestine file, none of this is worthwhile
 
 ### Why near-zero enrichment
 *Nuclear · why this bargain*
@@ -538,32 +539,48 @@ Slides that appear only in the deck.
 - The exact figure doesn’t matter · $500B, $300B, or $100B, what matters is real money put into regional reconstruction and economic ties dense enough to raise the cost of the next war for everyone
 
 ### “It’s overly optimistic”
-*The obvious objections · 1 of 5*
+*The obvious objections · 1 of 7*
 - It’s the fucking Middle East
 - Any plan to bring order to this chaos will be optimistic
 
-### “What if Israel sabotages it?”
-*The obvious objections · 2 of 5*
+### “What if Israel undermines it?”
+*The obvious objections · 2 of 7*
 - It can, like any party, the way the JCPOA was undermined
 - Israel’s permanence is a given, and nothing moves the Middle East more than its existential security interests
 - No architecture for the region survives without meeting them, and this one attempts to
-- Sabotage carries an increasingly high cost with the American nation
+- Undermining it carries an increasingly high cost with the American nation
 
 ### “It still leaves Iran enrichment”
-*The obvious objections · 3 of 5*
+*The obvious objections · 3 of 7*
 - A Persian, Shia state sitting on every fault line in the region will always want a hedge
 - No bombing campaign changes that, only regime change would
 - So the deal caps it: near-zero for 10–15 years, zero HEU, verification first
 
 ### “The Palestinian linkage is the weak link”
-*The obvious objections · 4 of 5*
+*The obvious objections · 4 of 7*
 - It is, and either side could veto it
 - It only asks the region to line up behind the one viable pathway
 - Any future two-state solution will be a Frankenstein of Oslo and the 20-point plan, and this is the best way I found to put the whole region behind it
 
 ### “How is it regionally owned with great-power guarantees?”
-*The obvious objections · 5 of 5*
+*The obvious objections · 5 of 7*
 - It’s a real limit
 - Great powers have to throw their weight around to stand it up
 - The ideal is that they then step back to providing basic services to each side
 - Great-power politics wins over the ideal, for now
+
+### “What about Yemen?”
+*The obvious objections · 6 of 7*
+- Out of scope for V1: the Saudi–Houthi front needs its own political process
+- It is the likeliest place for the All-Fronts Hudna to break first, because Bab el-Mandeb is a choke point and reopening it is existential for Saudi Arabia
+- That is why the Hudna covers Yemen only implicitly: it leaves leeway for when it breaks there
+- The infrastructure for that process is already laid: the Table, the Hudna agreements, and the Hormuz Commission as a template for Bab el-Mandeb
+- The Fund’s regional interconnectedness can reach the Yemeni front too, as an extension of the architecture after V1
+
+### “What about Lebanon?”
+*The obvious objections · 7 of 7*
+- In scope: the All-Fronts Hudna covers Lebanon explicitly, because the Lebanon file has to be handled, and the Fund’s public trust rebuilds it alongside Gaza
+- The Hudna aligns Hezbollah with Hamas behind the 20-point plan
+- With the Axis behind the same ending, Lebanon stops being a second campaign and becomes the leftover of a war both sides have ended on paper
+- That opens room for movement on demilitarizing southern Lebanon, something realistic to break the deadlock over the stalled Israel–Lebanon framework
+- The goal: properly demilitarize south of the Litani, through the official Israel–Lebanon framework, with the Hudna as the side channel that brings Hezbollah along
