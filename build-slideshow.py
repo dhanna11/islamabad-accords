@@ -46,6 +46,7 @@ ICONS = {
   "Warning": '<path d="M12 3 2 20h20z"/><path d="M12 10v4"/><path d="M12 17h.01"/>',
 }
 SECTION_LABEL = {"open": "Cover", "how": "The mechanism", "architectural": "2 · The architecture",  # the pitch's sections (29 Sep 2026)
+                 "plan": "1 · The plan", "delivers": "2 · What it delivers",  # the pitch, regrouped by what the slides do (author, 6 Oct 2026)
                  "cover": "Cover", "core": "The core thesis", "why": "Why Trump", "transactional": "1 · The transactional phase",
                  "institutions": "2 · Five institutions", "trades": "3 · Five trades", "horizon": "4 · The horizon",
                  "limits": "5 · Limits", "close": "The close", "appendix": "Appendix",
