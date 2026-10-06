@@ -12,11 +12,11 @@
   "p-mechanism",
   "arc",
   "p-three-deals",
+  "p-institutions",
   "sequencing",
   "recon-story",
   "hard-line",
   "next-year",
-  "p-institutions",
   "p-trade-hudna",
   "hudna-why",
   "p-limits",
@@ -36,13 +36,13 @@
    "description": "The mechanism and the arc.",
    "start": "p-mechanism"
   },
-  "transactional": {
-   "description": "A ceasefire and three deals, the sequencing, the end of the firestorm, and the year after.",
+  "plan": {
+   "description": "A ceasefire and three deals, the five institutions, and the sequencing.",
    "start": "p-three-deals"
   },
-  "architectural": {
-   "description": "Five institutions, the All-Fronts Hudna, and why the 20-point plan.",
-   "start": "p-institutions"
+  "delivers": {
+   "description": "Gaza and Lebanon rebuilt, the end of the firestorm, the year after, the All-Fronts Hudna, and why the 20-point plan.",
+   "start": "recon-story"
   },
   "close": {
    "description": "Limits, and the close.",
