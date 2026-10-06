@@ -186,10 +186,10 @@ MANDATE 2 · MEDIATION
 Intensive mediation of cross-cutting incidents the other institutions do not contain.
 ANTI-MANDATE · WHAT THE TABLE IS NOT
 - Not a Middle East UN
+- A seat is not normalization · the Table is built for enemies to sit safely across from each other
 - Not a voting body · issues no resolutions
 - Assigns no fault · commands no forces
-- Holds no standing over the other four institutions
-- No secretariat beyond what convening negotiations requires
+- Holds no standing over the other four institutions · no secretariat beyond what convening negotiations requires
 UNCONTAINED DISPUTES RISE TO THE TABLE · NO AUTHORITY FLOWS DOWN
 FILE · NUCLEAR
 
