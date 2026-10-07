@@ -183,7 +183,7 @@ MANDATE 1 · STANDING VENUE · NON-AGGRESSION AND PEACE AGREEMENTS
 THE INITIAL FILE · ALL-FRONTS HUDNA
 The permanent termination of war promised in MoU Art. 1 · US, Iran, and their respective allies.
 MANDATE 2 · MEDIATION
-Intensive mediation of cross-cutting incidents the other institutions do not contain · a venue of last resort, alongside the region's own ad hoc diplomacy.
+Intensive mediation of cross-cutting incidents the other institutions do not contain, alongside the region's own ad hoc diplomacy.
 ANTI-MANDATE · WHAT THE TABLE IS NOT
 - Not a Middle East UN
 - A seat is not normalization · the Table is built for enemies to sit safely across from each other
