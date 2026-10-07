@@ -170,8 +170,8 @@ The agreed architecture is endorsed by a UN Security Council resolution, as the 
 ## Card 2
 
 The Generational Settlement
-five files · five regionally owned institutions, each with its own members, milestones, and remedies
-FILE · THE WAR ITSELF
+five files · five regionally owned institutions, each with its own members, milestones, and rules of procedure
+THE WAR ITSELF
 
 Middle East Peace and Parley Table
 The region and its immediate neighbors · every seat is unconditional
@@ -186,36 +186,45 @@ MANDATE 2 · MEDIATION
 Intensive mediation of cross-cutting incidents the other institutions do not contain.
 ANTI-MANDATE · WHAT THE TABLE IS NOT
 - Not a Middle East UN
+- A seat is not normalization · the Table is built for enemies to sit safely across from each other
 - Not a voting body · issues no resolutions
 - Assigns no fault · commands no forces
-- Holds no standing over the other four institutions
-- No secretariat beyond what convening negotiations requires
+- Holds no standing over the other four institutions · no secretariat beyond what convening negotiations requires
 UNCONTAINED DISPUTES RISE TO THE TABLE · NO AUTHORITY FLOWS DOWN
-FILE · NUCLEAR
+NUCLEAR
 
 Middle East Atoms for Peace Consortium
 Iran · Pakistan · Türkiye · Gulf states · each party’s guarantor seated: Russia, China, the US
-- Verification first, enrichment second
-- Guarantees the negotiated terms alongside the IAEA
-FILE · HORMUZ
+MANDATE
+Prevents nuclear proliferation in the Middle East, by guaranteeing and verifying the region's civilian nuclear programs · with shared enrichment as an optional extension, once verification is established
+FILE
+Iran's program: custody of the exported stockpile, verification of its remaining enrichment capabilities, and the negotiated terms guaranteed alongside the IAEA
+HORMUZ
 
 Hormuz Freedom & Prosperity Commission
 Iran & Oman as littoral states · Gulf states · major transit users
-The strait's permanent settlement: navigation, demining, deconfliction, transit rights, and the economic arrangements that go with them.
-FILE · ARMS & PRESENCE
+MANDATE
+The free and non-discriminatory flow of commerce through the strait
+FILE
+The strait's permanent settlement: navigation, demining, deconfliction, transit rights, and the economic arrangements that go with them
+ARMS & PRESENCE
 
 Peace Through Strength Arms Control Forum
 Iran · Israel · Gulf states · foreign powers with regional forces
-- Arsenals, foreign military presence, arms to non-state actors
-- Reviving the Arms Control and Regional Security talks of 1992–95
-FILE · RECONSTRUCTION
+MANDATE
+Arms control for the whole region: arsenals, foreign military presence, and arms to non-state actors
+FILE
+The war's military aftermath: Iran's missiles, drones and proxies, and post-war American presence and basing
+RECONSTRUCTION
 
 Peace in the Middle East Reconstruction Fund
 Public trust + private investment vehicle
 ~$500B
 REGIONAL PROGRAM
-- Private capital for Iran and the wider region's economic interdependence
-- The public trust for Gaza & Lebanon
+MANDATE
+Rebuilding the region, with shared, interconnected infrastructure as the focus
+FILE
+The war's reconstruction: the public trust for Gaza & Lebanon, matched dollar for dollar by the Board of Peace, within the ~$500B regional program
 FIVE LOOSELY COUPLED TRACKS · THE OPERATING IDEAL: EACH KEEPS OPERATING THROUGH A CRISIS ELSEWHERE · SETTLED EXCHANGES STAY SETTLED
 Board of Peace
 Inaugurates the institutions and hosts the signing · the region governs thereafter.
