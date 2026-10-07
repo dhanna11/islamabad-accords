@@ -159,7 +159,7 @@ approved channels
 EVERY SUBSEQUENT ASSET RELEASE CARRIES AT LEAST A 25% SHARE · NUCLEAR-TRACK PAYMENTS EXEMPT
 What counts as agreement of the architectural phase
 - Acceptance of the five institutions
-- Acceptance of their general mandates
+- Acceptance of their general mandates and initial files
 - Agreement on the range of the negotiating parameters: enrichment percentage, duration, money · not a particular figure, the range on the figures
 - Agreement on the set of candidate nations that could assist in each institution
 On agreement, the wartime escalation unwinds: US forces surged for the war are withdrawn, the sanctions imposed since the June MoU are lifted, and an armistice ending the October 7th Firestorm is declared.
@@ -180,10 +180,10 @@ MANDATE 1 · STANDING VENUE · NON-AGGRESSION AND PEACE AGREEMENTS
 - Non-aggression, restoration, and normalization agreements · brokered here when parties seek it, never exclusively
 - Minimum bureaucracy, maximum agility
 - A realistic substitute for what MoU Art. 12 called for
-THE FILE · ALL-FRONTS HUDNA
+THE INITIAL FILE · ALL-FRONTS HUDNA
 The permanent termination of war promised in MoU Art. 1 · US, Iran, and their respective allies.
 MANDATE 2 · MEDIATION
-Intensive mediation of cross-cutting incidents the other institutions do not contain.
+Intensive mediation of cross-cutting incidents the other institutions do not contain · a venue of last resort, alongside the region's own ad hoc diplomacy.
 ANTI-MANDATE · WHAT THE TABLE IS NOT
 - Not a Middle East UN
 - A seat is not normalization · the Table is built for enemies to sit safely across from each other
@@ -197,7 +197,7 @@ Middle East Atoms for Peace Consortium
 Iran · Pakistan · Türkiye · Gulf states · each party’s guarantor seated: Russia, China, the US
 MANDATE
 Prevents nuclear proliferation in the Middle East, by guaranteeing and verifying the region's civilian nuclear programs · with shared enrichment as an optional extension, once verification is established
-FILE
+INITIAL FILE
 Iran's program: custody of the exported stockpile, verification of its remaining enrichment capabilities, and the negotiated terms guaranteed alongside the IAEA
 HORMUZ
 
@@ -205,7 +205,7 @@ Hormuz Freedom & Prosperity Commission
 Iran & Oman as littoral states · Gulf states · major transit users
 MANDATE
 The free and non-discriminatory flow of commerce through the strait
-FILE
+INITIAL FILE
 The strait's permanent settlement: navigation, demining, deconfliction, transit rights, and the economic arrangements that go with them
 ARMS & PRESENCE
 
@@ -213,7 +213,7 @@ Peace Through Strength Arms Control Forum
 Iran · Israel · Gulf states · foreign powers with regional forces
 MANDATE
 Arms control for the whole region: arsenals, foreign military presence, and arms to non-state actors
-FILE
+INITIAL FILE
 The war's military aftermath: Iran's missiles, drones and proxies, and post-war American presence and basing
 RECONSTRUCTION
 
@@ -223,7 +223,7 @@ Public trust + private investment vehicle
 REGIONAL PROGRAM
 MANDATE
 Rebuilding the region, with shared, interconnected infrastructure as the focus
-FILE
+INITIAL FILE
 The war's reconstruction: the public trust for Gaza & Lebanon, matched dollar for dollar by the Board of Peace, within the ~$500B regional program
 FIVE LOOSELY COUPLED TRACKS · THE OPERATING IDEAL: EACH KEEPS OPERATING THROUGH A CRISIS ELSEWHERE · SETTLED EXCHANGES STAY SETTLED
 Board of Peace
@@ -583,7 +583,7 @@ Slides that appear only in the deck.
 - Out of scope for V1: the Saudi–Houthi front needs its own political process
 - It is the likeliest place for the All-Fronts Hudna to break first, because Bab el-Mandeb is a choke point and reopening it is existential for Saudi Arabia
 - That is why the Hudna covers Yemen only implicitly: it leaves leeway for when it breaks there
-- The infrastructure for that process is already laid: the Table, the Hudna agreements, and the Hormuz Commission as a template for Bab el-Mandeb
+- The infrastructure for that process is already laid: the Table, the Hudna agreements, and the Hormuz Commission as a template for Bab el-Mandeb, as a sister body or a separate file and working group
 - The Fund’s regional interconnectedness can reach the Yemeni front too, as an extension of the architecture after V1
 
 ### “What about Lebanon?”
