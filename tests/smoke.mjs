@@ -137,7 +137,7 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
 }
 
 // every width: the bar stays one line and the section menu button keeps room to be read and tapped
-for (const width of [1280, 1024, 1023, 801, 800, 761, 760, 600, 480, 479, 390, 320]) {
+for (const width of [1280, 1024, 1023, 1001, 1000, 901, 900, 801, 800, 761, 760, 720, 719, 640, 600, 480, 479, 390, 320]) {
   const phone = width <= 760;
   const { ctx, page, errors } = await open(phone ? { ...devices['iPhone 13'], viewport: { width, height: 800 } } : { viewport: { width, height: 800 } }, '#' + MID);
   const m = await page.evaluate(() => {

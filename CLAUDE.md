@@ -4,7 +4,7 @@ A static site: two click-through slideshows (the pitch on the front page, the fu
 
 ## Files
 - `index.html`: the front page, the **pitch** slideshow (16 slides), built from `pitch/`. One self-contained page; it loads only Google Fonts from outside. Old links to full-deck slides on it (`index.html#<id>`) forward to `full.html#<id>`.
-- `full.html`: the **full deck** slideshow, built from `deck/`. Both pages carry a 1 page | Pitch | Full deck switch (the page you are on lit, the others links) at the left of the bar, and in the menu under 640px; `one-page.html` carries the same switch with 1 page lit.
+- `full.html`: the **full deck** slideshow, built from `deck/`. Both pages carry a 1 page | Pitch | Full deck switch (the page you are on lit, the others links) at the left of the bar, and in the menu under 720px; `one-page.html` carries the same switch with 1 page lit.
 - `islamabad-accords.pdf`: the PDF edition, linked from the slideshow's PDF button.
 - `islamabad-accords.md`: the plain-text edition, which the "Ask Claude" / "Ask ChatGPT" buttons point the AI at. Generated in the chat; never edit its text here.
 - `web.html`: the web edition, the same text as the PDF with clickable source links (the References slide links it at `web.html#refs`). Generated in the chat; never edit it here.
