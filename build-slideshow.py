@@ -24,7 +24,7 @@ ONE_PDF = "islamabad-accords-one-page.pdf"   # the one-pager's PDF, the left of 
 OUT = HERE
 PDF_NAME = "islamabad-accords.pdf"
 # "Ask Claude" / "Ask ChatGPT" open a new chat with this prompt filled in. The wording is the author's; change it only on their word.
-ASK_PROMPT = ("Read the Islamabad Accords at https://dhanna11.github.io/islamabad-accords/islamabad-accords.md. "
+ASK_PROMPT = ("Read the Islamabad Accords at https://dhanna11.github.io/islamabad-accords/islamabad-accords-text.html. "   # 8 Oct 2026: the HTML copy of the text edition (ChatGPT's reader refuses the .md's text/markdown); the wording is unchanged
               "Summarize it in a few lines, then answer my questions about it. Be fair to both its strengths and its weaknesses, "
               "and where it falls short, suggest how the plan could be improved.")
 ASK_LINKS = [("Claude", "https://claude.ai/new?q="), ("ChatGPT", "https://chatgpt.com/?q=")]
@@ -134,7 +134,7 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
         page = page.replace('<nav class="bar"', '<nav class="bar single"', 1).replace('<div class="hint">← → to move</div>\n', '', 1)
     kind = {PITCH: "pitch", DECK: "deck", ONEPAGE: "onepage"}.get(deck_dir, "deck")
     desc = ("The Islamabad Accords, an unofficial peace plan for ending the US-Iran war and building a new security architecture "
-            f"for the Middle East: {PAGE_ABOUT[kind].format(n=len(order))}. The complete plan in plain text: {SITE_URL}{MD_NAME}")
+            f"for the Middle East: {PAGE_ABOUT[kind].format(n=len(order))}. The complete plan in plain text: {SITE_URL}{TEXT_HTML}")
     page = page.replace("{{DESCRIPTION}}", H.escape(desc)).replace("{{ABOUT}}", about_html(kind, len(order)) if with_pdf else "")
     return page.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links).replace("{{OTHER}}", other_link) \
                    .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(len(order))) \
@@ -153,12 +153,33 @@ PAGE_ABOUT = {"pitch": "the pitch, a {n}-slide slideshow of the plan (the site's
               "deck": "the full deck, all {n} slides of the plan",
               "onepage": "the one-pager, the whole plan on one slide"}
 
+# The text edition is islamabad-accords.md, but GitHub Pages serves .md as text/markdown, which some AI web readers refuse
+# (8 Oct 2026, ChatGPT: "the web reader rejected it because the server serves it as text/markdown"). So every build also
+# writes the same text as text/plain (.txt) and as a bare HTML page, the copy the Ask buttons and the notes point at.
+TXT_NAME, TEXT_HTML = "islamabad-accords.txt", "islamabad-accords-text.html"
+
+def text_copies():
+    md = (HERE / MD_NAME).read_text()
+    (OUT / TXT_NAME).write_text(md)
+    (OUT / TEXT_HTML).write_text(f"""<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Islamabad Accords · plain text</title>
+<meta name="description" content="The complete text of the Islamabad Accords, an unofficial peace plan: every card, slide and source, as plain text.">
+<link rel="alternate" type="text/markdown" href="{MD_NAME}">
+<style>body {{ margin:0; background:#0a1628; color:#f0ece2; }} pre {{ white-space:pre-wrap; word-wrap:break-word; max-width:80ch; margin:32px auto; padding:0 16px;
+  font: 16px/1.55 'Source Sans 3', 'Segoe UI', Arial, sans-serif; }}</style>
+<pre>{H.escape(md)}</pre>
+</html>
+""")
+
 def about_html(kind, n):
     page = PAGE_ABOUT[kind].format(n=n)
     return (f'<p class="sr-only" id="about-this-page">The Islamabad Accords, an unofficial peace plan for ending the US-Iran war and '
             f'building a new security architecture for the Middle East. This page is {page}; every slide\'s text is in this page, in order. '
             f'The complete plan in plain text (all cards, slides and sources), the best single source for reading or summarizing it: '
-            f'{SITE_URL}{MD_NAME}. Other editions: the pitch ({SITE_URL}), the full deck ({SITE_URL}full.html), the one-pager '
+            f'{SITE_URL}{TEXT_HTML} (the same text as {SITE_URL}{TXT_NAME} and {SITE_URL}{MD_NAME}). Other editions: the pitch ({SITE_URL}), the full deck ({SITE_URL}full.html), the one-pager '
             f'({SITE_URL}one-page.html), the PDF ({SITE_URL}{PDF_NAME}), the one-page PDF ({SITE_URL}{ONE_PDF}) and the web edition '
             f'with clickable sources ({SITE_URL}web.html). An overview for AI tools: {SITE_URL}llms.txt.</p>')
 
@@ -379,6 +400,7 @@ if __name__ == "__main__":
     (OUT / "index.html").write_text(build(True, PITCH, ("full.html", "Full deck"), forward))   # the front page: the pitch
     (OUT / "full.html").write_text(build(True, DECK, ("index.html", "Pitch")))               # the full deck
     (OUT / "one-page.html").write_text(build(True, ONEPAGE, ("index.html", "Pitch")))        # the one-pager, one slide
+    text_copies()                                                                             # the text edition as .txt and HTML
     (OUT / "preview.html").write_text(build(False, PITCH))
     (OUT / "preview-full.html").write_text(build(False, DECK))
     print("index.html (pitch), full.html (full deck) and one-page.html (one-pager) written,", (OUT / "index.html").stat().st_size // 1024, ",",

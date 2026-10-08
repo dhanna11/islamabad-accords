@@ -6,7 +6,8 @@ The site's slideshows hold their text in the page, but the plain-text edition is
 
 ## The plan
 
-- [The complete plan in plain text](https://dhanna11.github.io/islamabad-accords/islamabad-accords.md): Markdown, every card and slide, with sources
+- [The complete plan in plain text](https://dhanna11.github.io/islamabad-accords/islamabad-accords-text.html): every card and slide, with sources, as a plain HTML page
+- The same text as [plain text](https://dhanna11.github.io/islamabad-accords/islamabad-accords.txt) and as [Markdown](https://dhanna11.github.io/islamabad-accords/islamabad-accords.md) (served as text/markdown, which some readers refuse)
 - [Web edition](https://dhanna11.github.io/islamabad-accords/web.html): the same text as the PDF, with clickable source links
 
 ## Slideshows

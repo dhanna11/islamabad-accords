@@ -13,13 +13,13 @@ const PAGES = [{ file: 'index.html', dir: 'pitch', others: [['one-page.html', '1
                // the one-pager as one slide (8 Oct 2026): same bar, its own PDF, nothing to step through
                { file: 'one-page.html', dir: 'onepage', others: [['index.html', 'Pitch'], ['full.html', 'Full deck']], here: '1 page', pdf: 'islamabad-accords-one-page.pdf' }];
 let PAGE, deck;
-const MD_URL = 'https://dhanna11.github.io/islamabad-accords/islamabad-accords.md';
+const MD_URL = 'https://dhanna11.github.io/islamabad-accords/islamabad-accords-text.html';   // the HTML copy of the text edition (8 Oct 2026: the .md's text/markdown is refused by some AI readers)
 
 const failures = [];
 const check = (ok, what) => { console.log(`${ok ? 'ok  ' : 'FAIL'}  ${what}`); if (!ok) failures.push(what); };
 
 // files the page links to, and the one that keeps Pages from turning the .md into HTML
-for (const f of ['islamabad-accords.pdf', 'islamabad-accords.md', '.nojekyll', 'full.html', 'one-page.html', 'islamabad-accords-one-page.pdf', 'llms.txt'])
+for (const f of ['islamabad-accords.pdf', 'islamabad-accords.md', '.nojekyll', 'full.html', 'one-page.html', 'islamabad-accords-one-page.pdf', 'llms.txt', 'islamabad-accords.txt', 'islamabad-accords-text.html'])
   check(existsSync(path.join(ROOT, f)) && (f === '.nojekyll' || statSync(path.join(ROOT, f)).size > 1000), `${f} is present`);
 
 // the one-pager's web page links its own PDF and leads back to the slideshow
@@ -27,6 +27,16 @@ for (const f of ['islamabad-accords.pdf', 'islamabad-accords.md', '.nojekyll', '
   const op = existsSync(path.join(ROOT, 'one-page.html')) ? readFileSync(path.join(ROOT, 'one-page.html'), 'utf8') : '';
   check(op.includes('href="islamabad-accords-one-page.pdf"') && op.includes('href="index.html"') && op.includes('href="full.html"') && /class="seg cur" aria-current="page">1(&nbsp;|\u00a0| )page</.test(op),
     'one-page.html links its own PDF, carries the switch with "1 page" lit, and links the pitch and the full deck');
+}
+
+// the text edition's .txt and HTML copies carry exactly the .md's text
+{
+  const md = readFileSync(path.join(ROOT, 'islamabad-accords.md'), 'utf8');
+  const txt = existsSync(path.join(ROOT, 'islamabad-accords.txt')) ? readFileSync(path.join(ROOT, 'islamabad-accords.txt'), 'utf8') : '';
+  const page = existsSync(path.join(ROOT, 'islamabad-accords-text.html')) ? readFileSync(path.join(ROOT, 'islamabad-accords-text.html'), 'utf8') : '';
+  const unesc = s => s.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, '&');
+  const pre = (page.match(/<pre>([\s\S]*)<\/pre>/) || [])[1] || '';
+  check(txt === md && unesc(pre) === md, 'islamabad-accords.txt and islamabad-accords-text.html hold exactly the text of islamabad-accords.md');
 }
 
 const browser = await chromium.launch();
