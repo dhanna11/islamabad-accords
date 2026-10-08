@@ -26,8 +26,8 @@ jobs:
             echo "::error::The build printed warnings (see above)."
             exit 1
           fi
-          if ! git diff --quiet -- index.html full.html one-page.html || [ -n "$(git status --porcelain -- full.html one-page.html)" ]; then
-            git status --short -- index.html full.html one-page.html
+          if ! git diff --quiet -- index.html full.html one-page.html islamabad-accords.txt islamabad-accords-text.html || [ -n "$(git status --porcelain -- full.html one-page.html islamabad-accords.txt islamabad-accords-text.html)" ]; then
+            git status --short -- index.html full.html one-page.html islamabad-accords.txt islamabad-accords-text.html
             echo "::error::index.html, full.html or one-page.html is out of date. Run python3 build-slideshow.py and commit them; never edit them by hand."
             exit 1
           fi
