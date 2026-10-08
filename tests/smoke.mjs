@@ -117,16 +117,15 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
     'the Ask buttons point to claude.ai/new?q= and chatgpt.com/?q=');
   check(ask.every(l => decodeURIComponent(new URL(l.href).searchParams.get('q') || '').includes(MD_URL)),
     'both Ask prompts point the AI at the text edition');
-  check(links.some(l => l.text === 'PDF' && l.href.endsWith('/' + P.pdf)), `the PDF button links to ${P.pdf}`);
+  // two PDF buttons side by side on every page, the one-pager's first (8 Oct 2026); none in the menu
+  const pdfs = await page.evaluate(() => [...document.querySelectorAll('.bar > .pdfs a')].map(a => ({ href: a.href, text: a.textContent.replace(/\s+/g, ' ').trim(), target: a.target, rel: a.rel })));
+  check(pdfs.length === 2 && pdfs[0].href.endsWith('/islamabad-accords-one-page.pdf') && pdfs[1].href.endsWith('/islamabad-accords.pdf')
+        && (await page.evaluate(() => document.querySelectorAll('#menu a[href$=".pdf"]').length)) === 0,
+    `the bar's PDF buttons link the one-pager and the full plan, side by side: ${pdfs.map(p => `"${p.text}"`).join(' | ')}`);
   check(links.some(l => l.href === 'https://x.com/thekingdavidjr'), 'the feedback note links to x.com/thekingdavidjr');
-  const menuLinks = await page.evaluate(() => [...document.querySelectorAll('#menu li:not(.menu-other):not(.menu-pdf) a')].map(a => ({ href: a.href, target: a.target, rel: a.rel })));
+  const menuLinks = await page.evaluate(() => [...document.querySelectorAll('#menu li:not(.menu-other) a')].map(a => ({ href: a.href, target: a.target, rel: a.rel })));
   check(menuLinks.length === 3 && menuLinks.slice(0, 2).map(l => l.href).join() === ask.map(l => l.href).join(),
     "the section menu's phone copies of the Ask links match the bar's");
-  // both PDFs in the menu on every page, the full plan's label naming its page count (8 Oct 2026)
-  const pdfs = await page.evaluate(() => [...document.querySelectorAll('#menu .menu-pdf a')].map(a => ({ href: a.href, text: a.textContent.trim(), target: a.target, rel: a.rel })));
-  check(pdfs.length === 2 && pdfs[0].href.endsWith('/islamabad-accords.pdf') && /\((\d+) pages\)/.test(pdfs[0].text) && !/\(0 pages\)/.test(pdfs[0].text)
-        && pdfs[1].href.endsWith('/islamabad-accords-one-page.pdf'),
-    `the menu links both PDFs: ${pdfs.map(p => `"${p.text}"`).join(' and ')}`);
   check([...links, ...menuLinks, ...pdfs].every(l => l.target === '_blank' && l.rel.includes('noopener')), 'outbound links open a new tab with rel=noopener');
 
   await page.evaluate(id => { location.hash = id; }, MID);
@@ -149,7 +148,7 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
 }
 
 // every width: the bar stays one line and the section menu button keeps room to be read and tapped
-for (const width of [1280, 1024, 1023, 1001, 1000, 901, 900, 801, 800, 761, 760, 720, 719, 640, 600, 480, 479, 390, 320]) {
+for (const width of [1280, 1151, 1150, 1024, 1001, 1000, 901, 900, 801, 800, 761, 760, 759, 720, 640, 600, 599, 480, 421, 420, 390, 361, 360, 320]) {
   const phone = width <= 760;
   const { ctx, page, errors } = await open(phone ? { ...devices['iPhone 13'], viewport: { width, height: 800 } } : { viewport: { width, height: 800 } }, '#' + MID);
   const m = await page.evaluate(() => {
@@ -159,11 +158,12 @@ for (const width of [1280, 1024, 1023, 1001, 1000, 901, 900, 801, 800, 761, 760,
     const inMenu = [...document.querySelectorAll('#menu .menu-ask')].filter(li => getComputedStyle(li).display !== 'none').length;
     return { overflow: bar.scrollWidth - bar.clientWidth, sect: document.getElementById('sect').getBoundingClientRect().width,
              sectWhole: (s => s.scrollWidth <= s.clientWidth)(document.getElementById('sect')),   // a short label (the one-pager's "1 page") shown whole
-             minH: Math.min(...[...bar.querySelectorAll('.ask a, .bar > .pdf, .btn')].filter(vis).map(e => e.getBoundingClientRect().height)),
-             askReachable: inBar.filter(t => /Claude|ChatGPT/.test(t)).length === 2 || inMenu === 2, otherReachable };
+             minH: Math.min(...[...bar.querySelectorAll('.ask a, .bar > .pdfs a, .btn')].filter(vis).map(e => e.getBoundingClientRect().height)),
+             askReachable: inBar.filter(t => /Claude|ChatGPT/.test(t)).length === 2 || inMenu === 2, otherReachable,
+             pdfsInBar: [...bar.querySelectorAll('.pdfs a')].filter(vis).length === 2 };
   });
-  check(m.overflow <= 0 && (m.sect >= 100 || m.sectWhole) && m.minH >= 28 && m.askReachable && m.otherReachable,
-    `${width}px: bar fits on one line, section button ${Math.round(m.sect)}px wide, controls tappable, both Ask links and the switch (1 page, Pitch, Full deck) reachable`);
+  check(m.overflow <= 0 && (m.sect >= 100 || m.sectWhole) && m.minH >= 28 && m.askReachable && m.otherReachable && m.pdfsInBar,
+    `${width}px: bar fits on one line, section button ${Math.round(m.sect)}px wide, controls tappable, both Ask links, the switch and both PDF buttons reachable`);
 
   if (width === 390) {
     const before = await page.evaluate(() => document.querySelector('.stage.on').dataset.id);

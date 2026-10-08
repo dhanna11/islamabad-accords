@@ -56,6 +56,12 @@
   .pdf { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; color: var(--gold-l); text-decoration:none;
          border:1px solid var(--gold-d); border-radius:20px; padding:9px 14px; }
   .pdf:hover { background: rgba(201,168,76,.12); }
+  .pdfs { display:inline-flex; align-items:center; border:1px solid var(--gold-d); border-radius:20px; flex:none; position:relative; }
+  .pdfs-lbl { font: 400 9px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; color: var(--gold-d); padding:0 2px 0 14px; }
+  .pdfs .seg { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; padding:9px 14px; white-space:nowrap;
+               color: var(--gold-l); text-decoration:none; }
+  .pdfs .seg + .seg { border-left:1px solid var(--gold-d); }
+  .pdfs .seg:hover { background: rgba(201,168,76,.12); }
   .ask { display:flex; align-items:center; gap:8px; }
   .ask-lbl { display:none; font: 400 9px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; text-transform:uppercase; color: var(--gold-d); }
   .note { font: 400 10px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; color: var(--gold-d); text-decoration:none; white-space:nowrap; }
@@ -73,10 +79,6 @@
   .menu-ask a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
                 font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
   .menu-ask a:hover { background: rgba(201,168,76,.12); }
-  .menu-pdf:not(.menu-pdf + .menu-pdf) { border-top:1px solid var(--line); margin-top:6px; padding-top:6px; }
-  .menu-pdf a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
-                font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
-  .menu-pdf a:hover { background: rgba(201,168,76,.12); }
   .menu-ask + .menu-note { border-top:0; margin-top:0; }
   .menu-note { display:none; border-top:1px solid var(--line); margin-top:6px; padding:10px 12px 4px; }
   .menu-note .note { font: 400 13px/1.2 'Source Sans 3', 'Segoe UI', Arial, sans-serif; letter-spacing:0; }
@@ -92,17 +94,22 @@
   @media (max-width: 560px) { .hint { display:none; } .count { display:none; } }
   /* narrow screens keep the bar on one line: short Ask labels under a small "Ask" first, then (under 480px) the Ask links
      move into the section menu; the feedback note moves into the menu under 640px */
-  @media (max-width: 1000px) {   /* was 760px; 800px since the Pitch | Full deck switch (29 Sep 2026); 1000px since the three-way switch (8 Oct 2026), which needs the room */
+  @media (max-width: 1150px) {   /* was 760px; 800px since the Pitch | Full deck switch (29 Sep 2026); 1000px since the three-way switch; 1150px since the two PDF buttons (8 Oct 2026) */
     .bar { gap:8px; }
     .ask { gap:4px; position:relative; }
     .ask-lbl { display:block; position:absolute; left:50%; top:-12px; transform:translateX(-50%); }
     .ask-long { display:none; }
     .ask .pdf, .bar > .pdf { padding:9px 9px; letter-spacing:1px; }
+    .pdfs-lbl { position:absolute; left:50%; top:-12px; transform:translateX(-50%); padding:0; }   /* the label moves above, like Ask's */
+    .pdfs .seg { padding:9px 9px; letter-spacing:1px; }
+    .pdfs .seg-more { display:none; }
   }
   @media (max-width: 900px) { .bar > .switch .seg { padding:9px 6px; letter-spacing:0; } .bar > .switch .seg-more { display:none; } }  /* the switch is wide: "Full deck" shows as "Full" under 900px */
   @media (max-width: 640px) { .viewport > .note { display:none; } .menu-note { display:block; } }
-  @media (max-width: 479px) { .bar .ask { display:none; } .menu-ask { display:block; } }
-  @media (max-width: 719px) { .bar > .switch { display:none; } .menu-other { display:block; } }  /* into the menu under 720px (640px before the three-way switch, 8 Oct 2026) */
+  @media (max-width: 599px) { .bar .ask { display:none; } .menu-ask { display:block; } }   /* 479px before the two PDF buttons (8 Oct 2026) */
+  @media (max-width: 759px) { .bar > .switch { display:none; } .menu-other { display:block; } }  /* into the menu under 760px (640px before the three-way switch, 720px before the two PDF buttons, 8 Oct 2026) */
+  @media (max-width: 420px) { .pdfs .seg { padding:9px 6px; letter-spacing:0; } }   /* phones: the PDF pair tighter */
+  @media (max-width: 360px) { .bar { gap:4px; } .btn { width:34px; height:34px; } .pdfs .seg { padding:9px 4px; } }   /* the smallest phones: every control a little tighter */
 </style>
 
 <main class="viewport" id="vp" aria-live="polite">
@@ -388,10 +395,10 @@
     <button class="sect" id="sect" type="button" aria-haspopup="true" aria-expanded="false">Cover</button>
     <span class="count" id="count">1 / 68</span>
   </div>
-  <div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span><a class="pdf" href="https://claude.ai/new?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener"><span class="ask-long">Ask </span>Claude</a><a class="pdf" href="https://chatgpt.com/?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener"><span class="ask-long">Ask </span>ChatGPT</a></div><a class="pdf" href="islamabad-accords.pdf" target="_blank" rel="noopener">PDF</a>
+  <div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span><a class="pdf" href="https://claude.ai/new?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener"><span class="ask-long">Ask </span>Claude</a><a class="pdf" href="https://chatgpt.com/?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener"><span class="ask-long">Ask </span>ChatGPT</a></div><div class="pdfs" role="group" aria-label="PDF"><span class="pdfs-lbl" aria-hidden="true">PDF</span><a class="seg" href="islamabad-accords-one-page.pdf" target="_blank" rel="noopener">1&nbsp;page</a><a class="seg" href="islamabad-accords.pdf" target="_blank" rel="noopener">Full<span class="seg-more"> plan</span></a></div>
   <button class="btn" id="prev" type="button" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
   <button class="btn" id="next" type="button" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
-  <ul class="menu" id="menu" hidden><li class="menu-other"><div class="switch" role="group" aria-label="One page, pitch or full deck"><a class="seg other" href="one-page.html">1 page</a><a class="seg other" href="index.html">Pitch</a><span class="seg cur" aria-current="page">Full<span class="seg-more"> deck</span></span></div></li><li><button type="button" data-go="0">Cover</button></li><li><button type="button" data-go="1">The core thesis</button></li><li><button type="button" data-go="5">Why Trump</button></li><li><button type="button" data-go="9">1 · The transactional phase</button></li><li><button type="button" data-go="20">2 · Five institutions</button></li><li><button type="button" data-go="29">3 · Five trades</button></li><li><button type="button" data-go="41">4 · The horizon</button></li><li><button type="button" data-go="45">The close</button></li><li><button type="button" data-go="47">Appendix</button></li><li><button type="button" data-go="64">References</button></li><li class="menu-pdf"><a href="islamabad-accords.pdf" target="_blank" rel="noopener">Full plan · PDF (13 pages)</a></li><li class="menu-pdf"><a href="islamabad-accords-one-page.pdf" target="_blank" rel="noopener">One page · PDF</a></li><li class="menu-ask"><a href="https://claude.ai/new?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener">Ask Claude</a></li><li class="menu-ask"><a href="https://chatgpt.com/?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener">Ask ChatGPT</a></li><li class="menu-note"><a class="note" href="https://x.com/thekingdavidjr" target="_blank" rel="noopener">Found a way to improve it? Tell me on X: @thekingdavidjr</a></li></ul>
+  <ul class="menu" id="menu" hidden><li class="menu-other"><div class="switch" role="group" aria-label="One page, pitch or full deck"><a class="seg other" href="one-page.html">1 page</a><a class="seg other" href="index.html">Pitch</a><span class="seg cur" aria-current="page">Full<span class="seg-more"> deck</span></span></div></li><li><button type="button" data-go="0">Cover</button></li><li><button type="button" data-go="1">The core thesis</button></li><li><button type="button" data-go="5">Why Trump</button></li><li><button type="button" data-go="9">1 · The transactional phase</button></li><li><button type="button" data-go="20">2 · Five institutions</button></li><li><button type="button" data-go="29">3 · Five trades</button></li><li><button type="button" data-go="41">4 · The horizon</button></li><li><button type="button" data-go="45">The close</button></li><li><button type="button" data-go="47">Appendix</button></li><li><button type="button" data-go="64">References</button></li><li class="menu-ask"><a href="https://claude.ai/new?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener">Ask Claude</a></li><li class="menu-ask"><a href="https://chatgpt.com/?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener">Ask ChatGPT</a></li><li class="menu-note"><a class="note" href="https://x.com/thekingdavidjr" target="_blank" rel="noopener">Found a way to improve it? Tell me on X: @thekingdavidjr</a></li></ul>
 </nav>
 
 <script>
