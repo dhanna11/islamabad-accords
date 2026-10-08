@@ -77,9 +77,15 @@
   .page { width: auto; max-width: 980px; height: auto; margin: 0 auto; }
   .content { height: auto; padding: 30px 42px 28px; }
   .webnav { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 22px; }
-  .webnav a { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light);
-              text-decoration: none; border: 1px solid var(--gold-dim); border-radius: 20px; padding: 9px 14px; white-space: nowrap; }
-  .webnav a:hover { background: var(--gold-10); }
+  .webnav .pdf { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold-light);
+                 text-decoration: none; border: 1px solid var(--gold-dim); border-radius: 20px; padding: 9px 14px; white-space: nowrap; }
+  .webnav .pdf:hover, .webnav a.seg:hover { background: var(--gold-10); }
+  .switch { display: inline-flex; border: 1px solid var(--gold-dim); border-radius: 20px; overflow: hidden; flex: none; }
+  .switch .seg { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 9px 14px; white-space: nowrap;
+                 color: var(--gold-light); text-decoration: none; }
+  .switch .seg + .seg { border-left: 1px solid var(--gold-dim); }
+  .switch .seg.cur { background: var(--gold); color: var(--bg); }
+  @media (max-width: 400px) { .switch .seg, .webnav .pdf { padding: 9px 9px; letter-spacing: 1px; } }
   .hd .t { font-size: 44px; }
   .hd .st { font-size: 18px; }
   .hd .strap { font-size: 14px; }
@@ -125,7 +131,7 @@
   <div class="border-frame"></div>
   <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
   <div class="content">
-    <nav class="webnav" aria-label="Other editions"><a href="index.html">← The slideshow</a><a href="islamabad-accords-one-page.pdf" target="_blank" rel="noopener">PDF</a></nav>
+    <nav class="webnav" aria-label="Other editions"><div class="switch" role="group" aria-label="One page, pitch or full deck"><span class="seg cur" aria-current="page">1&nbsp;page</span><a class="seg" href="index.html">Pitch</a><a class="seg" href="full.html">Full deck</a></div><a class="pdf" href="islamabad-accords-one-page.pdf" target="_blank" rel="noopener">PDF</a></nav>
     <div class="hd">
       <div><div class="t">The Islamabad Accords</div><div class="st">A Peace Plan Synthesized for Donald Trump · the road, top to bottom</div></div>
       <div class="strap">Ending the October 7th Firestorm<br>Ensuring Iran Never Develops a Nuclear Weapon<br>Building a New Security Architecture for the Middle East</div>
