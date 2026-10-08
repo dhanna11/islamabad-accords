@@ -175,15 +175,14 @@ THE WAR ITSELF
 
 Middle East Peace and Parley Table
 The region and its immediate neighbors · every seat is unconditional
-MANDATE 1 · STANDING VENUE · NON-AGGRESSION AND PEACE AGREEMENTS
-- Neutral ground for deals and deconfliction
-- Non-aggression, restoration, and normalization agreements · brokered here when parties seek it, never exclusively
-- Minimum bureaucracy, maximum agility
+MANDATE · STANDING VENUE AND MEDIATION
 - A realistic substitute for what MoU Art. 12 called for
+- Neutral ground for deals and deconfliction
+- Intensive mediation of cross-cutting incidents the other institutions do not contain
+- Non-aggression, restoration, and normalization agreements · brokered here when parties seek them, alongside the region's own ad hoc diplomacy
+- Minimum bureaucracy, maximum agility
 THE INITIAL FILE · ALL-FRONTS HUDNA
 The permanent termination of war promised in MoU Art. 1 · US, Iran, and their respective allies.
-MANDATE 2 · MEDIATION
-Intensive mediation of cross-cutting incidents the other institutions do not contain · a venue of last resort, alongside the region's own ad hoc diplomacy.
 ANTI-MANDATE · WHAT THE TABLE IS NOT
 - Not a Middle East UN
 - A seat is not normalization · the Table is built for enemies to sit safely across from each other
@@ -347,8 +346,8 @@ NO CENTRAL ENFORCEMENT
 - Enforcement is left to the distributed anarchy of geopolitics
 A WEAK SECURITY GUARANTEE
 - Nobody is trapped in this
+- The largest source of leverage in any deal is the ability to walk away from it
 - Staying has to be worth more than leaving, and that is the only thing holding it together
-- The mistrust is asymmetric: a superpower that shapes the order, facing a state that deliberately sits outside it, and no mechanism verifies the stronger side's restraint
 SANCTIONS RELIEF PRIMARILY AMERICAN
 - Reality is that relief primarily runs through Washington's political calculations
 - What the architecture supplies is a pathway Washington and others can follow, and regional partners with their own reasons to press for it
