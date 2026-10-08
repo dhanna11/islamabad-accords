@@ -65,7 +65,7 @@ a mosaic found in the Doom Scroll
 
 ABOUT THE AUTHOR
 Why listen to me?
-- I’m a code monkey, born and living in the seat of the nation
+- I’m a code monkey, born and living in the seat of the nation, that simply obsessively follows geopolitics
 - I’m an outsider: no political agenda, financial incentive, or reputation to protect, and none of the professional cynicism · a healthy dose of naivete
 - This started as a way to understand the Israeli-Palestinian conflict · after 7 October the US-Iran war was obvious, so I set a delusional goal: a peace framework for the next president, most likely Trump
 - Judge the plan itself · the receipts from the doom scroll are all here: 47 sources
@@ -508,6 +508,14 @@ Slides that appear only in the deck.
 - Private contributions and investments, potential, from anyone who cares about Palestine: $9.9B
 - Long term, rebuilding Gaza costs the world less than leaving an open sore to fester
 - Assumes a $100B pool; the carve-out scales with what is actually released
+
+### Three deals, one gate, five institutions
+*The proposed sequencing · from the talks to the architecture*
+- **Stage 1 · To the ceasefire** (weeks) · Initial talks: Agree the agenda: the three deals + regional and external guarantor consultations · then Ceasefire redeclared: all fronts
+- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Blockade lifts ⇄ attacks halt · simultaneous; H2 · Strait reopened ⇄ oil waiver · Nuclear Bargain: G1 · IAEA access ⇄ $6B+; G2 · HEU downblended ⇄ $5B+ (recover · blend down · verify) · Architecture talks: Institutions · mandates · parameter ranges
+- **The gate · armistice declared** · The October 7th Firestorm is over · Architecture agreed ⇄ the $25B tranche · UN Security Council endorses · The wartime escalation unwinds: US surge forces withdrawn · sanctions since the June MoU lifted
+- **Stage 3 · Initial institutions convene** (~1 year) · Hormuz Commission · initial: Begin talks on the long-term regime for the strait · Consortium · initial: What to do with the uranium · custody among members · verification for Iran and the region · The Table: Signing ceremony at a Board of Peace meeting · attendance highly recommended · The Fund: Initial matching pledges for the Gaza and Lebanon public trust · early private interest in shared, interconnected regional infrastructure · G3 · custody ⇄ $15B+
+- **Stage 4 · Five independent lines** (ongoing · past 20 Jan 2029, the end of the term) · Commission: The strait’s permanent settlement · Consortium: Verification first, enrichment second · The Table: The All-Fronts Hudna formalized · The Fund: Reconstruction and interdependence · Arms Control Forum: Initial talks on post-war regional presence and basing · regional arsenal build-up and retrenchment
 
 ### Why the 20-point plan
 *All-Fronts Hudna · why the 20-point plan*
