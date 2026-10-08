@@ -19,14 +19,8 @@ DECK = Path(os.environ.get("DECK_DIR", HERE / "deck"))
 PITCH = Path(os.environ.get("PITCH_DIR", HERE / "pitch"))
 # the one-pager as one slide (8 Oct 2026, author: "the one page should really be in slide format", not a jarring separate page)
 ONEPAGE = Path(os.environ.get("ONEPAGE_DIR", HERE / "onepage"))
-ONE_PDF = "islamabad-accords-one-page.pdf"   # the one-pager's PDF: what the PDF button gets on one-page.html
+ONE_PDF = "islamabad-accords-one-page.pdf"   # the one-pager's PDF, the left of the two PDF buttons
 
-def pdf_pages(name):
-    """A PDF's page count, read from its page objects (no PDF library: this script needs only Python 3); 0 if unreadable."""
-    try:
-        return len(re.findall(rb"/Type\s*/Page(?![s\w])", (HERE / name).read_bytes()))
-    except OSError:
-        return 0
 OUT = HERE
 PDF_NAME = "islamabad-accords.pdf"
 # "Ask Claude" / "Ask ChatGPT" open a new chat with this prompt filled in. The wording is the author's; change it only on their word.
@@ -119,17 +113,15 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
         ask = "".join(f'<a class="pdf" href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">'
                       f'<span class="ask-long">Ask </span>{name}</a>' for name, url in ASK_LINKS)
         links = (f'<div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span>{ask}</div>'
-                 f'<a class="pdf" href="{ONE_PDF if deck_dir == ONEPAGE else PDF_NAME}" target="_blank" rel="noopener">PDF</a>')
+                 # 8 Oct 2026, author: "the side by side PDF buttons… one page and then full plan… remove them from the menu"
+                 f'<div class="pdfs" role="group" aria-label="PDF"><span class="pdfs-lbl" aria-hidden="true">PDF</span>'
+                 f'<a class="seg" href="{ONE_PDF}" target="_blank" rel="noopener">1&nbsp;page</a>'
+                 f'<a class="seg" href="{PDF_NAME}" target="_blank" rel="noopener">Full<span class="seg-more"> plan</span></a></div>')
         # the Pitch / Full deck toggle sits at the left end of the bar, before the section menu
         here = {PITCH: "index.html", DECK: "full.html", ONEPAGE: "one-page.html"}[deck_dir]
         other_link = switch_html(here) if other else ""
         text, href = FEEDBACK
         note = f'<a class="note" href="{href}" target="_blank" rel="noopener">{H.escape(text)}</a>'
-        # both PDFs on every page (8 Oct 2026, author, option A): the bar's PDF button follows the page; the menu names each file
-        n = pdf_pages(PDF_NAME)
-        if not n: BUILD_WARNINGS.append(f"{PDF_NAME}: could not count its pages for the menu label")
-        menu_html += (f'<li class="menu-pdf"><a href="{PDF_NAME}" target="_blank" rel="noopener">Full plan · PDF ({n} pages)</a></li>'
-                      f'<li class="menu-pdf"><a href="{ONE_PDF}" target="_blank" rel="noopener">One page · PDF</a></li>')
         menu_html += "".join(f'<li class="menu-ask"><a href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">Ask {name}</a></li>'
                              for name, url in ASK_LINKS) + f'<li class="menu-note">{note}</li>'
         if other: menu_html = f'<li class="menu-other">{switch_html(here)}</li>' + menu_html
@@ -205,6 +197,12 @@ TEMPLATE = r"""<!doctype html>
   .pdf { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; color: var(--gold-l); text-decoration:none;
          border:1px solid var(--gold-d); border-radius:20px; padding:9px 14px; }
   .pdf:hover { background: rgba(201,168,76,.12); }
+  .pdfs { display:inline-flex; align-items:center; border:1px solid var(--gold-d); border-radius:20px; flex:none; position:relative; }
+  .pdfs-lbl { font: 400 9px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; color: var(--gold-d); padding:0 2px 0 14px; }
+  .pdfs .seg { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; padding:9px 14px; white-space:nowrap;
+               color: var(--gold-l); text-decoration:none; }
+  .pdfs .seg + .seg { border-left:1px solid var(--gold-d); }
+  .pdfs .seg:hover { background: rgba(201,168,76,.12); }
   .ask { display:flex; align-items:center; gap:8px; }
   .ask-lbl { display:none; font: 400 9px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; text-transform:uppercase; color: var(--gold-d); }
   .note { font: 400 10px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; color: var(--gold-d); text-decoration:none; white-space:nowrap; }
@@ -222,10 +220,6 @@ TEMPLATE = r"""<!doctype html>
   .menu-ask a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
                 font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
   .menu-ask a:hover { background: rgba(201,168,76,.12); }
-  .menu-pdf:not(.menu-pdf + .menu-pdf) { border-top:1px solid var(--line); margin-top:6px; padding-top:6px; }
-  .menu-pdf a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
-                font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
-  .menu-pdf a:hover { background: rgba(201,168,76,.12); }
   .menu-ask + .menu-note { border-top:0; margin-top:0; }
   .menu-note { display:none; border-top:1px solid var(--line); margin-top:6px; padding:10px 12px 4px; }
   .menu-note .note { font: 400 13px/1.2 'Source Sans 3', 'Segoe UI', Arial, sans-serif; letter-spacing:0; }
@@ -241,17 +235,22 @@ TEMPLATE = r"""<!doctype html>
   @media (max-width: 560px) { .hint { display:none; } .count { display:none; } }
   /* narrow screens keep the bar on one line: short Ask labels under a small "Ask" first, then (under 480px) the Ask links
      move into the section menu; the feedback note moves into the menu under 640px */
-  @media (max-width: 1000px) {   /* was 760px; 800px since the Pitch | Full deck switch (29 Sep 2026); 1000px since the three-way switch (8 Oct 2026), which needs the room */
+  @media (max-width: 1150px) {   /* was 760px; 800px since the Pitch | Full deck switch (29 Sep 2026); 1000px since the three-way switch; 1150px since the two PDF buttons (8 Oct 2026) */
     .bar { gap:8px; }
     .ask { gap:4px; position:relative; }
     .ask-lbl { display:block; position:absolute; left:50%; top:-12px; transform:translateX(-50%); }
     .ask-long { display:none; }
     .ask .pdf, .bar > .pdf { padding:9px 9px; letter-spacing:1px; }
+    .pdfs-lbl { position:absolute; left:50%; top:-12px; transform:translateX(-50%); padding:0; }   /* the label moves above, like Ask's */
+    .pdfs .seg { padding:9px 9px; letter-spacing:1px; }
+    .pdfs .seg-more { display:none; }
   }
   @media (max-width: 900px) { .bar > .switch .seg { padding:9px 6px; letter-spacing:0; } .bar > .switch .seg-more { display:none; } }  /* the switch is wide: "Full deck" shows as "Full" under 900px */
   @media (max-width: 640px) { .viewport > .note { display:none; } .menu-note { display:block; } }
-  @media (max-width: 479px) { .bar .ask { display:none; } .menu-ask { display:block; } }
-  @media (max-width: 719px) { .bar > .switch { display:none; } .menu-other { display:block; } }  /* into the menu under 720px (640px before the three-way switch, 8 Oct 2026) */
+  @media (max-width: 599px) { .bar .ask { display:none; } .menu-ask { display:block; } }   /* 479px before the two PDF buttons (8 Oct 2026) */
+  @media (max-width: 759px) { .bar > .switch { display:none; } .menu-other { display:block; } }  /* into the menu under 760px (640px before the three-way switch, 720px before the two PDF buttons, 8 Oct 2026) */
+  @media (max-width: 420px) { .pdfs .seg { padding:9px 6px; letter-spacing:0; } }   /* phones: the PDF pair tighter */
+  @media (max-width: 360px) { .bar { gap:4px; } .btn { width:34px; height:34px; } .pdfs .seg { padding:9px 4px; } }   /* the smallest phones: every control a little tighter */
 </style>
 
 <main class="viewport" id="vp" aria-live="polite">
