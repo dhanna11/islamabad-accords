@@ -132,6 +132,10 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
     page = TEMPLATE
     if len(order) == 1:   # a one-slide page (the one-pager): no arrows, counter or key hint
         page = page.replace('<nav class="bar"', '<nav class="bar single"', 1).replace('<div class="hint">← → to move</div>\n', '', 1)
+    kind = {PITCH: "pitch", DECK: "deck", ONEPAGE: "onepage"}.get(deck_dir, "deck")
+    desc = ("The Islamabad Accords, an unofficial peace plan for ending the US-Iran war and building a new security architecture "
+            f"for the Middle East: {PAGE_ABOUT[kind].format(n=len(order))}. The complete plan in plain text: {SITE_URL}{MD_NAME}")
+    page = page.replace("{{DESCRIPTION}}", H.escape(desc)).replace("{{ABOUT}}", about_html(kind, len(order)) if with_pdf else "")
     return page.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links).replace("{{OTHER}}", other_link) \
                    .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(len(order))) \
                    .replace("{{ALIASES}}", json.dumps(aliases)) \
@@ -139,11 +143,32 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
                    .replace("<title>The Islamabad Accords</title>", {PITCH: "<title>The Islamabad Accords</title>", DECK: "<title>The Islamabad Accords · Full deck</title>",
                                                                      ONEPAGE: "<title>The Islamabad Accords · One page</title>"}.get(deck_dir, "<title>The Islamabad Accords</title>"))
 
+# For AI tools that read the page through a web fetch (8 Oct 2026, author: "leave some instructions in the html… easier to grok
+# when a LLM looks at it"): fetch tools drop scripts, styles and comments, so the help is plain text, factual, no instructions
+# to the model. A meta description and a text/markdown alternate in the head, and one visually hidden paragraph (the
+# screen-reader technique) at the top of the page naming what the page is and where the whole plan is in plain text.
+SITE_URL = "https://dhanna11.github.io/islamabad-accords/"
+MD_NAME = "islamabad-accords.md"
+PAGE_ABOUT = {"pitch": "the pitch, a {n}-slide slideshow of the plan (the site's front page)",
+              "deck": "the full deck, all {n} slides of the plan",
+              "onepage": "the one-pager, the whole plan on one slide"}
+
+def about_html(kind, n):
+    page = PAGE_ABOUT[kind].format(n=n)
+    return (f'<p class="sr-only" id="about-this-page">The Islamabad Accords, an unofficial peace plan for ending the US-Iran war and '
+            f'building a new security architecture for the Middle East. This page is {page}; every slide\'s text is in this page, in order. '
+            f'The complete plan in plain text (all cards, slides and sources), the best single source for reading or summarizing it: '
+            f'{SITE_URL}{MD_NAME}. Other editions: the pitch ({SITE_URL}), the full deck ({SITE_URL}full.html), the one-pager '
+            f'({SITE_URL}one-page.html), the PDF ({SITE_URL}{PDF_NAME}), the one-page PDF ({SITE_URL}{ONE_PDF}) and the web edition '
+            f'with clickable sources ({SITE_URL}web.html). An overview for AI tools: {SITE_URL}llms.txt.</p>')
+
 TEMPLATE = r"""<!doctype html>
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Islamabad Accords</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="alternate" type="text/markdown" href="islamabad-accords.md" title="The Islamabad Accords, the complete plan in plain text">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
@@ -223,6 +248,7 @@ TEMPLATE = r"""<!doctype html>
   .menu-ask + .menu-note { border-top:0; margin-top:0; }
   .menu-note { display:none; border-top:1px solid var(--line); margin-top:6px; padding:10px 12px 4px; }
   .menu-note .note { font: 400 13px/1.2 'Source Sans 3', 'Segoe UI', Arial, sans-serif; letter-spacing:0; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
   :focus-visible { outline: 2px solid var(--gold-l); outline-offset: 3px; }
   .menu { position:absolute; left:16px; bottom: calc(var(--bar) + env(safe-area-inset-bottom, 0px) + 8px); background: var(--deep);
           border:1px solid var(--line); border-radius:6px; padding:8px; margin:0; list-style:none; min-width:260px; max-width: calc(100vw - 32px);
@@ -254,6 +280,7 @@ TEMPLATE = r"""<!doctype html>
 </style>
 
 <main class="viewport" id="vp" aria-live="polite">
+{{ABOUT}}
 {{SLIDES}}
 <div class="hint">← → to move</div>
 {{NOTE}}

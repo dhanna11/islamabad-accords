@@ -10,6 +10,7 @@ A static site: two click-through slideshows (the pitch on the front page, the fu
 - `web.html`: the web edition, the same text as the PDF with clickable source links (the References slide links it at `web.html#refs`). Generated in the chat; never edit it here.
 - `one-page.html`: the **one-pager** slideshow (one slide), built from `onepage/`, the first segment of the switch; `islamabad-accords-one-page.pdf` is the letter-size one-pager, the left PDF button on every page (generated in the chat; never edit it here).
 - `onepage/`: the one-pager's export, same format as `deck/` (one slide). This is the source of `one-page.html`; do not hand-edit `one-page.html`.
+- `llms.txt`: a plain overview of the site for AI tools (the llms.txt convention), pointing them at `islamabad-accords.md`. Each slideshow page also carries a meta description, a `text/markdown` alternate link and one visually hidden paragraph (`#about-this-page`) saying the same; all factual, no instructions to the model. Keep them in step with the editions.
 - `.nojekyll`: keeps GitHub Pages from running Jekyll, which would turn `islamabad-accords.md` into an HTML page and break its URL.
 - `deck/`: the full deck's export (`deck.json` for slide order and sections, `slides/*.html` for one slide each). This is the source of `full.html`.
 - `pitch/`: the pitch deck's export, same format. This is the source of `index.html`. Do not hand-edit `index.html` or `full.html`.

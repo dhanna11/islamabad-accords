@@ -1,0 +1,25 @@
+# The Islamabad Accords
+
+> An unofficial peace plan for ending the US-Iran war and building a new security architecture for the Middle East: a ceasefire and three deals, an armistice (the All-Fronts Hudna), then five regionally owned institutions. A private author's proposal, made with AI assistance (the plan has its own AI disclosure). Licensed CC BY 4.0.
+
+The site's slideshows hold their text in the page, but the plain-text edition is the best single source for reading, quoting or summarizing the plan: it has every card, page and deck-only slide in order, with sources.
+
+## The plan
+
+- [The complete plan in plain text](https://dhanna11.github.io/islamabad-accords/islamabad-accords.md): Markdown, every card and slide, with sources
+- [Web edition](https://dhanna11.github.io/islamabad-accords/web.html): the same text as the PDF, with clickable source links
+
+## Slideshows
+
+- [Pitch](https://dhanna11.github.io/islamabad-accords/): the short version, the site's front page
+- [Full deck](https://dhanna11.github.io/islamabad-accords/full.html): every slide, including the limits, objections and sources
+- [One page](https://dhanna11.github.io/islamabad-accords/one-page.html): the whole plan on one slide
+
+## PDFs
+
+- [Full plan](https://dhanna11.github.io/islamabad-accords/islamabad-accords.pdf): the print edition
+- [One page](https://dhanna11.github.io/islamabad-accords/islamabad-accords-one-page.pdf): the letter-size one-pager
+
+## Author
+
+- [x.com/thekingdavidjr](https://x.com/thekingdavidjr)

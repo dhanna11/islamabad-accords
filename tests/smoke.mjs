@@ -19,7 +19,7 @@ const failures = [];
 const check = (ok, what) => { console.log(`${ok ? 'ok  ' : 'FAIL'}  ${what}`); if (!ok) failures.push(what); };
 
 // files the page links to, and the one that keeps Pages from turning the .md into HTML
-for (const f of ['islamabad-accords.pdf', 'islamabad-accords.md', '.nojekyll', 'full.html', 'one-page.html', 'islamabad-accords-one-page.pdf'])
+for (const f of ['islamabad-accords.pdf', 'islamabad-accords.md', '.nojekyll', 'full.html', 'one-page.html', 'islamabad-accords-one-page.pdf', 'llms.txt'])
   check(existsSync(path.join(ROOT, f)) && (f === '.nojekyll' || statSync(path.join(ROOT, f)).size > 1000), `${f} is present`);
 
 // the one-pager's web page links its own PDF and leads back to the slideshow
@@ -101,6 +101,17 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
     return out;
   }));
   check(spill.length === 0, `no slide content spills past the slide edge${spill.length ? ': ' + spill.join(', ') : ''}`);
+
+  // for AI tools reading the page as text (8 Oct 2026): a description, a text/markdown alternate, and a hidden paragraph
+  // naming the plain-text edition; hidden means it takes no space on screen
+  const ai = await page.evaluate(() => {
+    const p = document.getElementById('about-this-page'), r = p && p.getBoundingClientRect();
+    return { desc: document.querySelector('meta[name="description"]')?.content || '',
+             alt: document.querySelector('link[rel="alternate"][type="text/markdown"]')?.getAttribute('href') || '',
+             text: p ? p.textContent : '', hidden: !!r && r.width <= 1 && r.height <= 1 };
+  });
+  check(ai.desc.includes(MD_URL) && ai.alt === 'islamabad-accords.md' && ai.text.includes(MD_URL) && ai.hidden,
+    'for AI tools: a description, a plain-text alternate and a hidden note all point at the text edition');
 
   // the bar's own links (the section menu, also inside the bar, holds phone copies of the Ask links and the note)
   const other = await page.evaluate(() => ['.bar > .switch', '#menu .menu-other'].map(sel =>
