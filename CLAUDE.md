@@ -4,15 +4,16 @@ A static site: two click-through slideshows (the pitch on the front page, the fu
 
 ## Files
 - `index.html`: the front page, the **pitch** slideshow (16 slides), built from `pitch/`. One self-contained page; it loads only Google Fonts from outside. Old links to full-deck slides on it (`index.html#<id>`) forward to `full.html#<id>`.
-- `full.html`: the **full deck** slideshow, built from `deck/`. Both pages carry a 1 page | Pitch | Full deck switch (the page you are on lit, the others links) at the left of the bar, and in the menu under 720px; `one-page.html` carries the same switch with 1 page lit.
+- `full.html`: the **full deck** slideshow, built from `deck/`. Both pages carry a 1 page | Pitch | Full deck switch (the page you are on lit, the others links) at the left of the bar, and in the menu under 720px; `one-page.html` carries the same bar with 1 page lit.
 - `islamabad-accords.pdf`: the PDF edition, linked from the slideshow's PDF button.
 - `islamabad-accords.md`: the plain-text edition, which the "Ask Claude" / "Ask ChatGPT" buttons point the AI at. Generated in the chat; never edit its text here.
 - `web.html`: the web edition, the same text as the PDF with clickable source links (the References slide links it at `web.html#refs`). Generated in the chat; never edit it here.
-- `one-page.html` and `islamabad-accords-one-page.pdf`: the one-pager, as a web page (the first segment of the switch) and as the PDF that page links. Generated in the chat; never edit them here.
+- `one-page.html`: the **one-pager** slideshow (one slide), built from `onepage/`, the first segment of the switch; its PDF button links `islamabad-accords-one-page.pdf` (the letter-size one-pager, generated in the chat; never edit it here).
+- `onepage/`: the one-pager's export, same format as `deck/` (one slide). This is the source of `one-page.html`; do not hand-edit `one-page.html`.
 - `.nojekyll`: keeps GitHub Pages from running Jekyll, which would turn `islamabad-accords.md` into an HTML page and break its URL.
 - `deck/`: the full deck's export (`deck.json` for slide order and sections, `slides/*.html` for one slide each). This is the source of `full.html`.
 - `pitch/`: the pitch deck's export, same format. This is the source of `index.html`. Do not hand-edit `index.html` or `full.html`.
-- `build-slideshow.py`: regenerates `index.html` from `pitch/` and `full.html` from `deck/` (plus `preview.html` and `preview-full.html`, never committed). It needs only Python 3.
+- `build-slideshow.py`: regenerates `index.html` from `pitch/`, `full.html` from `deck/` and `one-page.html` from `onepage/` (plus `preview.html` and `preview-full.html`, never committed). It needs only Python 3.
 - `README.md`: the human steps for GitHub Pages and a custom domain.
 - `LICENSE` (MIT: build scripts, tests, workflow, page wrapper) and `LICENSE-CONTENT.md` (CC BY 4.0: text and design, in every edition). The copyright notice on the References slide comes from the deck; don't edit it here.
 - `.github/workflows/check.yml` and `tests/`: the check that runs on every PR (see "Checks" below).
@@ -30,14 +31,14 @@ A static site: two click-through slideshows (the pitch on the front page, the fu
 The author edits the deck in the Claude chat app, as a Slides artifact: https://claude.ai/artifact/LFbTXx3XuS6AvxPaidPiNC
 Its published files `project/deck.json` and `project/slides/<id>.html` map one-to-one onto `deck/deck.json` and `deck/slides/<id>.html` here. The artifact is the upstream source; `deck/` is a copy of it.
 The pitch deck has its own Slides artifact, https://claude.ai/artifact/WMQcPRojVx9HH6K4RjpZjj; its published `project/deck.json` and `project/slides/<id>.html` map one-to-one onto `pitch/deck.json` and `pitch/slides/<id>.html`.
-The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE, whose published `islamabad-accords.pdf`, `islamabad-accords.md`, `web.html`, `one-page.html` and `islamabad-accords-one-page.pdf` are the upstream copies of the repo's PDF, plain-text and web edition and the one-pager.
+The PDF edition has its own artifact, https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE, whose published `islamabad-accords.pdf`, `islamabad-accords.md`, `web.html` and `islamabad-accords-one-page.pdf` are the upstream copies of the repo's PDF, plain-text and web edition and the one-pager's PDF. The one-pager slide's upstream is noted in the sync summary when it is first published.
 
 ### Syncing from the deck ("sync from the deck")
 1. List the artifact's files (Artifact tool, `action: "list"`, `scope: "files"`, the URL above) and read `project/deck.json` plus every `project/slides/*.html` (`action: "read"`, `paths`, `out_dir` in the scratchpad).
 2. Compare with `deck/`, do the same for the pitch artifact against `pitch/`, and do step 5 (the PDF and text edition) too. If none of them differs, stop: the site is current.
 3. Otherwise copy the files over `deck/` and `pitch/` (remove slides that are no longer in their artifact), run `python3 build-slideshow.py`, and delete `preview.html` and `preview-full.html`.
 4. Summarize for the author: slides added, removed or reordered, and which slides' text changed. For every removed or renamed slide id, add an entry to `SLIDE_ALIASES` in `build-slideshow.py` pointing it at the slide that now holds its content, so links people shared keep working, and list the redirects in the summary.
-5. The PDF, plain-text and web editions come from their own artifact: https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE. Read its published files `islamabad-accords.pdf`, `islamabad-accords.md`, `web.html`, `one-page.html` and `islamabad-accords-one-page.pdf` (Artifact tool, `action: "read"`, `paths`, `out_dir` in the scratchpad). If any differs from the repo's copy, replace it and say so in the PR summary.
+5. The PDF, plain-text and web editions come from their own artifact: https://claude.ai/artifact/EQe2iJS9XMf37GSy1zjjSE. Read its published files `islamabad-accords.pdf`, `islamabad-accords.md`, `web.html` and `islamabad-accords-one-page.pdf` (Artifact tool, `action: "read"`, `paths`, `out_dir` in the scratchpad). If any differs from the repo's copy, replace it and say so in the PR summary.
 6. Commit and push to the working branch, and open a PR into `main` (merging it publishes the site).
 
 ### Updating after the deck changes (manual)

@@ -1,0 +1,32 @@
+{
+ "v": 4,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-10-08T02:58:17Z"
+ },
+ "title": "The Islamabad Accords · One page",
+ "order": [
+  "one-page"
+ ],
+ "sections": {
+  "one-page": {
+   "description": "The plan on one slide: the road from the ceasefire to normalization.",
+   "start": "one-page"
+  }
+ },
+ "faces": {
+  "instrument-serif": {
+   "family": "Instrument Serif",
+   "href": "https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap"
+  },
+  "jetbrains-mono": {
+   "family": "JetBrains Mono",
+   "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+  },
+  "source-sans-3": {
+   "family": "Source Sans 3",
+   "href": "https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap"
+  }
+ },
+ "designSystems": []
+}

@@ -8,8 +8,10 @@ import path from 'node:path';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // 29 Sep 2026: two pages. index.html is the pitch (the front page, from pitch/); full.html is the full deck (from deck/).
-const PAGES = [{ file: 'index.html', dir: 'pitch', others: [['one-page.html', '1 page'], ['full.html', 'Full deck']], here: 'Pitch' },
-               { file: 'full.html', dir: 'deck', others: [['one-page.html', '1 page'], ['index.html', 'Pitch']], here: 'Full deck' }];
+const PAGES = [{ file: 'index.html', dir: 'pitch', others: [['one-page.html', '1 page'], ['full.html', 'Full deck']], here: 'Pitch', pdf: 'islamabad-accords.pdf' },
+               { file: 'full.html', dir: 'deck', others: [['one-page.html', '1 page'], ['index.html', 'Pitch']], here: 'Full deck', pdf: 'islamabad-accords.pdf' },
+               // the one-pager as one slide (8 Oct 2026): same bar, its own PDF, nothing to step through
+               { file: 'one-page.html', dir: 'onepage', others: [['index.html', 'Pitch'], ['full.html', 'Full deck']], here: '1 page', pdf: 'islamabad-accords-one-page.pdf' }];
 let PAGE, deck;
 const MD_URL = 'https://dhanna11.github.io/islamabad-accords/islamabad-accords.md';
 
@@ -24,7 +26,7 @@ for (const f of ['islamabad-accords.pdf', 'islamabad-accords.md', '.nojekyll', '
 {
   const op = existsSync(path.join(ROOT, 'one-page.html')) ? readFileSync(path.join(ROOT, 'one-page.html'), 'utf8') : '';
   check(op.includes('href="islamabad-accords-one-page.pdf"') && op.includes('href="index.html"') && op.includes('href="full.html"') && /class="seg cur" aria-current="page">1(&nbsp;|\u00a0| )page</.test(op),
-    'one-page.html links its PDF, carries the switch with "1 page" lit, and links the pitch and the full deck');
+    'one-page.html links its own PDF, carries the switch with "1 page" lit, and links the pitch and the full deck');
 }
 
 const browser = await chromium.launch();
@@ -73,7 +75,7 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
   }
   check(Object.keys(aliases).length > 0 && badAlias.length === 0,
     `old slide links redirect to their new slides (${Object.keys(aliases).length})${badAlias.length ? ': ' + badAlias.join(', ') : ''}`);
-  } else {
+  } else if (P.dir === 'pitch') {
     // links shared before the pitch became the front page point at full-deck slides on index.html: they must forward
     const fwd = JSON.parse(readFileSync(path.join(ROOT, P.file), 'utf8').match(/const FORWARD = (\{.*?\});/)[1]);
     const badFwd = [];
@@ -115,7 +117,7 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
     'the Ask buttons point to claude.ai/new?q= and chatgpt.com/?q=');
   check(ask.every(l => decodeURIComponent(new URL(l.href).searchParams.get('q') || '').includes(MD_URL)),
     'both Ask prompts point the AI at the text edition');
-  check(links.some(l => l.text === 'PDF' && l.href.endsWith('/islamabad-accords.pdf')), 'the PDF button links to islamabad-accords.pdf');
+  check(links.some(l => l.text === 'PDF' && l.href.endsWith('/' + P.pdf)), `the PDF button links to ${P.pdf}`);
   check(links.some(l => l.href === 'https://x.com/thekingdavidjr'), 'the feedback note links to x.com/thekingdavidjr');
   const menuLinks = await page.evaluate(() => [...document.querySelectorAll('#menu li:not(.menu-other) a')].map(a => ({ href: a.href, target: a.target, rel: a.rel })));
   check(menuLinks.length === 3 && menuLinks.slice(0, 2).map(l => l.href).join() === ask.map(l => l.href).join(),
@@ -130,8 +132,13 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
 
   await page.keyboard.press('ArrowRight');
   await page.waitForTimeout(200);
-  check((await page.evaluate(() => document.querySelector('.stage.on').dataset.id)) === deck.order[deck.order.indexOf(MID) + 1],
-    'the right arrow key moves one slide forward');
+  if (deck.order.length > 1)
+    check((await page.evaluate(() => document.querySelector('.stage.on').dataset.id)) === deck.order[deck.order.indexOf(MID) + 1],
+      'the right arrow key moves one slide forward');
+  else
+    check((await page.evaluate(() => document.querySelector('.stage.on').dataset.id)) === MID
+          && (await page.evaluate(() => ['prev', 'next', 'count'].every(id => getComputedStyle(document.getElementById(id)).display === 'none'))),
+      'one slide: the arrows and the counter are hidden, and the right arrow key stays on the slide');
   check(errors.length === 0, `no page errors on desktop${errors.length ? ': ' + errors.join('; ') : ''}`);
   await ctx.close();
 }
@@ -146,10 +153,11 @@ for (const width of [1280, 1024, 1023, 1001, 1000, 901, 900, 801, 800, 761, 760,
     const inBar = [...bar.querySelectorAll('a')].filter(vis).map(a => a.textContent.trim());
     const inMenu = [...document.querySelectorAll('#menu .menu-ask')].filter(li => getComputedStyle(li).display !== 'none').length;
     return { overflow: bar.scrollWidth - bar.clientWidth, sect: document.getElementById('sect').getBoundingClientRect().width,
+             sectWhole: (s => s.scrollWidth <= s.clientWidth)(document.getElementById('sect')),   // a short label (the one-pager's "1 page") shown whole
              minH: Math.min(...[...bar.querySelectorAll('.ask a, .bar > .pdf, .btn')].filter(vis).map(e => e.getBoundingClientRect().height)),
              askReachable: inBar.filter(t => /Claude|ChatGPT/.test(t)).length === 2 || inMenu === 2, otherReachable };
   });
-  check(m.overflow <= 0 && m.sect >= 100 && m.minH >= 28 && m.askReachable && m.otherReachable,
+  check(m.overflow <= 0 && (m.sect >= 100 || m.sectWhole) && m.minH >= 28 && m.askReachable && m.otherReachable,
     `${width}px: bar fits on one line, section button ${Math.round(m.sect)}px wide, controls tappable, both Ask links and the switch (1 page, Pitch, Full deck) reachable`);
 
   if (width === 390) {
@@ -158,7 +166,8 @@ for (const width of [1280, 1024, 1023, 1001, 1000, 901, 900, 801, 800, 761, 760,
     await page.touchscreen.tap(vp.x + vp.width * 0.8, vp.y + vp.height / 2);
     await page.waitForTimeout(300);
     const after = await page.evaluate(() => document.querySelector('.stage.on').dataset.id);
-    check(after === deck.order[deck.order.indexOf(before) + 1], '390px: tapping the right half of a slide moves one slide forward');
+    if (deck.order.length > 1) check(after === deck.order[deck.order.indexOf(before) + 1], '390px: tapping the right half of a slide moves one slide forward');
+    else check(after === before, '390px: tapping the slide keeps the one slide');
   }
   check(errors.length === 0, `${width}px: no page errors${errors.length ? ': ' + errors.join('; ') : ''}`);
   await ctx.close();

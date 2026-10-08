@@ -1,144 +1,194 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Islamabad Accords · One page</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
-  :root {
-    --bg: #0a1628;
-    --container: #0f1d33;
-    --sub: #162744;
-    --sub-border: rgba(201,168,76,0.14);
-    --gold: #c9a84c;
-    --gold-light: #e0c872;
-    --gold-dim: #8a7234;
-    --gold-10: rgba(201,168,76,0.08);
-    --gold-15: rgba(201,168,76,0.15);
-    --gold-25: rgba(201,168,76,0.25);
-    --gold-35: rgba(201,168,76,0.35);
-    --white: #f0ece2;
-    --dim: #a8a49a;
-    --serif: 'Instrument Serif', Georgia, serif;
-    --mono: 'JetBrains Mono', monospace;
-    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
-  }
+  /* single dark look, by choice: it is the deck's own identity */
+  :root { color-scheme: dark; --ink:#05090f; --navy:#0a1628; --deep:#070e18; --gold:#c9a84c; --gold-l:#e0c872; --gold-d:#8a7234;
+          --paper:#f0ece2; --line:rgba(201,168,76,.22); --bar:56px; }
+  /* iOS Safari inflates text inside the wide 1920px slide, except while it animates, so text jumped size when a slide finished entering */
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  html, body { height: 100%; }
+  body { margin:0; background: var(--ink); color: var(--paper); font-family:'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+         display:flex; flex-direction:column; overflow:hidden; }
+  .viewport { position:relative; flex:1; min-height:0; overflow:hidden; cursor:default; touch-action: pan-y; }
+  .stage { position:absolute; left:50%; top:50%; width:1920px; height:1080px; transform-origin: 0 0; visibility:hidden;
+           box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+  .stage.on { visibility:visible; }
+  .stage section { position:relative; width:1920px; height:1080px; box-sizing:border-box; overflow:hidden; }
+  .stage section * { box-sizing:border-box; }
+  .stage h1, .stage h2, .stage h3, .stage p, .stage ul, .stage ol { margin:0; }
+  .stage hr { margin:0; border:0; }
+  .stage x-icon, .stage .xi { display:block; }
+  .xs-arrow { display:block; flex-shrink:0; clip-path: polygon(0 30%, 60% 30%, 60% 0, 100% 50%, 60% 100%, 60% 70%, 0 70%); }
 
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body { background: #070e18; font-family: var(--sans); }
+  /* motion: runs only on navigation, so the first frame is complete at rest */
+  @keyframes inR { from { opacity:0; transform: translateX(28px); } to { opacity:1; transform:none; } }
+  @keyframes inL { from { opacity:0; transform: translateX(-28px); } to { opacity:1; transform:none; } }
+  @keyframes rise { from { opacity:0; transform: translateY(18px); } to { opacity:1; transform:none; } }
+  @keyframes out { from { opacity:1; } to { opacity:0; } }
+  .stage.enter-f section { animation: inR .55s cubic-bezier(.2,.7,.2,1) both; }
+  .stage.enter-b section { animation: inL .55s cubic-bezier(.2,.7,.2,1) both; }
+  .stage.enter-f section > *:not([style*="position:absolute"]), .stage.enter-b section > *:not([style*="position:absolute"]) {
+      animation: rise .6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 70ms + 80ms); }
+  .stage.leave { visibility:visible; animation: out .28s ease both; }
+  @media (prefers-reduced-motion: reduce) { .stage, .stage * { animation: none !important; } }
 
-  .page { max-width: 900px; margin: 0 auto; background: var(--bg); position: relative; overflow: hidden; }
-
-  .texture {
-    position: absolute; inset: 0; z-index: 1; pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-    background-size: 200px;
+  /* control bar */
+  .bar { position:relative; height: calc(var(--bar) + env(safe-area-inset-bottom, 0px)); padding: 0 16px env(safe-area-inset-bottom, 0px);
+         display:flex; align-items:center; gap:14px; background: var(--deep); border-top:1px solid var(--line); }
+  .progress { position:absolute; left:0; top:-1px; height:2px; background: var(--gold); width:0; transition: width .45s cubic-bezier(.2,.7,.2,1); }
+  .where { display:flex; align-items:baseline; gap:12px; min-width:0; flex:1; }
+  .sect { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2.5px; text-transform:uppercase; color: var(--gold);
+          background:none; border:0; padding:8px 0; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60vw; }
+  .sect::after { content:" ▾"; color: var(--gold-d); }
+  .bar.single .btn, .bar.single .count { display:none; }   /* one slide: nothing to step through */
+  .count { font: 400 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; color: var(--gold-d); font-variant-numeric: tabular-nums; white-space:nowrap; }
+  .btn { width:40px; height:40px; border-radius:50%; border:1px solid var(--gold-d); background: transparent; color: var(--gold-l);
+         display:grid; place-items:center; cursor:pointer; transition: background .2s, border-color .2s, transform .15s; }
+  .btn:hover { background: rgba(201,168,76,.12); border-color: var(--gold); }
+  .btn:active { transform: scale(.94); }
+  .btn:disabled { opacity:.3; cursor:default; }
+  .btn svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .pdf { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; color: var(--gold-l); text-decoration:none;
+         border:1px solid var(--gold-d); border-radius:20px; padding:9px 14px; }
+  .pdf:hover { background: rgba(201,168,76,.12); }
+  .ask { display:flex; align-items:center; gap:8px; }
+  .ask-lbl { display:none; font: 400 9px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; text-transform:uppercase; color: var(--gold-d); }
+  .note { font: 400 10px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; color: var(--gold-d); text-decoration:none; white-space:nowrap; }
+  .note:hover { color: var(--gold-l); text-decoration:underline; }
+  .viewport > .note { position:absolute; left:16px; bottom:12px; opacity:.8; z-index:2; }
+  .menu-ask { display:none; }
+  .menu-other { display:none; padding:6px 4px 10px; }  /* the Pitch | Full deck switch: in the bar on wide screens, in the menu on phones */
+  .switch { display:inline-flex; border:1px solid var(--gold-d); border-radius:20px; overflow:hidden; flex:none; }
+  .switch .seg { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; padding:9px 14px; white-space:nowrap;
+                 color: var(--gold-l); text-decoration:none; }
+  .switch .seg + .seg { border-left:1px solid var(--gold-d); }
+  .switch .seg.cur { background: var(--gold); color: var(--deep); }
+  .switch a.seg:hover { background: rgba(201,168,76,.12); }
+  .menu-ask:not(.menu-ask + .menu-ask) { border-top:1px solid var(--line); margin-top:6px; padding-top:6px; }
+  .menu-ask a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
+                font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
+  .menu-ask a:hover { background: rgba(201,168,76,.12); }
+  .menu-ask + .menu-note { border-top:0; margin-top:0; }
+  .menu-note { display:none; border-top:1px solid var(--line); margin-top:6px; padding:10px 12px 4px; }
+  .menu-note .note { font: 400 13px/1.2 'Source Sans 3', 'Segoe UI', Arial, sans-serif; letter-spacing:0; }
+  :focus-visible { outline: 2px solid var(--gold-l); outline-offset: 3px; }
+  .menu { position:absolute; left:16px; bottom: calc(var(--bar) + env(safe-area-inset-bottom, 0px) + 8px); background: var(--deep);
+          border:1px solid var(--line); border-radius:6px; padding:8px; margin:0; list-style:none; min-width:260px; max-width: calc(100vw - 32px);
+          box-shadow: 0 20px 50px rgba(0,0,0,.6); z-index:5; }
+  .menu button { display:block; width:100%; text-align:left; background:none; border:0; color: var(--paper); padding:10px 12px; border-radius:4px;
+                 font: 400 16px/1.2 'Instrument Serif', Georgia, serif; cursor:pointer; }
+  .menu button:hover, .menu button.cur { background: rgba(201,168,76,.12); color: var(--gold-l); }
+  .hint { position:absolute; right:16px; bottom:12px; font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing:1.5px; color: var(--gold-d);
+          opacity:.8; pointer-events:none; }
+  @media (max-width: 560px) { .hint { display:none; } .count { display:none; } }
+  /* narrow screens keep the bar on one line: short Ask labels under a small "Ask" first, then (under 480px) the Ask links
+     move into the section menu; the feedback note moves into the menu under 640px */
+  @media (max-width: 1000px) {   /* was 760px; 800px since the Pitch | Full deck switch (29 Sep 2026); 1000px since the three-way switch (8 Oct 2026), which needs the room */
+    .bar { gap:8px; }
+    .ask { gap:4px; position:relative; }
+    .ask-lbl { display:block; position:absolute; left:50%; top:-12px; transform:translateX(-50%); }
+    .ask-long { display:none; }
+    .ask .pdf, .bar > .pdf { padding:9px 9px; letter-spacing:1px; }
   }
-  .border-frame {
-    position: absolute; inset: 12px; z-index: 2; pointer-events: none;
-    border: 2px solid var(--gold-35);
-    outline: 1px solid rgba(201,168,76,0.12); outline-offset: 4px;
-  }
-  .corner { position: absolute; width: 26px; height: 26px; z-index: 4; }
-  .corner svg { width: 100%; height: 100%; }
-  .corner.tl { top: 7px; left: 7px; }
-  .corner.tr { top: 7px; right: 7px; transform: scaleX(-1); }
-  .corner.bl { bottom: 7px; left: 7px; transform: scaleY(-1); }
-  .corner.br { bottom: 7px; right: 7px; transform: scale(-1, -1); }
-
-  .content { position: relative; z-index: 3; padding: 42px 34px 40px; }
-
-  
-  .page { width: 900px; max-width: none; height: 1165px; }
-  .content { position: relative; z-index: 3; height: 100%; padding: 36px 42px 24px 42px; box-sizing: border-box; display: flex; flex-direction: column; }
-  .hd { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--gold-25); }
-  .hd .t { font-family: var(--serif); font-size: 36px; color: var(--gold); line-height: 1; }
-  .hd .st { font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--dim); margin-top: 5px; }
-  .hd .strap { font-family: var(--serif); font-size: 12px; font-style: italic; color: var(--white); line-height: 1.4; text-align: right; }
-  .flow { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; gap: 18px; margin-top: 16px; position: relative; padding-left: 52px; }
-  .spine { position: absolute; left: 13px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(180deg, var(--gold-25), var(--gold), var(--gold-25)); }
-  .blk { flex: 0 0 auto; background: var(--container); border: 1px solid var(--sub-border); border-radius: 3px; padding: 22px 28px 20px; position: relative; display: flex; flex-direction: column; justify-content: center; }
-  .blk.cap { border: 1.5px solid var(--gold); background: linear-gradient(135deg, var(--container), var(--sub)); box-shadow: 0 0 22px var(--gold-10); }
-  .blk .n { position: absolute; left: -52px; top: 50%; width: 32px; height: 32px; margin-top: -16px; border-radius: 50%; background: var(--bg); border: 2px solid var(--gold); color: var(--gold); font-family: var(--mono); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
-  .blk.cap .n { background: var(--gold); color: var(--bg); }
-  .blk .lab { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; }
-  .blk .lab span { color: var(--gold-dim); font-weight: 400; letter-spacing: 1px; margin-left: 8px; text-transform: none; }
-  .blk .ttl { font-family: var(--serif); font-size: 30px; color: var(--white); line-height: 1.1; margin: 6px 0 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--gold-25); }
-  .blk .sub { font-family: var(--serif); font-size: 13.5px; font-style: italic; color: var(--gold-light); line-height: 1.35; margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px dashed var(--gold-25); }
-  .blk ul { margin: 0; padding: 0 0 0 14px; }
-  .blk ul { padding-left: 18px; }
-  .blk li { font-family: var(--sans); font-size: 17px; color: var(--white); line-height: 1.45; padding: 3px 0; }
-  .blk li::marker { color: var(--gold-dim); }
-  .blk li b { color: var(--gold-light); font-weight: 600; }
-  .ft { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-top: 12px; padding-top: 9px; border-top: 1px solid var(--gold-25); font-family: var(--mono); font-size: 7.5px; color: var(--gold-dim); letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; }
-
-  .page { width: auto; max-width: 980px; height: auto; margin: 0 auto; }
-  .content { height: auto; padding: 30px 42px 28px; }
-  .webnav { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 22px; }
-  .webnav .pdf { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold-light);
-                 text-decoration: none; border: 1px solid var(--gold-dim); border-radius: 20px; padding: 9px 14px; white-space: nowrap; }
-  .webnav .pdf:hover, .webnav a.seg:hover { background: var(--gold-10); }
-  .switch { display: inline-flex; border: 1px solid var(--gold-dim); border-radius: 20px; overflow: hidden; flex: none; }
-  .switch .seg { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 9px 14px; white-space: nowrap;
-                 color: var(--gold-light); text-decoration: none; }
-  .switch .seg + .seg { border-left: 1px solid var(--gold-dim); }
-  .switch .seg.cur { background: var(--gold); color: var(--bg); }
-  @media (max-width: 400px) { .switch .seg, .webnav .pdf { padding: 9px 9px; letter-spacing: 1px; } }
-  .hd .t { font-size: 44px; }
-  .hd .st { font-size: 18px; }
-  .hd .strap { font-size: 14px; }
-  .flow { justify-content: flex-start; gap: 18px; margin-top: 20px; }
-  .blk li { font-size: 17.5px; }
-  .ft { margin-top: 18px; font-size: 9px; }
-  /* 8 Oct 2026, author, option A ("kind of long"): on wide screens the four blocks run left to right as a road, so the
-     page fits one laptop screen; 2 x 2 on tablets; stacked on phones */
-  @media (min-width: 1100px) {
-    .page { max-width: 1280px; }
-    .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding-left: 0; padding-top: 50px; margin-top: 14px; }
-    .spine { left: 12%; right: 12%; top: 16px; bottom: auto; width: auto; height: 2px; background: linear-gradient(90deg, var(--gold-25), var(--gold), var(--gold-25)); }
-    .blk { justify-content: flex-start; padding: 20px 20px 16px; }
-    .blk .n { left: 50%; top: -50px; margin: 0 0 0 -16px; }
-    .blk .ttl { font-size: 25px; min-height: 2.2em; }
-    .blk li { font-size: 16.5px; }
-  }
-  @media (min-width: 721px) and (max-width: 1099px) {
-    .flow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-left: 0; }
-    .spine { display: none; }
-    .blk { justify-content: flex-start; }
-    .blk .n { position: static; margin: 0 0 10px; }
-    .ft { flex-wrap: wrap; gap: 6px 24px; }
-  }
-  @media (max-width: 720px) {
-    .content { padding: 22px 16px 22px; }
-    .border-frame, .corner { display: none; }
-    .hd { grid-template-columns: 1fr; gap: 12px; }
-    .hd .t { font-size: 34px; }
-    .hd .strap { text-align: left; }
-    .flow { padding-left: 0; }
-    .spine, .blk .n { display: none; }
-    .blk { padding: 16px 16px 14px; }
-    .blk .ttl { font-size: 25px; }
-    .blk li { font-size: 16.5px; }
-    .ft { flex-direction: column; align-items: flex-start; gap: 6px; white-space: normal; }
-  }
+  @media (max-width: 900px) { .bar > .switch .seg { padding:9px 6px; letter-spacing:0; } .bar > .switch .seg-more { display:none; } }  /* the switch is wide: "Full deck" shows as "Full" under 900px */
+  @media (max-width: 640px) { .viewport > .note { display:none; } .menu-note { display:block; } }
+  @media (max-width: 479px) { .bar .ask { display:none; } .menu-ask { display:block; } }
+  @media (max-width: 719px) { .bar > .switch { display:none; } .menu-other { display:block; } }  /* into the menu under 720px (640px before the three-way switch, 8 Oct 2026) */
 </style>
-</head>
-<body>
-<div class="page">
-  <div class="texture"></div>
-  <div class="border-frame"></div>
-  <div class="corner tl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner tr"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner bl"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div><div class="corner br"><svg viewBox="0 0 24 24" fill="none"><path d="M2 22V2h20" stroke="#c9a84c" stroke-width="1" opacity="0.5"/><path d="M6 18V6h12" stroke="#c9a84c" stroke-width="0.5" opacity="0.25"/><circle cx="2" cy="2" r="1.5" fill="#c9a84c" opacity="0.4"/></svg></div>
-  <div class="content">
-    <nav class="webnav" aria-label="Other editions"><div class="switch" role="group" aria-label="One page, pitch or full deck"><span class="seg cur" aria-current="page">1&nbsp;page</span><a class="seg" href="index.html">Pitch</a><a class="seg" href="full.html">Full deck</a></div><a class="pdf" href="islamabad-accords-one-page.pdf" target="_blank" rel="noopener">PDF</a></nav>
-    <div class="hd">
-      <div><div class="t">The Islamabad Accords</div><div class="st">A Peace Plan Synthesized for Donald Trump · the road, top to bottom</div></div>
-      <div class="strap">Ending the October 7th Firestorm<br>Ensuring Iran Never Develops a Nuclear Weapon<br>Building a New Security Architecture for the Middle East</div>
-    </div>
-    <div class="flow"><div class="spine"></div><div class="blk"><div class="n">1</div><div class="lab">TRANSACTIONAL PHASE</div><div class="ttl">A ceasefire and three deals</div><ul><li><b>Hormuz standstill</b> · the blockade lifts, attacks on the strait halt</li><li><b>Nuclear bargain</b> · three verified gates release $6B, $5B, $15B</li><li><b>Reconstruction tranche</b> · $25B, a quarter to Gaza &amp; Lebanon</li></ul></div><div class="blk"><div class="n">2</div><div class="lab">END OF WAR</div><div class="ttl">The All-Fronts Hudna</div><ul><li>A <b>10–15 year armistice</b> across all fronts</li><li><b>Trump's Comprehensive Plan</b> as the current pathway to an Israeli-Palestinian political settlement</li></ul></div><div class="blk"><div class="n">3</div><div class="lab">ARCHITECTURAL PHASE</div><div class="ttl">Five regional institutions</div><ul><li><b>The Table</b>, <b>the Consortium</b>, <b>the Commission</b>, <b>the Forum</b>, <b>the Fund</b></li><li>Iran performs, a regional institution verifies, relief moves</li></ul></div><div class="blk cap"><div class="n">4</div><div class="lab">THE HORIZON</div><div class="ttl">Détente in ~15 years, normalization in 20–30</div><ul><li><b>Major incidents are expected</b> · the institutions keep them from cascading</li><li>Diplomatic relations among all the states of the region</li></ul></div></div>
-    <div class="ft"><span>Unofficial · a private author's proposal · September 2026</span><span>Two phases · five institutions · one mechanism</span><span>x.com/thekingdavidjr</span></div>
+
+<main class="viewport" id="vp" aria-live="polite">
+<div class="stage" data-id="one-page" data-label="1 page" aria-roledescription="slide" aria-label="1 of 1"><section id="one-page" data-transition="fade" style="background:#0a1628; color:#f0ece2; font-family:'Source Sans 3', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px; justify-content:start">
+<div style="display:flex; gap:24px; align-items:center"><p aria-hidden="true" style="font-size:64px; line-height:1; flex:none">🧭</p><div style="flex:1; display:flex; flex-direction:column; gap:16px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#c9a84c; letter-spacing:4px; text-transform:uppercase; text-wrap:balance">A Peace Plan Synthesized for Donald Trump</p><h2 style="font-family:'Instrument Serif', Georgia, serif; font-size:54px; font-weight:400; color:#c9a84c; line-height:1.1">The Islamabad Accords</h2></div></div><div style="flex:1; display:flex; flex-direction:column; gap:22px"><div style="position:relative; display:flex; gap:28px"><div style="position:absolute; left:12%; right:12%; top:27px; height:3px; background:linear-gradient(90deg, rgba(201,168,76,0.25), #c9a84c, rgba(201,168,76,0.25))"></div><div style="flex:1; display:flex; justify-content:center"><p style="width:56px; height:56px; border-radius:50%; border:3px solid #c9a84c; background:#0a1628; color:#c9a84c; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; display:flex; align-items:center; justify-content:center; position:relative; z-index:1">1</p></div><div style="flex:1; display:flex; justify-content:center"><p style="width:56px; height:56px; border-radius:50%; border:3px solid #c9a84c; background:#0a1628; color:#c9a84c; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; display:flex; align-items:center; justify-content:center; position:relative; z-index:1">2</p></div><div style="flex:1; display:flex; justify-content:center"><p style="width:56px; height:56px; border-radius:50%; border:3px solid #c9a84c; background:#0a1628; color:#c9a84c; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; display:flex; align-items:center; justify-content:center; position:relative; z-index:1">3</p></div><div style="flex:1; display:flex; justify-content:center"><p style="width:56px; height:56px; border-radius:50%; border:3px solid #c9a84c; background:#c9a84c; color:#0a1628; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; display:flex; align-items:center; justify-content:center; position:relative; z-index:1">4</p></div></div><div style="display:flex; gap:28px; align-items:stretch"><div style="flex:1; display:flex; flex-direction:column; gap:18px; background:#0f1d33; border:1px solid rgba(201,168,76,0.14); border-radius:4px; padding:32px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#c9a84c; letter-spacing:2px; text-transform:uppercase; line-height:1.3">TRANSACTIONAL PHASE</p><p style="font-family:'Instrument Serif', Georgia, serif; font-size:37px; color:#f0ece2; line-height:1.1; min-height:2.2em; padding-bottom:18px; border-bottom:1px dashed rgba(201,168,76,0.25)">A ceasefire and three deals</p><ul style="font-family:'Source Sans 3', Arial, sans-serif; font-size:27px; color:#f0ece2; line-height:1.4; padding:0 0 0 40px"><li><b>Hormuz standstill</b> · the blockade lifts, attacks on the strait halt</li><li><b>Nuclear bargain</b> · three verified gates release $6B, $5B, $15B</li><li><b>Reconstruction tranche</b> · $25B, a quarter to Gaza &amp; Lebanon</li></ul></div><div style="flex:1; display:flex; flex-direction:column; gap:18px; background:#0f1d33; border:1px solid rgba(201,168,76,0.14); border-radius:4px; padding:32px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#c9a84c; letter-spacing:2px; text-transform:uppercase; line-height:1.3">END OF WAR</p><p style="font-family:'Instrument Serif', Georgia, serif; font-size:37px; color:#f0ece2; line-height:1.1; min-height:2.2em; padding-bottom:18px; border-bottom:1px dashed rgba(201,168,76,0.25)">The All-Fronts Hudna</p><ul style="font-family:'Source Sans 3', Arial, sans-serif; font-size:27px; color:#f0ece2; line-height:1.4; padding:0 0 0 40px"><li>A <b>10–15 year armistice</b> across all fronts</li><li><b>Trump's Comprehensive Plan</b> as the current pathway to an Israeli-Palestinian political settlement</li></ul></div><div style="flex:1; display:flex; flex-direction:column; gap:18px; background:#0f1d33; border:1px solid rgba(201,168,76,0.14); border-radius:4px; padding:32px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#c9a84c; letter-spacing:2px; text-transform:uppercase; line-height:1.3">ARCHITECTURAL PHASE</p><p style="font-family:'Instrument Serif', Georgia, serif; font-size:37px; color:#f0ece2; line-height:1.1; min-height:2.2em; padding-bottom:18px; border-bottom:1px dashed rgba(201,168,76,0.25)">Five regional institutions</p><ul style="font-family:'Source Sans 3', Arial, sans-serif; font-size:27px; color:#f0ece2; line-height:1.4; padding:0 0 0 40px"><li><b>The Table</b>, <b>the Consortium</b>, <b>the Commission</b>, <b>the Forum</b>, <b>the Fund</b></li><li>Iran performs, a regional institution verifies, relief moves</li></ul></div><div style="flex:1; display:flex; flex-direction:column; gap:18px; background:#0f1d33; border:1px solid #c9a84c; border-radius:4px; padding:32px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#c9a84c; letter-spacing:2px; text-transform:uppercase; line-height:1.3">THE HORIZON</p><p style="font-family:'Instrument Serif', Georgia, serif; font-size:37px; color:#f0ece2; line-height:1.1; min-height:2.2em; padding-bottom:18px; border-bottom:1px dashed rgba(201,168,76,0.25)">Détente in ~15 years, normalization in 20–30</p><ul style="font-family:'Source Sans 3', Arial, sans-serif; font-size:27px; color:#f0ece2; line-height:1.4; padding:0 0 0 40px"><li><b>Major incidents are expected</b> · the institutions keep them from cascading</li><li>Diplomatic relations among all the states of the region</li></ul></div></div></div>
+<p style="position:absolute; left:128px; bottom:64px; width:800px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#8a7234; letter-spacing:3px">ONE PAGE</p><p style="position:absolute; right:128px; bottom:64px; width:800px; text-align:right; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#8a7234; letter-spacing:3px">X.COM/THEKINGDAVIDJR</p>
+</section></div>
+<a class="note" href="https://x.com/thekingdavidjr" target="_blank" rel="noopener">Found a way to improve it? Tell me on X: @thekingdavidjr</a>
+</main>
+<nav class="bar single" aria-label="Slideshow controls">
+  <div class="progress" id="prog"></div>
+  <div class="switch" role="group" aria-label="One page, pitch or full deck"><span class="seg cur" aria-current="page">1 page</span><a class="seg other" href="index.html">Pitch</a><a class="seg other" href="full.html">Full<span class="seg-more"> deck</span></a></div>
+  <div class="where">
+    <button class="sect" id="sect" type="button" aria-haspopup="true" aria-expanded="false">Cover</button>
+    <span class="count" id="count">1 / 1</span>
   </div>
-</div>
-</body>
-</html>
+  <div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span><a class="pdf" href="https://claude.ai/new?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener"><span class="ask-long">Ask </span>Claude</a><a class="pdf" href="https://chatgpt.com/?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener"><span class="ask-long">Ask </span>ChatGPT</a></div><a class="pdf" href="islamabad-accords-one-page.pdf" target="_blank" rel="noopener">PDF</a>
+  <button class="btn" id="prev" type="button" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+  <button class="btn" id="next" type="button" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+  <ul class="menu" id="menu" hidden><li class="menu-other"><div class="switch" role="group" aria-label="One page, pitch or full deck"><span class="seg cur" aria-current="page">1 page</span><a class="seg other" href="index.html">Pitch</a><a class="seg other" href="full.html">Full<span class="seg-more"> deck</span></a></div></li><li><button type="button" data-go="0">1 page</button></li><li class="menu-ask"><a href="https://claude.ai/new?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener">Ask Claude</a></li><li class="menu-ask"><a href="https://chatgpt.com/?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords.md.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener">Ask ChatGPT</a></li><li class="menu-note"><a class="note" href="https://x.com/thekingdavidjr" target="_blank" rel="noopener">Found a way to improve it? Tell me on X: @thekingdavidjr</a></li></ul>
+</nav>
+
+<script>
+(() => {
+  const vp = document.getElementById('vp');
+  const stages = Array.from(vp.querySelectorAll('.stage'));
+  const N = stages.length;
+  const $ = id => document.getElementById(id);
+  let cur = 0;
+  // stagger index for each slide's flow children
+  stages.forEach(s => { const sec = s.querySelector('section'); if (!sec) return;
+    Array.from(sec.children).forEach((c, i) => c.style.setProperty('--i', i)); });
+
+  function fit() {
+    const w = vp.clientWidth, h = vp.clientHeight, pad = Math.min(32, w * 0.03);
+    const k = Math.min((w - 2 * pad) / 1920, (h - 2 * pad) / 1080);
+    stages.forEach(s => { s.style.transform = `scale(${k}) translate(-50%, -50%)`; });
+  }
+  const ALIASES = {};  // retired slide ids -> their current slide, so old shared links still land right
+  const FORWARD = {"page": "", "ids": []};  // on the front page: full-deck slide ids (and their aliases) that live on full.html
+  function idxFromHash() {
+    let id = decodeURIComponent(location.hash.slice(1));
+    if (FORWARD.ids.includes(id)) { location.replace(FORWARD.page + '#' + encodeURIComponent(id)); return 0; }
+    if (Object.hasOwn(ALIASES, id)) id = ALIASES[id];
+    const i = stages.findIndex(s => s.dataset.id === id);
+    return i >= 0 ? i : 0;
+  }
+  function show(i, animate) {
+    i = Math.max(0, Math.min(N - 1, i));
+    if (i === cur && stages[i].classList.contains('on')) return;
+    const dir = i > cur ? 'f' : 'b', old = stages[cur];
+    stages.forEach(s => s.classList.remove('enter-f', 'enter-b', 'leave'));
+    if (animate && old !== stages[i]) { old.classList.remove('on'); old.classList.add('leave');
+      setTimeout(() => old.classList.remove('leave'), 300); } else old.classList.remove('on');
+    const s = stages[i]; s.classList.add('on');
+    if (animate) { void s.offsetWidth; s.classList.add('enter-' + dir); }
+    cur = i;
+    $('count').textContent = `${i + 1} / ${N}`;
+    $('sect').textContent = s.dataset.label;
+    $('prog').style.width = ((i + 1) / N * 100) + '%';
+    $('prev').disabled = i === 0; $('next').disabled = i === N - 1;
+    const secs = Array.from(document.querySelectorAll('#menu button[data-go]'));
+    secs.forEach((b, k) => { const start = +b.dataset.go, end = k + 1 < secs.length ? +secs[k + 1].dataset.go : N;
+      b.classList.toggle('cur', i >= start && i < end); });
+    const id = s.dataset.id; if (location.hash.slice(1) !== id) history.replaceState(null, '', '#' + id);
+  }
+  const go = d => show(cur + d, true);
+  $('next').onclick = () => go(1); $('prev').onclick = () => go(-1);
+  vp.addEventListener('click', e => { if (e.target.closest('a')) return; const r = vp.getBoundingClientRect();
+    go(e.clientX - r.left > r.width / 2 ? 1 : -1); });
+  document.addEventListener('keydown', e => {
+    if (e.target.closest('input, textarea')) return;
+    if (['ArrowRight', 'PageDown', ' ', 'Enter'].includes(e.key) && !e.target.closest('button, a')) { e.preventDefault(); go(1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+    else if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); go(-1); }
+    else if (e.key === 'Home') show(0, true); else if (e.key === 'End') show(N - 1, true);
+    else if (e.key === 'Escape') closeMenu();
+  });
+  let tx = null, ty = null;
+  vp.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+  vp.addEventListener('touchend', e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+    // only a real swipe swallows the tap-click, so a swipe never also counts as a half-screen tap
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { e.preventDefault(); go(dx < 0 ? 1 : -1); } tx = null; }, { passive: false });
+  const menu = $('menu');
+  function closeMenu() { menu.hidden = true; $('sect').setAttribute('aria-expanded', 'false'); }
+  $('sect').onclick = e => { e.stopPropagation(); menu.hidden = !menu.hidden; $('sect').setAttribute('aria-expanded', String(!menu.hidden)); };
+  menu.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; show(+b.dataset.go, true); closeMenu(); });
+  document.addEventListener('click', e => { if (!e.target.closest('#menu, #sect')) closeMenu(); });
+  window.addEventListener('resize', fit);
+  window.addEventListener('hashchange', () => show(idxFromHash(), true));
+  fit(); cur = idxFromHash(); show(cur, false);
+})();
+</script>
