@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: index.html (the pitch, from pitch/) and full.html (the full deck, from deck/) are built by build-slideshow.py, with no warnings
+      - name: index.html (the pitch, from pitch/), full.html (the full deck, from deck/) and one-page.html (the one-pager, from onepage/) are built by build-slideshow.py, with no warnings
         run: |
           python3 build-slideshow.py 2> build-warnings.txt
           rm -f preview.html preview-full.html
@@ -26,9 +26,9 @@ jobs:
             echo "::error::The build printed warnings (see above)."
             exit 1
           fi
-          if ! git diff --quiet -- index.html full.html || [ -n "$(git status --porcelain -- full.html)" ]; then
-            git status --short -- index.html full.html
-            echo "::error::index.html or full.html is out of date. Run python3 build-slideshow.py and commit both; never edit them by hand."
+          if ! git diff --quiet -- index.html full.html one-page.html || [ -n "$(git status --porcelain -- full.html one-page.html)" ]; then
+            git status --short -- index.html full.html one-page.html
+            echo "::error::index.html, full.html or one-page.html is out of date. Run python3 build-slideshow.py and commit them; never edit them by hand."
             exit 1
           fi
 
@@ -44,6 +44,6 @@ jobs:
           npm ci
           npx playwright install --with-deps chromium
 
-      - name: Smoke test both pages at desktop and phone widths
+      - name: Smoke test the three pages at desktop and phone widths
         working-directory: tests
         run: node smoke.mjs

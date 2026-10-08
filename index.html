@@ -45,6 +45,7 @@
   .sect { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2.5px; text-transform:uppercase; color: var(--gold);
           background:none; border:0; padding:8px 0; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60vw; }
   .sect::after { content:" ▾"; color: var(--gold-d); }
+  .bar.single .btn, .bar.single .count { display:none; }   /* one slide: nothing to step through */
   .count { font: 400 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; color: var(--gold-d); font-variant-numeric: tabular-nums; white-space:nowrap; }
   .btn { width:40px; height:40px; border-radius:50%; border:1px solid var(--gold-d); background: transparent; color: var(--gold-l);
          display:grid; place-items:center; cursor:pointer; transition: background .2s, border-color .2s, transform .15s; }

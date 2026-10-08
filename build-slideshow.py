@@ -17,6 +17,9 @@ DECK = Path(os.environ.get("DECK_DIR", HERE / "deck"))
 # 29 Sep 2026 (author): the pitch is the front page. pitch/ holds its export (same format as deck/); index.html is built
 # from it and full.html from deck/. Each page links to the other; old links to full-deck slides on the front page forward.
 PITCH = Path(os.environ.get("PITCH_DIR", HERE / "pitch"))
+# the one-pager as one slide (8 Oct 2026, author: "the one page should really be in slide format", not a jarring separate page)
+ONEPAGE = Path(os.environ.get("ONEPAGE_DIR", HERE / "onepage"))
+ONE_PDF = "islamabad-accords-one-page.pdf"   # the one-pager's PDF: what the PDF button gets on one-page.html
 OUT = HERE
 PDF_NAME = "islamabad-accords.pdf"
 # "Ask Claude" / "Ask ChatGPT" open a new chat with this prompt filled in. The wording is the author's; change it only on their word.
@@ -50,7 +53,7 @@ SECTION_LABEL = {"open": "Cover", "how": "The mechanism", "architectural": "2 ·
                  "cover": "Cover", "core": "The core thesis", "why": "Why Trump", "transactional": "1 · The transactional phase",
                  "institutions": "2 · Five institutions", "trades": "3 · Five trades", "horizon": "4 · The horizon",
                  "limits": "5 · Limits", "close": "The close", "appendix": "Appendix",
-                 "references": "References"}
+                 "references": "References", "one-page": "1 page"}   # one-page: the switch's own label (8 Oct 2026)
 SLIDE_LABEL = {"why-me": "About the author", "ai-disclosure": "AI disclosure"}
 # Slide ids the deck has dropped, mapped to the slide that now holds the same content, so links people shared keep working.
 # Add an entry whenever a sync removes or renames an id; never delete one.
@@ -109,9 +112,9 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
         ask = "".join(f'<a class="pdf" href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">'
                       f'<span class="ask-long">Ask </span>{name}</a>' for name, url in ASK_LINKS)
         links = (f'<div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span>{ask}</div>'
-                 f'<a class="pdf" href="{PDF_NAME}" target="_blank" rel="noopener">PDF</a>')
+                 f'<a class="pdf" href="{ONE_PDF if deck_dir == ONEPAGE else PDF_NAME}" target="_blank" rel="noopener">PDF</a>')
         # the Pitch / Full deck toggle sits at the left end of the bar, before the section menu
-        here = "index.html" if deck_dir == PITCH else "full.html"
+        here = {PITCH: "index.html", DECK: "full.html", ONEPAGE: "one-page.html"}[deck_dir]
         other_link = switch_html(here) if other else ""
         text, href = FEEDBACK
         note = f'<a class="note" href="{href}" target="_blank" rel="noopener">{H.escape(text)}</a>'
@@ -122,11 +125,15 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
     for old, new in aliases.items():
         if old in order: BUILD_WARNINGS.append(f"alias {old!r} is a live slide id again; remove it from SLIDE_ALIASES")
         if new not in order: BUILD_WARNINGS.append(f"alias {old!r} points to {new!r}, which is not in deck.json; point it at the slide that now holds that content")
-    return TEMPLATE.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links).replace("{{OTHER}}", other_link) \
+    page = TEMPLATE
+    if len(order) == 1:   # a one-slide page (the one-pager): no arrows, counter or key hint
+        page = page.replace('<nav class="bar"', '<nav class="bar single"', 1).replace('<div class="hint">← → to move</div>\n', '', 1)
+    return page.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links).replace("{{OTHER}}", other_link) \
                    .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(len(order))) \
                    .replace("{{ALIASES}}", json.dumps(aliases)) \
                    .replace("{{FORWARD}}", json.dumps({"page": forward[0], "ids": sorted(forward[1])} if forward else {"page": "", "ids": []})) \
-                   .replace("<title>The Islamabad Accords</title>", "<title>The Islamabad Accords</title>" if deck_dir == PITCH else "<title>The Islamabad Accords · Full deck</title>")
+                   .replace("<title>The Islamabad Accords</title>", {PITCH: "<title>The Islamabad Accords</title>", DECK: "<title>The Islamabad Accords · Full deck</title>",
+                                                                     ONEPAGE: "<title>The Islamabad Accords · One page</title>"}.get(deck_dir, "<title>The Islamabad Accords</title>"))
 
 TEMPLATE = r"""<!doctype html>
 <html lang="en">
@@ -175,6 +182,7 @@ TEMPLATE = r"""<!doctype html>
   .sect { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2.5px; text-transform:uppercase; color: var(--gold);
           background:none; border:0; padding:8px 0; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60vw; }
   .sect::after { content:" ▾"; color: var(--gold-d); }
+  .bar.single .btn, .bar.single .count { display:none; }   /* one slide: nothing to step through */
   .count { font: 400 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; color: var(--gold-d); font-variant-numeric: tabular-nums; white-space:nowrap; }
   .btn { width:40px; height:40px; border-radius:50%; border:1px solid var(--gold-d); background: transparent; color: var(--gold-l);
          display:grid; place-items:center; cursor:pointer; transition: background .2s, border-color .2s, transform .15s; }
@@ -328,10 +336,11 @@ if __name__ == "__main__":
     forward = ("full.html", (set(full_ids) | set(SLIDE_ALIASES)) - set(pitch_ids))
     (OUT / "index.html").write_text(build(True, PITCH, ("full.html", "Full deck"), forward))   # the front page: the pitch
     (OUT / "full.html").write_text(build(True, DECK, ("index.html", "Pitch")))               # the full deck
+    (OUT / "one-page.html").write_text(build(True, ONEPAGE, ("index.html", "Pitch")))        # the one-pager, one slide
     (OUT / "preview.html").write_text(build(False, PITCH))
     (OUT / "preview-full.html").write_text(build(False, DECK))
-    print("index.html (pitch) and full.html (full deck) written,", (OUT / "index.html").stat().st_size // 1024, "and",
-          (OUT / "full.html").stat().st_size // 1024, "KB")
+    print("index.html (pitch), full.html (full deck) and one-page.html (one-pager) written,", (OUT / "index.html").stat().st_size // 1024, ",",
+          (OUT / "full.html").stat().st_size // 1024, "and", (OUT / "one-page.html").stat().st_size // 1024, "KB")
     for w in dict.fromkeys(BUILD_WARNINGS):
         print(f"warning: {w}", file=sys.stderr)
     for name in sorted(UNKNOWN_ICONS):
