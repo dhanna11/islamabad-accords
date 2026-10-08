@@ -99,12 +99,13 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
     deck = json.loads((deck_dir / "deck.json").read_text())
     order = deck["order"]
     starts = {v["start"]: k for k, v in deck["sections"].items()}
-    sec, slides, menu = "cover", [], []
+    sec, slides, menu, toc = "cover", [], [], []
     for i, sid in enumerate(order):
         if sid in starts:
             sec = starts[sid]; menu.append((i, SECTION_LABEL.get(sec, sec)))
         label = SLIDE_LABEL.get(sid, SECTION_LABEL.get(sec, sec))
         body = clean((deck_dir / "slides" / f"{sid}.html").read_text().strip())
+        toc.append((sid, slide_title(body)))
         slides.append(f'<div class="stage" data-id="{sid}" data-label="{H.escape(label)}" aria-roledescription="slide" aria-label="{i+1} of {len(order)}">{body}</div>')
     menu_html = "".join(f'<li><button type="button" data-go="{i}">{H.escape(l)}</button></li>' for i, l in menu)
     # the PDF, Ask and feedback links go only in the Pages build (index.html), not the preview
@@ -135,7 +136,7 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
     kind = {PITCH: "pitch", DECK: "deck", ONEPAGE: "onepage"}.get(deck_dir, "deck")
     desc = ("The Islamabad Accords, an unofficial peace plan for ending the US-Iran war and building a new security architecture "
             f"for the Middle East: {PAGE_ABOUT[kind].format(n=len(order))}. The complete plan in plain text: {SITE_URL}{TEXT_HTML}")
-    page = page.replace("{{DESCRIPTION}}", H.escape(desc)).replace("{{ABOUT}}", about_html(kind, len(order)) if with_pdf else "")
+    page = page.replace("{{DESCRIPTION}}", H.escape(desc)).replace("{{ABOUT}}", about_html(kind, len(order), toc) if with_pdf else "")
     return page.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links).replace("{{OTHER}}", other_link) \
                    .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(len(order))) \
                    .replace("{{ALIASES}}", json.dumps(aliases)) \
@@ -174,14 +175,27 @@ def text_copies():
 </html>
 """)
 
-def about_html(kind, n):
+def slide_title(body):
+    """A slide's title for the contents list: its heading (h1/h2) as text, else its first paragraph."""
+    text = lambda frag: re.sub(r"\s+", " ", H.unescape(re.sub(r"<[^>]+>", " ", frag))).strip()
+    m = re.search(r"<h[12][^>]*>(.*?)</h[12]>", body, re.S)
+    if m: return text(m.group(1))
+    for attrs, frag in re.findall(r"<p([^>]*)>(.*?)</p>", body, re.S):   # skip the icon paragraphs (aria-hidden emoji)
+        if "aria-hidden" not in attrs and re.search(r"[A-Za-z]", text(frag)): return text(frag)
+    return ""
+
+def about_html(kind, n, toc=()):
     page = PAGE_ABOUT[kind].format(n=n)
+    # the contents, so a reader gets the page's structure without inferring it from the layout (8 Oct 2026: a web reader
+    # miscounted the pitch's slides); numbered, with each slide's own link
+    contents = " ".join(f"{i}. {H.escape(t or sid)} (#{sid})." for i, (sid, t) in enumerate(toc, 1))
     return (f'<p class="sr-only" id="about-this-page">The Islamabad Accords, an unofficial peace plan for ending the US-Iran war and '
             f'building a new security architecture for the Middle East. This page is {page}; every slide\'s text is in this page, in order. '
             f'The complete plan in plain text (all cards, slides and sources), the best single source for reading or summarizing it: '
             f'{SITE_URL}{TEXT_HTML} (the same text as {SITE_URL}{TXT_NAME} and {SITE_URL}{MD_NAME}). Other editions: the pitch ({SITE_URL}), the full deck ({SITE_URL}full.html), the one-pager '
             f'({SITE_URL}one-page.html), the PDF ({SITE_URL}{PDF_NAME}), the one-page PDF ({SITE_URL}{ONE_PDF}) and the web edition '
-            f'with clickable sources ({SITE_URL}web.html). An overview for AI tools: {SITE_URL}llms.txt.</p>')
+            f'with clickable sources ({SITE_URL}web.html). An overview for AI tools: {SITE_URL}llms.txt.'
+            + (f' The {n} slide{"s" if n != 1 else ""} on this page, in order: {contents}' if contents else '') + '</p>')
 
 TEMPLATE = r"""<!doctype html>
 <html lang="en">

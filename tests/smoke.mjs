@@ -120,6 +120,9 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
              alt: document.querySelector('link[rel="alternate"][type="text/markdown"]')?.getAttribute('href') || '',
              text: p ? p.textContent : '', hidden: !!r && r.width <= 1 && r.height <= 1 };
   });
+  const listed = [...ai.text.matchAll(/\d+\. [^(]*\(#([\w-]+)\)/g)].map(m => m[1]);
+  check(JSON.stringify(listed) === JSON.stringify(deck.order) && ai.text.includes(`The ${deck.order.length} slide`),
+    `the hidden note lists all ${deck.order.length} slides, in order, with their links`);
   check(ai.desc.includes(MD_URL) && ai.alt === 'islamabad-accords.md' && ai.text.includes(MD_URL) && ai.hidden,
     'for AI tools: a description, a plain-text alternate and a hidden note all point at the text edition');
 
