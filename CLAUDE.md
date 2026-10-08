@@ -4,11 +4,11 @@ A static site: two click-through slideshows (the pitch on the front page, the fu
 
 ## Files
 - `index.html`: the front page, the **pitch** slideshow (16 slides), built from `pitch/`. One self-contained page; it loads only Google Fonts from outside. Old links to full-deck slides on it (`index.html#<id>`) forward to `full.html#<id>`.
-- `full.html`: the **full deck** slideshow, built from `deck/`. Both pages carry a Pitch | Full deck switch (the page you are on lit, the other a link) at the left of the bar, and in the menu under 640px.
+- `full.html`: the **full deck** slideshow, built from `deck/`. Both pages carry a 1 page | Pitch | Full deck switch (the page you are on lit, the others links) at the left of the bar, and in the menu under 640px; `one-page.html` carries the same switch with 1 page lit.
 - `islamabad-accords.pdf`: the PDF edition, linked from the slideshow's PDF button.
 - `islamabad-accords.md`: the plain-text edition, which the "Ask Claude" / "Ask ChatGPT" buttons point the AI at. Generated in the chat; never edit its text here.
 - `web.html`: the web edition, the same text as the PDF with clickable source links (the References slide links it at `web.html#refs`). Generated in the chat; never edit it here.
-- `one-page.html` and `islamabad-accords-one-page.pdf`: the one-pager, as a web page (linked from the bar beside PDF from 1024px, and from the menu at every width) and as the PDF that page links. Generated in the chat; never edit them here.
+- `one-page.html` and `islamabad-accords-one-page.pdf`: the one-pager, as a web page (the first segment of the switch) and as the PDF that page links. Generated in the chat; never edit them here.
 - `.nojekyll`: keeps GitHub Pages from running Jekyll, which would turn `islamabad-accords.md` into an HTML page and break its URL.
 - `deck/`: the full deck's export (`deck.json` for slide order and sections, `slides/*.html` for one slide each). This is the source of `full.html`.
 - `pitch/`: the pitch deck's export, same format. This is the source of `index.html`. Do not hand-edit `index.html` or `full.html`.
