@@ -134,7 +134,7 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
     if len(order) == 1:   # a one-slide page (the one-pager): no arrows, counter or key hint
         page = page.replace('<nav class="bar"', '<nav class="bar single"', 1).replace('<div class="hint">← → to move</div>\n', '', 1)
     kind = {PITCH: "pitch", DECK: "deck", ONEPAGE: "onepage"}.get(deck_dir, "deck")
-    desc = ("The Islamabad Accords, an unofficial peace plan for ending the US-Iran war and building a new security architecture "
+    desc = ("The Islamabad Accords, an unofficial peace proposal for ending the US-Iran war and building a new security architecture "
             f"for the Middle East: {PAGE_ABOUT[kind].format(n=len(order))}. The complete plan in plain text: {SITE_URL}{TEXT_HTML}")
     page = page.replace("{{DESCRIPTION}}", H.escape(desc)).replace("{{ABOUT}}", about_html(kind, len(order), toc) if with_pdf else "")
     return page.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links).replace("{{OTHER}}", other_link) \
@@ -167,7 +167,7 @@ def text_copies():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Islamabad Accords · plain text</title>
-<meta name="description" content="The complete text of the Islamabad Accords, an unofficial peace plan: every card, slide and source, as plain text.">
+<meta name="description" content="The complete text of the Islamabad Accords, an unofficial peace proposal: every card, slide and source, as plain text.">
 <link rel="alternate" type="text/markdown" href="{MD_NAME}">
 <style>body {{ margin:0; background:#0a1628; color:#f0ece2; }} pre {{ white-space:pre-wrap; word-wrap:break-word; max-width:80ch; margin:32px auto; padding:0 16px;
   font: 16px/1.55 'Source Sans 3', 'Segoe UI', Arial, sans-serif; }}</style>
@@ -189,7 +189,7 @@ def about_html(kind, n, toc=()):
     # the contents, so a reader gets the page's structure without inferring it from the layout (8 Oct 2026: a web reader
     # miscounted the pitch's slides); numbered, with each slide's own link
     contents = " ".join(f"{i}. {H.escape(t or sid)} (#{sid})." for i, (sid, t) in enumerate(toc, 1))
-    return (f'<p class="sr-only" id="about-this-page">The Islamabad Accords, an unofficial peace plan for ending the US-Iran war and '
+    return (f'<p class="sr-only" id="about-this-page">The Islamabad Accords, an unofficial peace proposal for ending the US-Iran war and '
             f'building a new security architecture for the Middle East. This page is {page}; every slide\'s text is in this page, in order. '
             f'The complete plan in plain text (all cards, slides and sources), the best single source for reading or summarizing it: '
             f'{SITE_URL}{TEXT_HTML} (the same text as {SITE_URL}{TXT_NAME} and {SITE_URL}{MD_NAME}). Other editions: the pitch ({SITE_URL}), the full deck ({SITE_URL}full.html), the one-pager '
