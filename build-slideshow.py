@@ -20,6 +20,13 @@ PITCH = Path(os.environ.get("PITCH_DIR", HERE / "pitch"))
 # the one-pager as one slide (8 Oct 2026, author: "the one page should really be in slide format", not a jarring separate page)
 ONEPAGE = Path(os.environ.get("ONEPAGE_DIR", HERE / "onepage"))
 ONE_PDF = "islamabad-accords-one-page.pdf"   # the one-pager's PDF: what the PDF button gets on one-page.html
+
+def pdf_pages(name):
+    """A PDF's page count, read from its page objects (no PDF library: this script needs only Python 3); 0 if unreadable."""
+    try:
+        return len(re.findall(rb"/Type\s*/Page(?![s\w])", (HERE / name).read_bytes()))
+    except OSError:
+        return 0
 OUT = HERE
 PDF_NAME = "islamabad-accords.pdf"
 # "Ask Claude" / "Ask ChatGPT" open a new chat with this prompt filled in. The wording is the author's; change it only on their word.
@@ -118,6 +125,11 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
         other_link = switch_html(here) if other else ""
         text, href = FEEDBACK
         note = f'<a class="note" href="{href}" target="_blank" rel="noopener">{H.escape(text)}</a>'
+        # both PDFs on every page (8 Oct 2026, author, option A): the bar's PDF button follows the page; the menu names each file
+        n = pdf_pages(PDF_NAME)
+        if not n: BUILD_WARNINGS.append(f"{PDF_NAME}: could not count its pages for the menu label")
+        menu_html += (f'<li class="menu-pdf"><a href="{PDF_NAME}" target="_blank" rel="noopener">Full plan · PDF ({n} pages)</a></li>'
+                      f'<li class="menu-pdf"><a href="{ONE_PDF}" target="_blank" rel="noopener">One page · PDF</a></li>')
         menu_html += "".join(f'<li class="menu-ask"><a href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">Ask {name}</a></li>'
                              for name, url in ASK_LINKS) + f'<li class="menu-note">{note}</li>'
         if other: menu_html = f'<li class="menu-other">{switch_html(here)}</li>' + menu_html
@@ -210,6 +222,10 @@ TEMPLATE = r"""<!doctype html>
   .menu-ask a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
                 font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
   .menu-ask a:hover { background: rgba(201,168,76,.12); }
+  .menu-pdf:not(.menu-pdf + .menu-pdf) { border-top:1px solid var(--line); margin-top:6px; padding-top:6px; }
+  .menu-pdf a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
+                font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
+  .menu-pdf a:hover { background: rgba(201,168,76,.12); }
   .menu-ask + .menu-note { border-top:0; margin-top:0; }
   .menu-note { display:none; border-top:1px solid var(--line); margin-top:6px; padding:10px 12px 4px; }
   .menu-note .note { font: 400 13px/1.2 'Source Sans 3', 'Segoe UI', Arial, sans-serif; letter-spacing:0; }
