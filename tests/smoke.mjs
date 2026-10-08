@@ -119,10 +119,15 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
     'both Ask prompts point the AI at the text edition');
   check(links.some(l => l.text === 'PDF' && l.href.endsWith('/' + P.pdf)), `the PDF button links to ${P.pdf}`);
   check(links.some(l => l.href === 'https://x.com/thekingdavidjr'), 'the feedback note links to x.com/thekingdavidjr');
-  const menuLinks = await page.evaluate(() => [...document.querySelectorAll('#menu li:not(.menu-other) a')].map(a => ({ href: a.href, target: a.target, rel: a.rel })));
+  const menuLinks = await page.evaluate(() => [...document.querySelectorAll('#menu li:not(.menu-other):not(.menu-pdf) a')].map(a => ({ href: a.href, target: a.target, rel: a.rel })));
   check(menuLinks.length === 3 && menuLinks.slice(0, 2).map(l => l.href).join() === ask.map(l => l.href).join(),
     "the section menu's phone copies of the Ask links match the bar's");
-  check([...links, ...menuLinks].every(l => l.target === '_blank' && l.rel.includes('noopener')), 'outbound links open a new tab with rel=noopener');
+  // both PDFs in the menu on every page, the full plan's label naming its page count (8 Oct 2026)
+  const pdfs = await page.evaluate(() => [...document.querySelectorAll('#menu .menu-pdf a')].map(a => ({ href: a.href, text: a.textContent.trim(), target: a.target, rel: a.rel })));
+  check(pdfs.length === 2 && pdfs[0].href.endsWith('/islamabad-accords.pdf') && /\((\d+) pages\)/.test(pdfs[0].text) && !/\(0 pages\)/.test(pdfs[0].text)
+        && pdfs[1].href.endsWith('/islamabad-accords-one-page.pdf'),
+    `the menu links both PDFs: ${pdfs.map(p => `"${p.text}"`).join(' and ')}`);
+  check([...links, ...menuLinks, ...pdfs].every(l => l.target === '_blank' && l.rel.includes('noopener')), 'outbound links open a new tab with rel=noopener');
 
   await page.evaluate(id => { location.hash = id; }, MID);
   const [tab] = await Promise.all([ctx.waitForEvent('page'), page.locator('.ask a').first().click()]);
