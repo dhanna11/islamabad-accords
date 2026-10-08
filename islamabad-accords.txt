@@ -27,7 +27,7 @@ Unofficial · a private author's proposal · September 2026 · AI disclosure at 
 
 Ending the October 7th Firestorm
 two phases · five institutions · one mechanism · 20 to 30 years
-The Islamabad MoU was a skeletal framework for a deal without a destination. The core of this is an architectural framework that attempts to implement the full agreement, using pieces that have already been proposed by the international community, synthesized into a coherent vision for Trump to sign off on.
+The Islamabad MoU was a skeletal framework for a deal without a destination. The core of this is an architectural framework that attempts to implement the full agreement, using pieces that have already been proposed by the international community, synthesized into a coherent vision for Trump to own.
 A framework for Trump’s team and the experts to critique, tear apart, and reconstruct into a proper end-of-war settlement
 THE CLEARING AND SETTLEMENT LOOP · in four sentences
 1. Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange settles with finality.
@@ -473,8 +473,8 @@ Slides that appear only in the deck.
 - Large trust deficit: a legacy-defining deal is the only thing worth each other’s time
 - Tehran was selling exactly that: “the trillion-dollar opportunity that access to our economy represents” · American trade and investment in oil, gas, mining, and aircraft were on the table
 - Trump’s oldest complaint about the JCPOA is economic: “We give them $150 billion, we get nothing” · “They bought 118 Airbus planes, not Boeing planes. They’re spending all of their money in Europe”
-- Investment and trade at that scale need a regional architecture to protect them, and only Trump can build one
-- He honors wins he claims are his; an Iranian proposal will never be a Trump win
+- Investment and trade at that scale need a regional architecture to protect them
+- Tehran’s vision for the MoU still runs through Trump: he honors wins he claims are his, and an Iranian proposal will never be one
 
 ### What the wars have cost so far
 *Since 7 October 2023 · estimates*
@@ -504,7 +504,7 @@ And this doesn’t count the damage to the human condition.
 - Alongside it: disengagement, stabilizing the ceasefires, and the files outside this plan’s scope that it still depends on
 *One year of intense diplomatic activity, not interrupted by any major conflict · then see if the Middle East can abide by it*
 
-### Iran rebuilds Gaza and Lebanon
+### Iran and the BoP rebuild Gaza and Lebanon
 *Reconstruction Tranche · in his words*
 > “Iran should be responsible for the damages and death caused to the people of Lebanon, Syria, Yemen, and Gaza!”
 > — President Trump · Truth Social · 10 Aug 2026
@@ -534,11 +534,9 @@ And this doesn’t count the damage to the human condition.
 
 ### Why the 20-point plan
 *All-Fronts Hudna · why the 20-point plan*
-- What started in Gaza has to end in Gaza
 - The 20-point plan is Trump’s signature peace plan · the only political process for Gaza and the greater Israeli-Palestinian conflict, backed by the whole region outside the Resistance Axis and endorsed by the Security Council
 - The Israeli-Palestinian conflict is the largest fault line in the Middle East · the region’s San Andreas Fault, the one that produces the really big one
-- Acceptance by the Resistance Axis aligns the entire region behind a single Israel-Palestine political process, and gives it new momentum
-- Without forward progress on the Israel-Palestine file, none of this is worthwhile
+- The goal: align the rest of the Resistance Axis behind the political terminus of the October 7th Firestorm · the 20-point plan for Israel-Palestine, the Islamabad Accords for the region
 
 ### Why near-zero enrichment
 *Nuclear · why this bargain*
@@ -616,11 +614,11 @@ And this doesn’t count the damage to the human condition.
 - That opens room for movement on demilitarizing southern Lebanon, something realistic to break the deadlock over the stalled Israel–Lebanon framework
 - The goal: properly demilitarize south of the Litani, through the official Israel–Lebanon framework, with the Hudna as the side channel that brings Hezbollah along
 
-### Tell me where it breaks
-*Stress test*
-- Which assumption is most likely wrong?
-- Where could one side game the sequence?
-- Which commitment can no government survive at home?
-- Which incentive is too small to change a state’s behavior?
-- What happens after a major violation, or a change of government?
+### Help make it actionable
+*A thought experiment, looking for skeptics*
+- Wanted: anyone with a take · real analysts, armchair experts, randos on X
+- Tell me the weakest assumptions
+- Tell me the most half-assed parts, especially the non-obvious ones
+- Tell me the perverse incentives it creates
+- Tell me if there’s a better version of any idea here
 *Tell me on X · [x.com/thekingdavidjr](https://x.com/thekingdavidjr)*
