@@ -239,7 +239,7 @@ IRAN & ITS ALLIES COMMIT
 THE US & THE REGION COMMIT
 ALL-FRONTS HUDNA
 at the Table
-- Accept Trump's Comprehensive Plan as the pathway for Palestinian self-determination, with no competing end-state
+- Accept Trump's Comprehensive Plan as the current pathway to an Israeli-Palestinian political settlement, with no competing end-state
 - Commit to a 10–15 yr armistice and disengagement of the Axis toward Israel & US forces, contingent on the pathway not being foreclosed
 ⇄
 - Reciprocal non-aggression and disengagement toward Iran and its allies

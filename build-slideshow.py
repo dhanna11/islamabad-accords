@@ -19,6 +19,7 @@ DECK = Path(os.environ.get("DECK_DIR", HERE / "deck"))
 PITCH = Path(os.environ.get("PITCH_DIR", HERE / "pitch"))
 OUT = HERE
 PDF_NAME = "islamabad-accords.pdf"
+ONE_PAGE = "one-page.html"   # the one-pager as a web page (it links its own PDF), 8 Oct 2026: beside the PDF button and in the menu
 # "Ask Claude" / "Ask ChatGPT" open a new chat with this prompt filled in. The wording is the author's; change it only on their word.
 ASK_PROMPT = ("Read the Islamabad Accords at https://dhanna11.github.io/islamabad-accords/islamabad-accords.md. "
               "Summarize it in a few lines, then answer my questions about it. Be fair to both its strengths and its weaknesses, "
@@ -109,14 +110,15 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
         ask = "".join(f'<a class="pdf" href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">'
                       f'<span class="ask-long">Ask </span>{name}</a>' for name, url in ASK_LINKS)
         links = (f'<div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span>{ask}</div>'
-                 f'<a class="pdf" href="{PDF_NAME}" target="_blank" rel="noopener">PDF</a>')
+                 f'<a class="pdf" href="{PDF_NAME}" target="_blank" rel="noopener">PDF</a>'
+                 f'<a class="pdf one-page" href="{ONE_PAGE}">1 page</a>')
         # the Pitch / Full deck toggle sits at the left end of the bar, before the section menu
         here = next(h for h, _ in PAGES if h != other[0]) if other else None
         other_link = switch_html(here) if other else ""
         text, href = FEEDBACK
         note = f'<a class="note" href="{href}" target="_blank" rel="noopener">{H.escape(text)}</a>'
         menu_html += "".join(f'<li class="menu-ask"><a href="{H.escape(url + quote(ASK_PROMPT, safe=""))}" target="_blank" rel="noopener">Ask {name}</a></li>'
-                             for name, url in ASK_LINKS) + f'<li class="menu-note">{note}</li>'
+                             for name, url in ASK_LINKS) + f'<li class="menu-page"><a href="{ONE_PAGE}">One page</a></li><li class="menu-note">{note}</li>'
         if other: menu_html = f'<li class="menu-other">{switch_html(here)}</li>' + menu_html
     aliases = SLIDE_ALIASES if deck_dir == DECK else {}
     for old, new in aliases.items():
@@ -185,6 +187,7 @@ TEMPLATE = r"""<!doctype html>
   .pdf { font: 700 11px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; color: var(--gold-l); text-decoration:none;
          border:1px solid var(--gold-d); border-radius:20px; padding:9px 14px; }
   .pdf:hover { background: rgba(201,168,76,.12); }
+  .one-page { text-transform:uppercase; white-space:nowrap; }
   .ask { display:flex; align-items:center; gap:8px; }
   .ask-lbl { display:none; font: 400 9px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; text-transform:uppercase; color: var(--gold-d); }
   .note { font: 400 10px/1 'JetBrains Mono', ui-monospace, monospace; letter-spacing:1.5px; color: var(--gold-d); text-decoration:none; white-space:nowrap; }
@@ -202,6 +205,12 @@ TEMPLATE = r"""<!doctype html>
   .menu-ask a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
                 font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
   .menu-ask a:hover { background: rgba(201,168,76,.12); }
+  .menu-page { border-top:1px solid var(--line); margin-top:6px; padding-top:6px; }
+  .menu-ask + .menu-page { border-top:0; margin-top:0; padding-top:0; }
+  .menu-page a { display:block; padding:10px 12px; border-radius:4px; color: var(--gold-l); text-decoration:none;
+                 font: 700 11px/1.2 'JetBrains Mono', ui-monospace, monospace; letter-spacing:2px; text-transform:uppercase; }
+  .menu-page a:hover { background: rgba(201,168,76,.12); }
+  .menu-page + .menu-note { border-top:0; margin-top:0; }
   .menu-ask + .menu-note { border-top:0; margin-top:0; }
   .menu-note { display:none; border-top:1px solid var(--line); margin-top:6px; padding:10px 12px 4px; }
   .menu-note .note { font: 400 13px/1.2 'Source Sans 3', 'Segoe UI', Arial, sans-serif; letter-spacing:0; }
@@ -228,6 +237,7 @@ TEMPLATE = r"""<!doctype html>
   @media (max-width: 640px) { .viewport > .note { display:none; } .menu-note { display:block; } }
   @media (max-width: 479px) { .bar .ask { display:none; } .menu-ask { display:block; } }
   @media (max-width: 639px) { .bar > .switch { display:none; } .menu-other { display:block; } }  /* into the menu with the feedback note, under 640px */
+  @media (max-width: 1023px) { .bar > .one-page { display:none; } }  /* the one-pager: beside PDF from 1024px, in the menu at every width (8 Oct 2026) */
 </style>
 
 <main class="viewport" id="vp" aria-live="polite">
