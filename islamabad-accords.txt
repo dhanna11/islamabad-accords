@@ -496,7 +496,7 @@ And this doesn’t count the damage to the human condition.
 - Once the firestorm is extinguished, it is extinguished · no exceptions
 *The cycle of extermination that started on October 7th and resulted in so much destruction across the Middle East will have finally ended*
 
-### One year of intense diplomacy
+### One year of quiet for intense diplomacy
 *After the armistice · what comes next*
 - A highly ambitious goal for the Middle East
 - The primary focus: getting the deal across the line and standing up the architecture, through agreements that manage the competition and adjust to the new balance of power
