@@ -11,15 +11,15 @@ An unofficial proposal by a private author, September 2026. The same content as 
 
 A COVER, FIVE NUMBERED CARDS, AND REFERENCES
 The Islamabad Accords
-A Peace Proposal Synthesized for Donald Trump
-Ending the October 7th Firestorm
+A Peace Proposal for Donald Trump
 Ensuring Iran Never Develops a Nuclear Weapon
+Ending the October 7th Firestorm
 Building a New Security Architecture for the Middle East
 Peace in the
 Middle East
 David Hanna Jr.
 
-Unofficial · a private author's proposal · September 2026 · AI disclosure at the end
+Unofficial · a private author's proposal · 49 checked sources · October 2026 · AI disclosure at the end
 
 ---
 
