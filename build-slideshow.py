@@ -99,6 +99,9 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
     deck = json.loads((deck_dir / "deck.json").read_text())
     order = deck["order"]
     starts = {v["start"]: k for k, v in deck["sections"].items()}
+    # the counter counts the main deck only (author, 10 Oct 2026, option A): from the "appendix" section on, slides read
+    # A1, A2… with no denominator, and the progress bar is full; a deck with no appendix section counts every slide
+    main = order.index(deck["sections"]["appendix"]["start"]) if "appendix" in deck["sections"] else len(order)
     sec, slides, menu, toc = "cover", [], [], []
     for i, sid in enumerate(order):
         if sid in starts:
@@ -138,7 +141,7 @@ def build(with_pdf, deck_dir=DECK, other=None, forward=None):
             f"for the Middle East: {PAGE_ABOUT[kind].format(n=len(order))}. The complete plan in plain text: {SITE_URL}{TEXT_HTML}")
     page = page.replace("{{DESCRIPTION}}", H.escape(desc)).replace("{{ABOUT}}", about_html(kind, len(order), toc) if with_pdf else "")
     return page.replace("{{SLIDES}}", "\n".join(slides)).replace("{{MENU}}", menu_html).replace("{{PDF}}", links).replace("{{OTHER}}", other_link) \
-                   .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(len(order))) \
+                   .replace("{{NOTE}}", note).replace("{{TOTAL}}", str(main)).replace("{{MAIN}}", str(main)) \
                    .replace("{{ALIASES}}", json.dumps(aliases)) \
                    .replace("{{FORWARD}}", json.dumps({"page": forward[0], "ids": sorted(forward[1])} if forward else {"page": "", "ids": []})) \
                    .replace("<title>The Islamabad Accords</title>", {PITCH: "<title>The Islamabad Accords</title>", DECK: "<title>The Islamabad Accords · Full deck</title>",
@@ -338,6 +341,7 @@ TEMPLATE = r"""<!doctype html>
   const vp = document.getElementById('vp');
   const stages = Array.from(vp.querySelectorAll('.stage'));
   const N = stages.length;
+  const MAIN = {{MAIN}};  // slides before the appendix: the counter's denominator (the appendix reads A1, A2…)
   const $ = id => document.getElementById(id);
   let cur = 0;
   // stagger index for each slide's flow children
@@ -368,9 +372,9 @@ TEMPLATE = r"""<!doctype html>
     const s = stages[i]; s.classList.add('on');
     if (animate) { void s.offsetWidth; s.classList.add('enter-' + dir); }
     cur = i;
-    $('count').textContent = `${i + 1} / ${N}`;
+    $('count').textContent = i < MAIN ? `${i + 1} / ${MAIN}` : `A${i - MAIN + 1}`;
     $('sect').textContent = s.dataset.label;
-    $('prog').style.width = ((i + 1) / N * 100) + '%';
+    $('prog').style.width = (Math.min(i + 1, MAIN) / MAIN * 100) + '%';
     $('prev').disabled = i === 0; $('next').disabled = i === N - 1;
     const secs = Array.from(document.querySelectorAll('#menu button[data-go]'));
     secs.forEach((b, k) => { const start = +b.dataset.go, end = k + 1 < secs.length ? +secs[k + 1].dataset.go : N;

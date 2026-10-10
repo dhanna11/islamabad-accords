@@ -409,7 +409,7 @@
   <div class="switch" role="group" aria-label="One page, pitch or full deck"><a class="seg other" href="one-page.html">1 page</a><a class="seg other" href="index.html">Pitch</a><span class="seg cur" aria-current="page">Full<span class="seg-more"> deck</span></span></div>
   <div class="where">
     <button class="sect" id="sect" type="button" aria-haspopup="true" aria-expanded="false">Cover</button>
-    <span class="count" id="count">1 / 71</span>
+    <span class="count" id="count">1 / 48</span>
   </div>
   <div class="ask" role="group" aria-label="Ask an AI about the plan"><span class="ask-lbl" aria-hidden="true">Ask</span><a class="pdf" href="https://claude.ai/new?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords-text.html.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener"><span class="ask-long">Ask </span>Claude</a><a class="pdf" href="https://chatgpt.com/?q=Read%20the%20Islamabad%20Accords%20at%20https%3A%2F%2Fdhanna11.github.io%2Fislamabad-accords%2Fislamabad-accords-text.html.%20Summarize%20it%20in%20a%20few%20lines%2C%20then%20answer%20my%20questions%20about%20it.%20Be%20fair%20to%20both%20its%20strengths%20and%20its%20weaknesses%2C%20and%20where%20it%20falls%20short%2C%20suggest%20how%20the%20plan%20could%20be%20improved." target="_blank" rel="noopener"><span class="ask-long">Ask </span>ChatGPT</a></div><div class="pdfs" role="group" aria-label="PDF"><span class="pdfs-lbl" aria-hidden="true">PDF</span><a class="seg" href="islamabad-accords-one-page.pdf" target="_blank" rel="noopener">1&nbsp;page</a><a class="seg" href="islamabad-accords.pdf" target="_blank" rel="noopener">Full<span class="seg-more"> plan</span></a></div>
   <button class="btn" id="prev" type="button" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
@@ -422,6 +422,7 @@
   const vp = document.getElementById('vp');
   const stages = Array.from(vp.querySelectorAll('.stage'));
   const N = stages.length;
+  const MAIN = 48;  // slides before the appendix: the counter's denominator (the appendix reads A1, A2…)
   const $ = id => document.getElementById(id);
   let cur = 0;
   // stagger index for each slide's flow children
@@ -452,9 +453,9 @@
     const s = stages[i]; s.classList.add('on');
     if (animate) { void s.offsetWidth; s.classList.add('enter-' + dir); }
     cur = i;
-    $('count').textContent = `${i + 1} / ${N}`;
+    $('count').textContent = i < MAIN ? `${i + 1} / ${MAIN}` : `A${i - MAIN + 1}`;
     $('sect').textContent = s.dataset.label;
-    $('prog').style.width = ((i + 1) / N * 100) + '%';
+    $('prog').style.width = (Math.min(i + 1, MAIN) / MAIN * 100) + '%';
     $('prev').disabled = i === 0; $('next').disabled = i === N - 1;
     const secs = Array.from(document.querySelectorAll('#menu button[data-go]'));
     secs.forEach((b, k) => { const start = +b.dataset.go, end = k + 1 < secs.length ? +secs[k + 1].dataset.go : N;

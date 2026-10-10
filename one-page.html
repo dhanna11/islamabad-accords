@@ -141,6 +141,7 @@
   const vp = document.getElementById('vp');
   const stages = Array.from(vp.querySelectorAll('.stage'));
   const N = stages.length;
+  const MAIN = 1;  // slides before the appendix: the counter's denominator (the appendix reads A1, A2…)
   const $ = id => document.getElementById(id);
   let cur = 0;
   // stagger index for each slide's flow children
@@ -171,9 +172,9 @@
     const s = stages[i]; s.classList.add('on');
     if (animate) { void s.offsetWidth; s.classList.add('enter-' + dir); }
     cur = i;
-    $('count').textContent = `${i + 1} / ${N}`;
+    $('count').textContent = i < MAIN ? `${i + 1} / ${MAIN}` : `A${i - MAIN + 1}`;
     $('sect').textContent = s.dataset.label;
-    $('prog').style.width = ((i + 1) / N * 100) + '%';
+    $('prog').style.width = (Math.min(i + 1, MAIN) / MAIN * 100) + '%';
     $('prev').disabled = i === 0; $('next').disabled = i === N - 1;
     const secs = Array.from(document.querySelectorAll('#menu button[data-go]'));
     secs.forEach((b, k) => { const start = +b.dataset.go, end = k + 1 < secs.length ? +secs[k + 1].dataset.go : N;
