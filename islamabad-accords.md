@@ -480,14 +480,21 @@ Slides that appear only in the deck.
 
 ### What the wars have cost so far
 *Since 7 October 2023 · estimates*
-- **Israel** · $172B · Government spending, NIS 350B (2023–26) · lost output, NIS 177B (to end-2025) (Bank of Israel · Oct 2026)
-- **Iran** · $144B · Damage from the 2026 war · range $50–300B · Tehran claims $270B (FDD · Jun 2026)
-- **Gaza & Lebanon** · $93B · Gaza’s reconstruction need, $71.4B · Lebanon’s losses since 2024, $20–25B (EU/UN/World Bank · Lebanon’s finance minister)
-- **United States** · $57B · Aid and operations to Sep 2025, $31–34B · the Iran war to Apr 2026, $25B (Costs of War, Brown · Pentagon)
-- **Gulf & Egypt** · $206B\* · Gulf growth lost vs. the pre-war forecast, ≈$190B\* · Suez Canal, 2024–25, ≈$16B\* (World Bank · Egypt’s presidency)
-**Total: ≈ $670 billion** (range $530–850 billion)
-*Different sources, methods and dates · damage, spending and lost output added together · \*computed here from published figures*
-*Not counted: the West Bank, Syria, Yemen, Jordan, Iraq, US households’ costs (~$100B, Moody’s) · the world economy’s 2026 loss is separate: $0.6–1.3 trillion (IEP)*
+**Destroyed** (physical damage, at replacement cost): **≈ $140B**
+- Iran · ≈ $91B (FDD · Apr 2026)
+- Gaza · $35.2B (World Bank / UN / EU · Apr 2026)
+- Lebanon · ≈ $10B (World Bank 2025 · government 2026)
+- Israel · ≈ $2B (direct missile damage, partial)
+**Lost output** (against pre-war forecasts): **≈ $355B**
+- Gulf states · ≈ $210B\* (World Bank growth downgrades · 2026)
+- Iran, oil & gas revenue · ≈ $53B (FDD · Apr 2026)
+- Israel · ≈ $49B (Bank of Israel · NIS 175B, to end-2025)
+- Gaza · Lebanon · $22.7B · $11B (World Bank / UN / EU)
+- Egypt, Suez revenue · ≈ $9–10B (Egypt’s presidency · 2024–26)
+**War spending** (by governments): **≈ $170B**
+- Israel · ≈ $98B (Bank of Israel · NIS 350B, 2023–26)
+- United States · ≈ $70B (Brown, to Sep 2025 · Pentagon, the 2026 war)
+*Three different measures, never added together · Gaza’s reconstruction need: $71.4B · \*computed here from published figures*
 And this doesn’t count the damage to the human condition.
 
 ### The definitive end of the October 7th Firestorm
@@ -621,7 +628,7 @@ And this doesn’t count the damage to the human condition.
 - Nothing
 - Build it spoiler-proof and the universe builds a better spoiler, so it’s built to resist
 - Once the region has an architecture, wrecking it means choosing nothing over something, in public, against everyone who relies on it
-- Gains turn into physical facts early, so even a collapse can’t take it back to zero
+- If it breaks anyway, the deals already done still count toward ending the war, and the pieces stand on their own: the Hormuz Commission and the Consortium can be built later, one at a time
 - Its cost is whatever the others are willing to impose
 
 ### Help make it actionable
