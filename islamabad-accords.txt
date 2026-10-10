@@ -27,7 +27,7 @@ Unofficial · a private author's proposal · September 2026 · AI disclosure at 
 
 Ending the October 7th Firestorm
 two phases · five institutions · one mechanism · 20 to 30 years
-The Islamabad MoU was a skeletal framework for a deal without a destination. The core of this is an architectural framework that attempts to implement the full agreement, using pieces that have already been proposed by the international community, synthesized into a coherent vision for Trump to own.
+The Islamabad MoU was a skeletal framework for a deal without a destination. The core of this is a regionally owned architectural framework that attempts to implement the spirit of the agreement, using pieces that have already been proposed by the international community, synthesized into a coherent vision for Trump to own.
 A framework for Trump’s team and the experts to critique, tear apart, and reconstruct into a proper end-of-war settlement
 THE CLEARING AND SETTLEMENT LOOP · in four sentences
 1. Iran performs, a regional institution verifies, money and sanctions relief move, and the exchange settles with finality.
@@ -116,25 +116,25 @@ ADAPTED FROM THE IRAN–OMAN ROUTE TALKS (JUL–AUG 2026, STILL MOVING) · THE O
 No-prejudice: nobody formally concedes sovereignty, transit rights, or economic arrangements. Holds until the architectural phase settles the strait.
 Sovereign and military fleets excepted
 - The lane arrangement governs commercial traffic
-- Warships, government vessels, and state-flagged commercial fleets transit by either route, in recognition of sovereign interests, rights, and balance of power
-Mutual stand-down: the US naval blockade lifts; Iran’s attacks on the strait halt.
-The oil waiver returns with the strait
-- Restored under MoU ¶10
+- Any state’s warships and government vessels, and the coastal states’ state-owned commercial fleets, transit by either route, in recognition of sovereign interests, rights, and balance of power
+Oil for oil: Iranian energy exports pass the US blockade; Iran’s attacks on energy shipping halt. Food and medicine pass both ways. The rest lifts at the Armistice Gate.
+The oil waiver returns with the IRGC at the table
+- Restored under MoU ¶10 once the June US–Iran deconfliction cell is staffed and operational
 - Worth real money inside an architectural roadmap
 
 NUCLEAR BARGAIN
 de-escalate the file without resolving it
-GATE 1
+GATE N1
 IAEA access restored,
 verification baseline set
 $6B+
 QATARI ACCOUNTS RELEASE
-GATE 2
+GATE N2
 HEU downblended in place,
 verified, per MoU Art. 8
 $5B+
 RELEASES
-GATE 3 · ARCHITECTURAL PHASE
+GATE N3 · ARCHITECTURAL PHASE
 Custody of remaining material,
 on architectural-phase terms
 $15B+
@@ -165,7 +165,7 @@ What counts as agreement of the architectural phase
 - Acceptance of their general mandates and initial files
 - Agreement on the range of the negotiating parameters: enrichment percentage, duration, money · not a particular figure, the range on the figures
 - Agreement on the set of candidate nations that could assist in each institution
-On agreement, the wartime escalation unwinds: US forces surged for the war are withdrawn, the sanctions imposed since the June MoU are lifted, and an armistice ending the October 7th Firestorm is declared.
+On agreement, the wartime escalation unwinds: US forces surged for the war are withdrawn, the sanctions imposed since the June MoU are lifted, the rest of the naval blockade lifts as all commercial shipping passes freely, and an armistice ending the October 7th Firestorm is declared.
 The agreed architecture is endorsed by a UN Security Council resolution, as the 20-point plan was.
 
 ---
@@ -287,7 +287,7 @@ THE ONE COUPLING, NOT DESIGNED · AMERICAN FINANCIAL LEVERAGE TOUCHES EVERY TRAC
 Sanctions Relief & Asset Releases
 Not a sixth track · the compensation and compliance layer beneath all five
 FLOORS
-Settlement finality: a closed exchange ideally stays closed over a crisis on another track.
+Settlement finality: a closed exchange ideally stays closed · reopening it is a visible move against everyone who relies on it
 GATES
 Delivery versus payment: each future tranche tied to specified performance in its own track.
 BREACH
@@ -405,7 +405,7 @@ Repository: [github.com/dhanna11/islamabad-accords](https://github.com/dhanna11/
 ## Sources
 
 A Mosaic Found in the Doom Scroll
-a synthesis of proposals · Trump's branding on the package · 47 sources, by file · links are live in the PDF edition
+a synthesis of proposals · Trump's branding on the package · 49 sources, by file · links are live in the PDF edition
 THE INSTRUMENT · the MoU and its collapse
 [Wikisource · 17 Jun 2026 · The Islamabad MoU, full text: Arts. 1, 5, 8, 10, 11, 12](https://en.wikisource.org/wiki/Islamabad_Memorandum_of_Understanding_between_the_United_States_of_America_and_the_Islamic_Republic_of_Iran)
 [AP via PBS · 7 Jul 2026 · Three tankers hit; the US revokes the oil license the same day](https://www.pbs.org/newshour/world/3-tankers-hit-in-latest-attacks-in-the-strait-of-hormuz-british-military-says)
@@ -417,6 +417,8 @@ HORMUZ · the Commission
 [Axios (Ravid) · 26 Apr 2026 · Iran offers Hormuz first, the nuclear file later](https://www.axios.com/2026/04/27/iran-us-hormuz-strait-nuclear-talks-proposal-pakistan)
 [Maritime Executive · 18 Jun 2026 · Iran’s Persian Gulf Strait Authority and its transit fees](https://maritime-executive.com/article/will-passage-fees-be-charged-in-the-strait-of-hormuz)
 [MarineLink · 24 Jun 2026 · Oman opens alternative lanes; the TSS declared unsafe](https://www.marinelink.com/news/oman-opens-alternative-hormuz-lanes-540579)
+[Times of Israel (Magid) · 25 Jun 2026 · Vance: the deconfliction cell agreed in Switzerland puts IRGC and CENTCOM officers together in Doha](https://www.timesofisrael.com/vance-us-iran-deconfliction-cell-has-irgc-centcom-reps-hanging-out-in-doha/)
+[Al Jazeera · 27 Jun 2026 · The IRGC calls the Hormuz hotline “completely false”; it was not set up and will not be](https://www.aljazeera.com/news/2026/6/27/pick-up-the-phone-irgc-appears-to-rebuff-us-strait-of-hormuz-hotline)
 [Bourse & Bazaar (Batmanghelidj, Haghirian) · 10 Jul 2026 · A Hormuz fee paid to a body of all eight Gulf coastal states](https://www.bourseandbazaar-substack.org/p/how-a-hormuz-fee-could-work)
 [Reuters via Times of Israel · 28 Jul 2026 · Oman’s Gulf-backed proposal: joint control, voluntary fees, the Malacca model](https://www.timesofisrael.com/oman-hands-iran-proposal-for-joint-control-over-hormuz-with-voluntary-fees/)
 [Al Jazeera · 5 Aug 2026 · A lane plan: inbound through Iranian waters, outbound through Omani waters, 60 days toll-free](https://www.aljazeera.com/news/2026/8/5/iran-oman-us-close-to-hormuz-deal-what-do-they-all-want)
@@ -460,7 +462,7 @@ ARMS & PRESENCE · the Forum
 [Reuters via Times of Israel · 17 Sep 2026 · China privately presses Iran on the Houthis after a Saudi appeal](https://www.timesofisrael.com/china-privately-pushing-iran-to-help-rein-in-houthis-after-saudi-appeal-sources-say)
 SANCTIONS · the layer beneath
 [Lawfare (Karbassi) · 26 May 2022 · Waiver vs. termination; EO 13716; the CISADA §401 certification](https://www.lawfaremedia.org/article/nuclear-brinkmanship-us-sanctions-against-iran-explained)
-EVERY LINK OPENED AND CHECKED 18–26 SEP 2026 · THE ARCHITECTURE ARRANGES WHAT THE RECORD ALREADY CONTAINS
+EVERY LINK OPENED AND CHECKED 18 SEP–9 OCT 2026 · THE ARCHITECTURE ARRANGES WHAT THE RECORD ALREADY CONTAINS
 
 ---
 
@@ -527,9 +529,9 @@ And this doesn’t count the damage to the human condition.
 ### Three deals, one gate, five institutions
 *The proposed sequencing · from the talks to the architecture*
 - **Stage 1 · To the ceasefire** (weeks) · Initial talks: Agree the agenda: the three deals + regional and external guarantor consultations · then Ceasefire redeclared: all fronts
-- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Blockade lifts ⇄ attacks halt · simultaneous; H2 · Strait reopened ⇄ oil waiver · Nuclear Bargain: G1 · IAEA access ⇄ $6B+; G2 · HEU downblended ⇄ $5B+ (recover · blend down · verify) · Architecture talks: Institutions · mandates · parameter ranges
-- **The gate · armistice declared** · The October 7th Firestorm is over · Architecture agreed ⇄ the $25B tranche · UN Security Council endorses · The wartime escalation unwinds: US surge forces withdrawn · sanctions since the June MoU lifted
-- **Stage 3 · Initial institutions convene** (~1 year) · Hormuz Commission · initial: Begin talks on the long-term regime for the strait · Consortium · initial: What to do with the uranium · custody among members · verification for Iran and the region · The Table: Signing ceremony at a Board of Peace meeting · attendance highly recommended · The Fund: Initial matching pledges for the Gaza and Lebanon public trust · early private interest in shared, interconnected regional infrastructure · G3 · custody ⇄ $15B+
+- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Oil for oil · Iran’s exports pass ⇄ energy shipping safe; H2 · IRGC at the table ⇄ oil waiver · Nuclear Bargain: N1 · IAEA access ⇄ $6B+; N2 · HEU downblended ⇄ $5B+ (recover · blend down · verify) · Architecture talks: Institutions · mandates · parameter ranges
+- **The Armistice Gate** · The October 7th Firestorm is over · Architecture agreed ⇄ the $25B tranche · UN Security Council endorses · The wartime escalation unwinds: US surge forces withdrawn · sanctions since the June MoU lifted · Free passage for all shipping ⇄ the rest of the blockade lifts
+- **Stage 3 · Initial institutions convene** (~1 year) · Hormuz Commission · initial: Begin talks on the long-term regime for the strait · Consortium · initial: What to do with the uranium · custody among members · verification for Iran and the region · The Table: Signing ceremony at a Board of Peace meeting · attendance highly recommended · The Fund: Initial matching pledges for the Gaza and Lebanon public trust · early private interest in shared, interconnected regional infrastructure · N3 · custody ⇄ $15B+
 - **Stage 4 · Five independent lines** (ongoing · past 20 Jan 2029, the end of the term) · Commission: The strait’s permanent settlement · Consortium: Verification first, enrichment second · The Table: The All-Fronts Hudna formalized · The Fund: Reconstruction and interdependence · Arms Control Forum: Initial talks on post-war regional presence and basing · regional arsenal build-up and retrenchment
 
 ### Why the 20-point plan
@@ -568,38 +570,38 @@ And this doesn’t count the damage to the human condition.
 - The exact figure doesn’t matter · $500B, $300B, or $100B, what matters is real money put into regional reconstruction and economic ties dense enough to raise the cost of the next war for everyone
 
 ### “It’s overly optimistic”
-*The obvious objections · 1 of 7*
+*The obvious objections · 1 of 8*
 - It’s the fucking Middle East
 - Any plan to bring order to this chaos will be optimistic
 
 ### “What if Israel undermines it?”
-*The obvious objections · 2 of 7*
+*The obvious objections · 2 of 8*
 - It can, like any party, the way the JCPOA was undermined
 - Israel’s permanence is a given, and nothing moves the Middle East more than its existential security interests
 - No architecture for the region survives without meeting them, and this one attempts to
 - Undermining it carries an increasingly high cost with the American nation
 
 ### “It still leaves Iran enrichment”
-*The obvious objections · 3 of 7*
+*The obvious objections · 3 of 8*
 - A Persian, Shia state sitting on every fault line in the region will always want a hedge
 - No bombing campaign changes that, only regime change would
 - So the deal caps it: near-zero for 10–15 years, zero HEU, verification first
 
 ### “The Palestinian linkage is the weak link”
-*The obvious objections · 4 of 7*
+*The obvious objections · 4 of 8*
 - It is, and either side could veto it
 - It only asks the region to line up behind the one viable pathway
 - Any future two-state solution will be a Frankenstein of Oslo and the 20-point plan, and this is the best way I found to put the whole region behind it
 
 ### “How is it regionally owned with great-power guarantees?”
-*The obvious objections · 5 of 7*
+*The obvious objections · 5 of 8*
 - It’s a real limit
 - Great powers have to throw their weight around to stand it up
 - The ideal is that they then step back to providing basic services to each side
 - Great-power politics wins over the ideal, for now
 
 ### “What about Yemen?”
-*The obvious objections · 6 of 7*
+*The obvious objections · 6 of 8*
 - Out of scope for V1: the Saudi–Houthi front needs its own political process
 - It is the likeliest place for the All-Fronts Hudna to break first, because Bab el-Mandeb is a choke point and reopening it is existential for Saudi Arabia
 - That is why the Hudna covers Yemen only implicitly: it leaves leeway for when it breaks there
@@ -607,12 +609,20 @@ And this doesn’t count the damage to the human condition.
 - The Fund’s regional interconnectedness can reach the Yemeni front too, as an extension of the architecture after V1
 
 ### “What about Lebanon?”
-*The obvious objections · 7 of 7*
+*The obvious objections · 7 of 8*
 - In scope: the All-Fronts Hudna covers Lebanon explicitly, because the Lebanon file has to be handled, and the Fund’s public trust rebuilds it alongside Gaza
 - The Hudna aligns Hezbollah with Hamas behind the 20-point plan
 - With the Axis behind the same ending, Lebanon stops being a second campaign and becomes the leftover of a war both sides have ended on paper
 - That opens room for movement on demilitarizing southern Lebanon, something realistic to break the deadlock over the stalled Israel–Lebanon framework
 - The goal: properly demilitarize south of the Litani, through the official Israel–Lebanon framework, with the Hudna as the side channel that brings Hezbollah along
+
+### “What stops someone from spoiling it?”
+*The obvious objections · 8 of 8*
+- Nothing
+- Build it spoiler-proof and the universe builds a better spoiler, so it’s built to resist
+- Once the region has an architecture, wrecking it means choosing nothing over something, in public, against everyone who relies on it
+- Gains turn into physical facts early, so even a collapse can’t take it back to zero
+- Its cost is whatever the others are willing to impose
 
 ### Help make it actionable
 *A thought experiment, looking for skeptics*
