@@ -118,7 +118,7 @@ Sovereign and military fleets excepted
 - The lane arrangement governs commercial traffic
 - Any state’s warships and government vessels, and the coastal states’ state-owned commercial fleets, transit by either route, in recognition of sovereign interests, rights, and balance of power
 Oil for oil: Iranian energy exports pass the US blockade; Iran’s attacks on energy shipping halt. Food and medicine pass both ways. The rest lifts at the Armistice Gate.
-The oil waiver returns with the IRGC at the table
+The oil waiver returns
 - Restored under MoU ¶10 once the June US–Iran deconfliction cell is staffed and operational
 - Worth real money inside an architectural roadmap
 
@@ -536,7 +536,7 @@ And this doesn’t count the damage to the human condition.
 ### Three deals, one gate, five institutions
 *The proposed sequencing · from the talks to the architecture*
 - **Stage 1 · To the ceasefire** (weeks) · Initial talks: Agree the agenda: the three deals + regional and external guarantor consultations · then Ceasefire redeclared: all fronts
-- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Oil for oil · Iran’s exports pass ⇄ energy shipping safe; H2 · IRGC at the table ⇄ oil waiver · Nuclear Bargain: N1 · IAEA access ⇄ $6B+; N2 · HEU downblended ⇄ $5B+ (recover · blend down · verify) · Architecture talks: Institutions · mandates · parameter ranges
+- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Oil for oil · Iran’s exports pass ⇄ energy shipping safe; H2 · Deconfliction cell operational ⇄ oil waiver · Nuclear Bargain: N1 · IAEA access ⇄ $6B+; N2 · HEU downblended ⇄ $5B+ (recover · blend down · verify) · Architecture talks: Institutions · mandates · parameter ranges
 - **The Armistice Gate** · The October 7th Firestorm is over · Architecture agreed ⇄ the $25B tranche · UN Security Council endorses · The wartime escalation unwinds: US surge forces withdrawn · sanctions since the June MoU lifted · Free passage for all shipping ⇄ the rest of the blockade lifts
 - **Stage 3 · Initial institutions convene** (~1 year) · Hormuz Commission · initial: Begin talks on the long-term regime for the strait · Consortium · initial: What to do with the uranium · custody among members · verification for Iran and the region · The Table: Signing ceremony at a Board of Peace meeting · attendance highly recommended · The Fund: Initial matching pledges for the Gaza and Lebanon public trust · early private interest in shared, interconnected regional infrastructure · N3 · custody ⇄ $15B+
 - **Stage 4 · Five independent lines** (ongoing · past 20 Jan 2029, the end of the term) · Commission: The strait’s permanent settlement · Consortium: Verification first, enrichment second · The Table: The All-Fronts Hudna formalized · The Fund: Reconstruction and interdependence · Arms Control Forum: Initial talks on post-war regional presence and basing · regional arsenal build-up and retrenchment
