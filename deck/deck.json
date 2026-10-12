@@ -57,6 +57,7 @@
   "ai-disclosure",
   "appendix",
   "pool",
+  "future-files",
   "sec-5",
   "limit-1",
   "limit-2",
@@ -114,7 +115,7 @@
    "start": "close"
   },
   "appendix": {
-   "description": "Appendix: the pool by the numbers, the seven limits, and the nine obvious objections.",
+   "description": "Appendix: the pool by the numbers, future files for the institutions, the seven limits, and the nine obvious objections.",
    "start": "appendix"
   },
   "references": {
