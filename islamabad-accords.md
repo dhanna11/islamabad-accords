@@ -577,39 +577,49 @@ And this doesn’t count the damage to the human condition.
 - It’s roughly what this war has cost the region · Gaza ~$71B, Lebanon ~$11B, and Iran’s own ~$300B estimate already come to ~$380B, before the Gulf’s losses or shipping
 - The exact figure doesn’t matter · $500B, $300B, or $100B, what matters is real money put into regional reconstruction and economic ties dense enough to raise the cost of the next war for everyone
 
+### What changes hands at each gate
+*The gates, trade by trade*
+- **H1 · Oil for oil** · Iran and its allies give: Attacks on energy shipping halt · food and medicine pass to the Gulf · The US and the region give: Iranian energy exports pass the blockade · food and medicine pass to Iran · Settles when: each voyage passes unharmed
+- **H2 · Deconfliction cell** · Iran and its allies give: IRGC Navy and CENTCOM officers staff the June cell · The US and the region give: The oil waiver returns, under MoU ¶10 · Settles when: the cell is staffed and operational
+- **N1** · Iran and its allies give: IAEA access restored · The US and the region give: $6B+ released · Settles when: the IAEA verifies access
+- **N2** · Iran and its allies give: HEU recovered and downblended · The US and the region give: $5B+ released · Settles when: the IAEA verifies the downblending
+- **The Armistice Gate** · Iran and its allies give: The architecture agreed, the Hudna included · free passage for all shipping · The US and the region give: The $25B tranche · UN Security Council endorsement · the rest of the blockade lifts · wartime sanctions lifted · Settles when: the architecture is signed
+- **N3** · Iran and its allies give: Custody of the remaining material · The US and the region give: $15B+ released · Settles when: the Consortium holds the material
+*In the order they happen, as on the sequencing slide. The Armistice Gate is the one gate where the tracks meet.*
+
 ### “It’s overly optimistic”
-*The obvious objections · 1 of 8*
+*The obvious objections · 1 of 9*
 - It’s the fucking Middle East
 - Any plan to bring order to this chaos will be optimistic
 
 ### “What if Israel undermines it?”
-*The obvious objections · 2 of 8*
+*The obvious objections · 2 of 9*
 - It can, like any party, the way the JCPOA was undermined
 - Israel’s permanence is a given, and nothing moves the Middle East more than its existential security interests
 - No architecture for the region survives without meeting them, and this one attempts to
 - Undermining it carries an increasingly high cost with the American nation
 
 ### “It still leaves Iran enrichment”
-*The obvious objections · 3 of 8*
+*The obvious objections · 3 of 9*
 - A Persian, Shia state sitting on every fault line in the region will always want a hedge
 - No bombing campaign changes that, only regime change would
 - So the deal caps it: near-zero for 10–15 years, zero HEU, verification first
 
 ### “The Palestinian linkage is the weak link”
-*The obvious objections · 4 of 8*
+*The obvious objections · 4 of 9*
 - It is, and either side could veto it
 - It only asks the region to line up behind the one viable pathway
 - Any future two-state solution will be a Frankenstein of Oslo and the 20-point plan, and this is the best way I found to put the whole region behind it
 
 ### “How is it regionally owned with great-power guarantees?”
-*The obvious objections · 5 of 8*
+*The obvious objections · 5 of 9*
 - It’s a real limit
 - Great powers have to throw their weight around to stand it up
 - The ideal is that they then step back to providing basic services to each side
 - Great-power politics wins over the ideal, for now
 
 ### “What about Yemen?”
-*The obvious objections · 6 of 8*
+*The obvious objections · 6 of 9*
 - Out of scope for V1: the Saudi–Houthi front needs its own political process
 - It is the likeliest place for the All-Fronts Hudna to break first, because Bab el-Mandeb is a choke point and reopening it is existential for Saudi Arabia
 - That is why the Hudna covers Yemen only implicitly: it leaves leeway for when it breaks there
@@ -617,7 +627,7 @@ And this doesn’t count the damage to the human condition.
 - The Fund’s regional interconnectedness can reach the Yemeni front too, as an extension of the architecture after V1
 
 ### “What about Lebanon?”
-*The obvious objections · 7 of 8*
+*The obvious objections · 7 of 9*
 - In scope: the All-Fronts Hudna covers Lebanon explicitly, because the Lebanon file has to be handled, and the Fund’s public trust rebuilds it alongside Gaza
 - The Hudna aligns Hezbollah with Hamas behind the 20-point plan
 - With the Axis behind the same ending, Lebanon stops being a second campaign and becomes the leftover of a war both sides have ended on paper
@@ -625,12 +635,19 @@ And this doesn’t count the damage to the human condition.
 - The goal: properly demilitarize south of the Litani, through the official Israel–Lebanon framework, with the Hudna as the side channel that brings Hezbollah along
 
 ### “What stops someone from spoiling it?”
-*The obvious objections · 8 of 8*
+*The obvious objections · 8 of 9*
 - Nothing
 - Build it spoiler-proof and the universe builds a better spoiler, so it’s built to resist
 - Once the region has an architecture, wrecking it means choosing nothing over something, in public, against everyone who relies on it
 - If it breaks anyway, the deals already done still count toward ending the war, and the pieces stand on their own: the Hormuz Commission and the Consortium can be built later, one at a time
 - Its cost is whatever the others are willing to impose
+
+### “What stops the rebuilt Gaza and Lebanon from being blown up again?”
+*The obvious objections · 9 of 9*
+- Nothing guarantees it; the Hudna is designed to make it costly: Iran’s allies commit to the armistice, the US guarantees Israel’s compliance, and Hamas is to disarm under the 20-point plan
+- Every rebuilt block is a physical fact, paid for by Iran, the Board of Peace and the region; blowing it up is a visible move against everyone who paid
+- This is the prelude to the author’s real, delusional plan, the Virtuous City Vision: rebuild the destroyed strip as the Virtuous City of Gaza, a reconciliation of the Western and Islamic worlds, intertwined since the Golden Age
+- Its raison d’être: spiritual, intellectual and moral perfection of its inhabitants, for this life and the next
 
 ### Help make it actionable
 *A thought experiment, looking for skeptics*

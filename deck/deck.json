@@ -56,6 +56,7 @@
   "ai-disclosure",
   "appendix",
   "pool",
+  "gates",
   "sec-5",
   "limit-1",
   "limit-2",
@@ -72,6 +73,7 @@
   "objection-6",
   "objection-7",
   "objection-8",
+  "objection-9",
   "where-it-breaks",
   "references",
   "sources-1",
@@ -112,7 +114,7 @@
    "start": "close"
   },
   "appendix": {
-   "description": "Appendix: the pool by the numbers, the seven limits, and the eight obvious objections.",
+   "description": "Appendix: the pool by the numbers, the gates trade by trade, the seven limits, and the nine obvious objections.",
    "start": "appendix"
   },
   "references": {
