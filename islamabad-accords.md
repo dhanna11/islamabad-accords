@@ -312,7 +312,7 @@ Regional Détente
 20 TO 30 YEARS
 THE CATASTROPHIC SUCCESS
 Full Regional Normalization
-- Diplomatic relations among all the states of the region, with the end of US-Iran enmity as the keystone
+- Diplomatic relations among all the states of the region, with Israel–Iran relations as the keystone
 - Not warmth · a channel that holds under stress
 - A Middle East where every capital can reach every other in an emergency
 - A Middle East that secures itself · regional rivalries settled at its own table
