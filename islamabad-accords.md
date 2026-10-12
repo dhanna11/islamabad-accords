@@ -542,6 +542,16 @@ And this doesn’t count the damage to the human condition.
 - **Stage 3 · Initial institutions convene** (~1 year) · Hormuz Commission · initial: Begin talks on the long-term regime for the strait · Consortium · initial: What to do with the uranium · custody among members · verification for Iran and the region · The Table: Signing ceremony at a Board of Peace meeting · attendance highly recommended · The Fund: Initial matching pledges for the Gaza and Lebanon public trust · early private interest in shared, interconnected regional infrastructure · N3 · custody ⇄ $15B+
 - **Stage 4 · Five independent lines** (ongoing · past 20 Jan 2029, the end of the term) · Commission: The strait’s permanent settlement · Consortium: Verification first, enrichment second · The Table: The All-Fronts Hudna formalized · The Fund: Reconstruction and interdependence · Arms Control Forum: Initial talks on post-war regional presence and basing · regional arsenal build-up and retrenchment
 
+### What changes hands at each gate
+*The gates, trade by trade*
+- **H1 · Oil for oil** · Iran and its allies give: Attacks on energy shipping halt · food and medicine pass to the Gulf · The US and the region give: Iranian energy exports pass the blockade · food and medicine pass to Iran · Settles when: each voyage passes unharmed
+- **H2 · Deconfliction cell** · Iran and its allies give: IRGC Navy and CENTCOM officers staff the June cell · The US and the region give: The oil waiver returns, under MoU ¶10 · Settles when: the cell is staffed and operational
+- **N1** · Iran and its allies give: IAEA access restored · The US and the region give: $6B+ released · Settles when: the IAEA verifies access
+- **N2** · Iran and its allies give: HEU recovered and downblended · The US and the region give: $5B+ released · Settles when: the IAEA verifies the downblending
+- **The Armistice Gate** · Iran and its allies give: The architecture agreed, the Hudna included · free passage for all shipping · The US and the region give: The $25B tranche · UN Security Council endorsement · the rest of the blockade lifts · wartime sanctions lifted · Settles when: the architecture is signed
+- **N3** · Iran and its allies give: Custody of the remaining material · The US and the region give: $15B+ released · Settles when: the Consortium holds the material
+*The Armistice Gate is the one gate where the tracks meet.*
+
 ### Why the 20-point plan
 *All-Fronts Hudna · why the 20-point plan*
 - The 20-point plan is Trump’s signature peace plan · the only political process for Gaza and the greater Israeli-Palestinian conflict, backed by the whole region outside the Resistance Axis and endorsed by the Security Council
@@ -576,16 +586,6 @@ And this doesn’t count the damage to the human condition.
 - It’s a headline number · big enough to spur imagination and creativity
 - It’s roughly what this war has cost the region · Gaza ~$71B, Lebanon ~$11B, and Iran’s own ~$300B estimate already come to ~$380B, before the Gulf’s losses or shipping
 - The exact figure doesn’t matter · $500B, $300B, or $100B, what matters is real money put into regional reconstruction and economic ties dense enough to raise the cost of the next war for everyone
-
-### What changes hands at each gate
-*The gates, trade by trade*
-- **H1 · Oil for oil** · Iran and its allies give: Attacks on energy shipping halt · food and medicine pass to the Gulf · The US and the region give: Iranian energy exports pass the blockade · food and medicine pass to Iran · Settles when: each voyage passes unharmed
-- **H2 · Deconfliction cell** · Iran and its allies give: IRGC Navy and CENTCOM officers staff the June cell · The US and the region give: The oil waiver returns, under MoU ¶10 · Settles when: the cell is staffed and operational
-- **N1** · Iran and its allies give: IAEA access restored · The US and the region give: $6B+ released · Settles when: the IAEA verifies access
-- **N2** · Iran and its allies give: HEU recovered and downblended · The US and the region give: $5B+ released · Settles when: the IAEA verifies the downblending
-- **The Armistice Gate** · Iran and its allies give: The architecture agreed, the Hudna included · free passage for all shipping · The US and the region give: The $25B tranche · UN Security Council endorsement · the rest of the blockade lifts · wartime sanctions lifted · Settles when: the architecture is signed
-- **N3** · Iran and its allies give: Custody of the remaining material · The US and the region give: $15B+ released · Settles when: the Consortium holds the material
-*In the order they happen, as on the sequencing slide. The Armistice Gate is the one gate where the tracks meet.*
 
 ### “It’s overly optimistic”
 *The obvious objections · 1 of 9*
