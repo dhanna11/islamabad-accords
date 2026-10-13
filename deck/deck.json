@@ -27,6 +27,7 @@
   "recon-story",
   "recon-gap",
   "sequencing",
+  "gates",
   "sec-2",
   "institutions",
   "table",
@@ -56,7 +57,7 @@
   "ai-disclosure",
   "appendix",
   "pool",
-  "gates",
+  "future-files",
   "sec-5",
   "limit-1",
   "limit-2",
@@ -114,7 +115,7 @@
    "start": "close"
   },
   "appendix": {
-   "description": "Appendix: the pool by the numbers, the gates trade by trade, the seven limits, and the nine obvious objections.",
+   "description": "Appendix: the pool by the numbers, future files for the institutions, the seven limits, and the nine obvious objections.",
    "start": "appendix"
   },
   "references": {
