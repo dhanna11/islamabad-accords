@@ -1,6 +1,22 @@
 # TODO · Build scripts into the repo, then one content source
 
-Written 28 Sep 2026, 23:41, at the author's request. Planning only: nothing below has been started.
+Written 28 Sep 2026, 23:41, at the author's request. The original plan below is kept for history; read the status first.
+
+## Status · 15 Oct 2026
+
+**Where the build lives.** The author settled it on 29 Sep: the build scripts, content files and logs live in a separate **private** source repo; this public repo holds only the built website, its page wrapper (`build-slideshow.py`) and its checks. A publish is one PR here, made by a script in the source repo that copies the built `deck/`, `pitch/`, `onepage/` and editions in, then runs this repo's build and smoke test. The live Slides and PDF artifacts are published from the same build. So "build scripts into this repo" (goal 1) became "build scripts into their own repo", and the Pages questions in the repo-side notes below (files at the root, the source of truth flipping) did not arise.
+
+**Done** (in the source repo, each step checked by a parity test that compares every output with the committed one):
+- Phase 0 · parity: a baseline plus `check-parity.py` (text exact, PNGs pixel by pixel, PDFs apart from timestamps); versions pinned so a rebuild is byte for byte.
+- Phase A · relative paths, one entry point (`build.sh`), pinned requirements, bundled fonts, no more running slices of other scripts.
+- Phase B · one content source: every edition's words now live in small YAML files (one per card or section, ~17 files), with exact repeats merged into one copy plus pointers. The cards render from HTML templates filled from YAML. The deck, pitch, one-pager, web, print and text editions all read the same files. (The plan's single `accords.yaml` became small files on purpose: a one-line edit is a small diff.)
+
+**Still open:**
+- Near-repeats (the same idea worded differently in two places) are left alone for now, by the author's choice; `check-sync` still guards drift and was not shrunk.
+- `check-sync` compares only the first 70 characters of each sentence; tightening it is the author's call.
+- **Phase C (proposed 15 Oct, not started): one slide registry.** The full deck's builder still makes slides three ways, an accident of history: hand-written calls (slides with one-off layouts), loops (institutions, trades, limits), and YAML entries slotted in after a named slide. One ordered list of `{id, layout, content}` would make file order match deck order and turn adding or moving any slide into a one-line edit. Plumbing only: every slide's HTML must stay byte-identical. One to two sessions; only in a quiet week.
+- This repo, found 29 Sep and not fixed yet: following an old link whose `SLIDE_ALIASES` entry points at the slide already on screen keeps the old id in the address bar (`show()` returns early before it rewrites the hash).
+
 
 ## Goal
 
