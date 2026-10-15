@@ -82,6 +82,10 @@ console.log(`\n${P.file} (${P.dir}/, ${deck.order.length} slides)`);
     await page.goto(PAGE + '#' + old);
     await page.waitForFunction(i => document.querySelector('.stage.on')?.dataset.id === i && location.hash === '#' + i, now, { timeout: 2000 })
       .catch(() => badAlias.push(`${old} -> ${now}`));
+    // the same old link followed while its slide is already on screen: the address bar must still show the current id
+    await page.evaluate(o => { location.hash = o; }, old);
+    await page.waitForFunction(i => document.querySelector('.stage.on')?.dataset.id === i && location.hash === '#' + i, now, { timeout: 2000 })
+      .catch(() => badAlias.push(`${old} -> ${now} (from its own slide)`));
   }
   check(Object.keys(aliases).length > 0 && badAlias.length === 0,
     `old slide links redirect to their new slides (${Object.keys(aliases).length})${badAlias.length ? ': ' + badAlias.join(', ') : ''}`);

@@ -11,11 +11,11 @@ Written 28 Sep 2026, 23:41, at the author's request. The original plan below is 
 - Phase A · relative paths, one entry point (`build.sh`), pinned requirements, bundled fonts, no more running slices of other scripts.
 - Phase B · one content source: every edition's words now live in small YAML files (one per card or section, ~17 files), with exact repeats merged into one copy plus pointers. The cards render from HTML templates filled from YAML. The deck, pitch, one-pager, web, print and text editions all read the same files. (The plan's single `accords.yaml` became small files on purpose: a one-line edit is a small diff.)
 
-**Still open:**
+**Still open** (and one fix):
 - Near-repeats (the same idea worded differently in two places) are left alone for now, by the author's choice; `check-sync` still guards drift and was not shrunk.
 - `check-sync` compares only the first 70 characters of each sentence; tightening it is the author's call.
 - **Phase C (proposed 15 Oct, not started): one slide registry.** The full deck's builder still makes slides three ways, an accident of history: hand-written calls (slides with one-off layouts), loops (institutions, trades, limits), and YAML entries slotted in after a named slide. One ordered list of `{id, layout, content}` would make file order match deck order and turn adding or moving any slide into a one-line edit. Plumbing only: every slide's HTML must stay byte-identical. One to two sessions; only in a quiet week.
-- This repo, found 29 Sep and not fixed yet: following an old link whose `SLIDE_ALIASES` entry points at the slide already on screen keeps the old id in the address bar (`show()` returns early before it rewrites the hash).
+- [x] This repo, found 29 Sep, fixed 15 Oct: following an old link whose `SLIDE_ALIASES` entry points at the slide already on screen kept the old id in the address bar (`show()` returned early before it rewrote the hash). The smoke test now checks that case.
 
 
 ## Goal
