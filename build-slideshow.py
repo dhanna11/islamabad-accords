@@ -362,9 +362,11 @@ TEMPLATE = r"""<!doctype html>
     const i = stages.findIndex(s => s.dataset.id === id);
     return i >= 0 ? i : 0;
   }
+  // the address bar always names the slide on screen, also after an old (aliased) link to that same slide
+  const syncHash = () => { const id = stages[cur].dataset.id; if (location.hash.slice(1) !== id) history.replaceState(null, '', '#' + id); };
   function show(i, animate) {
     i = Math.max(0, Math.min(N - 1, i));
-    if (i === cur && stages[i].classList.contains('on')) return;
+    if (i === cur && stages[i].classList.contains('on')) { syncHash(); return; }
     const dir = i > cur ? 'f' : 'b', old = stages[cur];
     stages.forEach(s => s.classList.remove('enter-f', 'enter-b', 'leave'));
     if (animate && old !== stages[i]) { old.classList.remove('on'); old.classList.add('leave');
@@ -379,7 +381,7 @@ TEMPLATE = r"""<!doctype html>
     const secs = Array.from(document.querySelectorAll('#menu button[data-go]'));
     secs.forEach((b, k) => { const start = +b.dataset.go, end = k + 1 < secs.length ? +secs[k + 1].dataset.go : N;
       b.classList.toggle('cur', i >= start && i < end); });
-    const id = s.dataset.id; if (location.hash.slice(1) !== id) history.replaceState(null, '', '#' + id);
+    syncHash();
   }
   const go = d => show(cur + d, true);
   $('next').onclick = () => go(1); $('prev').onclick = () => go(-1);
