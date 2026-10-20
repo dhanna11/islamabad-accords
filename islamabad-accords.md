@@ -136,8 +136,13 @@ The oil waiver returns
 
 NUCLEAR BARGAIN
 de-escalate the file without resolving it
+GATE N0
+Preliminary IAEA access,
+a first visit
+Interest
+ON THE QATARI $6B
 GATE N1
-IAEA access restored,
+Full IAEA access restored,
 verification baseline set
 $6B+
 QATARI ACCOUNTS RELEASE
@@ -269,7 +274,7 @@ in the Consortium
 - Recognition of Iran's right to enrich under the NPT, via the Consortium, including on Iranian soil
 - Then a supervised ramp to a 1.5–3.67% ceiling
 - Saudi Arabia and any other domestic enrichment program under the same verification
-- The three nuclear gates of card 1 paid as each closes
+- The four nuclear gates of card 1 paid as each closes
 HORMUZ
 in the Commission
 - The strait reopens in practice
@@ -535,7 +540,7 @@ And this doesn’t count the damage to the human condition.
 ### Three deals, one gate, five institutions
 *The proposed sequencing · from the talks to the architecture*
 - **Stage 1 · To the ceasefire** (weeks) · Initial talks: Agree the agenda: the three deals + regional and external guarantor consultations · then Ceasefire redeclared: all fronts
-- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Oil for oil · Iran’s exports pass ⇄ energy shipping safe; H2 · Deconfliction cell operational ⇄ oil waiver · Nuclear Bargain: N1 · IAEA access ⇄ $6B+; N2 · HEU downblended ⇄ $5B+ (recover · blend down · verify) · Architecture talks: Institutions · mandates · parameter ranges
+- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Oil for oil · Iran’s exports pass ⇄ energy shipping safe; H2 · Deconfliction cell operational ⇄ oil waiver · Nuclear Bargain: N1 · Full IAEA access ⇄ $6B+; N2 · HEU downblended ⇄ $5B+ (recover · blend down · verify) · Architecture talks: Institutions · mandates · parameter ranges
 - **The Armistice Gate** · The October 7th Firestorm is over · Architecture agreed ⇄ the $25B tranche · UN Security Council endorses · The wartime escalation unwinds: US surge forces withdrawn · sanctions since the June MoU lifted · Free passage for all shipping ⇄ the rest of the blockade lifts
 - **Stage 3 · Initial institutions convene** (The Year of Quiet) · Hormuz Commission · initial: Begin talks on the long-term regime for the strait · Consortium · initial: What to do with the uranium · custody among members · verification for Iran and the region · The Table: Signing ceremony at a Board of Peace meeting · attendance highly recommended · The Fund: Initial matching pledges for the Gaza and Lebanon public trust · early private interest in shared, interconnected regional infrastructure · N3 · custody ⇄ $15B+
 - **Stage 4 · Five independent lines** (ongoing · past 20 Jan 2029, the end of the term) · Commission: The strait’s permanent settlement · Consortium: Verification first · future shared enrichment infrastructure optional · The Table: The All-Fronts Hudna formalized · The Fund: Reconstruction and interdependence · Arms Control Forum: Initial talks on post-war regional presence and basing · regional arsenal build-up and retrenchment
@@ -544,7 +549,8 @@ And this doesn’t count the damage to the human condition.
 *The gates, trade by trade*
 - **H1 · Oil for oil** · Iran and its allies give: Attacks on energy shipping halt · food and medicine pass to the Gulf · The US and the region give: Iranian energy exports pass the blockade · food and medicine pass to Iran · Settles when: Each voyage passes unharmed
 - **H2 · Deconfliction cell** · Iran and its allies give: IRGC Navy and CENTCOM officers staff the June cell · The US and the region give: The oil waiver returns, under MoU ¶10 · Settles when: The cell is staffed and operational
-- **N1** · Iran and its allies give: IAEA access restored · The US and the region give: $6B+ released · Settles when: The IAEA verifies access
+- **N0** · Iran and its allies give: Preliminary IAEA access, a first visit · The US and the region give: The interest on the Qatar-held $6B · Settles when: The IAEA completes the visit
+- **N1** · Iran and its allies give: Full IAEA access restored · The US and the region give: $6B+ released · Settles when: The IAEA verifies access
 - **N2** · Iran and its allies give: HEU recovered and downblended · The US and the region give: $5B+ released · Settles when: The IAEA verifies the downblending
 - **The Armistice Gate** · Iran and its allies give: The architecture agreed, the Hudna included · free passage for all shipping · The US and the region give: The $25B tranche · UN Security Council endorsement · the rest of the blockade lifts · wartime sanctions lifted · Settles when: The architecture is signed
 - **N3** · Iran and its allies give: Custody of the remaining material · The US and the region give: $15B+ released · Settles when: The Consortium holds the material
