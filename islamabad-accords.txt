@@ -548,7 +548,7 @@ And this doesn’t count the damage to the human condition.
 ### What changes hands at each gate
 *The gates, trade by trade*
 - **H1 · Deconfliction cell** · Iran and its allies give: IRGC Navy and CENTCOM officers staff the June cell · The US and the region give: The oil waiver returns, under MoU ¶10 · Settles when: The cell is staffed and operational
-- **H2 · Oil for oil** · Iran and its allies give: Attacks on energy shipping halt · food and medicine pass to the Gulf · The US and the region give: Iranian energy exports pass the blockade · food and medicine pass to Iran · Settles when: Each voyage passes unharmed
+- **H2 · Oil for oil** · Iran and its allies give: Attacks on energy shipping halt · food and medicine pass to the Gulf · The US and the region give: Iranian energy exports pass the blockade · food and medicine pass to Iran · Settles when: Each voyage passes unharmed · held until the Armistice Gate
 - **N0** · Iran and its allies give: Preliminary IAEA access, a first visit · The US and the region give: The interest on the Qatar-held $6B · Settles when: The IAEA completes the visit
 - **N1** · Iran and its allies give: Full IAEA access restored · The US and the region give: $6B+ released · Settles when: An IAEA report confirms inspectors back at all declared sites
 - **N2** · Iran and its allies give: HEU recovered and downblended · The US and the region give: $5B+ released · Settles when: The IAEA verifies the downblending
