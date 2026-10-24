@@ -27,7 +27,7 @@ Unofficial · a private author's proposal · 52 checked sources · October 2026 
 
 *TL;DR · the plan in five lines*
 
-- **End the October 7th Firestorm:** ceasefire on all fronts, Gaza, Lebanon and Yemen included, then negotiate it into a long-term armistice
+- **End the October 7th Firestorm:** ceasefire on all fronts, Palestine (Gaza, the West Bank), Lebanon and Yemen included, then negotiate it into a long-term armistice
 - **Three concurrent deals:** split Hormuz’s lanes between Iranian and Omani waters, blend down Iran’s highly enriched uranium, and agree on the contours of the post-war architecture, in exchange for sanctions relief and unfrozen assets, with a cut for regional reconstruction, prioritizing Gaza and Lebanon
 - **The clearing-and-settlement loop:** Iran delivers, a regional institution verifies, and relief moves, gate by gate
 - **The post-war operating system:** five regionally owned institutions for the files that sparked the war, open to new ones: a peace table, a nuclear consortium, a Hormuz commission, an arms control forum, and a reconstruction fund
@@ -120,11 +120,11 @@ agree the three deals as the agenda, redeclare the ceasefire, then negotiate the
 
 RECOMMITMENT TO CESSATION
 rain on the firestorm
-A recommitment to the cessation of armed hostilities across all fronts, Gaza, Lebanon and Yemen included, to be formalized into the All-Fronts Hudna, the war-ending armistice, in the architectural phase.
+A recommitment to the cessation of armed hostilities across all fronts, Palestine (Gaza, the West Bank), Lebanon and Yemen included, to be formalized into the All-Fronts Hudna, the war-ending armistice, in the architectural phase.
 
 HORMUZ STANDSTILL
 freeze the maritime conflict
-ADAPTED FROM THE IRAN–OMAN ROUTE TALKS (JUL–AUG 2026, STILL MOVING) · THE OUTBOUND LANE STAYS OMANI
+ADAPTED FROM THE IRAN–OMAN ROUTE TALKS (JUL–AUG 2026, STILL MOVING) · THE OUTBOUND LANE STAYS OMANI · THE LANES OPEN ONCE THE DECONFLICTION CELL IS OPERATIONAL
 No-prejudice: nobody formally concedes sovereignty, transit rights, or economic arrangements. Holds until the architectural phase settles the strait.
 Sovereign and military fleets excepted
 - The lane arrangement governs commercial traffic
@@ -540,7 +540,7 @@ And this doesn’t count the damage to the human condition.
 ### Three deals, one gate, five institutions
 *The proposed sequencing · from the talks to the architecture*
 - **Stage 1 · To the ceasefire** (weeks) · Initial talks: Agree on the three deals + regional and external guarantor consultations · then Ceasefire redeclared: all fronts
-- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Deconfliction cell ⇄ oil waiver; H2 · Iranian oil ⇄ Gulf oil · Nuclear Bargain: N0 · First IAEA access ⇄ interest on $6B; N1 · Full IAEA access ⇄ $6B+; N2 · HEU recovered and downblended ⇄ $5B+ · Architecture talks: A1 · Five institutions; A2 · Mandates and initial files; A3 · Parameter ranges and members; A4 · Preliminary sanctions relief outline; A5 · Preliminary approval at home
+- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Deconfliction cell ⇄ oil waiver; H2 · Lanes split · Iranian oil ⇄ Gulf oil · Nuclear Bargain: N0 · First IAEA access ⇄ interest on $6B; N1 · Full IAEA access ⇄ $6B+; N2 · HEU recovered and downblended ⇄ $5B+ · Architecture talks: A1 · Five institutions; A2 · Mandates and initial files; A3 · Parameter ranges and members; A4 · Preliminary sanctions relief outline; A5 · Preliminary approval at home
 - **The Armistice Gate** · The October 7th Firestorm is over · Architecture agreed ⇄ the $25B tranche · the wartime escalation unwinds · free passage for all shipping
 - **Stage 3 · Initial institutions convene** (The Year of Quiet · the sanctions relief schedule fleshed out) · Hormuz Commission · initial: Talks on the strait’s long-term regime · Consortium · initial: Final arrangements for uranium custody · initial Consortium verification for Iran · The Table: T1 · Board of Peace signing; T2 · First round table, all seated; T3 · Hudna formalization · The Fund: Matching pledges for the Gaza–Lebanon trust · private interest in region-wide infrastructure · N3 · custody ⇄ $15B+
 - **Stage 4 · Five independent lines** (ongoing · past 20 Jan 2029, the end of the term) · Commission: The strait’s permanent settlement · Consortium: Verification first · future shared enrichment infrastructure optional · The Table: The All-Fronts Hudna formalized · The Fund: Reconstruction and interdependence · Arms Control Forum: Talks on post-war presence and basing · arsenal build-up and retrenchment
