@@ -156,7 +156,6 @@ Custody of remaining material,
 on architectural-phase terms
 $15B+
 RELEASES
-- Released to Iran without restriction on use
 - These are Iran's own assets, unfrozen under the MoU ¶11 procedure
 FIGURES TRACK AMOUNTS REPORTED BY AXIOS DURING THE 2026 NUCLEAR NEGOTIATIONS
 
