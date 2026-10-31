@@ -541,7 +541,7 @@ And this doesn’t count the damage to the human condition.
 - **Stage 1 · To the ceasefire** (weeks) · Initial talks: Agree on the three deals + regional and external guarantor consultations · then All-Fronts Ceasefire: redeclared
 - **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Deconfliction cell ⇄ oil waiver; H2 · Commercial lanes split · Iranian oil ⇄ Gulf oil · Nuclear Bargain: N0 · First IAEA access ⇄ interest on $6B; N1 · Full IAEA access ⇄ $6B+; N2 · HEU recovered and downblended in Iran ⇄ $5B+ · Architecture talks: A1 · Five institutions; A2 · Mandates and initial files; A3 · Parameter ranges and members; A4 · Preliminary milestones ⇄ relief outline; A5 · Preliminary approval at home
 - **The Armistice Gate** · The October 7th Firestorm is over · Architectural framework agreed ⇄ the $25B tranche · the armistice declared · the wartime escalation unwinds · free passage for all shipping
-- **Stage 3 · The Year of Quiet** (Institutions stood up, the sanctions relief schedule fleshed out) · Hormuz Commission · initial: Talks on the strait’s long-term regime · Consortium · initial: Final arrangements for uranium custody · initial Consortium verification for Iran · The Table: T1 · Board of Peace signing; T2 · First round table, all seated; T3 · Shoring up the ceasefire; T4 · Hudna formalized · The Fund: Matching pledges for the Gaza–Lebanon trust · private interest in region-wide infrastructure · Arms Control Forum: First talks on regional arsenals and foreign basing · N3 · custody ⇄ $15B+
+- **Stage 3 · The Year of Quiet** (Institutions stood up, the sanctions relief schedule fleshed out) · Hormuz Commission · initial: Talks on the strait’s long-term regime · Consortium · initial: Final arrangements for uranium custody · initial Consortium verification for Iran · The Table: T1 · Board of Peace signing; T2 · First round table, all seated; Shoring up the armistice; T3 · Hudna formalized · The Fund: Matching pledges for the Gaza–Lebanon trust · private interest in region-wide infrastructure · Arms Control Forum: First talks on regional arsenals and foreign basing · N3 · custody ⇄ $15B+
 - **Stage 4 · Five loosely coupled tracks** (ongoing · past 20 Jan 2029, the end of the term) · Commission: Shared TSS restored · the strait’s permanent economic settlement · Consortium: Verification first · future shared enrichment infrastructure optional · The Table: The All-Fronts Hudna in force · The Fund: Reconstruction and interdependence · Arms Control Forum: Talks on post-war presence and basing · arsenal build-up and retrenchment
 
 ### What changes hands at each gate
@@ -555,15 +555,14 @@ And this doesn’t count the damage to the human condition.
 - **N3** · Iran and its allies give: Custody of the remaining material · The US and the region give: $15B+ released · Settles when: The Consortium holds the material
 *The Armistice Gate is the one gate where the tracks meet. Early gates either side can undo · each later gate costs more to reverse.*
 
-### Reversible steps early, irreversible ones at the gate
-*The MoU and the US position · splitting the difference*
-- **Art. 1 · Ceasefire on all fronts** · Tehran, on signing: Immediate and permanent · Washington, after the uranium: A pause it can end · The split: Immediate at the All-Fronts Ceasefire · permanent once the Hudna is formalized
-- **The blockade** · Tehran, on signing: Lifted · Washington, after the uranium: Held until the uranium is handed over · The split: Oil, food and medicine pass early · the rest lifts at the Armistice Gate
-- **Art. 10 · Oil waivers** · Tehran, on signing: Restored · Washington, after the uranium: Held as leverage · The split: Restored early: a waiver can be revoked overnight
-- **Art. 8 · Enriched uranium** · Tehran, on signing: Downblended on site · Washington, after the uranium: Shipped out first · The split: Downblended on site, early · custody of the rest after the gate
-- **Art. 11 · Frozen funds** · Tehran, on signing: Fully available on implementation · Washington, after the uranium: Nothing up front · The split: Released step by step, each on a verified step · about four-fifths at or after the gate
-- **US forces nearby** · Tehran, on signing: Withdrawn · Washington, after the uranium: Stay · The split: Surge forces unwind at the gate · basing negotiated in the Forum
-*Every MoU term is honored and the timing is staged, through the Art. 12 implementation mechanism. Anything reversible moves early; anything irreversible waits for the gate.*
+### Splitting the difference on who moves first
+*Reversible steps left, the rest once the architecture is agreed*
+- **Ceasefire on all fronts** · Iran wants first: A permanent end to the war · America wants first: Talks, under a temporary, indefinite pause in hostilities · How the sequence splits it: The All-Fronts Ceasefire now · a permanent armistice once the Hudna is formalized
+- **The blockade and the strait** · Iran wants first: The blockade lifted within 7 days, then the strait reopens · America wants first: The strait reopened, then the blockade eases · How the sequence splits it: The deconfliction cell first, then oil moves both ways at once, with food and medicine · the rest of the blockade lifts once the architecture is agreed
+- **Oil waivers** · Iran wants first: Restored within 7 days · America wants first: Only after nuclear concessions · How the sequence splits it: Restored once the deconfliction cell is stood up, kept with ongoing coordination
+- **Uranium and relief** · Iran wants first: Relief, then downblending on site · America wants first: The uranium handed over, then relief · How the sequence splits it: On-site downblending, agreed in Art. 8, starts early and relief is paid against it · custody of the rest once the architecture is agreed
+- **Frozen funds** · Iran wants first: All of it on signing · America wants first: Nothing until the uranium is dealt with · How the sequence splits it: One release after each verified step · a large chunk once the architecture is agreed, with a carve-out for regional reconstruction
+*Every MoU term is honored; only the timing is staged, through the Art. 12 implementation mechanism.*
 
 ### The definitive end of the October 7th Firestorm
 *On agreement of the architectural phase · the armistice*
