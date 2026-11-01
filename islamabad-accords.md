@@ -142,7 +142,7 @@ a first visit
 Interest
 ON THE QATARI $6B
 GATE N1
-Full IAEA access restored,
+Interim IAEA access regime,
 verification baseline set
 $6B+
 QATARI ACCOUNTS RELEASE
@@ -266,7 +266,7 @@ at the Table
 NUCLEAR
 in the Consortium
 - Near-zero enrichment for 10–15 yrs · one protected research cascade below 1%, under Consortium verification
-- Every other facility sealed under continuous IAEA watch
+- Every other facility sealed under continuous Consortium and IAEA watch
 - Zero HEU for the duration
 - The existing stockpile part downblended in place and kept under seal, the rest exported to Consortium custody
 ⇄
@@ -539,17 +539,17 @@ And this doesn’t count the damage to the human condition.
 ### Three deals, one gate, five institutions
 *The proposed sequencing · from the talks to the architecture*
 - **Stage 1 · To the ceasefire** (weeks) · Initial talks: Agree on the three deals + regional and external guarantor consultations · then All-Fronts Ceasefire: redeclared
-- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Deconfliction cell ⇄ oil waiver; H2 · Commercial lanes split · Iranian oil ⇄ Gulf oil · Nuclear Bargain: N0 · First IAEA access ⇄ interest on $6B; N1 · Full IAEA access ⇄ $6B+; N2 · HEU recovered and downblended in Iran · Architecture talks: A1 · Five institutions; A2 · Mandates and initial files; A3 · Parameter ranges and members; A4 · Preliminary milestones ⇄ relief outline; A5 · Preliminary approval at home
+- **Stage 2 · Three deals, in parallel** (~6 months) · Hormuz Standstill: H1 · Deconfliction cell ⇄ oil waiver; H2 · Commercial lanes split · Iranian oil ⇄ Gulf oil · Nuclear Bargain: N0 · First IAEA access ⇄ interest on $6B; N1 · Interim IAEA access regime ⇄ $6B+; N2 · HEU recovered and downblended in Iran · Architecture talks: A1 · Five institutions; A2 · Mandates and initial files; A3 · Parameter ranges and members; A4 · Preliminary milestones ⇄ relief outline; A5 · Preliminary approval at home
 - **The Armistice Gate** · The October 7th Firestorm is over · Architectural framework agreed ⇄ the $25B tranche · the armistice declared · the wartime escalation unwinds · free passage for all shipping
 - **Stage 3 · The Year of Quiet** (One-year deadline · institutions stood up, relief schedule fleshed out) · Hormuz Commission · initial: Talks on the strait’s long-term regime · Consortium · initial: Initial Consortium verification for Iran · The Table: T1 · Board of Peace signing; T2 · First round table, all seated; Shoring up the armistice; T3 · Hudna formalized · The Fund: Matching pledges for the Gaza–Lebanon trust · private interest in region-wide infrastructure · Arms Control Forum: First talks on regional arsenals and foreign basing · N2 verified ⇄ $5B+ · N3 · custody ⇄ $15B+
-- **Stage 4 · Five loosely coupled tracks** (ongoing · past 20 Jan 2029, the end of the term) · Commission: Shared TSS restored · the strait’s permanent economic settlement · Consortium: Verification first · future shared enrichment infrastructure optional · The Table: The All-Fronts Hudna in force · The Fund: Reconstruction and interdependence · Arms Control Forum: Talks on post-war presence and basing · arsenal build-up and retrenchment
+- **Stage 4 · Five loosely coupled tracks** · Commission: Shared TSS restored · free, non-discriminatory passage under a shared economic regime · Consortium: Continuous verification of the nuclear deal, led by the region, with the IAEA and external guarantors · The Table: The All-Fronts Hudna in force · a standing venue for disputes and integration · The Fund: Rebuilding Gaza and Lebanon · shared, interconnected infrastructure for the region · Arms Control Forum: Talks on post-war presence and basing · arsenal build-up and retrenchment
 
 ### What changes hands at each gate
 *The gates, trade by trade*
 - **H1 · Deconfliction cell** · Iran and its allies give: IRGC Navy and CENTCOM officers staff the June cell · The US and the region give: The oil waiver returns, under MoU ¶10 · Settles when: The cell is staffed and operational
 - **H2 · Oil for oil** · Iran and its allies give: Attacks on energy shipping halt · food and medicine pass to the Gulf · The US and the region give: Iranian energy exports pass the blockade · food and medicine pass to Iran · Settles when: Each voyage passes unharmed · held until the Armistice Gate
 - **N0** · Iran and its allies give: Preliminary IAEA access, a first visit · The US and the region give: The interest on the Qatar-held $6B · Settles when: The IAEA completes the visit
-- **N1** · Iran and its allies give: Full IAEA access restored · The US and the region give: $6B+ released · Settles when: An IAEA report confirms inspectors back at all declared sites
+- **N1** · Iran and its allies give: Interim IAEA access regime in place · The US and the region give: $6B+ released · Settles when: An IAEA report confirms inspectors back at all declared sites
 - **N2** · Iran and its allies give: HEU recovered and downblended in Iran · The US and the region give: $5B+ released · Settles when: The IAEA verifies the downblending
 - **The Armistice Gate** · Iran and its allies give: The architectural framework agreed, the armistice declared · free passage for all shipping · The US and the region give: The $25B tranche · UN Security Council endorsement · the rest of the blockade lifts · wartime sanctions lifted · Settles when: The framework is signed
 - **N3** · Iran and its allies give: Custody of the remaining material · The US and the region give: $15B+ released · Settles when: The Consortium holds the material
